@@ -29,7 +29,7 @@ class MainComponent extends Component{
     state={isPopSign:false,mobileNo:"",erorr:""}
 
     componentDidMount(){
-        setTimeout(this.togglePopup, 2000);
+        // setTimeout(this.togglePopup, 2000);
     }
     handleChange=(e)=>{
         const {currentTarget: input} = e;
@@ -46,7 +46,7 @@ class MainComponent extends Component{
     }
     handleClose=()=>{
         let s1={...this.state}; 
-        setTimeout(this.togglePopup, 5000);
+        // setTimeout(this.togglePopup, 50000);
         !s1.isPopSign?s1.isPopSign=true:s1.isPopSign=false;
         this.setState(s1);
     }

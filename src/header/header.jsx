@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
-import Popup from '../components/login/loginPopup';
 import LoginForm from '../components/login/user_login';
 
 class Header extends Component{
@@ -87,14 +86,20 @@ class Header extends Component{
 
                     </div>
                 </div>
-                <div className="f">
-                    {isOpen && <Popup
-                    content={<>
-                      <LoginForm/>
-                      </>}
-                      handleClose={this.togglePopup}
-                    />}
+                <div className="">
+                    {isOpen &&
+                    <div className="popup-box">
+                        <div className="box">
+                            <span className="close-icon" onClick={this.togglePopup}></span>
+                            <LoginForm/>
+                        </div>
+                    </div>
+                }
                 </div>
+
+                
+
+
             </div>
               
         );

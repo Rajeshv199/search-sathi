@@ -8,6 +8,7 @@ import Header from "../header/header";
 import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
 import Footer from "../footer/footer";
+import UserRegisterPop from "../components/registration/userRegisterPop";
 import HeaderMobile from "../header/headerMobile";
 import findWorkImg1 from "../image/findWorkImg1.png";
 import findWorkImg2 from "../image/findWorkImg2.png";
@@ -31,6 +32,7 @@ class index extends Component{
                 {name:"Gagan & Jaya",img:"https://imagecdn.jeevansathi.com/22267/1/445341677-1612944013.jpg"},{name:"Dipesh & Divya ",img:"https://imagecdn.jeevansathi.com/22115/5/442305857-1612080018.jpg"},{name:"Nikit & Nimisha ",img:"https://imagecdn.jeevansathi.com/21956/14/439134849-1611216077.jpg"},
                 {name:"Naveen & Soniya ",img:"https://imagecdn.jeevansathi.com/22667/14/453354629-1615190452.jpg"},{name:"Vishal & Isha",img:"https://imagecdn.jeevansathi.com/21217/8/424348367-1607328093.jpg"},{name:"Pranit & Anjani ",img:"https://imagecdn.jeevansathi.com/22568/7/451367351-1614585699.jpg"}
             ],
+        registerPop:false,
 
     }
     componentDidMount() {
@@ -55,8 +57,13 @@ class index extends Component{
         s1.showMatrialMb=s1.showMatrialMb==index?-1:index;
         this.setState(s1);
     }
+    handleResisterPop=(value)=>{
+        let s1 = {...this.state};
+        s1.registerPop=value;
+        this.setState(s1);
+    }
     render(){
-        const {showMatrimonial,showMatrialMb,scrolled,motherTongue,castes,religion,cities,occupation,states,NRI,colleges,matrimonial,successStoryList} = this.state;
+        const {showMatrimonial,showMatrialMb,scrolled,motherTongue,castes,religion,cities,occupation,states,NRI,colleges,matrimonial,successStoryList,registerPop} = this.state;
         const settings = {
             dots: false,
             infinite: true,
@@ -81,50 +88,13 @@ class index extends Component{
                                     <div className="nowChatForFree">Now, chat for free!</div>
                                     <div className="isLooking">Finding your perfect match just became easier</div>
                                 </div>
-                                <div className="registerFields">
-                                    <div className="px-3 pb-3">
-                                    <div >
-                                        <label>Create Profile For</label>
-                                        <select  className="mr-2">
-                                            <option>Select</option>
-                                            <option>Myself</option>
-                                            <option>Son</option>
-                                            <option>Daughter</option>
-                                            <option>Brother</option>
-                                            <option>Sister</option>
-                                            <option>Relative</option>
-                                            <option>Friend</option>
-                                            <option>Marriage Bureau</option>
-                                        </select>
-                                    </div>
-                                    <div >
-                                        <label>Email Address</label>
-                                        <input type="text" placeholder="abc@gmail.com"/>
-                                    </div>
-                                    <div >
-                                        <label>Mobile No.</label>
-                                        <div className="d-flex">
-                                            <div className="countryCode">
-                                                <select>
-                                                    <option>+ 91</option>
-                                                </select>
-                                            </div>
-                                            <input type="text" className="mobileText" placeholder=""/>
-                                        </div>
-                                    </div>
-                                    <div >
-                                        <label>Create Password</label>
-                                        <input type="password" placeholder=""/>
-                                    </div>
-                                    <Link to="/user_registration"><div className="register_Button"> Register Free</div></Link>
-                                    <div className="register_Tmc"> 
-                                        By clicking on 'Register Free', you confirm that you accept the <span>Terms of Use </span>and <span>Privacy Policy</span>   
-                                    </div>
+                                <div className="">
+                                    <button className="registerFreeBtn" onClick={()=>this.handleResisterPop(true)}>Register Free</button>
                                 </div>
+                                
                             </div>
-                        </div>
 
-                        <div>
+                            <div>
                             <div className="homeContainer">
                                 <div className="main-benifit">
                                     <div className="my-3">
@@ -673,7 +643,17 @@ class index extends Component{
                                 </div>
                     </div>
                 </div>
-            
+
+                <div>
+                {registerPop&&
+                <div className="popup-box">
+                    <div className="box">
+                        <span className="close-icon" onClick={()=>this.handleResisterPop(false)} ></span>
+                        <UserRegisterPop/>
+                    </div>
+                </div>
+                }
+                </div>
             </div>
         )
     }

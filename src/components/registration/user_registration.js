@@ -8,12 +8,13 @@ import "slick-carousel/slick/slick-theme.css";
 import { AnimatePresence, color, motion } from "framer-motion";
 import './reg.css'
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link,useLocation  } from "react-router-dom";
 
 export default function User_registration() {
  
     const [label, setlabel] = useState(false);
     
+    const {state} = useLocation();
 
     const [account, setAccount] = useState(-1);
     function handleAccType(val) {
@@ -93,11 +94,7 @@ export default function User_registration() {
         })
     }
 
-    //
-    console.log(password)
-
-
-    //
+  
 
     return <div className="main-div-registration" >
         <div className="cover" >
