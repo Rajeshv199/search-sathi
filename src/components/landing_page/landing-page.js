@@ -6,8 +6,11 @@ import OffCanvas from '../offcanvas/off-canvas'
 import LeftAside from '../aside/left_aside'
 import RightAside from '../aside/right_aside'
 import MobileAside from '../profile_layout/MobileAside'
+import { useState } from 'react'
 
 function MobileNav() {
+
+    const [show,setShow]=useState(true)
 
 
     return <div className='landing-mobile'>
@@ -67,6 +70,7 @@ export default function LandingPage() {
         <div className='landing-mobile-nav'>
             <MobileNav />
         </div>
+        
 
         <div className="landing-navbar">
             <div>
