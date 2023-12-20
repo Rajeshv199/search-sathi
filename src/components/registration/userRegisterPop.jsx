@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import {Switch, Route, Redirect,useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
+import LoginForm from '../login/user_login';
 
 
 function UserRegister(){
-    const [takeData,setTakeData] = useState({title:"",gmail:"",mobileNo:"",password:""});
+    const [takeData,setTakeData] = useState({title:"",gmail:"",ISD:"+91",mobileNo:"",password:"",gender:""});
     const [errors,setErrors]= useState({});
     const [passwordShow,setPasswordShow]=useState(false);
+    const [loginPop,setloginPop]=useState(false);
     const history =  useHistory();
 
     function handleChange(e){
@@ -79,48 +81,59 @@ function UserRegister(){
     const titles= ["Myself","Son","Daughter","Brother","Sister","Relative","Friend","Marriage Bureau"];
 
     const {title,gmail,mobileNo,password} = takeData;
-    console.log(errors);
+    // console.log(errors);
 
     return(
             <div className="registerFields">
                 <div >
                     <label>Create Profile For</label>
-                    <select  className="mr-2" name="title" value={title} onChange={handleChange}>
+                    <select  className={errors&&errors.title?"inputBord":""} name="title" value={title} onChange={handleChange}>
                         <option disabled value="">Select</option>
                         {titles.map((t1,index) => (
                             <option key={index}>{t1}</option>
                         ))}
                     </select>
-                    <span className="showError">{errors&&errors.title}</span>
+                    {/* <span className="showError">{errors&&errors.title}</span> */}
                 </div>
                 <div>
                     <label>Email Address</label>
-                    <input type="gmail" name="gmail" value={gmail} placeholder="abc@gmail.com" onChange={handleChange} autoComplete="off"/>
-                    <span className="showError">{errors&&errors.gmail}</span>
+                    <input type="gmail" className={errors&&errors.gmail?"inputBord":""} name="gmail" value={gmail} placeholder="abc@gmail.com" onChange={handleChange} autoComplete="off"/>
+                    {/* <span className="showError">{errors&&errors.gmail}</span> */}
                 </div>
                 <div >
                     <label>Mobile No.</label>
-                    <div className="d-flex">
+                    <div className={"d-flex "+(errors&&errors.mobileNo?"inputBord":"")}>
                         <div className="countryCode">
                             <select>
                                 <option>+ 91</option>
                             </select>
                         </div>
-                        <input type="text" name="mobileNo" value={mobileNo} className="mobileText" placeholder="" onChange={handleChange}/>
+                        <input type="number"  name="mobileNo" value={mobileNo} className="mobileText" placeholder="" onChange={handleChange}/>
                        
                     </div>
-                    <span className="showError">{errors&&errors.mobileNo}</span>
+                    {/* <span className="showError">{errors&&errors.mobileNo}</span> */}
                 </div>
                 <div >
                     <label>Create Password</label>
-                    <input type="password" name="password" value={password} placeholder="" onChange={handleChange}/>
-                    <span className="showError">{errors&&errors.password}</span>
+                    <input type="password" name="password" className={errors&&errors.password?"inputBord":""} value={password} placeholder="" onChange={handleChange}/>
+                    {/* <span className="showError">{errors&&errors.password}</span> */}
                 </div>
                 <div className="register_Button" onClick={()=>handleSubmit()}> Register Free</div>
                 <div className="register_Tmc"> 
                     By clicking on 'Register Free', you confirm that you accept the <span>Terms of Use </span>and <span>Privacy Policy</span>   
                 </div>
-                <Link to="/user_registration"><div className="login_Button"> Login</div></Link>
+                <div className="login_Button" onClick={()=>setloginPop(true)}> Login</div>
+
+                <div className="">
+                    {loginPop &&
+                    <div className="popup-box">
+                        <div className="box">
+                            <span className="close-icon" onClick={()=>setloginPop(false)}></span>
+                            <LoginForm/>
+                        </div>
+                    </div>
+                }
+                </div>
             </div>
     );
 

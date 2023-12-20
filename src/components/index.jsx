@@ -647,7 +647,7 @@ class index extends Component{
                 <div>
                 {registerPop&&
                 <div className="popup-box">
-                    <div className="box">
+                    <div className="box2">
                         <span className="close-icon" onClick={()=>this.handleResisterPop(false)} ></span>
                         <UserRegisterPop/>
                     </div>

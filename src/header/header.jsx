@@ -5,7 +5,7 @@ import LoginForm from '../components/login/user_login';
 
 class Header extends Component{
     state={
-        showList:1,scrolled:null,isOpen:false
+        showList:1,scrolled:null,isOpen:false,popupView:0,
     }
 
     componentDidMount() {
@@ -27,11 +27,12 @@ class Header extends Component{
     }
     togglePopup=()=>{
         let s1={...this.state};
+        s1.popupView=1;
         !s1.isOpen?s1.isOpen=true:s1.isOpen=false;
         this.setState(s1);
     }
     render(){
-        const{ showList,scrolled,isOpen} = this.state;
+        const{ showList,scrolled,isOpen,popupView} = this.state;
         
         return(
             <div className="header--modifier text-white">
@@ -76,7 +77,7 @@ class Header extends Component{
                 </div>
                 <div className="menu-navbar--second">
                     <div className={"signupMenu " + (scrolled>400?"srolled":"")}>
-                        <div className="loginPart"onClick={this.togglePopup}>
+                        <div className="loginPart" onClick={this.togglePopup}>
                             LOGIN    
                         </div>
                         <Link to="/user_registration">
@@ -87,7 +88,7 @@ class Header extends Component{
                     </div>
                 </div>
                 <div className="">
-                    {isOpen &&
+                    {isOpen && popupView==1&&
                     <div className="popup-box">
                         <div className="box">
                             <span className="close-icon" onClick={this.togglePopup}></span>

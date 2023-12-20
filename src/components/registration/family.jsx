@@ -70,10 +70,10 @@ function FamilyDetails(){
                                 <React.Fragment>
                                 <div>
                                     <ul className="familyType">
-                                        <li className={"border-0 " +(famlyTye==0?"otpActive":"")} onClick={()=>{handleFmlyTye(0)}}>Select</li>
-                                        <li className={famlyTye==1?"otpActive":""}  onClick={()=>{handleFmlyTye(1)}}>Joint Family</li>
-                                        <li className={famlyTye==2?"otpActive":""}  onClick={()=>{handleFmlyTye(2)}}>Nuclear Family</li>
-                                        <li className={famlyTye==3?"otpActive":""}  onClick={()=>{handleFmlyTye(3)}}>Others</li>
+                                        <li className={"border-0 " +(famlyTye==0?"optActive":"")} onClick={()=>{handleFmlyTye(0)}}>Select</li>
+                                        <li className={famlyTye==1?"optActive":""}  onClick={()=>{handleFmlyTye(1)}}>Joint Family</li>
+                                        <li className={famlyTye==2?"optActive":""}  onClick={()=>{handleFmlyTye(2)}}>Nuclear Family</li>
+                                        <li className={famlyTye==3?"optActive":""}  onClick={()=>{handleFmlyTye(3)}}>Others</li>
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -129,11 +129,11 @@ function FamilyDetails(){
                                 <React.Fragment>
                                 <div>
                                     <ul className="brotherList">
-                                        <li className={"border-0 " +(brotherNo==0?"otpActive":"")} onClick={()=>{handleBrotherList(0)}}>None</li>
-                                        <li className={brotherNo==1?"otpActive":""}  onClick={()=>{handleBrotherList(1)}}>1</li>
-                                        <li className={brotherNo==2?"otpActive":""}  onClick={()=>{handleBrotherList(2)}}>2</li>
-                                        <li className={brotherNo==3?"otpActive":""}  onClick={()=>{handleBrotherList(3)}}>3</li>
-                                        <li className={brotherNo==4?"otpActive":""}  onClick={()=>{handleBrotherList(4)}}>3+</li>
+                                        <li className={"border-0 " +(brotherNo==0?"optActive":"")} onClick={()=>{handleBrotherList(0)}}>None</li>
+                                        <li className={brotherNo==1?"optActive":""}  onClick={()=>{handleBrotherList(1)}}>1</li>
+                                        <li className={brotherNo==2?"optActive":""}  onClick={()=>{handleBrotherList(2)}}>2</li>
+                                        <li className={brotherNo==3?"optActive":""}  onClick={()=>{handleBrotherList(3)}}>3</li>
+                                        <li className={brotherNo==4?"optActive":""}  onClick={()=>{handleBrotherList(4)}}>3+</li>
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -147,11 +147,11 @@ function FamilyDetails(){
                                 <React.Fragment>
                                 <div>
                                     <ul className="brotherList">
-                                        <li className={"border-0 " +(sisterNo==0?"otpActive":"")} onClick={()=>{handleSisterList(0)}}>None</li>
-                                        <li className={sisterNo==1?"otpActive":""}  onClick={()=>{handleSisterList(1)}}>1</li>
-                                        <li className={sisterNo==2?"otpActive":""}  onClick={()=>{handleSisterList(2)}}>2</li>
-                                        <li className={sisterNo==3?"otpActive":""}  onClick={()=>{handleSisterList(3)}}>3</li>
-                                        <li className={sisterNo==4?"otpActive":""}  onClick={()=>{handleSisterList(4)}}>3+</li>
+                                        <li className={"border-0 " +(sisterNo==0?"optActive":"")} onClick={()=>{handleSisterList(0)}}>None</li>
+                                        <li className={sisterNo==1?"optActive":""}  onClick={()=>{handleSisterList(1)}}>1</li>
+                                        <li className={sisterNo==2?"optActive":""}  onClick={()=>{handleSisterList(2)}}>2</li>
+                                        <li className={sisterNo==3?"optActive":""}  onClick={()=>{handleSisterList(3)}}>3</li>
+                                        <li className={sisterNo==4?"optActive":""}  onClick={()=>{handleSisterList(4)}}>3+</li>
                                     </ul>
                                 </div>
                                 </React.Fragment>
