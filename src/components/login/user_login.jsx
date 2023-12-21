@@ -53,7 +53,7 @@ function UserLogin(){
             <div>
                 {registerPop&&
                 <div className="popup-box">
-                    <div className="box">
+                    <div className="box2">
                         <span className="close-icon" onClick={()=>setregisterPop(false)} ></span>
                         <UserRegisterPop/>
                     </div>
