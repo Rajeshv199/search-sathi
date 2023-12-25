@@ -77,8 +77,7 @@ function UserRegister(){
         
     }
 
-
-    const titles= ["Myself","Son","Daughter","Brother","Sister","Relative","Friend","Marriage Bureau"];
+    const titles= ["Self","Son","Daughter","Brother","Sister","Relative","Friend","Marriage Bureau"];
 
     const {title,gmail,mobileNo,password} = takeData;
     // console.log(errors);
@@ -106,6 +105,8 @@ function UserRegister(){
                         <div className="countryCode">
                             <select>
                                 <option>+ 91</option>
+                                <option>+ 61</option>
+                                <option>+ 86</option>
                             </select>
                         </div>
                         <input type="number"  name="mobileNo" value={mobileNo} className="mobileText" placeholder="" onChange={handleChange}/>

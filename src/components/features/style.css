@@ -47,12 +47,6 @@
     display: flex;
 }
 
-.left-side-items{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px;
-    color: rgb(143, 142, 142);
-}
 
 #landing-navbar{
     display: flex;

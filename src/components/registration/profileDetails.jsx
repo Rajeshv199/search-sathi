@@ -85,7 +85,6 @@ function ProfileDetails(){
                             <div>Career Details</div>
                             <div>Lifestyle & Family</div>
                         </div>
-                        
                     </div>
                 </div>
             </div>

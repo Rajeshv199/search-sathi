@@ -106,7 +106,6 @@ function ProfileDetails(){
                                 <label className={"reg-label " +(label1?"reg-email":"")}>Your Email <span className="star">*</span></label>
                                 <input type="text" name="gmail" value={gmail} onChange={handleChange}/>
                             </div>
-                            
                         </div>
                        
                         <div className="regi-detail">

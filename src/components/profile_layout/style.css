@@ -28,7 +28,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 50px;
-    height: 70px;
+    height: 75px;
     width: 100%;
     border-bottom: 2px solid;
     border-color: rgb(220, 225, 230);
@@ -42,7 +42,35 @@
 .match-main {
     width: 45%;
 }
-
+.offSliderMain{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 350px;
+}
+.sliderPadding{
+    padding-bottom: 10px;
+    border-bottom:1px solid #f0edee;
+    margin: 12px 15px;
+}
+.text-detils h4{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    --tw-text-opacity: 1;
+    color: rgb(52 73 94/var(--tw-text-opacity));
+}
+.text-detils p{
+    font-size: 13px;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(118 132 147/var(--tw-text-opacity));
+}
+.text-detils a{
+    --tw-text-opacity: 1;
+    color: rgb(216 70 92/var(--tw-text-opacity));
+    font-family: 500;
+}
 .noti-main {
     width: 45%;
     border-radius: 5px;
@@ -81,8 +109,36 @@
 .left-side-items {
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px;
+    padding: 10px 0px;
     color: rgb(143, 142, 142);
+}
+.user-icon img {
+    width:65px;
+    border: 4px solid rgb(71, 183, 73);
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    padding: 5px;
+    margin-right: 12px;
+    margin-bottom: 16px;
+}
+.user-percent{
+    position: absolute;
+    color: rgb(71, 183, 73);
+    font-size: 11px;
+    z-index: 10;
+    margin-top: 52px;
+    margin-left: 13px;
+    background-color: #fff;
+    height: 17px;
+    border-radius: 13px;
+    font-weight: 600;
+    width: 38px;
+    min-width: 35px;
+    text-align: center;
+}
+.megtop{
+    margin-left: -122px;
 }
 
 @media only screen and (max-width: 1200px) {
