@@ -3,9 +3,9 @@ import logo from './.././../asset/logo1.png'
 import { Link } from 'react-router-dom'
 import './style.css'
 import OffCanvas from '../offcanvas/off-canvas'
-import LeftAside from './left_aside'
-import RightAside from './right_aside'
-import MobileAside from './MobileAside'
+import LeftAside from '../aside/left_aside'
+import RightAside from '../aside/right_aside'
+import MobileAside from '../aside/MobileAside'
 
 export default function Details() {
 
