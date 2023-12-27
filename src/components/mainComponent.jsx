@@ -23,6 +23,7 @@ import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 import Demo from  "./../components/registration/demoAmi";
 import Notification from "./profile_layout/Notification";
+import SuccessStories from "./features/success_stories";
 
 
 
@@ -68,6 +69,7 @@ class MainComponent extends Component{
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/>
                     <Route path="/features/phone-book" component={PhoneBook}/> 
+                    <Route path="/success/story" component={SuccessStories} />
 
                     <Route path="/login" render={(props)=><User_Login {...props} onSubmit={this.handlePopView} />}/>
 
