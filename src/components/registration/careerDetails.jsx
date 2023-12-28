@@ -87,7 +87,7 @@ function CareerDetails(){
                 </div>
             </div>
             <div className="register-wid">
-                <div className="regi-info">Great! You are about to complete your Jeevansathi profile.</div>
+                <div className="regi-info">Great! You are about to complete your Yogjodi profile.</div>
                 <div className="pt-4 d-flex mt-2">
                     <div className="reg-wid80">
                         <div className="mandator">Mandatory<span className="star"> *</span></div>

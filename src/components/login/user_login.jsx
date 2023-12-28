@@ -43,7 +43,7 @@ function UserLogin(){
                     </div>
                 </div>
                 <div className="loginFrm2">
-                    <p>New on Jeevansathi?</p>
+                    <p>New on Yogjodi?</p>
                     <div className="mt-3">
                         <button className="registerBtn" onClick={()=>setregisterPop(true)}>REGISTER FREE</button>
                     </div>
@@ -106,7 +106,7 @@ function UserLogin(){
                         </button>
                     </div>
                     <div className="regMob text-center">
-                        <span>New to Jeevansathi?</span>
+                        <span>New to Yogjodi?</span>
                         <Link to="/">Register Now!</Link>
                     </div>
                 </div>

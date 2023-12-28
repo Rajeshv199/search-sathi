@@ -68,7 +68,7 @@ class footer extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="copyRight"> All rights reserved © 2016 Jeevansathi Internet Services. </div>
+                <div className="copyRight"> All rights reserved © 2016 Yogjodi Internet Services. </div>
             </div>
         );
     }

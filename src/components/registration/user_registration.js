@@ -154,7 +154,7 @@ export default function User_registration() {
                         <input type="text" className="Credential" placeholder={!m ? 'Phone*' : null} onChange={(e) => { setMobile(e.target.value) }} />
                     </div>
                     {show ? <div id="message">
-                        <p>Jeevansathi members who like your profile will  contact you on this phone number.</p>
+                        <p>Yogjodi members who like your profile will  contact you on this phone number.</p>
                         <p ><b>verification</b> of this number is compulsory after your registration</p>
                     </div>
                         : null}
@@ -278,7 +278,7 @@ export default function User_registration() {
             </div>
 
             <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
-                <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Jeevansathi Internet Services.</p>
+                <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Yogjodi Internet Services.</p>
             </div>
 
         </div>

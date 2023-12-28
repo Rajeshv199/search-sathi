@@ -63,11 +63,11 @@ class Header extends Component{
                                 </div>
                             </li>
                             <li className="search-ml" >
-                                <div className="search-menu">SEARCH<i className="fa-solid fa-chevron-down fa-sm "></i></div>
-                                <div className="search-list">
+                                <div className="search-menu"><Link to="search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
+                                {/* <div className="search-list">
                                     <div>Search</div>
                                     <div>Search by Profile ID</div>
-                                </div>
+                                </div> */}
                             </li>
                             <li className="search-ml">
                                 <Link to="/features/help">HELP</Link>
@@ -83,8 +83,6 @@ class Header extends Component{
                         <Link to="/user_registration">
                             <div className="registerPart" > REGISTER FREE</div>
                         </Link>
-                        
-
                     </div>
                 </div>
                 <div className="">

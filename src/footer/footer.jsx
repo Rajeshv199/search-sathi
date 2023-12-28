@@ -36,14 +36,14 @@ class footer extends Component{
                                 <ul className="list-inline ">
                                     <li className="footerWid-Title">Services</li>
                                     <li><Link to="#">Membership Options</Link></li>
-                                    <li><Link to="#">Jeevansathi Careers</Link></li>
+                                    <li><Link to="#">Yogjodi Careers</Link></li>
                                 </ul>
                             </div>
                             <div className="footerWid">
                                 <ul className="list-inline ">
                                     <li className="footerWid-Title">Help</li>
                                     <li><Link to="#">Contact us</Link></li>
-                                    <li><Link to="#">Jeevansathi centers (32)</Link></li>
+                                    <li><Link to="#">Yogjodi centers (32)</Link></li>
                                 </ul>
                                             </div>
                             <div className="footerWid">

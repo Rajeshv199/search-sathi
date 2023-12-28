@@ -1,6 +1,5 @@
 import Footer from "./.././../footer/footer"
-import background from './.././../asset/header-inner1.jpg'
-import './style.css'
+import background from './.././../asset/header-inner1.jpg';
 import logo from "./.././../asset/logo1.png"
 import { Link } from "react-router-dom"
 
@@ -85,7 +84,7 @@ export default function Help() {
                         </li>
                         <br/>
                         <li>
-                            <p>Introducing Free Chat on Jeevansathi</p>
+                            <p>Introducing Free Chat on Yogjodi</p>
                             <p style={{color:'red'}}>View all questions</p>
                         </li>
                     </ul>
@@ -142,7 +141,7 @@ export default function Help() {
         <Footer />
 
         <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
-            <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Jeevansathi Internet Services.</p>
+            <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Yogjodi Internet Services.</p>
         </div>
     </div>
 }

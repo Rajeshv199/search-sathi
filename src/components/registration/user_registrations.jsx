@@ -121,7 +121,7 @@ function ProfileDetails(){
                                 </div>
                                 }
                             </div>
-                            <div className="txtInfo"> Jeevansathi members who like your profile will contact you on this phone number. <span>Verification</span>   of this number is compulsory after your registration.</div>
+                            <div className="txtInfo"> Yogjodi members who like your profile will contact you on this phone number. <span>Verification</span>   of this number is compulsory after your registration.</div>
                         </div>
 
                        

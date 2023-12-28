@@ -23,6 +23,7 @@ import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 import Demo from  "./../components/registration/demoAmi";
 import Notification from "./profile_layout/Notification";
+import SearchBar from "./../header/searchBar";
 
 
 
@@ -49,6 +50,8 @@ class MainComponent extends Component{
                     
 
                     <Route path="/test" component={User_regi}/>
+
+                    <Route path="/search" component={SearchBar}/>
 
                     <Route path="/registr/page5" component={VerificationMob}/>
                     <Route path="/registr/page4" component={SocialDetails}/>

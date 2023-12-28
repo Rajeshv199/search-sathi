@@ -41,8 +41,8 @@ function Verification(){
                     </div>
                     <button className="verifyButton">Verify this number</button>
                     <div>
-                        <p className="phnTxt">We would like to inform you that by by verifying the above number you are agreeing to receive calls from the Jeevansathi customer 
-                        support team and SMS from Jeevansathi, even though your number is registered with the NCPR.<br/><br/>                        
+                        <p className="phnTxt">We would like to inform you that by by verifying the above number you are agreeing to receive calls from the Yogjodi customer 
+                        support team and SMS from Yogjodi, even though your number is registered with the NCPR.<br/><br/>                        
                         Please note that you can change your preference from the ‘Alert Manager Settings’ page on the Desktop site any time.</p>
                     </div>
                     

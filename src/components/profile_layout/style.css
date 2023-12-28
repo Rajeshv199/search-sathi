@@ -140,6 +140,10 @@
 .megtop{
     margin-left: -122px;
 }
+.pro-side{
+    display: flex;
+    justify-content: space-between;
+}
 
 @media only screen and (max-width: 1200px) {
 
