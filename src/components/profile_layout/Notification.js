@@ -2,8 +2,8 @@ import './style.css'
 import logo from "./.././../asset/logo1.png"
 import { Link } from 'react-router-dom';
 import OffCanvas from '../offcanvas/off-canvas';
-import LeftAside from './left_aside';
-import RightAside from './right_aside';
+import LeftAside from '../aside/left_aside';
+import RightAside from '../aside/right_aside';
 
 
 

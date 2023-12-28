@@ -1,9 +1,18 @@
 import { useState } from 'react'
+<<<<<<< HEAD
 import logo from './.././../asset/logo1.png';
 import { Link } from 'react-router-dom';
 import OffCanvas from '../offcanvas/off-canvas';
 import LeftAside from '../profile_layout/left_aside';
 import RightAside from '../profile_layout/right_aside';
+=======
+import logo from './.././../asset/logo1.png'
+import { Link } from 'react-router-dom'
+import './style.css'
+import OffCanvas from '../offcanvas/off-canvas'
+import LeftAside from '../aside/left_aside'
+import RightAside from '../aside/right_aside'
+>>>>>>> f3081cdaa41cb900742eae0aabb2773ceea25fb0
 
 export default function Settings() {
 

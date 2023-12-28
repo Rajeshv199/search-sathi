@@ -23,7 +23,11 @@ import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 import Demo from  "./../components/registration/demoAmi";
 import Notification from "./profile_layout/Notification";
+<<<<<<< HEAD
 import SearchBar from "./../header/searchBar";
+=======
+import SuccessStories from "./features/success_stories";
+>>>>>>> f3081cdaa41cb900742eae0aabb2773ceea25fb0
 
 
 
@@ -71,6 +75,7 @@ class MainComponent extends Component{
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/>
                     <Route path="/features/phone-book" component={PhoneBook}/> 
+                    <Route path="/success/story" component={SuccessStories} />
 
                     <Route path="/login" render={(props)=><User_Login {...props} onSubmit={this.handlePopView} />}/>
 
