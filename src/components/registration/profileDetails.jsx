@@ -84,6 +84,8 @@ function ProfileDetails(){
                             <div className="reg-active">Profile Details</div>
                             <div>Career Details</div>
                             <div>Lifestyle & Family</div>
+                            <div>Partner Basic Details</div>
+                            
                         </div>
                     </div>
                 </div>

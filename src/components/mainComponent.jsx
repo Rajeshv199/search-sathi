@@ -12,22 +12,21 @@ import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
 import CareerDetails from "./../components/registration/careerDetails";
+import EducatonDetails from "./../components/registration/educatonDetails";
 import Family from "./../components/registration/family";
 import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
 import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import SocialDetails from "./../components/registration/socialDetails";
+import PartnerBasicDetails from "./../components/registration/partnerBasicDetails";
 import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 import Demo from  "./../components/registration/demoAmi";
 import Notification from "./profile_layout/Notification";
-<<<<<<< HEAD
 import SearchBar from "./../header/searchBar";
-=======
 import SuccessStories from "./features/success_stories";
->>>>>>> f3081cdaa41cb900742eae0aabb2773ceea25fb0
 
 
 
@@ -52,7 +51,6 @@ class MainComponent extends Component{
                 <Switch>
                 
                     
-
                     <Route path="/test" component={User_regi}/>
 
                     <Route path="/search" component={SearchBar}/>
@@ -63,8 +61,10 @@ class MainComponent extends Component{
                     <Route path="/registr/page2" component={PersonalDetails}/>
                     <Route path="/registr/page1" component={RegisterMobile}/>
 
-                    <Route path="/user_registration5" component={Verification}/>
-                    <Route path="/user_registration4" component={Family}/>
+                    <Route path="/user_registration7" component={Verification}/>
+                    <Route path="/user_registration6" component={PartnerBasicDetails}/>
+                    <Route path="/user_registration5" component={Family}/>
+                    <Route path="/user_registration4" component={EducatonDetails}/>
                     <Route path="/user_registration3" component={CareerDetails}/>
                     <Route path="/user_registration2" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>

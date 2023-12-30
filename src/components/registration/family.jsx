@@ -13,6 +13,8 @@ function FamilyDetails(){
     const [label6, setlabel6] = useState(false);
     const [label7, setlabel7] = useState(false);
     const [label8, setlabel8] = useState(false);
+    const [label9, setlabel9] = useState(false);
+    const [label10, setlabel10] = useState(false);
 
     const [famlyTye, setFamlyTye] = useState(-1);
     function handleFmlyTye(val){
@@ -53,6 +55,7 @@ function FamilyDetails(){
                             <div>Profile Details</div>
                             <div>Career Details</div>
                             <div className="reg-active">Lifestyle & Family</div>
+                            <div>Partner Basic Details</div>
                         </div>
                         
                     </div>
@@ -83,6 +86,14 @@ function FamilyDetails(){
                         <div className="regi-detail">
                             {/* <div className="arletVlid"></div> */}
                             <div className="regi-secle mt-4" >
+                                <label className={"reg-label " +(label9?"reg-FtherOcption":"")} onClick={() =>{setlabel9(true)}}>Father's Name</label>
+                                <input type="text" placeholder="" />
+                                
+                            </div>
+                        </div>
+                        <div className="regi-detail">
+                            {/* <div className="arletVlid"></div> */}
+                            <div className="regi-secle mt-4" >
                                 <label className={"reg-label " +(label2?"reg-FtherOcption":"")} onClick={() =>{setlabel2(true)}}>Father's Occupation</label>
                                 <input type="text" placeholder="" onClick={() =>{setfatherOcp(true);setlabel2(true)}}/>
                                 {label2 && fatherOcp?
@@ -99,6 +110,14 @@ function FamilyDetails(){
                                 </div>
                                 </React.Fragment>
                                 :""}
+                            </div>
+                        </div>
+                        <div className="regi-detail">
+                            {/* <div className="arletVlid"></div> */}
+                            <div className="regi-secle mt-4" >
+                                <label className={"reg-label " +(label10?"reg-FtherOcption":"")} onClick={() =>{setlabel10(true)}}>Mother's Name</label>
+                                <input type="text" placeholder="" />
+                                
                             </div>
                         </div>
                         <div className="regi-detail">

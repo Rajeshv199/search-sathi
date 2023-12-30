@@ -90,13 +90,8 @@ export default function Help() {
                         </li>
                         <br />
                         <li>
-<<<<<<< HEAD
                             <p>Introducing Free Chat on Yogjodi</p>
                             <p style={{color:'red'}}>View all questions</p>
-=======
-                            <p>Introducing Free Chat on Jeevansathi</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
->>>>>>> f3081cdaa41cb900742eae0aabb2773ceea25fb0
                         </li>
                     </ul>
                     <ul>
@@ -151,13 +146,8 @@ export default function Help() {
         </div>
         <Footer />
 
-<<<<<<< HEAD
         <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
             <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Yogjodi Internet Services.</p>
-=======
-        <div style={{ width: '100%', height: '40px', backgroundColor: '#e1e4e7' }}>
-            <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Jeevansathi Internet Services.</p>
->>>>>>> f3081cdaa41cb900742eae0aabb2773ceea25fb0
         </div>
     </div>
 }
