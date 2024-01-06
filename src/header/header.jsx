@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
 import LoginForm from '../components/login/user_login';
+import yogjodiLogo from "../image/YogJodiLogo.png";
 
 class Header extends Component{
     state={
@@ -38,7 +39,7 @@ class Header extends Component{
             <div className="header--modifier text-white">
                 <div>
                     <Link className="jeevansathi-logo" to="#">
-                        <img height="100%" width="100%"  src="https://static.jeevansathi.com/images/jspc/commonimg/desktopLogo.svg"/>
+                        <img height="100%" width="100%"  src={yogjodiLogo}/>
                     </Link>
                 </div>
                 <div className="menu-navbar">
@@ -93,7 +94,7 @@ class Header extends Component{
                             <LoginForm/>
                         </div>
                     </div>
-                }
+                    }
                 </div>
 
                 

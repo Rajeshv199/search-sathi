@@ -5,9 +5,10 @@ import LoginForm from '../login/user_login';
 
 
 function UserRegister(){
-    const [takeData,setTakeData] = useState({title:"",gmail:"",ISD:"+91",mobileNo:"",password:"",gender:""});
+    const [takeData,setTakeData] = useState({title:"",gmail:"",ISD:"+91",mobileNo:"",password:"",confirmPassword:"",gender:""});
     const [errors,setErrors]= useState({});
     const [passwordShow,setPasswordShow]=useState(false);
+    const [confrmPaswordShow,setconfrmPaswordShow]=useState(false);
     const [loginPop,setloginPop]=useState(false);
     const history =  useHistory();
 
@@ -41,6 +42,9 @@ function UserRegister(){
             case "password":
                 errors.password = validatePasswrd(input.value);
                 break;
+            case "confirmPassword":
+                errors.confirmPassword = validateConfrmPasswrd(input.value);
+                break;
             default:
                 break;
         }
@@ -48,12 +52,13 @@ function UserRegister(){
     }
 
     function validateAll(){
-        let {title,gmail,mobileNo,password} = takeData;
+        let {title,gmail,mobileNo,password,confirmPassword} = takeData; 
         let errors={};
         errors.title = validateTitle(title);
         errors.gmail = validateGmail(gmail);
         errors.mobileNo = validateMob(mobileNo);
         errors.password = validatePasswrd(password);
+        errors.confirmPassword = validateConfrmPasswrd(confirmPassword);
         return errors;
     }
     function validateTitle(title){return !title?"Title is missing":""}
@@ -65,21 +70,24 @@ function UserRegister(){
         return !mobileNo?"Mobile No is missing":filter.test(mobileNo)&&mobileNo.length==10?"":"Not a valid number";
     }
     function validatePasswrd(password){return !password?"Password is missing":""}
+    function validateConfrmPasswrd(confirmPassword){return !confirmPassword?"Password is missing":""}
 
     function handleSubmit(){
         let errors = validateAll();
-        if(isValid(errors)){
+        if(isValid(errors)&&(takeData.password==takeData.confirmPassword)){
             history.push({pathname:"/user_registration",state:{takeData}});
         }
         else {
             setErrors(errors);
+            if(takeData.password!=takeData.confirmPassword)
+                alert("Password do not match. Please try again.")
         }
         
     }
 
     const titles= ["Self","Son","Daughter","Brother","Sister","Relative","Friend","Marriage Bureau"];
 
-    const {title,gmail,mobileNo,password} = takeData;
+    const {title,gmail,mobileNo,password,confirmPassword} = takeData;
     // console.log(errors);
 
     return(
@@ -115,8 +123,21 @@ function UserRegister(){
                     {/* <span className="showError">{errors&&errors.mobileNo}</span> */}
                 </div>
                 <div >
-                    <label>Create Password</label>
-                    <input type="password" name="password" className={errors&&errors.password?"inputBord":""} value={password} placeholder="" onChange={handleChange}/>
+                    <label>Create Password </label>
+                    <div className="hideIcon">{passwordShow?
+                        <i class="fa-regular fa-eye" onClick={()=>setPasswordShow(false)}></i>:
+                        <i class="fa-regular fa-eye-slash" onClick={()=>setPasswordShow(true)}></i>}
+                    </div>
+                    <input type={passwordShow?"text":"password"} name="password" className={errors&&errors.password?"inputBord":""} value={password} placeholder="" onChange={handleChange}/>
+                    {/* <span className="showError">{errors&&errors.password}</span> */}
+                </div>
+                <div >
+                    <label>Confirm Password</label>
+                    <div className="hideIcon">{confrmPaswordShow?
+                        <i class="fa-regular fa-eye" onClick={()=>setconfrmPaswordShow(false)}></i>:
+                        <i class="fa-regular fa-eye-slash" onClick={()=>setconfrmPaswordShow(true)}></i>}
+                    </div>
+                    <input type={confrmPaswordShow?"text":"password"} name="confirmPassword" className={errors&&errors.confirmPassword?"inputBord":""} value={confirmPassword} placeholder="" onChange={handleChange}/>
                     {/* <span className="showError">{errors&&errors.password}</span> */}
                 </div>
                 <div className="register_Button" onClick={()=>handleSubmit()}> Register Free</div>

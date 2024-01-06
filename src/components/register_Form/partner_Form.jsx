@@ -3,10 +3,9 @@ import {Switch, Route, Redirect,useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../../footer/regi_footer";
 import Select from 'react-select';
-import YogJodiLogo from "../../image/YogJodiLogo.png"; 
 
 
-function PartnerBasicDetails(){
+function PartnerForm(){
     const history =  useHistory();
     // window.scrollTo(0,0);
 
@@ -53,12 +52,7 @@ function PartnerBasicDetails(){
         // history.push({pathname:"/profiles",state:"3"});
     }
     function handleChange(e){
-        // console.log(e);
-        // const {currentTarget: input} = e;
-        // let takeData1 = {...takeData};
-        // (takeData1[input.name] = input.value) ;
-        // setTakeData(takeData1);
-        // handleValidate(e);
+       
 
     }
 
@@ -70,42 +64,14 @@ function PartnerBasicDetails(){
     // let maritalStatusArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
     let maritalStatusArr=[{value:"Never Married",label:"Never Married"},{value:"Awaiting Divorce",label:"Awaiting Divorce"},{value:"Divorced",label:"Divorced"},{value:"Widowed",label:"Widowed"}];
     let countries = [{value:"Russia",label:"Russia"},{value:"Canada",label:"Canada"},{value:"China",label:"China"},{value:"US of America",label:"US of America"},{value:"Brazil",label:"Brazil"},{value:"Australia",label:"Australia"},{value:"India",label:"India"},{value:"Argentina",label:"Argentina"},{value:"Kazakhstan",label:"Kazakhstan"},{value:"Algeria",label:"Algeria"}];
-    
-    let motherToungs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
+    let motherToungs = [{value:"Assamese",label:"Assamese"},{value:"Bengali",label:"Bengali"},{value:"Bodo",label:"Bodo"},{value:"Dogri",label:"Dogri"},{value:"Gujarati",label:"Gujarati"},{value:"Hindi",label:"Hindi"},{value:"Kannada",label:"Kannada"},{value:"Kashmiri",label:"Kashmiri"},{value:"Kashmiri",label:"Kashmiri"},{value:"Maithili",label:"Maithili"},{value:"Malayalam",label:"Malayalam"},{value:"Manipuri",label:"Manipuri"},{value:"Marathi",label:"Marathi"},{value:"Nepali",label:"Nepali"},{value:"Odia",label:"Odia"},{value:"Punjabi",label:"Punjabi"},{value:"Sanskrit",label:"Sanskrit"},{value:"Santali",label:"Santali"},{value:"Sindhi",label:"Sindhi"},{value:"Tamil",label:"Tamil"},{value:"Telugu",label:"Telugu"},{value:"Urdu",label:"Urdu"}]
     let skills=[{value:"Problem solving",label:"Problem solving"},{value:"Communication",label:"Communication"},{value:"Interpersonal",label:"Interpersonal"},{value:"Time management",label:"Time management"}];
     let occupations=[{value:"Engineer",label:"Engineer"},{value:"Architect",label:"Architect"},{value:"Scientist",label:"Scientist"},{value:"Teacher",label:"Teacher"},{value:"Technician",label:"Technician"},{value:"Civil engineer",label:"Civil engineer"},{value:"Electrical engineer",label:"Electrical engineer"},{value:"Psychologist",label:"Psychologist"}];
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     let borads=[{value:"CBSE",label:"CBSE"},{value:"Jharkhand Board",label:"Jharkhand Board"},{value:"CISCE",label:"CISCE"},{value:"State Boards",label:"State Boards"},{value:"ICSE",label:"ICSE"}]
 
     return(
-        <div className="proDetailBg" onClick={showPop>=1?()=>setShowPop(-1):null}>
-            <div className="pro-coverImg">
-                <div className="profile-container">
-                    <div className="proheader">
-                        <div className="pro-jeevanLogo">
-                            <Link to="/" className=""><img  src={YogJodiLogo} /></Link>
-                        </div>
-                        <div className="liveChat-Help">
-                            <span>LIVE CHAT</span>
-                            <span>1-800-419-6299 (Toll Free)</span>
-                        </div>
-                    </div>
-                    <div className="proSection">
-                        <div className="proSText">
-                            <div>Profile Details</div>
-                            <div>Career Details</div>
-                            <div>Lifestyle & Family</div>
-                            <div className="reg-active">Partner Basic Details</div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="register-wid">
-                <div className="regi-info">We would love to know about your Partner Basic Details.</div>
-                <div className="pt-4 d-flex mt-2">
-                    <div className="reg-wid80">
-                        <div className="backarro"><Link to="/lifestyle&family">Back</Link></div>
+            <React.Fragment>
                         <div className="regi-detail">
                             <div className="regi-secle" onClick={() =>{setlabel1(true)}}>
                                 <label className={"reg-label " +(label1?"reg-Age":"")}>Age</label>
@@ -198,23 +164,9 @@ function PartnerBasicDetails(){
                             <div className={"regi-secle4 mt20"} onClick={() =>setlabel6(true)}>
                                 <label className={"reg-label top8 " +(label6?"reg-label6":"")} >Mother tongue</label>
                                 {label6?
-                                    
-                                    <div className="multiCheckbox">
-                                    {/* <Select isMulti={true} value={motherToung} onChange={setMotherToung} options={motherToungs}/> */}
-                                    {motherToungs.map((m1,index)=>(
-                                        
-                                            <label>
-                                                <input type="checkbox" />
-                                                {m1}
-                                            </label>
-                                        
-                                    ))}
-                                    
-                                </div>
+                                    <Select isMulti={true} value={motherToung} onChange={setMotherToung} options={motherToungs}/>
                                 :null}
-                                
                             </div>
-                            
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle4 mt20" onClick={() =>setlabel8(true)}>
@@ -309,21 +261,11 @@ function PartnerBasicDetails(){
                             {/* <button className="showMoreBtn" onClick={handleShowMore}>Continue</button> */}
                         </div>
                         
-                    </div>
-                </div>
+            </React.Fragment>
                 
-                
-            </div>
-            <div>
-                <Footer/>
-            </div>
-        </div>
                  
     );
 
 }
 
-export default PartnerBasicDetails;
-
-
-// prtmkumari55@gmail.com
+export default PartnerForm;

@@ -13,6 +13,7 @@ import HeaderMobile from "../header/headerMobile";
 import findWorkImg1 from "../image/findWorkImg1.png";
 import findWorkImg2 from "../image/findWorkImg2.png";
 import findWorkImg3 from "../image/findWorkImg3.png";
+import mobileView from "../image/mobileView.png";
 
 
 
@@ -280,7 +281,7 @@ class index extends Component{
                                         <div><Link to="#">Click here</Link>  <span className="opacity-75">to view more about Apps</span></div>                 
                                     </div>
                                     <div className="connectApp-Img">
-                                        <img src="https://www.jeevansathi.com/images/jspc/commonimg/Group_64_new.png" />                      
+                                        <img src={mobileView}/>                      
                                     </div>                           
                                 </div> 
 

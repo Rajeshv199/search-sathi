@@ -3,9 +3,9 @@ import './landing.css'
 import Match from '../profile_layout/Match'
 import { Link } from 'react-router-dom'
 import OffCanvas from '../offcanvas/off-canvas'
-import LeftAside from '../aside/left_aside'
-import RightAside from '../aside/right_aside'
-import MobileAside from '../aside/MobileAside'
+import LeftAside from '../profile_layout/left_aside'
+import RightAside from '../profile_layout/right_aside'
+import MobileAside from '../profile_layout/MobileAside'
 import { useState } from 'react'
 
 function MobileNav() {

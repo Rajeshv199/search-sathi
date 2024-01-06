@@ -37,10 +37,11 @@ function UserLogin(){
                             <input type="password" name="password" placeholder="Password" autoComplete="off"/>
                         </div>
                     </div>
-                    <div className="text-center mt-4">Forgot Password</div>
+                    
                     <div  className="">
-                        <button className="loginBtns">LOGIN</button>
+                        <button className="loginBtns mt-4">LOGIN</button>
                     </div>
+                    <div className="forgotpass">Forgot Password?</div>
                 </div>
                 <div className="loginFrm2">
                     <p>New on Yogjodi?</p>

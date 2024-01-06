@@ -1,14 +1,11 @@
 import React, {useState} from "react";
 import {Switch, Route, Redirect,useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Footer from "../../footer/regi_footer";
-import AddEduction from "./addEductionForm";
-import YogJodiLogo from "../../image/YogJodiLogo.png"; 
+import AddEduction from "../registration/addEductionForm";
 
 
-function CareerDetails(){
+function CareerDetails(props){
     const history =  useHistory();
-    // window.scrollTo(0,0);
 
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
@@ -40,9 +37,8 @@ function CareerDetails(){
         
     }
     function handleShowMore(){
-        history.push({pathname:"/profiles",state:"3"});
+        history.push({pathname:"/profiles",state:props.viewBtn?"-3":"3"});
     }
-    
 
 
     
@@ -55,33 +51,8 @@ function CareerDetails(){
 
 
     return(
-        <div className="proDetailBg" onClick={showPop>=1?()=>setShowPop(-1):null}>
-            <div className="pro-coverImg">
-                <div className="profile-container">
-                    <div className="proheader">
-                        <div className="pro-jeevanLogo">
-                        <Link to="/" className="ml-2"><img src={YogJodiLogo} /></Link>
-                        </div>
-                        <div className="liveChat-Help">
-                            <span>LIVE CHAT</span>
-                            <span>1-800-419-6299 (Toll Free)</span>
-                        </div>
-                    </div>
-                    <div className="proSection">
-                        <div className="proSText">
-                            <div>Profile Details</div>
-                            <div className="reg-active">Career Details</div>
-                            <div>Lifestyle & Family</div>
-                            <div>Partner Basic Details</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="register-wid">
-                <div className="regi-info">Great! You are about to complete your Yogjodi profile.</div>
-                <div className="pt-4 d-flex mt-2">
-                    <div className="reg-wid80">
-                        <div className="backarro"><Link to="/profile">Back</Link></div>
+        <React.Fragment>
+            
                         <div className="regi-detail">
                             <div className="regi-secle">
                                 <label className={"reg-label top8 " +(label1?"reg-emp":"")} onClick={() =>{setlabel1(true);handlePop(1)}}>Employed In</label> 
@@ -194,32 +165,27 @@ function CareerDetails(){
 
                         <div>
                             <button className="saveBtn" onClick={handleSave}>Save</button>
-                            <button className="showMoreBtn" onClick={handleShowMore}>Show More</button>
+                            <button className="showMoreBtn" onClick={handleShowMore}>{props.viewBtn?"Show Less":"Show More"}</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <Footer/>
-            </div>
+           
            
             <div className="">
-                {eductOpen &&
-                <div className="popup-box">
-                    <div className="box">
-                        <div className="p-4">
-                            <AddEduction/>
-                            <div className="mt-4 mb-5">
-                                <button className="saveBtn3" onClick={()=>setEductOpen(false)}>Save</button>
-                                <button className="cancelBtn" onClick={()=>setEductOpen(false)}>Cencel</button>
+                    {eductOpen &&
+                    <div className="popup-box">
+                        <div className="box">
+                            <div className="p-4">
+                                <AddEduction/>
+                                <div className="mt-4 mb-5">
+                                    <button className="saveBtn3" onClick={()=>setEductOpen(false)}>Save</button>
+                                    <button className="cancelBtn" onClick={()=>setEductOpen(false)}>Cencel</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                 }
+                    }
             </div>
             
-        </div>
+        </React.Fragment>
                  
     );
 

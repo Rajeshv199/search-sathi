@@ -5,28 +5,28 @@ import  "./styles/style.css";
 import  "./styles/styleMobile.css";
 import Index from "./index";
 import User_registration from "./../components/registration/user_registrations";
-import User_regi from "./../components/registration/user_registration";
 import LandingPage from "./landing_page/landing-page";
 import Details from "./profile_layout/profile_details";
 import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
 import CareerDetails from "./../components/registration/careerDetails";
-import EducatonDetails from "./../components/registration/educatonDetails";
-import Family from "./../components/registration/family";
-import Verification from "./../components/registration/verification";
+import Family from "./registration/lifeStyle_family";
+// import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
 import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import SocialDetails from "./../components/registration/socialDetails";
 import PartnerBasicDetails from "./../components/registration/partnerBasicDetails";
+// import PartnerEducatDetails from "./../components/registration/partnerEducatDetails";
 import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
-import Demo from  "./../components/registration/demoAmi";
 import Notification from "./profile_layout/Notification";
 import SearchBar from "./../header/searchBar";
 import SuccessStories from "./features/success_stories";
+import ProfileEdit from "./profile_layout/profile_Edit";
+import AllPageManage from "./registration/allpageManage";
 
 
 
@@ -38,7 +38,7 @@ class MainComponent extends Component{
     }
  
  
- 
+   
    
   
     
@@ -51,7 +51,6 @@ class MainComponent extends Component{
                 <Switch>
                 
                     
-                    <Route path="/test" component={User_regi}/>
 
                     <Route path="/search" component={SearchBar}/>
 
@@ -61,16 +60,20 @@ class MainComponent extends Component{
                     <Route path="/registr/page2" component={PersonalDetails}/>
                     <Route path="/registr/page1" component={RegisterMobile}/>
 
-                    <Route path="/user_registration7" component={Verification}/>
-                    <Route path="/user_registration6" component={PartnerBasicDetails}/>
-                    <Route path="/user_registration5" component={Family}/>
-                    <Route path="/user_registration4" component={EducatonDetails}/>
-                    <Route path="/user_registration3" component={CareerDetails}/>
-                    <Route path="/user_registration2" component={profileDetails}/>
+                    {/* <Route path="/user_registration8" component={Verification}/> */}
+                    {/* <Route path="/user_registration7" component={PartnerEducatDetails}/> */}
+                    <Route path="/partner" component={PartnerBasicDetails}/>
+                    <Route path="/lifestyle&family" component={Family}/>
+                    <Route path="/career" component={CareerDetails}/>
+                    <Route path="/profile" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>
+                    <Route path="/profiles" component={AllPageManage}/>
 
                     <Route path="/notification" component={Notification} />
                     <Route path="/landing" component={LandingPage} />
+
+
+                    <Route path="/profile_edit" component={ProfileEdit} />
                     <Route path="/profile_details" component={Details} />
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/>

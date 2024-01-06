@@ -31,11 +31,11 @@
     display: none;
 }
 
-.nav-logo {
+/* .nav-logo {
     width: 10%;
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .landing-main {
     background-color: rgb(238, 243, 248);
@@ -55,14 +55,7 @@
     position: relative;
     z-index: 0;
 }
-.profileDetils{
-    width: 20%;
-    border: 1px solid rgb(220, 225, 230);
-    border-radius: 5px;
-    position: fixed;
-    padding: 32px 24px 56px 24px;
-    background-color: white;
-}
+
 .landing-child {
     width: 20%;
     border: 1px solid rgb(220, 225, 230);
@@ -72,11 +65,7 @@
     background-color: white;
 }
 
-#one {
-    margin-right: 70%;
-    height: 400px;
-    padding-top: 30px;
-}
+
 
 #two {
     margin-left: 70%;

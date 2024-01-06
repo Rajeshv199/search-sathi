@@ -130,7 +130,8 @@ function SearchBar() {
                         <div className="border my-2"></div>
                         <div className={"advnWid "+(searchProfileId?"srchSelected":"")} onClick={()=>setSearchProfileId(true)}>Search by Profile ID</div>
                     </div>
-
+                    {!searchProfileId?(
+                    <div>
                     <div className="srchform">
                         <ul>
                             <li className="d-flex">
@@ -354,7 +355,24 @@ function SearchBar() {
                         <button>Search</button>
                     </div>                        
 
+                    </div>
+                    ):(
+                    <div className="srchform">
+                        <ul>
+                            <div className="profeError">Required</div>
+                            <li className="serchProfileId">
+                                <input className="srxchField" placeholder="Profile ID"/>
+                                    
+                            </li>
+                        </ul>
+                        <div className="serchBtn bg-white mt-4">
+                            <button>Search</button>
+                        </div> 
+                    </div>
 
+                    )}
+            
+               
                 </div>
             </div>
             <Footer/>
