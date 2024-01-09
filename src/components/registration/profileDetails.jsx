@@ -24,8 +24,6 @@ function ProfileDetails(){
 
     const [showPop,setShowPop] = useState(false);
 
-    const targetRef = useRef(null);
-
     function handleOption(value){
         if(value=="profile"){setProfile(true);setCareer(false);setLifeStyle(false);setPartner(false)};
         if(value=="career"){setProfile(false);setCareer(true);setLifeStyle(false);setPartner(false)};
@@ -34,39 +32,47 @@ function ProfileDetails(){
         setTitleShow(false);
     }
    
+    function scrollCareer(){
+       window.scrollTo({ top: 990, behavior: 'smooth' });
+    }
+    function scrollLife(){
+        window.scrollTo({ top: 1860, behavior: 'smooth' });
+    }
+    function scrollPartner(){
+        window.scrollTo({ top: 2820, behavior: 'smooth' });
+    }
     function handleShowMore(value){
         if(value=="career"){
-            setCareer(true);
-            console.log(targetRef.current);
-            // window.scrollTo({ top: 2000, behavior: 'smooth' });
-            if (targetRef.current) {
-                console.log(targetRef.current);
-                targetRef.current.scrollIntoView({ behavior: 'smooth' });
-              }
-
-
+            setProfile(true);setCareer(true);
+            setTimeout(scrollCareer, 0);
         };
         if(value=="lifeSyle"){
-            setLifeStyle(true);
-            // window.scrollTo({ top: 2500});
-            
+            setProfile(true);setLifeStyle(true);
+            setTimeout(scrollLife, 0);
         };
-        if(value=="partner"){setPartner(true)};
+        if(value=="partner"){
+            setProfile(true);setCareer(true);
+            setPartner(true);
+            setTimeout(scrollPartner, 0);
+        };
 
         if(value=="careerHide"){
             setCareer(false);setLifeStyle(false);setPartner(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth'});
         }
         if(value=="lifeSyleHide"){
             setLifeStyle(false);setPartner(false);
-            window.scrollTo({ top: 1000, behavior: 'smooth' });
+            window.scrollTo({ top: 990, behavior: 'smooth'});
         }
         if(value=="partnerHide"){
             setPartner(false);
-            window.scrollTo({ top: 1845, behavior: 'smooth' });
+            window.scrollTo({ top: 1860, behavior: 'smooth'});
         }
         setTitleShow(true);
     }
+
+  
+
 
 
     useEffect(()=>{
@@ -114,7 +120,6 @@ function ProfileDetails(){
                     }
                     {career&&
                     <React.Fragment>
-                        {/* <div ref={targetRef}>Career</div> */}
                         {titleShow&&<div className="headFont" >Career Details</div>}
                         <div className="pt-4 d-flex mt-2" >
                             <div className="reg-wid80">
@@ -148,8 +153,6 @@ function ProfileDetails(){
                     </React.Fragment>
                     }   
                 </div>
-                                
-                
             <div>
                 <Footer/>
             </div>

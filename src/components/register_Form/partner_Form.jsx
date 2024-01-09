@@ -27,16 +27,11 @@ function PartnerForm(){
     const [maxAge, setMaxAge] = useState(30);
     const [minHeight, setMinHeight] = useState(`4' 0" (1.22 mts)`);
     const [maxHeight, setMaxHeight] = useState(`7' (2.13 mts) plus'`);
-    const [maritalStatus, setMaritalStatus] = useState("");
-    const [motherToung, setMotherToung] = useState([]);
-    const [country, setCountry] = useState([]);
-    const [state, setState] = useState([]);
-    const [color, setColor] = useState("");
-    const [skill, setSkill] = useState([]);
-    const [board, setBoard] = useState([]);
+    const [takeData,setTakeData] = useState({maritalStatus:[],motherToung:[],country:[],state:[],skill:[],board:[],occupation:[]})
+    
+    // const [motherToung, setMotherToung] = useState([]);
     const [minQalification, setMinQalification] = useState("");
     const [maxQualification, setMaxQualification] = useState("");
-    const [occupation, setOccupation] = useState([]);
     const [income, setIncome] = useState("");
     const [descAboutPartner, setDescAboutPartner] = useState("");
 
@@ -48,13 +43,43 @@ function PartnerForm(){
         history.push("/partner");
         
     }
-    function handleShowMore(){
-        // history.push({pathname:"/profiles",state:"3"});
-    }
     function handleChange(e){
-       
+        const {currentTarget: input} = e;
+        let takeData1 = {...takeData};
+        input.type === "checkbox"?
+        (takeData1[input.name] = updateCBs(takeData1[input.name],input.checked,input.value)):
+        (takeData1[input.name] = input.value);
+        setTakeData(takeData1);
 
     }
+    function updateCBs(inpArr, checked, value){
+        if(checked) inpArr.push(value);
+        else{
+            let index = inpArr.findIndex((ele)=> ele === value);
+            if (index >= 0) inpArr.splice(index, 1);
+        }
+        return inpArr;
+    }
+
+    function handleDelete(arr,value){
+        let takeData1 = {...takeData}
+        let index = arr.findIndex((ele)=> ele === value);
+        if (index >= 0) arr.splice(index, 1);
+        setTakeData(takeData1);
+    }
+    function multiCheckbox(manArr,name,arr){
+        return(
+        <div className={"multiCheckbox "+(arr[0]?"":"top35") }>
+            {manArr.map((a1,index)=>(
+                <label key={index}>
+                    <input type="checkbox" name={name} value={a1} checked={arr.find((tk)=>tk===a1)} onChange={handleChange} />
+                    {a1}
+                </label>
+            ))}
+        </div>
+        )
+    }
+
 
     
     let ageArr = [];
@@ -62,13 +87,16 @@ function PartnerForm(){
     let heights = [];
     for(let i=0;i<10;i++)heights.push(`4' ${i}" (1.22 mts)`);
     // let maritalStatusArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
-    let maritalStatusArr=[{value:"Never Married",label:"Never Married"},{value:"Awaiting Divorce",label:"Awaiting Divorce"},{value:"Divorced",label:"Divorced"},{value:"Widowed",label:"Widowed"}];
-    let countries = [{value:"Russia",label:"Russia"},{value:"Canada",label:"Canada"},{value:"China",label:"China"},{value:"US of America",label:"US of America"},{value:"Brazil",label:"Brazil"},{value:"Australia",label:"Australia"},{value:"India",label:"India"},{value:"Argentina",label:"Argentina"},{value:"Kazakhstan",label:"Kazakhstan"},{value:"Algeria",label:"Algeria"}];
-    let motherToungs = [{value:"Assamese",label:"Assamese"},{value:"Bengali",label:"Bengali"},{value:"Bodo",label:"Bodo"},{value:"Dogri",label:"Dogri"},{value:"Gujarati",label:"Gujarati"},{value:"Hindi",label:"Hindi"},{value:"Kannada",label:"Kannada"},{value:"Kashmiri",label:"Kashmiri"},{value:"Kashmiri",label:"Kashmiri"},{value:"Maithili",label:"Maithili"},{value:"Malayalam",label:"Malayalam"},{value:"Manipuri",label:"Manipuri"},{value:"Marathi",label:"Marathi"},{value:"Nepali",label:"Nepali"},{value:"Odia",label:"Odia"},{value:"Punjabi",label:"Punjabi"},{value:"Sanskrit",label:"Sanskrit"},{value:"Santali",label:"Santali"},{value:"Sindhi",label:"Sindhi"},{value:"Tamil",label:"Tamil"},{value:"Telugu",label:"Telugu"},{value:"Urdu",label:"Urdu"}]
-    let skills=[{value:"Problem solving",label:"Problem solving"},{value:"Communication",label:"Communication"},{value:"Interpersonal",label:"Interpersonal"},{value:"Time management",label:"Time management"}];
-    let occupations=[{value:"Engineer",label:"Engineer"},{value:"Architect",label:"Architect"},{value:"Scientist",label:"Scientist"},{value:"Teacher",label:"Teacher"},{value:"Technician",label:"Technician"},{value:"Civil engineer",label:"Civil engineer"},{value:"Electrical engineer",label:"Electrical engineer"},{value:"Psychologist",label:"Psychologist"}];
-    let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
-    let borads=[{value:"CBSE",label:"CBSE"},{value:"Jharkhand Board",label:"Jharkhand Board"},{value:"CISCE",label:"CISCE"},{value:"State Boards",label:"State Boards"},{value:"ICSE",label:"ICSE"}]
+    let maritalStutArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
+    let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina","Kazakhstan","Algeria"];
+    let skills=["Problem solving","Communication","Interpersonal","Time management"];
+    let occupations=["Engineer","Architect","Scientist","Teacher","Technician","Civil engineer","Electrical engineer","Psychologist"];
+    let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"]
+    let borads=["CBSE","Jharkhand Board","CISCE","State Boards","ICSE"]
+
+    let motherToungs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"];
+    
+    const {maritalStatus,motherToung,country,state,skill,board,occupation} = takeData;
 
     return(
             <React.Fragment>
@@ -135,67 +163,80 @@ function PartnerForm(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="regi-secle4 mt20" onClick={() =>setlabel3(true)}>
-                                <label className={"reg-label top8 " +(label3?"reg-city":"")} >Marital status</label>
-                                {label3?
-                                    <Select isMulti={true} value={maritalStatus} onChange={setMaritalStatus} options={maritalStatusArr}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);setShowPop(5)}}>
+                                <label className={"reg-label top8 " +(label3?"reg-label6":"")} onClick={() =>setShowPop(5)}>Marital status</label>
+                                <div className="">{maritalStatus.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(maritalStatus,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label3 && showPop==5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="regi-secle4 mt20 " onClick={() =>setlabel4(true)}>
-                                <label className={"reg-label top8 " +(label4?"reg-label7":"")} >Country</label>  
-                                {label4?
-                                    <Select isMulti={true} value={country} onChange={setCountry} options={countries}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel4(true);setShowPop(6)}}>
+                                <label className={"reg-label top8 " +(label4?"reg-label7":"")} onClick={() =>setShowPop(6)}>Country</label>
+                                <div className="">{country.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(country,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label4 && showPop==6?  multiCheckbox(countries,"country",country):null}
                             </div>
                         </div>
                         {country&&
                         <div className="regi-detail">
-                            <div className="regi-secle4 mt20" onClick={() =>setlabel5(true)}>
-                                <label className={"reg-label top8 " +(label5?"reg-State2":"")} >State</label>
-                                {label5?
-                                    <Select isMulti={true} value={state} onChange={setState} options={countries}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel5(true);setShowPop(7)}}>
+                                <label className={"reg-label top8 " +(label5?"reg-State2":"")} onClick={() =>setShowPop(7)}>State</label>
+                                <div className="">{state.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(state,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label5 && showPop==7?  multiCheckbox(countries,"state",state):null}
                             </div>
                         </div>
                         }
                         <div className="regi-detail">
-                            <div className={"regi-secle4 mt20"} onClick={() =>setlabel6(true)}>
-                                <label className={"reg-label top8 " +(label6?"reg-label6":"")} >Mother tongue</label>
-                                {label6?
-                                    <Select isMulti={true} value={motherToung} onChange={setMotherToung} options={motherToungs}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel6(true);setShowPop(8)}}>
+                                <label className={"reg-label top8 " +(label6?"reg-label6":"")} onClick={() =>setShowPop(8)}>Mother tongue</label>
+                                <div className="">{motherToung.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(motherToung,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label6 && showPop==8?  multiCheckbox(motherToungs,"motherToung",motherToung):null}
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="regi-secle4 mt20" onClick={() =>setlabel8(true)}>
-                                <label className={"reg-label " +(label8?"reg-Age":"")}>Skill</label>
-                                {label8?
-                                    <Select isMulti={true} value={skill} onChange={setSkill} options={skills}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel7(true);setShowPop(9)}}>
+                                <label className={"reg-label top8 " +(label7?"reg-Age":"")} onClick={() =>setShowPop(9)}>Skill</label>
+                                <div className="">{skill.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(skill,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label7 && showPop==9?  multiCheckbox(skills,"skill",skill):null}
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="regi-secle4 mt20" onClick={() =>setlabel7(true)}>
-                                <label className={"reg-label " +(label7?"reg-borad":"")} >Borad</label>  
-                                {label7?
-                                    <Select isMulti={true} value={board} onChange={setBoard} options={borads}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel8(true);setShowPop(10)}}>
+                                <label className={"reg-label top8 " +(label8?"reg-Age":"")} onClick={() =>setShowPop(9)}>Borad</label>
+                                <div className="">{board.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(board,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label8 && showPop==10?  multiCheckbox(borads,"board",board):null}
                             </div>
                         </div>
+                        
                         <div className="regi-detail">
-                            <div className="regi-secle mt20" onClick={() =>{setlabel2(true)}}>
-                                <label className={"reg-label top8 " +(label2?"reg-famly":"")}>Qualification</label>
-                                {label2?
+                            <div className="regi-secle mt20" onClick={() =>{setlabel9(true)}}>
+                                <label className={"reg-label top8 " +(label9?"reg-famly":"")}>Qualification</label>
+                                {label9?
                                 <ul className="multiSelected d-flex">
-                                    <li onClick={() =>handlePop(2)}>
+                                    <li onClick={() =>handlePop(10)}>
                                         <div >
                                             <span>{minQalification?minQalification:"min qalification"}</span>
                                             <i className={showPop==2?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
-                                    <li onClick={() =>handlePop(3)}>
+                                    <li onClick={() =>handlePop(11)}>
                                         <div >
                                             <span>{maxQualification?maxQualification:"max qualification"}</span> 
                                             <i className={showPop==3?"iconArrow iconPostion":""}></i>
@@ -216,19 +257,21 @@ function PartnerForm(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="regi-secle4 mt20" onClick={() =>setlabel10 (true)}>
-                                <label className={"reg-label top8 " +(label10?"reg-Occupat":"")} >Occupation</label> 
-                                
-                                {label10?
-                                    <Select isMulti={true} value={occupation} onChange={setOccupation} options={occupations}/>
-                                :null}
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel10(true);setShowPop(12)}}>
+                                <label className={"reg-label top8 " +(label10?"reg-Occupat":"")} onClick={() =>setShowPop(12)}>Occupation</label>
+                                <div className="">{occupation.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(occupation,m1)}></i></div>
+                                ))}
+                                </div>
+                                {label10 && showPop==12?  multiCheckbox(occupations,"occupation",occupation):null}
                             </div>
                         </div>
+
                         <div className="regi-detail">
                             <div className={"regi-secle mt20"} >
-                                <label className={"reg-label top8 " +(label4?"reg-income":"")} onClick={() =>{setlabel4(true);handlePop(5)}}>Income</label> 
-                                <input type="text" placeholder="" readOnly value={income} onClick={() =>{setlabel4(true);handlePop(5)}}/>
-                                {label4 && showPop==5?
+                                <label className={"reg-label top8 " +(label11?"reg-income":"")} onClick={() =>{setlabel11(true);handlePop(13)}}>Income</label> 
+                                <input type="text" placeholder="" readOnly value={income} onClick={() =>{setlabel11(true);handlePop(13)}}/>
+                                {label11 && showPop==13?
                                 <React.Fragment>
                                 <div className={"gridDropdown"}>
                                     <i className={"imgArrow religionIcon"}></i>
