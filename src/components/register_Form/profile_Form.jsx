@@ -16,7 +16,7 @@ function ProfileDetails(props){
     const [label8, setlabel8] = useState(false);
    
     const [showPop,setShowPop] = useState(-1);
-    const {state} = useLocation();
+    
 
     const [day, setDay] = useState("");
     const [month, setMonth] = useState("");
@@ -39,10 +39,10 @@ function ProfileDetails(props){
     }
 
     function handleSave(){
-        history.push("/career");        
+        props.onSubmit("career");
     }
     function handleShowMore(){
-        history.push({pathname:"/profiles",state:props.viewBtn?"-2":"2"});
+        props.onShowMore(props.career?"careerHide":"career");
     }
 
     let days = [];
@@ -60,7 +60,7 @@ function ProfileDetails(props){
     for(let i=0;i<10;i++){
         heights.push(`4' 0" (1.22 mts)`);
     }
-    console.log(props);
+    // console.log(props);
 
     return(
             
@@ -201,7 +201,7 @@ function ProfileDetails(props){
                         </div>
                         <div>
                             <button className="saveBtn" onClick={handleSave}>Save</button>
-                            <button className="showMoreBtn" onClick={handleShowMore}>{props.viewBtn?"Show Less":"Show More"}</button>
+                            <button className="showMoreBtn" onClick={handleShowMore}>{props.career?"Show Less":"Show More"}</button>
                         </div>
                     </React.Fragment>
                            

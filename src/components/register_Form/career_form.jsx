@@ -33,11 +33,10 @@ function CareerDetails(props){
         setShowPop(val);
     }
     function handleSave(){
-        history.push("/lifestyle&family");
-        
+        props.onSubmit("lifeSyle");
     }
     function handleShowMore(){
-        history.push({pathname:"/profiles",state:props.viewBtn?"-3":"3"});
+        props.onShowMore(props.lifeStyle?"lifeSyleHide":"lifeSyle");
     }
 
 
@@ -165,7 +164,7 @@ function CareerDetails(props){
 
                         <div>
                             <button className="saveBtn" onClick={handleSave}>Save</button>
-                            <button className="showMoreBtn" onClick={handleShowMore}>{props.viewBtn?"Show Less":"Show More"}</button>
+                            <button className="showMoreBtn" onClick={handleShowMore}>{props.lifeStyle?"Show Less":"Show More"}</button>
                         </div>
            
            

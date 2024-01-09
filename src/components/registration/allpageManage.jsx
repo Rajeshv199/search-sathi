@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState,useEffect,useRef} from "react";
 import {Switch, Route, Redirect,useHistory,useLocation} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../../footer/regi_footer";
@@ -12,10 +12,11 @@ import Partner from "../register_Form/partner_Form";
     
 function Profiles(){
     const history =  useHistory();
-    // window.scrollTo({ top: 1000, behavior: 'smooth' })
+    // window.scrollTo({ top: 1000, behavior: 'smooth' });
     // window.scrollTo( 1000,0)
+    const targetRef = useRef(null);
 
-    const[showProfile,setShowProfile] = useState(false);
+    const[showProfile,setShowProfile] = useState(true);
     const[showCareer,setshowCareer] = useState(false);
     const[showLifeStyle,setShowLifeStyle] = useState(false);
     const[showPartner,setShowPartner] = useState(false);
@@ -26,36 +27,46 @@ function Profiles(){
         if(state==2){
             setShowProfile(true);
             setshowCareer(true);
+            // if (targetRef.current) {
+            //     // Scroll to the 'target' element
+            //     targetRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            //   }
+            window.scrollTo({ top: 1500, behavior: 'smooth' });
         }
         if(state==3){
             setShowLifeStyle(true);
             setShowProfile(true);
             setshowCareer(true);
+            window.scrollTo({ top: 1845, behavior: 'smooth' });
         }
         if(state==4){
             setShowProfile(true);
             setshowCareer(true);
             setShowLifeStyle(true);
             setShowPartner(true);
+            window.scrollTo({ top: 2820, behavior: 'smooth' });
         }
         if(state==-2){
             setShowProfile(true);
             setshowCareer(false);
             setShowLifeStyle(false);
             setShowPartner(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         if(state==-3){
             setShowLifeStyle(false);
             setShowPartner(false);
+            window.scrollTo({ top: 1000, behavior: 'smooth' });
         }
         if(state==-4){
             setShowPartner(false);
+            window.scrollTo({ top: 1845, behavior: 'smooth' });
         }
         
-        // window.scrollTo({ top: 1850, behavior: 'smooth' })
     
     },[state]);
 
+    console.log(state);
    
 
 
@@ -76,7 +87,7 @@ function Profiles(){
                 
                 {showCareer?
                 <React.Fragment>
-                    <div className="headFont"><span>Career Details</span></div>
+                    <div className="headFont" ref={targetRef}><span>Career Details</span></div>
                     <div className="pt-4 d-flex mt-2" >
                         <div className="reg-wid80">
                             <Career viewBtn={showLifeStyle?true:false}/>

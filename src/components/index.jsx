@@ -14,6 +14,8 @@ import findWorkImg1 from "../image/findWorkImg1.png";
 import findWorkImg2 from "../image/findWorkImg2.png";
 import findWorkImg3 from "../image/findWorkImg3.png";
 import mobileView from "../image/mobileView.png";
+import LoginForm from './login/user_login';
+
 
 
 
@@ -33,7 +35,7 @@ class index extends Component{
                 {name:"Gagan & Jaya",img:"https://imagecdn.jeevansathi.com/22267/1/445341677-1612944013.jpg"},{name:"Dipesh & Divya ",img:"https://imagecdn.jeevansathi.com/22115/5/442305857-1612080018.jpg"},{name:"Nikit & Nimisha ",img:"https://imagecdn.jeevansathi.com/21956/14/439134849-1611216077.jpg"},
                 {name:"Naveen & Soniya ",img:"https://imagecdn.jeevansathi.com/22667/14/453354629-1615190452.jpg"},{name:"Vishal & Isha",img:"https://imagecdn.jeevansathi.com/21217/8/424348367-1607328093.jpg"},{name:"Pranit & Anjani ",img:"https://imagecdn.jeevansathi.com/22568/7/451367351-1614585699.jpg"}
             ],
-        registerPop:false,
+        registerPop:false,loginpop:false,
 
     }
     componentDidMount() {
@@ -60,11 +62,18 @@ class index extends Component{
     }
     handleResisterPop=(value)=>{
         let s1 = {...this.state};
-        s1.registerPop=value;
+        !s1.registerPop?s1.registerPop=true:s1.registerPop=false;
+        s1.loginpop=false;
+        this.setState(s1);
+    }
+    handelLoginpop=()=>{
+        let s1={...this.state};
+        !s1.loginpop?s1.loginpop=true:s1.loginpop=false;
+        s1.registerPop = false;
         this.setState(s1);
     }
     render(){
-        const {showMatrimonial,showMatrialMb,scrolled,motherTongue,castes,religion,cities,occupation,states,NRI,colleges,matrimonial,successStoryList,registerPop} = this.state;
+        const {showMatrimonial,showMatrialMb,scrolled,motherTongue,castes,religion,cities,occupation,states,NRI,colleges,matrimonial,successStoryList,registerPop,loginpop} = this.state;
         const settings = {
             dots: false,
             infinite: true,
@@ -90,7 +99,7 @@ class index extends Component{
                                     <div className="isLooking">Finding your perfect match just became easier</div>
                                 </div>
                                 <div className="">
-                                    <button className="registerFreeBtn" onClick={()=>this.handleResisterPop(true)}>Register Free</button>
+                                    <button className="registerFreeBtn" onClick={this.handleResisterPop}>Register Free</button>
                                 </div>
                                 
                             </div>
@@ -663,11 +672,28 @@ class index extends Component{
                 {registerPop&&
                 <div className="popup-box">
                     <div className="box2">
-                        <span className="close-icon" onClick={()=>this.handleResisterPop(false)} ></span>
-                        <UserRegisterPop/>
+                        <span className="close-icon" onClick={this.handleResisterPop} ></span>
+                        <div className="registerFields">
+                            <UserRegisterPop/>
+                            <div className="login_Button" onClick={this.handelLoginpop}> Login</div>
+                        </div>
                     </div>
                 </div>
                 }
+                {loginpop &&
+                    <div className="popup-box">
+                        <div className="box">
+                            <span className="close-icon" onClick={this.handelLoginpop}></span>
+                            <LoginForm/>
+                            <div className="loginFrm2">
+                                <p>New on Yogjodi?</p>
+                                <div className="mt-3">
+                                    <button className="registerBtn" onClick={this.handleResisterPop}>REGISTER FREE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
                 </div>
             </div>
         )

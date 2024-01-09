@@ -3,10 +3,11 @@ import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
 import LoginForm from '../components/login/user_login';
 import yogjodiLogo from "../image/YogJodiLogo.png";
+import UserRegisterPop from "../components/registration/userRegisterPop";
 
 class Header extends Component{
     state={
-        showList:1,scrolled:null,isOpen:false,popupView:0,
+        showList:1,scrolled:null,loginPgOpen:false,regiPgopen:false,
     }
 
     componentDidMount() {
@@ -26,14 +27,26 @@ class Header extends Component{
         s1.showList=no;
         this.setState(s1);
     }
-    togglePopup=()=>{
+    handelloginPg=()=>{
         let s1={...this.state};
-        s1.popupView=1;
-        !s1.isOpen?s1.isOpen=true:s1.isOpen=false;
+        !s1.loginPgOpen?s1.loginPgOpen=true:s1.loginPgOpen=false;
+        s1.regiPgopen = false;
         this.setState(s1);
     }
+    handelRegiPg=()=>{
+        let s1={...this.state};
+        !s1.regiPgopen?s1.regiPgopen=true:s1.regiPgopen=false;
+        s1.loginPgOpen = false;
+        this.setState(s1);
+    }
+    // loginPgOpen=()=>{
+    //     let s1={...this.state};
+    //     !s1.isOpen?s1.isOpen=true:s1.isOpen=false;
+    //     s1.regiPgopen = false;
+    //     this.setState(s1);
+    // }
     render(){
-        const{ showList,scrolled,isOpen,popupView} = this.state;
+        const{ showList,scrolled,loginPgOpen,regiPgopen} = this.state;
         
         return(
             <div className="header--modifier text-white">
@@ -78,20 +91,35 @@ class Header extends Component{
                 </div>
                 <div className="menu-navbar--second">
                     <div className={"signupMenu " + (scrolled>400?"srolled":"")}>
-                        <div className="loginPart" onClick={this.togglePopup}>
-                            LOGIN    
-                        </div>
+                        <div className="loginPart" onClick={this.handelloginPg}>LOGIN</div>
                         <Link to="/user_registration">
                             <div className="registerPart" > REGISTER FREE</div>
                         </Link>
                     </div>
                 </div>
                 <div className="">
-                    {isOpen && popupView==1&&
+                    {loginPgOpen &&
                     <div className="popup-box">
                         <div className="box">
-                            <span className="close-icon" onClick={this.togglePopup}></span>
+                            <span className="close-icon" onClick={this.handelloginPg}></span>
                             <LoginForm/>
+                            <div className="loginFrm2">
+                                <p>New on Yogjodi?</p>
+                                <div className="mt-3">
+                                    <button className="registerBtn" onClick={this.handelRegiPg}>REGISTER FREE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    {regiPgopen&&
+                    <div className="popup-box">
+                        <div className="box2">
+                            <span className="close-icon" onClick={this.handelRegiPg} ></span>
+                            <div className="registerFields">
+                                <UserRegisterPop/>
+                                <div className="login_Button" onClick={this.handelloginPg}> Login</div>
+                            </div>
                         </div>
                     </div>
                     }

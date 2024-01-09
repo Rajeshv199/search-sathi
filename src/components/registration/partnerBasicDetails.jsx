@@ -28,16 +28,17 @@ function PartnerBasicDetails(){
     const [maxAge, setMaxAge] = useState(30);
     const [minHeight, setMinHeight] = useState(`4' 0" (1.22 mts)`);
     const [maxHeight, setMaxHeight] = useState(`7' (2.13 mts) plus'`);
-    const [maritalStatus, setMaritalStatus] = useState("");
-    const [motherToung, setMotherToung] = useState([]);
-    const [country, setCountry] = useState([]);
-    const [state, setState] = useState([]);
+    const [takeData,setTakeData] = useState({maritalStatus:[],motherToung:[],country:[],state:[],skill:[],board:[],occupation:[]})
+    const [maritalStatus2, setMaritalStatus] = useState([]);
+    const [motherToung2, setMotherToung] = useState([]);
+    const [country2, setCountry] = useState([]);
+    const [state2, setState] = useState([]);
     const [color, setColor] = useState("");
-    const [skill, setSkill] = useState([]);
-    const [board, setBoard] = useState([]);
+    const [skill2, setSkill] = useState([]);
+    const [board2, setBoard] = useState([]);
     const [minQalification, setMinQalification] = useState("");
     const [maxQualification, setMaxQualification] = useState("");
-    const [occupation, setOccupation] = useState([]);
+    const [occupation2, setOccupation] = useState([]);
     const [income, setIncome] = useState("");
     const [descAboutPartner, setDescAboutPartner] = useState("");
 
@@ -53,15 +54,42 @@ function PartnerBasicDetails(){
         // history.push({pathname:"/profiles",state:"3"});
     }
     function handleChange(e){
-        // console.log(e);
-        // const {currentTarget: input} = e;
-        // let takeData1 = {...takeData};
-        // (takeData1[input.name] = input.value) ;
-        // setTakeData(takeData1);
-        // handleValidate(e);
+        const {currentTarget: input} = e;
+        let takeData1 = {...takeData};
+        input.type === "checkbox"?
+        (takeData1[input.name] = updateCBs(takeData1[input.name],input.checked,input.value)):
+        (takeData1[input.name] = input.value);
+        setTakeData(takeData1);
 
     }
+    function updateCBs(inpArr, checked, value){
+        if(checked) inpArr.push(value);
+        else{
+            let index = inpArr.findIndex((ele)=> ele === value);
+            if (index >= 0) inpArr.splice(index, 1);
+        }
+        return inpArr;
+    }
+    function handleDelete(arr,value){
+        let takeData1 = {...takeData}
+        let index = arr.findIndex((ele)=> ele === value);
+        if (index >= 0) arr.splice(index, 1);
+        setTakeData(takeData1);
+    }
+    function multiCheckbox(manArr,name,arr){
+        return(
+        <div className={"multiCheckbox "+(arr[0]?"":"top35") }>
+            {manArr.map((a1,index)=>(
+                <label key={index}>
+                    <input type="checkbox" name={name} value={a1} checked={motherToung.find((tk)=>tk===a1)} onChange={handleChange} />
+                    {a1}
+                </label>
+            ))}
+        </div>
+        )
+    }
 
+    
     
     let ageArr = [];
     for(let i=18;i<=70;i++) ageArr.push(i);
@@ -71,14 +99,16 @@ function PartnerBasicDetails(){
     let maritalStatusArr=[{value:"Never Married",label:"Never Married"},{value:"Awaiting Divorce",label:"Awaiting Divorce"},{value:"Divorced",label:"Divorced"},{value:"Widowed",label:"Widowed"}];
     let countries = [{value:"Russia",label:"Russia"},{value:"Canada",label:"Canada"},{value:"China",label:"China"},{value:"US of America",label:"US of America"},{value:"Brazil",label:"Brazil"},{value:"Australia",label:"Australia"},{value:"India",label:"India"},{value:"Argentina",label:"Argentina"},{value:"Kazakhstan",label:"Kazakhstan"},{value:"Algeria",label:"Algeria"}];
     
-    let motherToungs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
+    let motherToungs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
     let skills=[{value:"Problem solving",label:"Problem solving"},{value:"Communication",label:"Communication"},{value:"Interpersonal",label:"Interpersonal"},{value:"Time management",label:"Time management"}];
     let occupations=[{value:"Engineer",label:"Engineer"},{value:"Architect",label:"Architect"},{value:"Scientist",label:"Scientist"},{value:"Teacher",label:"Teacher"},{value:"Technician",label:"Technician"},{value:"Civil engineer",label:"Civil engineer"},{value:"Electrical engineer",label:"Electrical engineer"},{value:"Psychologist",label:"Psychologist"}];
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     let borads=[{value:"CBSE",label:"CBSE"},{value:"Jharkhand Board",label:"Jharkhand Board"},{value:"CISCE",label:"CISCE"},{value:"State Boards",label:"State Boards"},{value:"ICSE",label:"ICSE"}]
 
+    const {maritalStatus,motherToung,country,state,skill,board,occupation} = takeData;
+
     return(
-        <div className="proDetailBg" onClick={showPop>=1?()=>setShowPop(-1):null}>
+        <div className="proDetailBg" onClick={()=>showPop>=1?setShowPop(-1):null}>
             <div className="pro-coverImg">
                 <div className="profile-container">
                     <div className="proheader">
@@ -195,26 +225,14 @@ function PartnerBasicDetails(){
                         </div>
                         }
                         <div className="regi-detail">
-                            <div className={"regi-secle4 mt20"} onClick={() =>setlabel6(true)}>
-                                <label className={"reg-label top8 " +(label6?"reg-label6":"")} >Mother tongue</label>
-                                {label6?
-                                    
-                                    <div className="multiCheckbox">
-                                    {/* <Select isMulti={true} value={motherToung} onChange={setMotherToung} options={motherToungs}/> */}
-                                    {motherToungs.map((m1,index)=>(
-                                        
-                                            <label>
-                                                <input type="checkbox" />
-                                                {m1}
-                                            </label>
-                                        
-                                    ))}
-                                    
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel6(true);setShowPop(8)}}>
+                                <label className={"reg-label top8 " +(label6?"reg-label6":"")} onClick={() =>setShowPop(8)}>Mother tongue</label>
+                                <div className="">{motherToung.map((m1,index)=>(
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(motherToung,m1)}></i></div>
+                                ))}
                                 </div>
-                                :null}
-                                
+                                {label6 && showPop==8?  multiCheckbox(motherToungs,"motherToung",motherToung):null}
                             </div>
-                            
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle4 mt20" onClick={() =>setlabel8(true)}>

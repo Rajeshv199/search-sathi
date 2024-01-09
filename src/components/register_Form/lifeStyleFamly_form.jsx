@@ -30,11 +30,11 @@ function FamilyDetails(props){
     const [aboutMyFamily, setAboutMyFamily] = useState("");
 
     function handleSave(){
-        history.push("/lifestyle&family");
+        props.onSubmit("partner");
         
     }
     function handleShowMore(){
-        history.push({pathname:"/profiles",state:props.viewBtn?"-4":"4"});
+        props.onShowMore(props.partner?"partnerHide":"partner");
     }
     
 
@@ -166,7 +166,7 @@ function FamilyDetails(props){
                         </div>
                         <div>
                             <button className="saveBtn" onClick={handleSave}>Save</button>
-                            <button className="showMoreBtn" onClick={handleShowMore}>{props.viewBtn?"Show Less":"Show More"}</button>
+                            <button className="showMoreBtn" onClick={handleShowMore}>{props.partner?"Show Less":"Show More"}</button>
                         </div>
                     </React.Fragment>
                  

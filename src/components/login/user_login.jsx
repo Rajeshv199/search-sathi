@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
 import SlideMenu from "./slideMenu";
-import UserRegisterPop from "../registration/userRegisterPop";
 
 
 function UserLogin(){
@@ -43,24 +42,10 @@ function UserLogin(){
                     </div>
                     <div className="forgotpass">Forgot Password?</div>
                 </div>
-                <div className="loginFrm2">
-                    <p>New on Yogjodi?</p>
-                    <div className="mt-3">
-                        <button className="registerBtn" onClick={()=>setregisterPop(true)}>REGISTER FREE</button>
-                    </div>
-                </div>
+                
             </div>
 
-            <div>
-                {registerPop&&
-                <div className="popup-box">
-                    <div className="box2">
-                        <span className="close-icon" onClick={()=>setregisterPop(false)} ></span>
-                        <UserRegisterPop/>
-                    </div>
-                </div>
-                }
-                </div>
+            
             
             
 

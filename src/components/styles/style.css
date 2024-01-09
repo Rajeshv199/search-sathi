@@ -336,6 +336,7 @@ a:hover{
     margin-top: 5px;
     font-size: 14px;
     cursor: pointer;
+    color: #000000;
 
 }
 .inputBord{
@@ -1376,7 +1377,7 @@ li:hover .subhobver{
   }
   
   .close-icon{
-    background-image: url(https://static.jeevansathi.com/images/jspc/commonimg/sprite-two.png?cacheBurst=true);
+    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/sprite-two.png?cacheBurst=true");
     background-repeat: no-repeat;
     background-position: -73px -178px;
     width: 26px;
@@ -1525,6 +1526,7 @@ li:hover .subhobver{
         padding-bottom: 10px;
         color: #fff;
         opacity: 0.8;
+        cursor: pointer;
     }
     .reg-active{
         border-bottom: 2px solid #fff;
@@ -1637,13 +1639,15 @@ li:hover .subhobver{
     }
     .regi-secle4{
         position: relative;
-        height: 46px;
+        min-height: 46px;
         width: 500px;
         background-color: #fff;
         float: right;
-        /* border: 1px solid #d9d9d9; */
+        border: 1px solid #d9d9d9;
         border-radius: 2px;
         margin-top: 30px;
+        padding: 10px 0;
+        /* z-index: 99; */
 
     }
     .countWord{
@@ -3078,6 +3082,7 @@ li:hover .subhobver{
     margin-left: 290px;
 }
 .headFont{
+    display: block;
     position: relative;
     font-size: 20px;
     font-weight: 500;
@@ -3130,16 +3135,19 @@ li:hover .subhobver{
     padding: 0 12px;
 }
 .multiCheckbox{
-    position: absolute;
-        width: 500px;
-        border: 1px solid #bbb8b9;
-        font-size: 15px;
-        background-color: #fff;
-        top: 45px;
-        overflow-y: auto;
-        max-height: 200px;
-        z-index: 10;
+    position: relative;
+    width: 500px;
+    border: 1px solid #bbb8b9;
+    font-size: 15px;
+    background-color: #fff;
+    top: 6px;
+    overflow-y: auto;
+    max-height: 200px;
+    z-index: 10;
         
+}
+.top35{
+    top: 32px!important;
 }
 
 .multiCheckbox input{
@@ -3154,6 +3162,44 @@ li:hover .subhobver{
 .multiCheckbox label:hover{
     background-color: #d4e9df;
 }
+.dfsdfs{
+    /* min-height: 46px;
+    width: 500px; */
+}
+.multiValue{
+    background-color: #ddd9d9;
+    border-radius: 2px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    /* padding: 2px 4px; */
+    margin: 2px 0 2px 6px;
+}
+.multiValue span{
+    padding: 4px 2px 4px 6px;
+}
+.multiValue i{
+   margin-left: 4px; 
+   cursor: pointer;
+   padding: 4px;
+}
+.multiValue i:hover{
+    background-color: #FFBDAD;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 1200px){
 
     .features-navbar{

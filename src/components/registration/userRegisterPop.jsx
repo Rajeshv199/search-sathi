@@ -91,7 +91,7 @@ function UserRegister(){
     // console.log(errors);
 
     return(
-            <div className="registerFields">
+            <React.Fragment>
                 <div >
                     <label>Create Profile For</label>
                     <select  className={errors&&errors.title?"inputBord":""} name="title" value={title} onChange={handleChange}>
@@ -144,19 +144,8 @@ function UserRegister(){
                 <div className="register_Tmc"> 
                     By clicking on 'Register Free', you confirm that you accept the <span>Terms of Use </span>and <span>Privacy Policy</span>   
                 </div>
-                <div className="login_Button" onClick={()=>setloginPop(true)}> Login</div>
-
-                <div className="">
-                    {loginPop &&
-                    <div className="popup-box">
-                        <div className="box">
-                            <span className="close-icon" onClick={()=>setloginPop(false)}></span>
-                            <LoginForm/>
-                        </div>
-                    </div>
-                }
-                </div>
-            </div>
+                
+            </React.Fragment>
     );
 
 }

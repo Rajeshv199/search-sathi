@@ -1,71 +1,80 @@
-import React, {useState,useEffect} from "react";
+import React, {useState,useEffect,useRef} from "react";
 import {Switch, Route, Redirect,useHistory,useLocation} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../../footer/regi_footer";
 import WhyRegister from "./whyRegister";
 import YogJodiLogo from "../../image/YogJodiLogo.png"; 
 import Profile from "../register_Form/profile_Form"; 
+import Career from "../register_Form/career_form"; 
+import LifeSyle from "../register_Form/lifeStyleFamly_form"; 
+import Partner from "../register_Form/partner_Form"; 
  
     
 function ProfileDetails(){
     const history =  useHistory();
     // window.scrollTo(0,0);
 
-    const [label1, setlabel1] = useState(false);
-    const [label2, setlabel2] = useState(false);
-    const [label3, setlabel3] = useState(false);
-    const [label4, setlabel4] = useState(false);
-    const [label5, setlabel5] = useState(false);
-    const [label6, setlabel6] = useState(false);
-    const [label7, setlabel7] = useState(false);
-    const [label8, setlabel8] = useState(false);
-   
-    const [showPop,setShowPop] = useState(false);
+    const[profile,setProfile] = useState(true);
+    const[career,setCareer] = useState(false);
+    const[lifeStyle,setLifeStyle] = useState(false);
+    const[partner,setPartner] = useState(false);
+    const[titleShow,setTitleShow] = useState(false);
+
     const {state} = useLocation();
 
-    const [day, setDay] = useState("");
-    const [month, setMonth] = useState("");
-    const [year, setYrs] = useState("");
-    const [mothertongue, setMothertong] = useState("");
-    const [religion, setRligion] = useState("");
-    const [caste, setCaste] = useState("");
-    const [maritalStatus, setMaritalStatus] = useState("");
-    const [height, setHeight] = useState("");
-    const [descriYrSelf, setDescriYrSelf] = useState("");
-  
-    function handlePop(val){
-        setShowPop(val);
+    const [showPop,setShowPop] = useState(false);
+
+    const targetRef = useRef(null);
+
+    function handleOption(value){
+        if(value=="profile"){setProfile(true);setCareer(false);setLifeStyle(false);setPartner(false)};
+        if(value=="career"){setProfile(false);setCareer(true);setLifeStyle(false);setPartner(false)};
+        if(value=="lifeSyle"){setProfile(false);setCareer(false);setLifeStyle(true);setPartner(false)};
+        if(value=="partner"){setProfile(false);setCareer(false);setLifeStyle(false);setPartner(true)};
+        setTitleShow(false);
+    }
+   
+    function handleShowMore(value){
+        if(value=="career"){
+            setCareer(true);
+            console.log(targetRef.current);
+            // window.scrollTo({ top: 2000, behavior: 'smooth' });
+            if (targetRef.current) {
+                console.log(targetRef.current);
+                targetRef.current.scrollIntoView({ behavior: 'smooth' });
+              }
+
+
+        };
+        if(value=="lifeSyle"){
+            setLifeStyle(true);
+            // window.scrollTo({ top: 2500});
+            
+        };
+        if(value=="partner"){setPartner(true)};
+
+        if(value=="careerHide"){
+            setCareer(false);setLifeStyle(false);setPartner(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        if(value=="lifeSyleHide"){
+            setLifeStyle(false);setPartner(false);
+            window.scrollTo({ top: 1000, behavior: 'smooth' });
+        }
+        if(value=="partnerHide"){
+            setPartner(false);
+            window.scrollTo({ top: 1845, behavior: 'smooth' });
+        }
+        setTitleShow(true);
     }
 
-    function handleSave(){
-        history.push("/career");
-        
-    }
-    function handleShowMore(){
-        history.push({pathname:"/profiles",state:"2"});
-    }
 
     useEffect(()=>{
-       console.log(showPop);
+    //    console.log(showPop);
     },0);
 
-    let days = [];
-    let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-    let years = [];
-    let date = new Date();
-    let pastYear = date.getFullYear() - 20;
-    for(let i=1;i<=31;i++) days.push(i);
-    for(let j=pastYear-50;j<pastYear;j++) years.push(j);
-    let langs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
-    let religions=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
-    let mstatus=["Never Married","Awaiting Divorce","Divorced","Widowed"];
-    let heights = [];
 
-    for(let i=0;i<10;i++){
-        heights.push(`4' 0" (1.22 mts)`);
-    }
     let data = state?state.takeData:null;
-    // const{takeData} = state?state:null;
 
     return(
         <div className="proDetailBg" onClick={()=>setShowPop(true)}>
@@ -80,13 +89,13 @@ function ProfileDetails(){
                             <span>1-800-419-6299 (Toll Free)</span>
                         </div>
                     </div> 
-
-                    <div className="proSection">
+                       
+                    <div className="proSection"> 
                         <div className="proSText">
-                            <div className="reg-active">Profile Details</div>
-                            <div>Career Details</div>
-                            <div>Lifestyle & Family</div>
-                            <div>Partner Basic Details</div>
+                            <div className={profile?"reg-active":null} onClick={()=>handleOption("profile")}>Profile Details</div>
+                            <div className={career?"reg-active":null} onClick={()=>handleOption("career")}>Career Details</div>
+                            <div className={lifeStyle?"reg-active":null} onClick={()=>handleOption("lifeSyle")}>Lifestyle & Family</div>
+                            <div className={partner?"reg-active":null} onClick={()=>handleOption("partner")}>Partner Basic Details</div>
                             
                         </div>
                     </div>
@@ -94,14 +103,53 @@ function ProfileDetails(){
             </div>
             <div className="register-wid" >
                 <div className="regi-info">Hi! {state?<span>{data.firstName+" "+data.middleName+" "+data.lastName}</span>:""} </div>
-                <div className="pt-4 d-flex mt-2" >
-                    <div className="reg-wid80">
-                        
-                       <Profile showPop={showPop    }/>
-                    </div>
-                    <WhyRegister/>                 
+                
+                    {profile&&
+                    <div className="pt-4 d-flex mt-2" >
+                        <div className="reg-wid80">
+                            <Profile career={career} onSubmit={handleOption} onShowMore={handleShowMore}/>
+                        </div>
+                        <WhyRegister/>     
+                    </div> 
+                    }
+                    {career&&
+                    <React.Fragment>
+                        {/* <div ref={targetRef}>Career</div> */}
+                        {titleShow&&<div className="headFont" >Career Details</div>}
+                        <div className="pt-4 d-flex mt-2" >
+                            <div className="reg-wid80">
+                                <Career lifeStyle={lifeStyle} onSubmit={handleOption} onShowMore={handleShowMore}/>     
+                            </div>
+                                <WhyRegister/>     
+                        </div> 
+                    </React.Fragment>
+                    }
+
+                    {lifeStyle&&
+                    <React.Fragment>
+                        {titleShow&&<div className="headFont" >LifeStyle & Family</div>}
+                        <div className="pt-4 d-flex mt-2" >
+                            <div className="reg-wid80">
+                                <LifeSyle partner={partner} onSubmit={handleOption}  onShowMore={handleShowMore}/>
+                            </div>
+                            <WhyRegister/>     
+                        </div>  
+                    </React.Fragment>
+                    }
+                    {partner&&
+                    <React.Fragment>
+                        {titleShow&&<div className="headFont">Partner Basic</div>}
+                        <div className="pt-4 d-flex mt-2" >
+                            <div className="reg-wid80">
+                                <Partner onSubmit={handleOption}/>
+                            </div>
+                            <WhyRegister/>     
+                        </div>
+                    </React.Fragment>
+                    }   
                 </div>
-            </div>
+                                
+                
             <div>
                 <Footer/>
             </div>

@@ -27,6 +27,7 @@ import SearchBar from "./../header/searchBar";
 import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
 import AllPageManage from "./registration/allpageManage";
+import Temprorary from "./temprorary";
 
 
 
@@ -51,6 +52,8 @@ class MainComponent extends Component{
                 <Switch>
                 
                     
+
+                    <Route path="/test" component={Temprorary}/>
 
                     <Route path="/search" component={SearchBar}/>
 
