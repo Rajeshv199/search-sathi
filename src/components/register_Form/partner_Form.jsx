@@ -77,7 +77,7 @@ function PartnerForm(){
         )
     }
     function handleShowPop(val,check){
-        // setShowPop(check?val:-1)
+        // setShowPop(check?val:-1) 
         console.log(val,check);
     }
 

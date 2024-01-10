@@ -1,11 +1,13 @@
-import logo from './.././../asset/logo1.png'
-import './landing.css'
-import Match from '../profile_layout/Match'
-import { Link } from 'react-router-dom'
-import OffCanvas from '../offcanvas/off-canvas'
-import LeftAside from '../profile_layout/left_aside'
-import RightAside from '../profile_layout/right_aside'
-import MobileAside from '../profile_layout/MobileAside'
+import logo from './.././../asset/logo1.png';
+import './landing.css';
+import Match from '../profile_layout/Match';
+import { Link } from 'react-router-dom';
+import OffCanvas from '../offcanvas/off-canvas';
+import LeftAside from '../profile_layout/left_aside';
+import RightAside from '../profile_layout/right_aside';
+import MobileAside from '../profile_layout/MobileAside';
+import ProfileHeader from '../profile_layout/profileHeader';
+
 import { useState } from 'react'
 
 function MobileNav() {
@@ -72,7 +74,7 @@ export default function LandingPage() {
         </div>
         
 
-        <div className="landing-navbar">
+        {/* <div className="landing-navbar">
             <div>
                 <img src={logo} />
             </div>
@@ -110,7 +112,8 @@ export default function LandingPage() {
                     <OffCanvas />
                 </div>
             </div>
-        </div>
+        </div> */}
+        <ProfileHeader/>
         <div id="landing-body">
             <LeftAside />
             <Match />

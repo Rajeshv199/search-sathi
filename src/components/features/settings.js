@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import logo from './.././../asset/logo1.png'
-import { Link } from 'react-router-dom'
-import './style.css'
-import OffCanvas from '../offcanvas/off-canvas'
-import LeftAside from '../profile_layout/left_aside'
-import RightAside from '../profile_layout/right_aside'
+import { useState } from 'react';
+import logo from './.././../asset/logo1.png';
+import { Link } from 'react-router-dom';
+import './style.css';
+import OffCanvas from '../offcanvas/off-canvas';
+import LeftAside from '../profile_layout/left_aside';
+import RightAside from '../profile_layout/right_aside';
+import ProfileHeader from '../profile_layout/profileHeader';
 
 export default function Settings() {
 
@@ -15,7 +16,7 @@ export default function Settings() {
 
     return <div className='features-main'>
 
-        <div className="features-navbar">
+        {/* <div className="features-navbar">
             <div>
                 <img src={logo} />
             </div>
@@ -53,7 +54,8 @@ export default function Settings() {
                     <OffCanvas />
                 </div>
             </div>
-        </div>
+        </div> */}
+        <ProfileHeader/>
         <div id="landing-body">
 
             <LeftAside />

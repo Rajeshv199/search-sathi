@@ -72,50 +72,15 @@
 
 // export default AllCompany;
 
-import React, { useRef } from 'react';
 
-const ScrollToElement = () => {
-  const targetRef = useRef(null);
-
-  const scrollToElement = () => {
-    window.scrollTo({ top: 1000, behavior: 'smooth' });
-    console.log(targetRef.current);
-    // if (targetRef.current) {
-    //   window.scroll(100)
-    //   targetRef.current.scrollIntoView({ behavior: 'smooth' });
-    // }
-  };
-
-  return (
-    <div>
-      <button onClick={scrollToElement}>
-        Scroll to Element
-      </button>
-      
-      <div style={{ height: '1000px' }}>Scroll down...</div>
-      <div ref={targetRef}>
-        This is the target element
-      </div>
-       <div style={{height: '155rem'}} />
-    </div>
-  );
-};
-
-export default ScrollToElement;
+import {useRef} from 'react';
+  export default function App() {
+   
 
 
-// import {useRef} from 'react';
-//   export default function App() {
-//     const ref = useRef(null);
-//     const handleClick = () => {
-//       ref.current?.scrollIntoView({behavior: 'smooth'});
-//     };
-//     return (
-//         <div>
-//           <button onClick={handleClick}>Scroll to element</button>
-//           <div style={{height: '155rem'}} />
-//           <div ref={ref}>Some content here</div>
-//           <div style={{height: '155rem'}} />
-//         </div>
-//     );
-//   }
+    return (
+        <div>
+          <h1>hello</h1>
+        </div>
+    );
+  }

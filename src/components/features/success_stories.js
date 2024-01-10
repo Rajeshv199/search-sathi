@@ -1,6 +1,6 @@
 import Footer from '../footer/footer'
 import successBackground from './../../asset/success-bakground.jpg'
-import logo from "./.././../asset/logo1.png"
+import logo from "../image/YogJodiLogo.png"
 import { Link } from 'react-router-dom'
 import userVector from './../../asset/user-vector.png'
 
@@ -9,7 +9,7 @@ export default function SuccessStories() {
     return <div className='success-main'>
         <div className="success-nav" >
             <div className="help-nav-child1">
-                <img src={logo} />
+                <Link to="/"><img src={logo}  className='p-2'/></Link>
             </div>
             <div className="help-nav-child2">
                 <Link to={"/landing"}><p>MATCHES</p></Link>
@@ -30,6 +30,8 @@ export default function SuccessStories() {
             </div>
 
         </div>
+
+       
         <div >
             <div style={{ zIndex: '-1', backgroundColor: 'white', width: '100%' }}>
                 <img src={successBackground} width={'100%'} />
