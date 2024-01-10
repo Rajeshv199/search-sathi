@@ -1,9 +1,9 @@
 import React, {useState,useEffect,useRef} from "react";
 import {Switch, Route, Redirect,useHistory,useLocation} from "react-router-dom";
 import {Link} from "react-router-dom";
-import Footer from "../../footer/regi_footer";
+import Footer from "../footer/regi_footer";
 import WhyRegister from "./whyRegister";
-import YogJodiLogo from "../../image/YogJodiLogo.png"; 
+import YogJodiLogo from "../image/YogJodiLogo.png"; 
 import Profile from "../register_Form/profile_Form"; 
 import Career from "../register_Form/career_form"; 
 import LifeSyle from "../register_Form/lifeStyleFamly_form"; 
@@ -71,19 +71,17 @@ function ProfileDetails(){
         setTitleShow(true);
     }
 
+    function handlePop(){
+        setShowPop(true);
+        // console.log("ff");
+    }
   
-
-
-
-    useEffect(()=>{
-    //    console.log(showPop);
-    },0);
-
+    // console.log(showPop);
 
     let data = state?state.takeData:null;
 
     return(
-        <div className="proDetailBg" onClick={()=>setShowPop(true)}>
+        <div className="proDetailBg" onClick={handlePop}>
             <div className="pro-coverImg">
                 <div className="profile-container">
                     <div className="proheader">
@@ -113,7 +111,7 @@ function ProfileDetails(){
                     {profile&&
                     <div className="pt-4 d-flex mt-2" >
                         <div className="reg-wid80">
-                            <Profile career={career} onSubmit={handleOption} onShowMore={handleShowMore}/>
+                            <Profile career={career} showPop={showPop} onSubmit={handleOption} onShowMore={handleShowMore}/>
                         </div>
                         <WhyRegister/>     
                     </div> 

@@ -10,23 +10,23 @@ import Details from "./profile_layout/profile_details";
 import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
-import CareerDetails from "./../components/registration/careerDetails";
-import Family from "./registration/lifeStyle_family";
+// import CareerDetails from "./../components/registration/careerDetails";
+// import Family from "./registration/lifeStyle_family";
 // import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
 import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import SocialDetails from "./../components/registration/socialDetails";
-import PartnerBasicDetails from "./../components/registration/partnerBasicDetails";
+// import PartnerBasicDetails from "./../components/registration/partnerBasicDetails";
 // import PartnerEducatDetails from "./../components/registration/partnerEducatDetails";
 import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 import Notification from "./profile_layout/Notification";
-import SearchBar from "./../header/searchBar";
+import SearchBar from "./header/searchBar";
 import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
-import AllPageManage from "./registration/allpageManage";
+// import AllPageManage from "./registration/allpageManage";
 import Temprorary from "./temprorary";
 
 
@@ -65,12 +65,12 @@ class MainComponent extends Component{
 
                     {/* <Route path="/user_registration8" component={Verification}/> */}
                     {/* <Route path="/user_registration7" component={PartnerEducatDetails}/> */}
-                    <Route path="/partner" component={PartnerBasicDetails}/>
+                    {/* <Route path="/partner" component={PartnerBasicDetails}/>
                     <Route path="/lifestyle&family" component={Family}/>
-                    <Route path="/career" component={CareerDetails}/>
+                    <Route path="/career" component={CareerDetails}/> */}
                     <Route path="/profile" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>
-                    <Route path="/profiles" component={AllPageManage}/>
+                    {/* <Route path="/profiles" component={AllPageManage}/> */}
 
                     <Route path="/notification" component={Notification} />
                     <Route path="/landing" component={LandingPage} />

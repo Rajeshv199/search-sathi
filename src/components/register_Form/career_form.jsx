@@ -54,7 +54,7 @@ function CareerDetails(props){
             
                         <div className="regi-detail">
                             <div className="regi-secle">
-                                <label className={"reg-label top8 " +(label1?"reg-emp":"")} onClick={() =>{setlabel1(true);handlePop(1)}}>Employed In</label> 
+                                <label className={"reg-label top8 " +(label1?"reg-email":"")} onClick={() =>{setlabel1(true);handlePop(1)}}>Employed In</label> 
                                 <input type="text" placeholder="" readOnly value={employee} onClick={() =>{setlabel1(true);handlePop(1)}}/>
                                 {label1 && showPop==1?
                                 <div className={"mStatusBox"}>
@@ -90,7 +90,7 @@ function CareerDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt20">
-                                <label className={"reg-label top8 " +(label4?"reg-emp":"")} onClick={() =>{setlabel4(true);handlePop(4)}}>Organization</label> 
+                                <label className={"reg-label top8 " +(label4?"reg-email":"")} onClick={() =>{setlabel4(true);handlePop(4)}}>Organization</label> 
                                 <input type="text" placeholder="" readOnly value={organization} onClick={() =>{setlabel4(true);handlePop(4)}}/>
                                 {label4 && showPop==4?
                                 <div className={"mStatusBox"}>
@@ -135,7 +135,7 @@ function CareerDetails(props){
 
                         <div className="regi-detail">
                             <div className="regi-secle mt20" >
-                                <label className={"reg-label " +(label9?"reg-HDegree":"")} onClick={() =>{setlabel9(true);handlePop(7)}}>Highest Degree</label> 
+                                <label className={"reg-label " +(label9?"reg-expres":"")} onClick={() =>{setlabel9(true);handlePop(7)}}>Highest Degree</label> 
                                 <input type="text" placeholder="" readOnly value={hightdegree} onClick={() =>{setlabel9(true);handlePop(7)}}/>
                                 {label9 && showPop==7?
                                 <div className={"highdegBox"}>
@@ -149,7 +149,7 @@ function CareerDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt20" >
-                                <label className={"reg-label " +(label8?"reg-HDegree":"")} onClick={() =>{setlabel8(true);setEductOpen(true)}}>Add Education</label> 
+                                <label className={"reg-label " +(label8?"reg-expres":"")} onClick={() =>{setlabel8(true);setEductOpen(true)}}>Add Education</label> 
                                 <input type="text" placeholder="" readOnly  onClick={() =>{setlabel8(true);setEductOpen(true)}}/>
                             </div>
                         </div>
@@ -161,7 +161,6 @@ function CareerDetails(props){
                                 :null}
                             </div>
                         </div>
-
                         <div>
                             <button className="saveBtn" onClick={handleSave}>Save</button>
                             <button className="showMoreBtn" onClick={handleShowMore}>{props.lifeStyle?"Show Less":"Show More"}</button>

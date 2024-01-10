@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
-import LoginForm from '../components/login/user_login';
+import LoginForm from '../login/user_login';
 import yogjodiLogo from "../image/YogJodiLogo.png";
-import UserRegisterPop from "../components/registration/userRegisterPop";
+import UserRegisterPop from "../registration/userRegisterPop";
 
 class Header extends Component{
     state={
@@ -69,7 +69,7 @@ class Header extends Component{
                                         <div className="occupation" onMouseEnter={()=>this.handleView(5)}>Occupation</div>
                                         <div className="state" onMouseEnter={()=>this.handleView(6)}>State</div>
                                         <div className="NRI" onMouseEnter={()=>this.handleView(7)}>NRI</div>
-                                        <div className="college" onMouseEnter={()=>this.handleView(8)}>College</div>
+                                        {/* <div className="college" onMouseEnter={()=>this.handleView(8)}>College</div> */}
                                     </div>
                                     <div className="browseContent">
                                         <BrowseContent showList={showList}/>

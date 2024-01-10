@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Switch, Route, Redirect,useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Footer from "../../footer/regi_footer";
+import Footer from "../footer/regi_footer";
 import Select from 'react-select';
 
 
@@ -20,6 +20,7 @@ function PartnerForm(){
     const [label9, setlabel9] = useState(false);
     const [label10, setlabel10] = useState(false);
     const [label11, setlabel11] = useState(false);
+    const [label12, setlabel12] = useState(false);
 
     const [showPop,setShowPop] = useState(-1);
 
@@ -34,10 +35,6 @@ function PartnerForm(){
     const [maxQualification, setMaxQualification] = useState("");
     const [income, setIncome] = useState("");
     const [descAboutPartner, setDescAboutPartner] = useState("");
-
-    function handlePop(val){
-        setShowPop(val);
-    }
    
     function handleSave(){
         history.push("/partner");
@@ -79,14 +76,19 @@ function PartnerForm(){
         </div>
         )
     }
+    function handleShowPop(val,check){
+        // setShowPop(check?val:-1)
+        console.log(val,check);
+    }
 
-
+    console.log(showPop);
     
     let ageArr = [];
     for(let i=18;i<=70;i++) ageArr.push(i);
     let heights = [];
     for(let i=0;i<10;i++)heights.push(`4' ${i}" (1.22 mts)`);
     // let maritalStatusArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
+    let aaAw=[{value:"acx",label:"acx"}]
     let maritalStutArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina","Kazakhstan","Algeria"];
     let skills=["Problem solving","Communication","Interpersonal","Time management"];
@@ -99,19 +101,19 @@ function PartnerForm(){
     const {maritalStatus,motherToung,country,state,skill,board,occupation} = takeData;
 
     return(
-            <React.Fragment>
+            <div onClick={()=>handleShowPop(1)}>
                         <div className="regi-detail">
                             <div className="regi-secle" onClick={() =>{setlabel1(true)}}>
                                 <label className={"reg-label " +(label1?"reg-Age":"")}>Age</label>
                                 {label1?
                                 <ul className="multiSelected d-flex">
-                                    <li onClick={() =>handlePop(1)}>
+                                    <li onClick={() =>setShowPop(1)}>
                                         <div >
                                             <span>{minAge?minAge +" years":"min age"}</span>
                                             <i className={showPop==1?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
-                                    <li onClick={() =>handlePop(2)}>
+                                    <li onClick={() =>setShowPop(2)}>
                                         <div >
                                             <span>{maxAge?maxAge+" years":"max age"}</span> 
                                             <i className={showPop==2?"iconArrow iconPostion":""}></i>
@@ -136,13 +138,13 @@ function PartnerForm(){
                                 <label className={"reg-label top8 " +(label2?"reg-State":"")}>Height</label>
                                 {label2?
                                 <ul className="multiSelected d-flex">
-                                    <li onClick={() =>handlePop(3)}>
+                                    <li onClick={() =>setShowPop(3)}>
                                         <div >
                                             <span>{minHeight?minHeight:"min height"}</span>
                                             <i className={showPop==3?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
-                                    <li onClick={() =>handlePop(4)}>
+                                    <li onClick={() =>setShowPop(4)}>
                                         <div >
                                             <span>{maxHeight?maxHeight:"max height"}</span> 
                                             <i className={showPop==4?"iconArrow iconPostion":""}></i>
@@ -163,20 +165,21 @@ function PartnerForm(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);setShowPop(5)}}>
-                                <label className={"reg-label top8 " +(label3?"reg-label6":"")} onClick={() =>setShowPop(5)}>Marital status</label>
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);handleShowPop(5,true)}}>
+                                <label className={"reg-label top8 " +(label3?"reg-mobile":"")} >Marital status</label>
                                 <div className="">{maritalStatus.map((m1,index)=>(
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(maritalStatus,m1)}></i></div>
                                 ))}
-                                </div>
-                                {label3 && showPop==5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
+                            </div>
+                                {/* <Select isMulti={true} value={minAge} onChange={setMinAge}  options={aaAw}/> */}
+                            {label3 && showPop==5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
                             </div>
                         </div>
                         <div className="regi-detail">
                             <div className={"regi-secle4 mt20"} onClick={() =>{setlabel4(true);setShowPop(6)}}>
                                 <label className={"reg-label top8 " +(label4?"reg-label7":"")} onClick={() =>setShowPop(6)}>Country</label>
                                 <div className="">{country.map((m1,index)=>(
-                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(country,m1)}></i></div>
+                                    <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(country,m1)}></i> </div>
                                 ))}
                                 </div>
                                 {label4 && showPop==6?  multiCheckbox(countries,"country",country):null}
@@ -216,7 +219,7 @@ function PartnerForm(){
                         </div>
                         <div className="regi-detail">
                             <div className={"regi-secle4 mt20"} onClick={() =>{setlabel8(true);setShowPop(10)}}>
-                                <label className={"reg-label top8 " +(label8?"reg-Age":"")} onClick={() =>setShowPop(9)}>Borad</label>
+                                <label className={"reg-label top8 " +(label8?"reg-borad":"")} onClick={() =>setShowPop(9)}>Borad</label>
                                 <div className="">{board.map((m1,index)=>(
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(board,m1)}></i></div>
                                 ))}
@@ -230,13 +233,13 @@ function PartnerForm(){
                                 <label className={"reg-label top8 " +(label9?"reg-famly":"")}>Qualification</label>
                                 {label9?
                                 <ul className="multiSelected d-flex">
-                                    <li onClick={() =>handlePop(10)}>
+                                    <li onClick={() =>setShowPop(10)}>
                                         <div >
                                             <span>{minQalification?minQalification:"min qalification"}</span>
                                             <i className={showPop==2?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
-                                    <li onClick={() =>handlePop(11)}>
+                                    <li onClick={() =>setShowPop(11)}>
                                         <div >
                                             <span>{maxQualification?maxQualification:"max qualification"}</span> 
                                             <i className={showPop==3?"iconArrow iconPostion":""}></i>
@@ -269,8 +272,8 @@ function PartnerForm(){
 
                         <div className="regi-detail">
                             <div className={"regi-secle mt20"} >
-                                <label className={"reg-label top8 " +(label11?"reg-income":"")} onClick={() =>{setlabel11(true);handlePop(13)}}>Income</label> 
-                                <input type="text" placeholder="" readOnly value={income} onClick={() =>{setlabel11(true);handlePop(13)}}/>
+                                <label className={"reg-label top8 " +(label11?"reg-income":"")} onClick={() =>{setlabel11(true);setShowPop(13)}}>Income</label> 
+                                <input type="text" placeholder="" readOnly value={income} onClick={() =>{setlabel11(true);setShowPop(13)}}/>
                                 {label11 && showPop==13?
                                 <React.Fragment>
                                 <div className={"gridDropdown"}>
@@ -285,9 +288,9 @@ function PartnerForm(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className={"regi-secle2 mt20"} onClick={() =>{setlabel9(true)}}>
-                                <label className={"reg-label " +(label9?"reg-password":"")} onClick={() =>{setlabel7(true)}}>Describe About Partner</label>
-                                {label9?
+                            <div className={"regi-secle2 mt20"} onClick={() =>{setlabel12(true)}}>
+                                <label className={"reg-label " +(label12?"reg-partnr":"")} onClick={() =>{setlabel12(true)}}>Describe About Partner</label>
+                                {label12?
                                         <textarea placeholder="You may consider answering these questions:
                                         1. How would you describe About Partner?
                                         2. What kind of food/movies/books/music you like?
@@ -304,7 +307,7 @@ function PartnerForm(){
                             {/* <button className="showMoreBtn" onClick={handleShowMore}>Continue</button> */}
                         </div>
                         
-            </React.Fragment>
+            </div>
                 
                  
     );

@@ -44,7 +44,7 @@ function FamilyDetails(props){
     
 
     return(
-                    <React.Fragment>
+                <React.Fragment>
                         <div className="regi-detail">
                             <div className="regi-secle " onClick={() =>{setlabel1(true)}}>
                                 <label className={"reg-label top8 " +(label1?"reg-label6":"")} >Father's Name</label>
@@ -61,7 +61,7 @@ function FamilyDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt-4" onClick={() =>{setlabel3(true)}}>
-                                <label className={"reg-label top8 " +(label3?"reg-brther":"")} >Brother</label>  
+                                <label className={"reg-label top8 " +(label3?"reg-country":"")} >Brother</label>  
                                 {label3?
                                 <div>
                                     <ul className="brotherList">
@@ -152,13 +152,13 @@ function FamilyDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt-4" onClick={() =>{setlabel9(true)}}>
-                                <label className={"reg-label top8 " +(label9?"reg-Addree":"")} >Contact Address</label> 
+                                <label className={"reg-label top8 " +(label9?"reg-label2":"")} >Contact Address</label> 
                                 <input type="text" placeholder="" value={contactAddres} onChange={(e)=>setContactAddres(e.currentTarget.value)}/>
                             </div>
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle2 mt-4" onClick={() =>{setlabel10(true)}}>
-                                <label className={"reg-label top8 " +(label10?"reg-expres":"")} onClick={() =>{setlabel6(true)}}>About My Family</label>
+                                <label className={"reg-label top8 " +(label10?"reg-label2":"")} onClick={() =>{setlabel10(true)}}>About My Family</label>
                                 {label10?
                                     <textarea value={aboutMyFamily} placeholder="Write about your parents and brothers or sisters. Where do they live? What are they doing?" onChange={(e)=>setAboutMyFamily(e.currentTarget.value)}></textarea>
                                 :null}

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Footer from "../../footer/regi_footer"
+import Footer from "../footer/regi_footer"
 
 
 function UserRegisterMobile(){

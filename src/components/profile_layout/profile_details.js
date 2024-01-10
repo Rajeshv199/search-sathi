@@ -4,8 +4,8 @@ import { Link, Prompt } from 'react-router-dom'
 import './style.css';
 
 import ProfileHeader from './profileHeader';
-import RightAside from './right_aside'
-import MobileAside from './MobileAside'
+import RightAside from './right_aside';
+import MobileAside from './MobileAside';
 
 export default function Details() {
 

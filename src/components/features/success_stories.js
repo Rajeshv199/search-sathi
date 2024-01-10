@@ -1,4 +1,4 @@
-import Footer from './../../footer/footer'
+import Footer from '../footer/footer'
 import successBackground from './../../asset/success-bakground.jpg'
 import logo from "./.././../asset/logo1.png"
 import { Link } from 'react-router-dom'

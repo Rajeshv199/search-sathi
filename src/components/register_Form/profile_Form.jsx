@@ -28,10 +28,10 @@ function ProfileDetails(props){
     const [height, setHeight] = useState("");
     const [descriYrSelf, setDescriYrSelf] = useState("");
 
-  
+
     useEffect(()=>{
-        console.log(props.showPop);
-        if(props.showPop&&showPop>=1)setShowPop(-1);
+        console.log("pro");
+        // if(props.showPop&&showPop>=1)setShowPop(-1);
     },showPop);
 
     function handlePop(val){
@@ -64,7 +64,7 @@ function ProfileDetails(props){
 
     return(
             
-                    <React.Fragment >
+                <React.Fragment >
                         <div className="mandator">Mandatory<span className="star"> *</span></div>
                         <div className="regi-detail">
                             <div className="regi-secle mt20" onClick={() =>{setlabel2(true)}}>
@@ -113,7 +113,7 @@ function ProfileDetails(props){
                         <div className="regi-detail">
                             <div className="regi-secle mt20">
                                 <label className={"reg-label top8 " +(label3?"reg-label4":"")} onClick={() =>{setlabel3(true);handlePop(4)}}>Mother tongue</label>
-                                <input type="text" placeholder="" value={mothertongue} onClick={() =>{setlabel3(true);handlePop(4)}}/>
+                                <input type="text" placeholder="" readOnly value={mothertongue} onClick={() =>{setlabel3(true);handlePop(4)}}/>
                                 {label3 && showPop==4?
                                 <div className="gridDropdown">
                                     <ul>
@@ -126,7 +126,7 @@ function ProfileDetails(props){
                         <div className="regi-detail">
                             <div className="regi-secle mt20" >
                                 <label className={"reg-label top8 " +(label4?"reg-label5":"")} onClick={() =>{setlabel4(true);handlePop(5)}}>Religion</label>
-                                <input type="text" placeholder="" value={religion} onClick={() =>{setlabel4(true);handlePop(5)}}/>
+                                <input type="text" placeholder="" readOnly value={religion} onClick={() =>{setlabel4(true);handlePop(5)}}/>
                                 {label4 && showPop==5?
                                 <div className="religionBox">
                                     <i className={"imgArrow religionIcon"}></i>
@@ -155,7 +155,7 @@ function ProfileDetails(props){
                         <div className="regi-detail">
                             <div className="regi-secle mt20">
                                 <label className={"reg-label top8 " +(label5?"reg-label6":"")} onClick={() =>{setlabel5(true);handlePop(6)}}>Marital status</label>
-                                <input type="text" placeholder="" value={maritalStatus} onClick={() =>{setlabel5(true);handlePop(6)}}/>
+                                <input type="text" placeholder="" readOnly value={maritalStatus} onClick={() =>{setlabel5(true);handlePop(6)}}/>
                                 {label5 && showPop==6?
                                 <div className="mStatusBox">
                                     <i className={"imgArrow religionIcon"}></i>
@@ -169,7 +169,7 @@ function ProfileDetails(props){
                         <div className="regi-detail">
                             <div className="regi-secle mt20">
                                 <label className={"reg-label top8 " +(label6?"reg-label7":"")}  onClick={() =>{setlabel6(true);handlePop(7)}}>Height</label>
-                                <input type="text" placeholder="" value={height} onClick={() =>{setlabel6(true);handlePop(7)}}/>
+                                <input type="text" placeholder="" readOnly value={height} onClick={() =>{setlabel6(true);handlePop(7)}}/>
                                 {label6 && showPop==7?
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
@@ -182,7 +182,7 @@ function ProfileDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle2 mt20" onClick={() =>{setlabel8(true)}}>
-                                <label className={"reg-label top8 " +(label8?"reg-mtherOcption":"")} onClick={() =>{setlabel8(true)}}>Express Yourself!</label>
+                                <label className={"reg-label top8 " +(label8?"reg-Addree":"")} onClick={() =>{setlabel8(true)}}>Express Yourself!</label>
                                 {label8? 
                                 <React.Fragment>
                                         <textarea placeholder="You may consider answering these questions:

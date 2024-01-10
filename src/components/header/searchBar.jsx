@@ -1,10 +1,8 @@
 import Footer from "../footer/footer";
-import background from '../asset/header-inner1.jpg';
-import logo from "../asset/logo1.png";
 import { Link } from "react-router-dom";
 import BrowseContent from "./browseContent";
 import { useState } from "react";
-import Select from 'react-select';
+import yogjodiLogo from "../image/YogJodiLogo.png";
 
 
 function SearchBar() {
@@ -77,8 +75,8 @@ function SearchBar() {
             <header className="coverImg">
                 <div className="searchWid">
                     <div>
-                        <Link className="jeevansathi-logo" to="#">
-                            <img height="100%" width="100%"  src="https://static.jeevansathi.com/images/jspc/commonimg/desktopLogo.svg"/>
+                        <Link className="jeevansathi-logo" to="/">
+                            <img height="100%" width="100%"  src={yogjodiLogo}/>
                         </Link>
                     </div>
                     <div className="menu-navbar">

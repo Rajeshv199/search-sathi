@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from "react";
 import {Switch, Route, Redirect,useHistory,useLocation } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Footer from "../../footer/regi_footer";
-import YogJodiLogo from "../../image/YogJodiLogo.png"; 
+import Footer from "../footer/regi_footer";
+import YogJodiLogo from "../image/YogJodiLogo.png"; 
     
 function ProfileDetails(){
     const history =  useHistory();
@@ -70,7 +70,8 @@ function ProfileDetails(){
         let count = keys.reduce((acc,curr)=>(data[curr]?acc+1:acc),0);
         // const {password,confirmPassword} = takeData;
         if(keys.length==count&&(takeData.password==takeData.confirmPassword)){
-            history.push({pathname:"/profile",state:{takeData}});
+            setVerifyMob(true);
+            // history.push({pathname:"/profile",state:{takeData}});
         }else{
             if(takeData.password!=takeData.confirmPassword) alert("Password do not match");
         }
@@ -224,7 +225,7 @@ function ProfileDetails(){
                         </div>
                         :""}
 
-                        <button className="proBtns" onClick={()=>{setVerifyMob(true)}}>Register Me</button>
+                        <button className="proBtns" onClick={handleSubmit}>Register Me</button>
                     </div>
                     <div className="reg-wid15">
                         <div className="wyregi">why register</div>

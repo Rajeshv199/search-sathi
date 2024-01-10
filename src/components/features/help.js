@@ -1,92 +1,119 @@
-import Footer from "./.././../footer/footer"
+import { useState } from "react";
+import Footer from "../footer/footer"
 import background from './.././../asset/header-inner1.jpg';
 import logo from "./.././../asset/logo1.png"
 import { Link } from "react-router-dom"
-import userVector from './../../asset/user-vector.png'
+import userVector from './../../asset/user-vector.png';
+import yogjodiLogo from "../image/YogJodiLogo.png";
+import BrowseContent from "../header/browseContent";
 
 
 export default function Help() {
+    const[showList,setShowList] = useState(1);
 
-
-    return <div className="help-main" style={{ position: 'relative' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-            <div style={{ zIndex: '-1', backgroundColor: 'white', width: '100%' }}>
-                <img src={background} width={'100%'} />
-            </div>
-            <div className="help-nav">
-                <div className="help-nav-child1">
-                    <img src={logo} />
-                </div>
-                <div className="help-nav-child2">
-                    <Link to={"/landing"}><p>MATCHES</p></Link>
-                    <p>ACTIVITY</p>
-                    <p>SEARCH</p>
-                    <p>UPGREAD</p>
-                    <p>HELP</p>
-                </div>
-                <div className="help-nav-child3"  >
-                    <Link to="/notification">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                        </svg>
+    return (
+        <div className="help-main" style={{ position: 'relative' }}>
+        <header className="coverImg">
+            <div className="searchWid">
+                <div>
+                    <Link className="jeevansathi-logo" to="/">
+                        <img height="100%" width="100%"  src={yogjodiLogo}/>
                     </Link>
-                    <div >
-                        <img src={userVector} height={40} width={40} style={{ border: '1px', borderRadius: '50%' }} />
+                </div>
+                <div className="menu-navbar">
+                    <div className="menupl">
+                        <ul className="menu-list list-inline">
+                            <li>
+                                <div className="browse-menu pb-4" >BROWSE PROFILES BY<i className="fa-solid fa-chevron-down fa-sm"></i></div>
+                                <div className="contentHome">
+                                    <div className="browse-link-list">
+                                        <div className="mother_Tongue" onMouseEnter={()=>setShowList(1)}>Mother Tongue</div>
+                                        <div className="caste" onMouseEnter={()=>setShowList(2)}>Caste</div>
+                                        <div className="religion" onMouseEnter={()=>setShowList(3)}>Religion</div>
+                                        <div className="city" onMouseEnter={()=>setShowList(4)}>City</div>
+                                        <div className="occupation" onMouseEnter={()=>setShowList(5)}>Occupation</div>
+                                        <div className="state" onMouseEnter={()=>setShowList(6)}>State</div>
+                                        <div className="NRI" onMouseEnter={()=>setShowList(7)}>NRI</div>
+                                        <div className="college" onMouseEnter={()=>setShowList(8)}>College</div>
+                                    </div>
+                                    <div className="browseContent">
+                                        <BrowseContent showList={showList}/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="search-ml" >
+                                <div className="search-menu"><Link to="search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
+                                    
+                            </li>
+                            <li className="search-ml">
+                                <Link to="/features/help">HELP</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
+                <div className="menu-navbar--second">
+                    <div className={"signupMenu2"}>
+                        <div className="loginPart" >LOGIN <i className="login-icon"></i></div>
+                        <Link to="/user_registration">
+                            <div className="registerPart2" > REGISTER FREE</div>
+                        </Link>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
+
+        
         <div className="help-body">
+       
             <div className="help-body-sub" >
-                <h3 style={{ color: 'rgb(143, 142, 142)' }}>How can we help you?</h3>
+                <h4>How can we help you?</h4>
                 <br />
-                <div class="input-group mb-1 w-75">
+                <div class="input-group w-75 m-auto">
                     <input type="text" class="form-control" placeholder="What can we help with?" aria-describedby="button-addon2" />
-                    <button class="btn btn-danger" type="button" id="button-addon2">Button</button>
-                </div><br /><br />
-                <h4 style={{ width: '90%', color: 'rgb(100, 100, 100)' }}><b>Categories</b></h4>
-                <br />
+                    <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
+                </div><br />
+                <h4 className="text-start mt-4">Categories</h4>
+           
                 <div className="help-body-list" >
                     <ul >
                         <li>
                             <p>Getting Started</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p  className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Search Profile</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Membership</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Fraud Alert</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Common Issue</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Getting Response</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Managing your Profie</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Video Profiles</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
@@ -97,47 +124,47 @@ export default function Help() {
                     <ul>
                         <li>
                             <p>Privacy Settings</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Initiate Contact</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Login/Password</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Help Center/Customer Support</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Changing Basic details</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Add On Services</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>JSExclusive</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Match Hour</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                         <br />
                         <li>
                             <p>Profile Verification</p>
-                            <p style={{ color: 'red' }}>View all questions</p>
+                            <p className="text-danger">View all questions</p>
                         </li>
                     </ul>
 
@@ -150,4 +177,5 @@ export default function Help() {
             <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Yogjodi Internet Services.</p>
         </div>
     </div>
+    )
 }

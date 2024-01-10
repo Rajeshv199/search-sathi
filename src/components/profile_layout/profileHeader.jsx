@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import logo from './.././../asset/logo1.png'
+
+import yogjodiLogo from "../image/YogJodiLogo.png";
 import { Link } from 'react-router-dom'
 import './style.css';
 export default function ProfileHeader() {
@@ -8,8 +9,8 @@ export default function ProfileHeader() {
     return (
 
         <div className="profile-navbar">    
-            <div className=''>
-                <img src={logo} />
+            <div className='px-3'>
+                <Link to="/"><img src={yogjodiLogo} /></Link>
             </div>
             <div className="nav-logo">
                 <Link to="/profile_edit">

@@ -157,7 +157,7 @@ a:hover{
     left: -24px;
     display: none;
     overflow: hidden;
-    height: 335px;
+    height: 300px;
     z-index: 3;
     background: rgba(52, 73, 94, 0.95);
     color: #fff;
@@ -1639,8 +1639,8 @@ li:hover .subhobver{
     }
     .regi-secle4{
         position: relative;
+        display: inline;
         min-height: 46px;
-        max-height: 150px;
         width: 500px;
         background-color: #fff;
         float: right;
@@ -1651,6 +1651,7 @@ li:hover .subhobver{
         /* z-index: 99; */
 
     }
+
     .countWord{
         position: absolute;
         color: rgb(53, 62, 79);
@@ -1681,10 +1682,10 @@ li:hover .subhobver{
         top: 10px;
     }
     .reg-email{
-        left: -40px; 
+        left: -110px; 
     }
     .reg-mobile{
-        left: -35px; 
+        left: -115px; 
     }
     .reg-password{ 
         left: -148px;
@@ -1725,12 +1726,6 @@ li:hover .subhobver{
     .reg-city{ 
         left: -115px;
     }
-    .reg-HDegree{ 
-        left: -136px;
-    }
-    .reg-emp{ 
-        left: -110px;
-    }
     .reg-occup{ 
         left: -105px;
     }
@@ -1750,26 +1745,20 @@ li:hover .subhobver{
         left: -158px;
     }
     .reg-mtherOcption{
-        left: -175px;
+        left: -168px;
     }
-    .reg-brther{
-        left: -85px;
-    }
+ 
     .reg-sister{
         left: -70px;
     }
     .reg-famlyLing{
-        left: -134px;
+        left: -128px;
     }
-    .reg-Addree{
-        left: -144px;
-    }
+    
     .reg-Age{
         left: -50px;
     }
-    .reg-color{
-        left: -60px;
-    }
+    
     .reg-income{
         left: -75px;
     }
@@ -1778,6 +1767,9 @@ li:hover .subhobver{
     }
     .reg-confrmPass{
         left: -155px;
+    }
+    .reg-partnr{
+        left: -180px;
     }
     
 
@@ -1796,6 +1788,7 @@ li:hover .subhobver{
         border-right: 1px solid rgb(177, 173, 173)!important;
     } */
     .regi-secle input{ 
+        height: 44px;
         outline: none;
         color: #353e4f;
         padding: 10px 31% 10px 10px;
@@ -2736,22 +2729,21 @@ li:hover .subhobver{
 }
 
 .help-body{
-    min-height: 600px;
-    /* width: 990px; */
     background-color: #e7e6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 30px;
 }
 
 .help-body-sub{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 500px;
+    padding: 30px;
     width: 990px;
     background-color: #ffffff;
-    margin: 20px 0px;
+    margin: 0 auto;
+}
+.help-body-sub h4{
+    font-size: 21px;
+    font-weight: 500;
+    color: rgb(143, 142, 142);
+    text-align: center;
 }
 
 .help-body-list{
@@ -2759,6 +2751,8 @@ li:hover .subhobver{
     display: flex;
     justify-content: space-between;
     padding: 15px 0px;
+    margin-top: 20px;
+    opacity: 0.8;
 }
 
 .phone-box{
@@ -3188,6 +3182,7 @@ li:hover .subhobver{
    cursor: pointer;
    padding: 4px;
 }
+
 .multiValue i:hover{
     background-color: #FFBDAD;
     color: red;
