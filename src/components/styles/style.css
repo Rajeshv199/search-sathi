@@ -1466,7 +1466,7 @@ li:hover .subhobver{
         background-color: #f3f2f2;
     }
     .pro-coverImg{
-        background:rgba(0,0,0,0.4) url("../../image/coverImg.png");
+        background:rgba(0,0,0,0.4) url("../image/coverImg.png");
         background-size: cover;
         padding-top: 35px;
         /* height: 200px; */

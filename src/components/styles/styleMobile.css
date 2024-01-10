@@ -740,10 +740,10 @@
     }
     .iconMenu {
         background-position: -51px -252px !important;
-        background: url(../../image/loginIcon.png);
+        background: url(../image/loginIcon.png);
     }
     .iconMenu2 {
-        background: url(../../image/loginIcon.png);
+        background: url(../image/loginIcon.png);
         background-position: -1px -229px !important;
     }
     .loginSection{

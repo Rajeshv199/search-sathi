@@ -9,10 +9,10 @@ import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
 import Footer from "./footer/footer";
 import UserRegisterPop from "../components/registration/userRegisterPop";
-import findWorkImg1 from "../image/findWorkImg1.png";
-import findWorkImg2 from "../image/findWorkImg2.png";
-import findWorkImg3 from "../image/findWorkImg3.png";
-import mobileView from "../image/mobileView.png";
+import findWorkImg1 from "./image/findWorkImg1.png";
+import findWorkImg2 from "./image/findWorkImg2.png";
+import findWorkImg3 from "./image/findWorkImg3.png";
+import mobileView from "./image/mobileView.png";
 import LoginForm from './login/user_login';
 
 
