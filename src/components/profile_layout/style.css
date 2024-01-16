@@ -318,14 +318,27 @@
 .activeBtn{
     border-bottom: 3px solid rgb(202, 59, 59)!important;
 }
+.widh80{
+    width: 80px;
+    flex-shrink: 0;
+}
 .widh90{
-    width: 90px
+    width: 90px;
+    flex-shrink: 0;
 }
 .widh100{
-    width: 110px
+    width: 110px;
+    flex-shrink: 0;
+}
+.widh130{
+    width: 140px;
+    flex-shrink: 0;
+}
+.flotLeft{
+    float: left;
 }
 .basicData{
-    padding: 18px 20px;
+    padding: 14px 20px;
     font-size: 14px;
     margin: 15px 30px;
     color: #555454;
@@ -336,6 +349,7 @@
 }
 .basicData h5{
     color: #A70855;
+    font-size: 16px;
 }   
 .basicData h5 div{
     margin-top: 4px;
@@ -356,7 +370,11 @@
     color: #FFAED5;
 }
 
-.left-side-items:hover,.left-side-items div:hover{
+.left-side-items:hover span{
+    color:  #CB3055!important;
+    border: 1px solid #CB3055;
+}
+.left-side-items:hover div{
     color:  #CB3055!important;
 }
 .left-side-items span{
@@ -371,8 +389,8 @@
 
 .left-side-items div{
     font-size: 12px;
-    color: #000;
     font-weight: 500;
+    color: #000;
     transition: color 500ms ease-out;
 }
 

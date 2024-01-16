@@ -30,23 +30,23 @@ export default function LeftAside(){
 
             <div className="d-flex justify-content-between">
                 <Link to="/profile_details">
-                    <div className="left-side-items">
+                    <div className={'left-side-items '+(route=="/profile_details"?"colr5":"")}>
                         <span class="material-symbols-outlined">join_inner</span>
-                        <div>Matches</div>
+                        <div className={route=="/profile_details"?"colr5":""}>Matches</div>
                     </div>
                 </Link>
                 <Link to="/activity">
-                    <div className="left-side-items colr5">
-                        <span class="material-symbols-outlined">join_inner</span>
-                        <div>Activity</div>
+                    <div className={'left-side-items '+(route=="/activity"?"colr5":"")}>
+                        <span class="material-symbols-outlined">local_activity</span>
+                        <div className={route=="/activity"?"colr5":""}>Activity</div>
                     </div>
                 </Link>
                 <div className="left-side-items">
-                    <span class="material-symbols-outlined">join_inner</span>
+                <span class="material-symbols-outlined">query_stats</span>
                     <div>Search</div>
                 </div>
                 <div className="left-side-items">
-                    <span class="material-symbols-outlined">join_inner</span>
+                <span class="material-symbols-outlined">send</span>
                     <div>Messanger</div>
                 </div>
             </div>
