@@ -4,11 +4,13 @@ import { Link, Prompt } from 'react-router-dom'
 import './style.css';
 
 import ProfileHeader from './profileHeader';
-import RightAside from './right_aside'
-import MobileAside from './MobileAside'
+import LeftAside from './left_aside';
+import RightAside from './right_aside';
+import MobileAside from './MobileAside';
 
 export default function Details() {
 
+    const[showDetails,setShowDetails] = useState(-1);
     const[activeItem,setActiveItem] = useState(1);
     // function goBack() {
     //     window.history.back()
@@ -22,46 +24,11 @@ export default function Details() {
         
         <div className='profile-detail-body'>
 
-            <div className="profileDetils">
-                <div className="d-flex border-bottom" >
-                    <div className='user-icon' >
-                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
-                    </div>
-                    <div className='user-percent'>100%</div>
-                    <div className="text-detils mb-3">
-                        <h4 style={{fontFamily:'sans-serif'}}>Hi Sunit!</h4>
-                        <p>UVA537 <a href='#'>Edit profile</a></p>
-                    </div>
-                </div>
-                <br />
-                <div className='left-side'>
-                    <Link to="/profile_details">
-                        <div className="left-side-items">
-                            <h6>Matches</h6>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                        </div>
-                    </Link>
-                    <div className="left-side-items">
-                        <h6>Activity</h6>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                    </div>
-                    <div className="left-side-items">
-                        <h6>Search</h6>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                    </div>
-                    <div className="left-side-items">
-                        <h6>Messanger</h6>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                    </div>
-                </div>
-            </div>
+            <LeftAside/>
 
-            <div className='profile-box2'>
+            <div className='profile-box'>
                 <div className='prfile-panel'>
-                    <div>
-
-                    </div>
-
+                    
                     <div className='postion-absolute'>
                         <div className='d-flex'>
                             <div className='pro-name'>Rohit Kumar</div>
@@ -77,11 +44,66 @@ export default function Details() {
                     <button className='activeBtn' >About Me</button>
                     <button >Looking For</button>
                 </div>
-              
-               
+                <div className='basicData' onClick={()=>setShowDetails(1)}>
+                    <div className='d-flex justify-content-between'>
+                        <h5 className='m-0'>Basic Details 
+                            {showDetails==1&&<div className='headerTxt'>Brief outline of personal information</div>}
+                        </h5>
+                        {showDetails==1?<i class="fa-solid fa-pen-to-square"></i>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                    </div>
+                    {showDetails==1&&
+                    <div className='d-flex'>
+                        <div className='d-flex w-50 mr-2'>
+                            <div>
+                                <div className='widh90 d-flex justify-content-between my-2'>Height<span >:</span></div>
+                                <div className='widh90 d-flex justify-content-between my-2'>Religion<span >:</span></div>
+                                <div className='widh90 d-flex justify-content-between my-2'>Location<span >:</span></div>
+                                <div className='widh90 d-flex justify-content-between my-2'>Birth Date<span >:</span></div>
+                            </div>
+                            <div className='px-2'>
+                                <div className='my-2'>4' 11" (1.50 mts)</div>
+                                <div className='my-2'>Hindu • Bari</div>
+                                <div className='my-2'>Kolkata, West Bengal, India</div>  
+                                <div className='my-2'>01 Feb 2000</div>
+                            </div>
+                        </div>
+                        <div className='d-flex w-50 '>
+                            <div className='d-blok'>
+                                <div className='widh100 d-flex justify-content-between my-2'>Annual Incom<span >:</span></div>
+                                <div className='widh100 d-flex justify-content-between my-2'>Marital Status<span >:</span></div>
+                                <div className='widh100 d-flex justify-content-between my-2'>Mother Tongue<span >:</span></div>
+                                
+                            </div>
+                            <div className='d-block px-2'>
+                                <div className='my-2'>4' 11" (1.50 mts)</div>
+                                <div className='my-2'>Hindu • Bari</div>
+                                <div className='my-2'>Kolkata, West Bengal, India</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    }
+                </div>
+                <div className='basicData' onClick={()=>setShowDetails(2)}>
+                    <div className='d-flex justify-content-between'>
+                        <h5 className='m-0'>About Me
+                            {showDetails==2&&<div className='headerTxt'>Describe yourself in a few words</div>}
+                        </h5>
+                        {showDetails==2?<i class="fa-solid fa-pen-to-square"></i>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                        
+                    </div>
+                    {showDetails==2&&
+                    <div className='mt-2'>
+                    Surprise Visits: If possible, surprise your partner with a visit. Even short, unexpected visits can be incredibly special and memorable.
+                    Be Supportive: Show support during tough times. Be there to listen, offer advice, or simply provide comfort when your partner needs it.
+                    Trust and Honesty: Build trust by being honest and open about your feelings,
+                        
+                    </div>
+                    }
+                </div>
             </div>
 
-            <RightAside />
+            {/* <RightAside /> */}
             <MobileAside />
         </div>
 

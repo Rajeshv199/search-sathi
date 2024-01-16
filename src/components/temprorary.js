@@ -73,14 +73,61 @@
 // export default AllCompany;
 
 
-import {useRef} from 'react';
-  export default function App() {
+import {useRef,Component} from 'react';
+class App extends Component{
    
-
-
-    return (
-        <div>
-          <h1>hello</h1>
-        </div>
-    );
+  state={
+    table:[{name:"name",rolno:23},{name:"name2",rolno:25}]
   }
+
+  handleSubmit=()=>{
+    let s1 = {...this.state};
+    let lenw = s1.table.length-1;
+    let len2 = s1.table[lenw].name.length-1;
+    let val = s1.table[lenw].name.substring(len2);
+    
+    let jon={name:`name${+val+ +1}`,rolno:255};
+    s1.table.push(jon)
+    this.setState(s1);
+    console.log(val);
+  }
+
+  handleDelete=(name)=>{
+    let s1 = {...this.state};
+    let index = s1.table.findIndex(t1=>t1.name==name);
+    if(index>=0){
+      s1.table.splice(index,1);
+    }
+    this.setState(s1);
+  }
+  render(){
+    const{table} = this.state;
+    return (
+        <div className='container'>
+              <div className='row'>
+                <div className='col-3 border bg-dark text-white'>Name</div>
+                <div className='col-3 border bg-dark text-white'>Roll No</div>
+              </div>
+          {table.map((t1,index)=>(
+            <div >
+              
+                <div className='row'>
+                <div className='col-3 border' onClick={()=>this.handleDelete(t1.name)}>{t1.name}</div>
+                <div className='col-3 border'>{t1.rolno}</div>
+
+
+              </div>
+              
+            </div>
+          ))}
+            <button className='btn btn-success my-3' onClick={()=>this.handleSubmit()}>submit</button>
+
+        </div>
+
+      
+  );
+
+  }
+    
+  }
+  export default App;

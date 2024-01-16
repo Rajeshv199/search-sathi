@@ -1,6 +1,6 @@
 import logo from './.././../asset/logo1.png';
 import './landing.css';
-import Match from '../profile_layout/Match';
+// import Match from '../profile_layout/Match';
 import { Link } from 'react-router-dom';
 import OffCanvas from '../offcanvas/off-canvas';
 import LeftAside from '../profile_layout/left_aside';
@@ -116,7 +116,7 @@ export default function LandingPage() {
         <ProfileHeader/>
         <div id="landing-body">
             <LeftAside />
-            <Match />
+            {/* <Match /> */}
             <RightAside />
         </div>
 

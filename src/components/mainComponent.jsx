@@ -6,7 +6,9 @@ import  "./styles/styleMobile.css";
 import Index from "./index";
 import User_registration from "./../components/registration/user_registrations";
 import LandingPage from "./landing_page/landing-page";
-import Details from "./profile_layout/profile_details";
+// import Details from "./profile_layout/profile_details";
+import MyMatches from "./profile_layout/myMatches";
+import Activity from "./profile_layout/activity";
 import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
@@ -26,6 +28,7 @@ import Notification from "./profile_layout/Notification";
 import SearchBar from "./header/searchBar";
 import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
+import Chat from "./profile_layout/chat";
 // import AllPageManage from "./registration/allpageManage";
 import Temprorary from "./temprorary";
 
@@ -76,8 +79,10 @@ class MainComponent extends Component{
                     <Route path="/landing" component={LandingPage} />
 
 
+                    <Route path="/chat" component={Chat} />
                     <Route path="/profile_edit" component={ProfileEdit} />
-                    <Route path="/profile_details" component={Details} />
+                    <Route path="/activity" component={Activity} />
+                    <Route path="/profile_details" component={MyMatches} />
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/>
                     <Route path="/features/phone-book" component={PhoneBook}/> 

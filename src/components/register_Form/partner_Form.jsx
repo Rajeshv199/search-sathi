@@ -101,7 +101,7 @@ function PartnerForm(){
     const {maritalStatus,motherToung,country,state,skill,board,occupation} = takeData;
 
     return(
-            <div onClick={()=>handleShowPop(1)}>
+            <div onClick={()=>handleShowPop(-1)}>
                         <div className="regi-detail">
                             <div className="regi-secle" onClick={() =>{setlabel1(true)}}>
                                 <label className={"reg-label " +(label1?"reg-Age":"")}>Age</label>
@@ -165,7 +165,7 @@ function PartnerForm(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);handleShowPop(5,true)}}>
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);handleShowPop(5)}}>
                                 <label className={"reg-label top8 " +(label3?"reg-mobile":"")} >Marital status</label>
                                 <div className="">{maritalStatus.map((m1,index)=>(
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(maritalStatus,m1)}></i></div>
@@ -301,7 +301,6 @@ function PartnerForm(){
                                 :null}
                             </div>
                         </div>
-                       
                         <div>
                             <button className="saveBtn bg-danger" onClick={handleSave}>Continue</button>
                             {/* <button className="showMoreBtn" onClick={handleShowMore}>Continue</button> */}
