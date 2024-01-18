@@ -316,7 +316,7 @@ a:hover{
     display: block;
 }
 .registerFields input, select{
-    width: 326px;
+    width: 100%;
     height: 32px;
     background-color: #c2bfbf;
     color: #14202B;
@@ -360,7 +360,7 @@ a:hover{
     border-bottom-left-radius: 0!important;
 }
 .register_Button{
-    width: 326px;
+    width: 100%;
     padding: 8px;
     font-size: 16px;
     color: #FFF;
@@ -375,7 +375,7 @@ a:hover{
     background: #EA556B;
 }
 .login_Button{
-    width: 326px;
+    width: 100%;
     padding: 8px;
     font-size: 16px;
     color: #FFF;
@@ -3049,7 +3049,7 @@ li:hover .subhobver{
     color: #353e4f;
 }
 .eductForm input{
-    width: 450px;
+    width: 100%;
     height: 40px;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
@@ -3121,12 +3121,12 @@ li:hover .subhobver{
     border-radius: 20px;
 }
 .inputopt{
-    width: 32px;
+    width: 30px;
     outline: none;
     border: none;
     border-bottom: 2px solid rgb(55, 133, 163);
     background-color: transparent;
-    margin:0 8px;
+    margin:0 7px;
     padding: 0 12px;
 }
 
@@ -3159,10 +3159,6 @@ li:hover .subhobver{
 .multiCheckbox label:hover{
     background-color: #d4e9df;
 }
-.dfsdfs{
-    /* min-height: 46px;
-    width: 500px; */
-}
 .multiValue{
     background-color: #ddd9d9;
     border-radius: 2px;
@@ -3187,8 +3183,97 @@ li:hover .subhobver{
     background-color: #FFBDAD;
     color: red;
 }
+.edit-header i{
+    position: absolute;
+    cursor: pointer;
+    padding: 4px;
+}
+.edit-header h5{
+    text-align: center;
+    color: #A70855;
+}
+.edit-header div{
+    text-align: center;
+    font-size: 14px;
+    color: #f176b2;
+}
+.custom-form{
+    width: 50%;
+    float: left;
+    padding: 0 20px;
+    margin-top: 44px;
+}
+.custom-form label{
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #615f5f;
+    line-height: 15px;
+}
+.custom-form input{
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(163, 160, 160);
+    outline: none;
+    padding: 4px 4px ;
+    line-height: 16px;
+}
+.custom-textarea{
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 44px;
+    float: left;
+}
+.custom-textarea label{
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #615f5f;
+    line-height: 15px;
+}
+.custom-textarea textarea{
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(163, 160, 160);
+    outline: none;
+    padding: 4px ;
+    resize: none;
+    line-height: 16px;
+}
+.saveBtn2{
+    position: fixed;
+    background-color: #fff;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+    width: 56%;
 
-
+}
+.saveBtn2 button{
+    justify-content: center;
+    background: #A70855;
+    color: #ffff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 5px;
+    width: 50%;
+}
+.wordCont{
+    text-align: end;
+    line-height: 12px;
+    font-size: 14px;
+    color: red;
+    font-weight: 500;
+}
+.lock{
+    position: absolute;
+    text-align: end;
+    right: 45px;
+    background-color: #fff;
+    padding: 0 4px;
+}
 
 
 

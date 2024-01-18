@@ -2,7 +2,6 @@ import logo from './.././../asset/logo1.png';
 import './landing.css';
 // import Match from '../profile_layout/Match';
 import { Link } from 'react-router-dom';
-import OffCanvas from '../offcanvas/off-canvas';
 import LeftAside from '../profile_layout/left_aside';
 import RightAside from '../profile_layout/right_aside';
 import MobileAside from '../profile_layout/MobileAside';
@@ -45,7 +44,6 @@ function MobileNav() {
                 <button type="button" className="btn btn-danger" style={{ width: "80%" }}>Upgrad Now&nbsp;
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-right"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></button>
             </div>
-            <OffCanvas />
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-around', width: '20%' }}>

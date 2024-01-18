@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
-import OffCanvas from '../offcanvas/off-canvas'
 import { motion } from "framer-motion";
 
 

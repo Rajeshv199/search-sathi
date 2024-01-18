@@ -4,7 +4,7 @@ import { Link, Prompt } from 'react-router-dom'
 import './style.css';
 
 import ProfileHeader from './profileHeader';
-import leftaside from './left_aside';
+import Leftaside from './left_aside';
 import RightAside from './right_aside';
 import MobileAside from './MobileAside';
 
@@ -23,9 +23,9 @@ export default function Details() {
         
         <div className='profile-detail-body'>
 
-           <leftaside/>
+           <Leftaside/>
 
-            <div className='profile-box2 '>
+            <div className='profile-box'>
                 <div className='msgHeader'>
                     <Link to="/profile_details" className='text-dark'><i class="fa-solid fa-angle-left fa-lg py-2 my-1"></i></Link>
                     <div className='text-center d-flex mx-4 justify-constent-center'>
@@ -75,7 +75,6 @@ export default function Details() {
                
             </div>
 
-            <RightAside />
             <MobileAside />
         </div>
 

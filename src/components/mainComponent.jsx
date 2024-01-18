@@ -6,21 +6,15 @@ import  "./styles/styleMobile.css";
 import Index from "./index";
 import User_registration from "./../components/registration/user_registrations";
 import LandingPage from "./landing_page/landing-page";
-// import Details from "./profile_layout/profile_details";
 import MyMatches from "./profile_layout/myMatches";
 import Activity from "./profile_layout/activity";
 import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
-// import CareerDetails from "./../components/registration/careerDetails";
-// import Family from "./registration/lifeStyle_family";
-// import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
 import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import SocialDetails from "./../components/registration/socialDetails";
-// import PartnerBasicDetails from "./../components/registration/partnerBasicDetails";
-// import PartnerEducatDetails from "./../components/registration/partnerEducatDetails";
 import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
@@ -28,8 +22,20 @@ import Notification from "./profile_layout/Notification";
 import SearchBar from "./header/searchBar";
 import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
+import PartnerEdit from "./profile_layout/pertner_edit";
 import Chat from "./profile_layout/chat";
-// import AllPageManage from "./registration/allpageManage";
+import Basic from "./profile_Edit/basic";
+import About from "./profile_Edit/about";
+import Education from "./profile_Edit/education";
+import Career from "./profile_Edit/career";
+import Contact from "./profile_Edit/contact";
+import LifeStyle from "./profile_Edit/lifeStyle";
+import Family from "./profile_Edit/family";
+import BasicPartner from "./profile_Edit/basic_partner";
+import Eduction_Occupation from "./profile_Edit/education_Occuption";
+import Religion from "./profile_Edit/religion";
+import LifeStyle_Partner from "./profile_Edit/lifeStyle_partner";
+import About_Partner from "./profile_Edit/about_partner";
 import Temprorary from "./temprorary";
 
 
@@ -79,6 +85,20 @@ class MainComponent extends Component{
                     <Route path="/landing" component={LandingPage} />
 
 
+                    <Route path="/partner/about" component={About_Partner} />
+                    <Route path="/partner/lifeStyle" component={LifeStyle_Partner} />
+                    <Route path="/partner/religion" component={Religion} />
+                    <Route path="/partner/eduction_occupation" component={Eduction_Occupation} />
+                    <Route path="/partner/basic" component={BasicPartner} />
+                    <Route path="/edit/partner" component={PartnerEdit} />
+
+                    <Route path="/profile_edit/family" component={Family} />
+                    <Route path="/profile_edit/lifeStyle" component={LifeStyle} />
+                    <Route path="/profile_edit/contact" component={Contact} />
+                    <Route path="/profile_edit/career" component={Career} />
+                    <Route path="/profile_edit/education" component={Education} />
+                    <Route path="/profile_edit/about" component={About} />
+                    <Route path="/profile_edit/basic" component={Basic} />
                     <Route path="/chat" component={Chat} />
                     <Route path="/profile_edit" component={ProfileEdit} />
                     <Route path="/activity" component={Activity} />

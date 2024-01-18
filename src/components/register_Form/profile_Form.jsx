@@ -182,7 +182,7 @@ function ProfileDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle2 mt20" onClick={() =>{setlabel8(true)}}>
-                                <label className={"reg-label top8 " +(label8?"reg-Addree":"")} onClick={() =>{setlabel8(true)}}>Express Yourself!</label>
+                                <label className={"reg-label top8 " +(label8?"reg-label2":"")} onClick={() =>{setlabel8(true)}}>Express Yourself!</label>
                                 {label8? 
                                 <React.Fragment>
                                         <textarea placeholder="You may consider answering these questions:
