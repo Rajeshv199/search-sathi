@@ -23,7 +23,6 @@ export default function Religion() {
            <Leftaside/>
 
             <div className='profile-box p-4'>
-                
                 <div className='edit-header'>
                     <Link className='text-dark' to="/edit/partner"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>Religion</h5>

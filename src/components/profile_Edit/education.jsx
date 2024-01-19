@@ -1,20 +1,65 @@
-import { useState } from 'react';
-import logo from './.././../asset/logo1.png';
-import { Link, Prompt } from 'react-router-dom';
+import React,{ useState } from 'react';
+import { Link, Prompt,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
 
 export default function Education() {
+    const[eductionData,setEductionData] = useState({highestDegree:"MCA",pgDegree:"MCA",pgCollege:"University Evening College",ugDegree:"BCA",ugCollege:"Annamalai University",school:"Independent HPS, Haroorgeri",aboutEducton:"The term education can be applied to primitive cultures only in the sense of enculturation"})
+    const[ispop,setIsPop] = useState(-1);
+    const history = useHistory();
+    
+    function handleChange(e){
+        const {currentTarget: input} = e;
+        let eductionData1 = {...eductionData}
+        eductionData1[input.name] = input.value;
+        setEductionData(eductionData1);
+    }
+    
+    function closePopup(){
+        setIsPop(-1)
+    }
 
-    function multiInputs(label,name,value){
+    function multiInputs(label,value,no){
         return(
             <div className='custom-form'>
                 <label>{label}</label>
-                <input type='text' name={name}  />
+                <input type='text' readOnly value={value} onClick={()=>setIsPop(no)}/>
             </div>
         )
     }
+    function multiSelected(title,arr,name,value){
+        return(
+            <div className="popup-box2">
+                <div className="box5">
+                    <div className="checkbox-Custom">
+                        <h5 className='mb-2'>{title}</h5>
+                        <div className='popContaner'>
+                            {arr.map((a1,index)=>(
+                                <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
+                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <div className='px-2'>{a1}</div>
+                                </label>
+                            ))}
+                        </div>
+                        {/* <button className="ubmitopt2" onClick={()=>setIsPop(false)}>Done</button> */}
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    function handleSubmit(){
+        history.push("/profile_edit")
+    }
+
+
+    let heighDegreesArr = ["ACDA","B.IT","BCA","BBA","DCA","MCA","MBA","B.Tech","MCM","B.Com","CA","CS"];
+    let pgDegreeArr=["MCA","MCM","MBA"];
+    let ugDegreeArr=["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"]
+
+    const{highestDegree,pgDegree,pgCollege,ugDegree,ugCollege,school,aboutEducton}=eductionData;
 
     return (
     <div className='profile-details'>
@@ -30,27 +75,51 @@ export default function Education() {
                     <div>Update these details to get suitable matches</div>
                 </div>
                 <div className=''>
+                    {multiInputs("Highest Degree",highestDegree,1)}
+
+                    {pgDegreeArr.find(p1=>p1==highestDegree)&&
+                    <React.Fragment>
+                        {multiInputs("PG Degree",pgDegree,2)}
+
+                        <div className='custom-form'>
+                            <label>PG College</label>
+                            <input type='text' name='pgCollege' value={pgCollege} onChange={handleChange}/>
+                        </div>
+                    </React.Fragment>
+                    }
                     
-                    {multiInputs("Height Degree","heightDegree")}
-                    {multiInputs("PG Degree","pgDegree")}
-                    {multiInputs("PG College","pgCollege")}
-                    {multiInputs("UG Degree","ugDegree")}
-                    {multiInputs("UG College","ugCollege")}
-                    {multiInputs("School","school")}
-                    <div className='custom-textarea mt-4'>
-                        <label>About My Education</label>
-                        <textarea name="about" className='w-100' rows="6"></textarea>
+                    {pgDegreeArr.find(p1=>p1==highestDegree)|| ugDegreeArr.find(p1=>p1==highestDegree)?
+                    <React.Fragment>
+                        {multiInputs("UG Degree",ugDegree,3)}
                         
+                        <div className='custom-form'>
+                            <label>UG College</label>
+                            <input type='text' name='ugCollege' value={ugCollege} onChange={handleChange}/>
+                        </div>
+                    </React.Fragment>
+                    :null}
+
+                    <div className='custom-form'>
+                        <label>School</label>
+                        <input type='text' name='school' value={school} onChange={handleChange}/>
                     </div>
                     
-                    
-                    
+                    <div className='custom-textarea mt-4'>
+                        <label>About My Education</label>
+                        <textarea name="aboutEducton" value={aboutEducton}  className='w-100' rows="6" onChange={handleChange}></textarea>
+                    </div>
                     <div className="saveBtn2">
-                        <button>Save</button>
+                        <button onClick={handleSubmit}>Save</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div>
+            {ispop==1?multiSelected("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
+            {ispop==2?multiSelected("Height",pgDegreeArr,"pgDegree",pgDegree):null}
+            {ispop==3?multiSelected("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
+        </div>
+
 
     </div>
 )

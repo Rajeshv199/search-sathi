@@ -105,6 +105,10 @@ export default function Details() {
                                 {multipleValue("UG Degree","BCA","widh90")}
                                 {multipleValue("UG College","Annamalai University","widh90")}
                                 {multipleValue("Schhol Name","Independent HPS, Haroorgeri","widh90")}
+                                <div className='d-block w-100 flotLeft mt-2'>
+                                    <h6 className='mb-0'>About My Eduction</h6>
+                                    <div>The term education can be applied to primitive cultures only in the sense of enculturation</div>
+                                </div>
                                 
                             </div>
                         </div>

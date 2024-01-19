@@ -65,7 +65,6 @@ export default function Details() {
                     
                 </div>
                 <div className='msgContainer'>
-                    
                     <div className='msgInput'>
                         <input type='text' placeholder='Type a message'/>
                         <button className='border-0'><span class="material-symbols-outlined">send</span></button>

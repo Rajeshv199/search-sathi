@@ -3210,6 +3210,13 @@ li:hover .subhobver{
     color: #615f5f;
     line-height: 15px;
 }
+.custom-form span{
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #615f5f;
+    line-height: 15px;
+}
 .custom-form input{
     font-size: 14px;
     width: 100%;
@@ -3217,8 +3224,14 @@ li:hover .subhobver{
     border-bottom: 1px solid rgb(163, 160, 160);
     outline: none;
     padding: 4px 4px ;
-    line-height: 16px;
+    line-height: 18px;
 }
+/* .custom-form div{
+    font-size: 14px;
+    border-bottom: 1px solid rgb(163, 160, 160);
+    padding: 4px 4px ;
+    line-height: 16px;
+} */
 .custom-textarea{
     width: 100%;
     padding: 0 20px;

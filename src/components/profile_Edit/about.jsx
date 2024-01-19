@@ -1,20 +1,25 @@
 import { useState } from 'react';
 import logo from './.././../asset/logo1.png';
-import { Link, Prompt } from 'react-router-dom';
+import { Link, Prompt,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
 
 export default function About() {
-    const[aboutFeild,setAboutFeild] = useState({about:""});
-    const[wordCount,setWordCount] = useState("");
-
+    const[aboutFeild,setAboutFeild] = useState({about:"Surprise Visits: If possible, surprise your partner with a visit. Even short, unexpected visits can be incredibly special and memorable."});
+    const history = useHistory()
+    
     function handleChange(e){
         const {currentTarget: input} = e;
         let aboutFeild1 = {...aboutFeild}
         aboutFeild1[input.name] = input.value;
         setAboutFeild(aboutFeild1);
     }
+    
+    function handleSubmit(){
+        history.push("/profile_edit")
+    }
+
 
     const{about} = aboutFeild;
     return (
@@ -37,9 +42,8 @@ export default function About() {
                         <div className={'wordCont '+(about.length>=100?"text-success":"")}>{about.length}/100</div>
                     </div>
                     
-                    
                     <div className="saveBtn2">
-                        <button>Save</button>
+                        <button onClick={handleSubmit}>Save</button>
                     </div>
                 </div>
             </div>

@@ -750,6 +750,95 @@
 .boxInterest span{
     font-size: 14px;
 }
+.popup-box2{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 99!important;
+  }
+  
+  .box5{
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 150vh;
+    margin-top: calc(100vh - 80vh - 50px);
+    background: #fff;
+    overflow: none;
+    border-radius: 4px;
+  }
+  .cancelBtn2{
+    cursor: pointer;
+    position: fixed;
+    right: calc(38% - 55px);
+    top: calc(100vh - 75vh - 80px);
+    background-color: transparent;
+    border: none;
+    color: #fff;
+  }
+  .checkbox-Custom{
+    padding: 30px 20px 10px 20px;
+  }
+  .cutom-title{
+    font-size: 14px;
+    font-family: 500;
+    margin: 6px 0;
+  }
+  .popContaner{
+    height: 300px;
+    overflow-y: auto;
+  }
+
+  .popContaner input{
+    accent-color: #d64869;;
+  }
+  .select-item{
+    display: flex;
+    overflow: none;
+    flex-wrap: wrap;
+  }
+  .select-item li{
+    border: 1px solid #f795ac;
+    margin: 5px;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #faeaef;
+
+  }
+  .select-item li i{
+    padding-left: 5px;
+    color: #f1708e;
+  }
+
+  .checkbox-Custom label{
+    display: flex;
+    padding: 6px 8px!important;
+    font-size: 14px;
+    line-height: 15px;
+    margin: 6px 0;
+    width: 100%;
+    cursor: pointer;
+  }
+  .checkbox-Custom label:hover{
+    background-color: #e3e5e6;
+  }
+  .submitopt2{
+    border: none;
+    background-color: #A70855;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 4px 15px;
+    margin-top: 14px;
+    border-radius: 4px;
+}
+
 @media only screen and (max-width: 1200px) {
 
     .landing-navbar {
