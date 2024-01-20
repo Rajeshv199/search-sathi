@@ -31,7 +31,7 @@ export default function Career() {
         setIsPop(-1)
     }
 
-    function multiSelected(title,arr,name,value){
+    function multiRadioBox(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
@@ -92,9 +92,9 @@ export default function Career() {
             </div>
         </div>
         <div>
-            {ispop==1?multiSelected("Employed In",EmployeeArr,"employee",employee):null}
-            {ispop==2?multiSelected("Occupation",occupationArr,"occupation",occupation):null}
-            {ispop==3?multiSelected("Organization",organizationArr,"organization",organization):null}
+            {ispop==1?multiRadioBox("Employed In",EmployeeArr,"employee",employee):null}
+            {ispop==2?multiRadioBox("Occupation",occupationArr,"occupation",occupation):null}
+            {ispop==3?multiRadioBox("Organization",organizationArr,"organization",organization):null}
         </div>
 
     </div>

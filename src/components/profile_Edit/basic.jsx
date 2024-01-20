@@ -22,7 +22,7 @@ export default function Basic() {
     }
 
 
-    function multiSelected(title,arr,name,value){
+    function multiRadioBox(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
@@ -118,12 +118,12 @@ export default function Basic() {
             </div>
         </div>
         <div>
-            {ispop==1?multiSelected("Basic Detials",maritalStatusArr,"maritalStatus",maritalStatus):null}
-            {ispop==2?multiSelected("Height",heightArr,"height",height):null}
-            {ispop==3?multiSelected("Religion",religionArr,"religion",religion):null}
-            {ispop==4?multiSelected("Caste",religionArr,"caste",caste):null}
-            {ispop==5?multiSelected("Mother Tongue",motherTongueArr,"motherTongue",motherTongue):null}
-            {ispop==6?multiSelected("Anuual Income",anualIncomeArr,"anualIncome",anualIncome):null}
+            {ispop==1?multiRadioBox("Basic Detials",maritalStatusArr,"maritalStatus",maritalStatus):null}
+            {ispop==2?multiRadioBox("Height",heightArr,"height",height):null}
+            {ispop==3?multiRadioBox("Religion",religionArr,"religion",religion):null}
+            {ispop==4?multiRadioBox("Caste",religionArr,"caste",caste):null}
+            {ispop==5?multiRadioBox("Mother Tongue",motherTongueArr,"motherTongue",motherTongue):null}
+            {ispop==6?multiRadioBox("Anuual Income",anualIncomeArr,"anualIncome",anualIncome):null}
         </div>
 
         

@@ -195,16 +195,16 @@ export default function Details() {
                         {showDetails==7&&
                         <div className='d-flex mt-1'>
                             <div>
-                                {multipleValue("Drinking Habits","","widh100")}
-                                {multipleValue("Hobbies","","widh80")}
-                                {multipleValue("Dietary Habits","","widh100")}
-                                {multipleValue("Interests","","widh80")}
-                                {multipleValue("Smoking Habits","","widh100")}
-                                {multipleValue("Languages","","widh80")}
-                                {multipleValue("Favourite Music","","widh100")}
+                                {multipleValue("Drinking Habits","No","widh100")}
+                                {multipleValue("Hobbies","Painting","widh80")}
+                                {multipleValue("Dietary Habits","Non Vegetarian","widh100")}
+                                {multipleValue("Interests","Reading, Movies","widh80")}
+                                {multipleValue("Smoking Habits","No","widh100")}
+                                {multipleValue("Languages","English","widh80")}
+                                {multipleValue("Favourite Music","Old Song","widh100")}
                                 {multipleValue("Movies","","widh80")}
                                 {multipleValue("Favourite Books","","widh100")}                                
-                                {multipleValue("Sports","","widh80")}
+                                {multipleValue("Sports","Cricekt, Football","widh80")}
                             </div>
                         </div>
                         }

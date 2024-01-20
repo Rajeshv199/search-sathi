@@ -3225,6 +3225,7 @@ li:hover .subhobver{
     outline: none;
     padding: 4px 4px ;
     line-height: 18px;
+    text-overflow: ellipsis;
 }
 /* .custom-form div{
     font-size: 14px;

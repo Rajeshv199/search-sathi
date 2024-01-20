@@ -28,7 +28,7 @@ export default function Education() {
             </div>
         )
     }
-    function multiSelected(title,arr,name,value){
+    function multiRadioBox(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
@@ -115,9 +115,9 @@ export default function Education() {
             </div>
         </div>
         <div>
-            {ispop==1?multiSelected("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
-            {ispop==2?multiSelected("Height",pgDegreeArr,"pgDegree",pgDegree):null}
-            {ispop==3?multiSelected("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
+            {ispop==1?multiRadioBox("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
+            {ispop==2?multiRadioBox("Height",pgDegreeArr,"pgDegree",pgDegree):null}
+            {ispop==3?multiRadioBox("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
         </div>
 
 

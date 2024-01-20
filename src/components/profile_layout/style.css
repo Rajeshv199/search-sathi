@@ -792,6 +792,13 @@
     height: 300px;
     overflow-y: auto;
   }
+  .popContaner2{
+    height: 240px;
+    overflow-y: auto;
+  }
+  .popContaner2{
+    accent-color: #d64869;;
+  }
 
   .popContaner input{
     accent-color: #d64869;;
@@ -803,7 +810,7 @@
   }
   .select-item li{
     border: 1px solid #f795ac;
-    margin: 5px;
+    margin: 5px 3px;
     font-size: 12px;
     padding: 2px 8px;
     border-radius: 20px;
@@ -814,6 +821,13 @@
   .select-item li i{
     padding-left: 5px;
     color: #f1708e;
+  }
+  .select-item div{
+    font-size: 14px;
+    color:#ec328c;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-left: 4px;
   }
 
   .checkbox-Custom label{
@@ -838,6 +852,27 @@
     margin-top: 14px;
     border-radius: 4px;
 }
+.habitsOpt{
+    display: flex;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+.habitsOpt button{
+    border: 1px solid rgb(209, 207, 207);
+    background-color: #ffff;
+    border-radius: 20px;
+    padding: 3px 12px;
+    line-height: 20px;
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+.bgcolor{
+    background-color: #f5d7d7!important;
+    border: 1px solid rgb(235, 117, 117)!important;
+}
+
 
 @media only screen and (max-width: 1200px) {
 
