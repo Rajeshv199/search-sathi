@@ -88,7 +88,7 @@ function PartnerForm(){
     let heights = [];
     for(let i=0;i<10;i++)heights.push(`4' ${i}" (1.22 mts)`);
     // let maritalStatusArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
-    let aaAw=[{value:"acx",label:"acx"}]
+   
     let maritalStutArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina","Kazakhstan","Algeria"];
     let skills=["Problem solving","Communication","Interpersonal","Time management"];

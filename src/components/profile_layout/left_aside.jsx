@@ -53,6 +53,11 @@ export default function LeftAside(){
             
         </div>
 
+        <div className="getOffer">
+            <div className="w-25"><span>30%</span> Off</div>
+            <div className="mt-2 pt-1"> Get upto 3x more</div>
+        </div>
+
         <div className="premiumBefis">
             <h5 className="text-center">You are <span className="text-danger">missing</span> out on premium benefits!</h5>
         
@@ -73,8 +78,7 @@ export default function LeftAside(){
                 <div className="benefitTxt">Perform unlimited search</div>
             </div>
 
-            <div className="getOffer text-center mt-4">
-                <h6>Flat 38% OFF till 30 Jan</h6>
+            <div className="upgrdeBtn text-center mt-4">
                 <button>Upgrade Now <i class="fa-solid fa-chevron-right fa-2xs"></i></button>
             </div>
             

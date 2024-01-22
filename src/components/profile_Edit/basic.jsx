@@ -8,7 +8,7 @@ import Leftaside from '../profile_layout/left_aside';
 export default function Basic() {
 
     const[ispop,setIsPop] = useState(-1);
-    const[basicData,setBasicData] = useState({name:"Rajesh",gender:"Male",date:"01/02/2000",maritalStatus:"Never Married",height:`"4' 0" (1.22 mts)"`,religion:"Hindu",caste:"Banik",motherTongue:"Hindi",currentLocation:"Kolkata",anualIncome:"Rs. 3 - 5 Lakh"})
+    const[basicData,setBasicData] = useState({name:"Rajesh",gender:"Male",date:"01/02/2000",maritalStatus:"Never Married",height:`4' 0" (1.22 mts)`,religion:"Hindu",caste:"Banik",motherTongue:"Hindi",currentLocation:"Kolkata",anualIncome:"Rs. 3 - 5 Lakh"})
     const history =  useHistory();
 
     function handleChange(e){
@@ -17,12 +17,14 @@ export default function Basic() {
         basicData1[input.name] = input.value;
         setBasicData(basicData1);
     }
-    function closePopup(){
-        setIsPop(-1)
+    function handleSelected(val,name){
+        let basicData1 = {...basicData}
+        basicData1[name]= val;
+        setBasicData(basicData1);
     }
 
 
-    function multiRadioBox(title,arr,name,value){
+    function multiRadioBtn(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
@@ -30,7 +32,7 @@ export default function Basic() {
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
-                                <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
+                                <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
                                     <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
@@ -48,7 +50,7 @@ export default function Basic() {
         history.push("/profile_edit")
     }
 
-    let maritalStatusArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
+    let maritalStatusArr=["Never Married","Awaiting Divorce","Divorced","Widowed","Annulled"];
     let heightArr = [];  for(let i=0;i<10;i++){heightArr.push(`4' ${i}" (1.22 mts)`);}
     let religionArr=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
     let motherTongueArr = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"];
@@ -81,14 +83,18 @@ export default function Basic() {
                         <label>Date</label>
                         <input type='date' name='date' value={date} onChange={handleChange}/>
                     </div>
-                    <div className='custom-form'>
-                        <label>Marital Status</label>
-                        <input type='text' readOnly value={maritalStatus} onClick={()=>setIsPop(1)}/>
-                    </div>
-                   
+                                       
                     <div className='custom-form'>
                         <label>Height</label>
                         <input type='text' readOnly value={height} onClick={()=>setIsPop(2)}/>
+                    </div>
+                    <div className='custom-form w-100'>
+                        <label>Marital Status</label>
+                        <div className='habitsOpt'>
+                            {maritalStatusArr.map((h1,index)=>(
+                                <button className={maritalStatus==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"maritalStatus")} key={index}>{h1}</button>
+                            ))}
+                        </div>
                     </div>
                     <div className='custom-form'>
                         <label>Religion</label>
@@ -118,12 +124,12 @@ export default function Basic() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBox("Basic Detials",maritalStatusArr,"maritalStatus",maritalStatus):null}
-            {ispop==2?multiRadioBox("Height",heightArr,"height",height):null}
-            {ispop==3?multiRadioBox("Religion",religionArr,"religion",religion):null}
-            {ispop==4?multiRadioBox("Caste",religionArr,"caste",caste):null}
-            {ispop==5?multiRadioBox("Mother Tongue",motherTongueArr,"motherTongue",motherTongue):null}
-            {ispop==6?multiRadioBox("Anuual Income",anualIncomeArr,"anualIncome",anualIncome):null}
+            
+            {ispop==2?multiRadioBtn("Height",heightArr,"height",height):null}
+            {ispop==3?multiRadioBtn("Religion",religionArr,"religion",religion):null}
+            {ispop==4?multiRadioBtn("Caste",religionArr,"caste",caste):null}
+            {ispop==5?multiRadioBtn("Mother Tongue",motherTongueArr,"motherTongue",motherTongue):null}
+            {ispop==6?multiRadioBtn("Anuual Income",anualIncomeArr,"anualIncome",anualIncome):null}
         </div>
 
         

@@ -117,10 +117,10 @@ export default function Partner_Edit() {
                         {showDetails==4&&
                         <div className='d-flex mt-1'>
                             <div>
-                                {multipleValue("Drinking Habits","","widh100")}
-                                {multipleValue("Dietary Habits","","widh100")}
-                                {multipleValue("Smoking Habits","","widh100")}
-                                {multipleValue("Special Case","","widh100")}
+                                {multipleValue("Drinking Habits","Doesn't Matter","widh100")}
+                                {multipleValue("Dietary Habits","Doesn't Matter","widh100")}
+                                {multipleValue("Smoking Habits","Doesn't Matter","widh100")}
+                                {multipleValue("Special Case","Doesn't Matter","widh100")}
                             </div>
                         </div>
                         }

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import logo from './.././../asset/logo1.png';
-import { Link, Prompt } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
 
 export default function About_Partner() {
     const[aboutFeild,setAboutFeild] = useState({about:""});
-    const[wordCount,setWordCount] = useState("");
+    const history = useHistory()
 
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -15,6 +15,10 @@ export default function About_Partner() {
         aboutFeild1[input.name] = input.value;
         setAboutFeild(aboutFeild1);
     }
+    function handleSubmit(){
+        history.push("/edit/partner")
+    }
+
 
     const{about} = aboutFeild;
     return (
@@ -38,7 +42,7 @@ export default function About_Partner() {
                     </div>
                     
                     <div className="saveBtn2">
-                        <button>Save</button>
+                        <button onClick={handleSubmit}>Save</button>
                     </div>
                 </div>
             </div>

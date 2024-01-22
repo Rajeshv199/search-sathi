@@ -261,23 +261,35 @@
     overflow: hidden;
     height: 380px;
     color: rgba(152,163,175,.3);
-    padding: 28px 0;
     background-image: linear-gradient(180deg,#477288 67.52%,#022636 101.04%);
     width: 100%;
-    display: flex;
+    border-radius: 5px;
+}
+.profile-glary{
+    background-color: #A70855;
+    color: #fff;
+    text-align: end;
+    padding:4px 0;
+    font-size: 12px;
+}
 
-
+.profile-glary span{
+    font-weight: 500;
+    margin-right: 30px;
+    cursor: pointer;
 }
 .postion-absolute{
     position: absolute;
-    width: 100%;
-    padding: 36px 32px 28px 32px;
+    background-color: #022636;
+    width: 260px;
+    margin: 0 0 30px 30px;
+    padding: 20px 15px;
     left: 0;
     bottom: 0;
     height: 130px;
-   
-
+    border-radius: 4px;
 }
+
 .pro-name{
     font-size: 28px;
     color: #fff;
@@ -291,10 +303,7 @@
     text-align: center;
     margin-left: 6px;
 }
-.pro-uerId{
-    font-size: 16px;
-    color: #fff;
-}
+
 .postion-sticky{
     position: sticky;
     top: 0;
@@ -457,7 +466,7 @@
     border-radius: 8px;
     /* position: sticky; */
     padding: 15px 24px 15px 24px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 20px;
     font-size: 14px;
 }
@@ -489,12 +498,22 @@
     padding: 8px 0;
     color: #A70855;
 }
-.getOffer h6{
-    font-weight: 600;
-    line-height: 16px;
-    color: #2b2a2a;
+.getOffer{
+    display: flex;
+    background-color: #F4FF12;
+    padding: 8px 14px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #A70855;
+    line-height: 24px;
 }
-.getOffer button{
+.getOffer span{
+    font-size: 26px;
+}
+
+.upgrdeBtn button{
     color: #fff;
     background: #A70855;
     border: none;
@@ -502,7 +521,7 @@
     border-radius: 4px;
 
 }
-.getOffer i{
+.upgrdeBtn i{
     padding-left: 10px;
 }
 .pdding32{
@@ -783,6 +802,10 @@
   .checkbox-Custom{
     padding: 30px 20px 10px 20px;
   }
+  .checkbox-Custom .fa-chevron-left{
+    margin-right: 15px;
+    cursor: pointer;
+  }
   .cutom-title{
     font-size: 14px;
     font-family: 500;
@@ -854,23 +877,28 @@
 }
 .habitsOpt{
     display: flex;
-    margin-top: 14px;
+    margin-top: 10px;
     flex-wrap: wrap;
 }
 .habitsOpt button{
     border: 1px solid rgb(209, 207, 207);
     background-color: #ffff;
     border-radius: 20px;
-    padding: 3px 12px;
+    padding: 4px 12px;
     line-height: 20px;
-    margin: 0 4px;
+    margin: 4px;
     cursor: pointer;
     font-size: 14px;
     outline: none;
+    color: #3a3838;
+}
+.habitsOpt i{
+    margin-left: 6px;
 }
 .bgcolor{
     background-color: #f5d7d7!important;
     border: 1px solid rgb(235, 117, 117)!important;
+    color: #000!important;
 }
 
 

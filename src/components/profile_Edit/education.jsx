@@ -16,10 +16,6 @@ export default function Education() {
         setEductionData(eductionData1);
     }
     
-    function closePopup(){
-        setIsPop(-1)
-    }
-
     function multiInputs(label,value,no){
         return(
             <div className='custom-form'>
@@ -28,7 +24,7 @@ export default function Education() {
             </div>
         )
     }
-    function multiRadioBox(title,arr,name,value){
+    function multiRadioBtn(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
@@ -36,7 +32,7 @@ export default function Education() {
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
-                                <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
+                                <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
                                     <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
@@ -115,9 +111,9 @@ export default function Education() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBox("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
-            {ispop==2?multiRadioBox("Height",pgDegreeArr,"pgDegree",pgDegree):null}
-            {ispop==3?multiRadioBox("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
+            {ispop==1?multiRadioBtn("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
+            {ispop==2?multiRadioBtn("Height",pgDegreeArr,"pgDegree",pgDegree):null}
+            {ispop==3?multiRadioBtn("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
         </div>
 
 

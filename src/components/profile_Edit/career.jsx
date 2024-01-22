@@ -18,6 +18,12 @@ export default function Career() {
         setCareerData(careerData1);
     }
 
+    function handleSelected(val,name){
+        let careerData1 = {...careerData}
+        careerData1[name]= val;
+        setCareerData(careerData1);
+    }
+
     function multiInputs(label,value,no){
         return(
             <div className='custom-form'>
@@ -27,11 +33,8 @@ export default function Career() {
         )
     }
 
-    function closePopup(){
-        setIsPop(-1)
-    }
 
-    function multiRadioBox(title,arr,name,value){
+    function multiRadioBtn(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
@@ -39,7 +42,7 @@ export default function Career() {
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
-                                <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
+                                <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
                                     <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
@@ -58,7 +61,7 @@ export default function Career() {
     }
 
 
-    let EmployeeArr = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
+    let EmployeeArr = ["Private Sector","Government/Public Sector","Civil Services","Defence","Not Working"];
     let occupationArr=["Technician","Operator","Engineer","Aviator","Plumber","Architect","Scientist","Mechanical engineer","Civil engineer","Plasterer"]
     let organizationArr = ["United Nations","International Monetary Fund","World Health Organization","World Bank","Commonwealth of Nations"]
     const{employee,occupation,organization,aboutCareer} = careerData;
@@ -78,9 +81,16 @@ export default function Career() {
                 </div>
                 <div className=''>
                     
-                    {multiInputs("Employed In",employee,1)}
-                    {multiInputs("Occupation",occupation,2)}
-                    {multiInputs("Organization",organization,3)}
+                    <div className='custom-form w-100'>
+                        <label>Employed In</label>
+                        <div className='habitsOpt'>
+                            {EmployeeArr.map((h1,index)=>(
+                                <button className={employee==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"employee")} key={index}>{h1}</button>
+                            ))}
+                        </div>
+                    </div>
+                    {multiInputs("Occupation",occupation,1)}
+                    {multiInputs("Organization",organization,2)}
                     <div className='custom-textarea mt-4'>
                         <label>About My Career</label>
                         <textarea  name="aboutCareer" value={aboutCareer} className='w-100' rows="6" onChange={handleChange}></textarea>
@@ -92,9 +102,8 @@ export default function Career() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBox("Employed In",EmployeeArr,"employee",employee):null}
-            {ispop==2?multiRadioBox("Occupation",occupationArr,"occupation",occupation):null}
-            {ispop==3?multiRadioBox("Organization",organizationArr,"organization",organization):null}
+            {ispop==1?multiRadioBtn("Occupation",occupationArr,"occupation",occupation):null}
+            {ispop==2?multiRadioBtn("Organization",organizationArr,"organization",organization):null}
         </div>
 
     </div>
