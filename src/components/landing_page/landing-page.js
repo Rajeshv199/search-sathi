@@ -3,7 +3,7 @@ import './landing.css';
 // import Match from '../profile_layout/Match';
 import { Link } from 'react-router-dom';
 import LeftAside from '../profile_layout/left_aside';
-import RightAside from '../profile_layout/right_aside';
+// import RightAside from '../profile_layout/right_aside';
 import MobileAside from '../profile_layout/MobileAside';
 import ProfileHeader from '../profile_layout/profileHeader';
 
@@ -115,7 +115,7 @@ export default function LandingPage() {
         <div id="landing-body">
             <LeftAside />
             {/* <Match /> */}
-            <RightAside />
+            {/* <RightAside /> */}
         </div>
 
         <MobileAside />

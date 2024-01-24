@@ -31,11 +31,12 @@ export default function LifeStyle() {
         LifeStyleData1[name]= val;
         setLifeStyleData(LifeStyleData1);
     }
-
-    function closePopup(){
-        setIsPop(-1)
+    function handleDelete(arr,val){
+        let LifeStyleData1 = {...LifeStyleData};
+        let index = arr.findIndex(a1=>a1==val);
+        if(index>=0) arr.splice(index,1);
+        setLifeStyleData(LifeStyleData1);
     }
-
     function multiInputs2(label,value,no){
         return(
             <div className='custom-form'>
@@ -47,18 +48,17 @@ export default function LifeStyle() {
     }
     
     function multiCheckBox(title,arr,name,value){
-        console.log(value);
         return(
             <div className="popup-box2">
                 <div className="box5">
                     <div className="checkbox-Custom">
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
-                            {value.length<=3? value.map((v1,index)=><li key={index}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
+                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
                             <React.Fragment>
-                            <li>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
                             <div>+{value.length-3}more</div>
                             </React.Fragment>
                             }
@@ -96,7 +96,6 @@ export default function LifeStyle() {
     let dietryHabitsArr = ["Vegetarian","Non Vegetarian","Jain"];
     
     const{drinkingHabits,dietaryHabits,smokingHabits,hobbies,interests,languages,favouriteMusic,movies,favouriteBooks,sports}=LifeStyleData;
-    console.log(drinkingHabits);
 
     return (
     <div className='profile-details' onClick={()=>handleClose()}>

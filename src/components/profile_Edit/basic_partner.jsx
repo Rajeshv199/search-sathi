@@ -5,7 +5,7 @@ import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
 
 export default function BasicPartner() {
-    const[basicPartner,setBasicPartner] = useState({minHeight:`4' 0" (1.22 mts)`,maxHeight:`4' 3" (1.22 mts)`,minAge:18,maxAge:20,maritalStatus:[],country:[],residentialStatus:[]})
+    const[basicPartner,setBasicPartner] = useState({minHeight:`4' 0" (1.22 mts)`,maxHeight:`4' 3" (1.22 mts)`,minAge:"18 Years",maxAge:"20 Years",maritalStatus:[],country:[],residentialStatus:[]})
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
 
@@ -13,11 +13,19 @@ export default function BasicPartner() {
     function handleChange(e){
         const {currentTarget: input} = e;
         let basicPartner1 = {...basicPartner}
+        console.log(input.name);
         input.type === "checkbox"?
         basicPartner1[input.name] = updateCBs(basicPartner1[input.name],input.checked,input.value):
         basicPartner1[input.name] = input.value;
         setBasicPartner(basicPartner1);
     }
+    function handleDelete(arr,val){
+        let basicPartner1 = {...basicPartner};
+        let index = arr.findIndex(a1=>a1==val);
+        if(index>=0) arr.splice(index,1);
+        setBasicPartner(basicPartner1);
+    }
+
     function handleMutiSelected(val,arr){
         let basicPartner1 = {...basicPartner}
         let find = arr.find(b1=>b1==val);
@@ -36,7 +44,6 @@ export default function BasicPartner() {
             }
                 
         }
-            
         setBasicPartner(basicPartner1);
     }
     function updateCBs(inpArr, checked, value){
@@ -48,10 +55,10 @@ export default function BasicPartner() {
         return inpArr;
     }
 
-    function closePopup(){
+    function closePopup(val){
         setIsPop(-1);
-        ispop==1?setTimeout(()=>{setIsPop(2);},100):
-        setTimeout(()=>{setIsPop(5);},100);
+        if(ispop==1)setTimeout(()=>{setIsPop(2);},100);
+        if(ispop==4)setTimeout(()=>{setIsPop(5);},100);
     }
   
 
@@ -82,7 +89,7 @@ export default function BasicPartner() {
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
                                     <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
-                                    <div className='px-2'>{a1}{name=="minAge"?" Years":""}</div>
+                                    <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
                         </div>
@@ -93,18 +100,18 @@ export default function BasicPartner() {
             </div>
         )
     }
-    function multiCheckBtnSecond(title,arr,name,value){
+    function multiRadioBtnSecond(title,arr,name,value,minval,prevPop){
         return(
             <div className="popup-box2">
                 <div className="box5">
                     <div className="checkbox-Custom">
-                        <h5 className='mb-2'><i class="fa-solid fa-chevron-left fa-xs" onClick={()=>{name=="maxHeight"?setIsPop(1):setIsPop(4)}}></i>{title}</h5>
-                        <ul className='select-item'><li>{name=="maxHeight"?minHeight:minAge +" Years"} <i class="fa-solid fa-xmark fa-sm"></i></li></ul>
+                        <h5 className='mb-2'><i class="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(prevPop)}></i>{title}</h5>
+                        <ul className='select-item'><li>{minval} <i class="fa-solid fa-xmark fa-sm"></i></li></ul>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
                                     <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
-                                    <div className='px-2'>{a1}{name=="maxAge"?" Years":""}</div>
+                                    <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
                         </div>
@@ -114,9 +121,7 @@ export default function BasicPartner() {
                 </div>
             </div>
         )
-    }
-  
-    
+    }    
     function multiCheckBox(title,arr,name,value){
         console.log(value);
         return(
@@ -125,11 +130,11 @@ export default function BasicPartner() {
                     <div className="checkbox-Custom">
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
-                            {value.length<=3? value.map((v1,index)=><li key={index}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
+                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
                             <React.Fragment>
-                            <li>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
                             <div>+{value.length-3} More</div>
                             </React.Fragment>
                             }
@@ -153,7 +158,7 @@ export default function BasicPartner() {
     function handleSubmit(){
         history.push("/edit/partner")
     }
-    let ageArr = [];for(let i=18;i<=70;i++) ageArr.push(i);
+    let ageArr = [];for(let i=18;i<=70;i++) ageArr.push(i+" Years");
     
     let heightArr = [];
     for(let i=0;i<10;i++){heightArr.push(`4' ${i}" (1.22 mts)`);}
@@ -162,14 +167,8 @@ export default function BasicPartner() {
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina","Kazakhstan","Algeria"];
     const{minHeight,maxHeight,minAge,maxAge,maritalStatus,country,residentialStatus} = basicPartner;
 
-    
-    // let height2 = 
-    if(minHeight<maxHeight){console.log("fff");}
-
-    let ageArr2 = [];for(let i=+minAge+1;i<=70;i++) ageArr2.push(i);
-    let index = heightArr.findIndex(h1=>h1==minHeight);
-    let heightArr2 = [];
-    for(let i=index+1;i<10;i++){heightArr2.push(`4' ${i}" (1.22 mts)`);}
+    let heightArr2= [...heightArr].splice(heightArr.indexOf(minHeight,1)+1);
+    let ageArr2 =[...ageArr].splice(ageArr.indexOf(minAge,1)+1);
 
     return (
     <div className='profile-details'>
@@ -185,9 +184,9 @@ export default function BasicPartner() {
                     <div>Update these details to get suitable matches</div>
                 </div>
                 <div className=''>
-                   
                     {multiInputs("Height",`${minHeight} - ${maxHeight}`,1)}
-                    {multiInputs("Age",`${minAge} Years - ${maxAge} Years`,4)}
+                    {multiInputs("Age",`${minAge} - ${maxAge}`,4)}
+                    
                     <div className='custom-form w-100'>
                         <label>Marital Status</label>
                         <div className='habitsOpt'>
@@ -218,11 +217,10 @@ export default function BasicPartner() {
         </div>
         <div>
             {ispop==1?multiRadioBtn("Minimum Height",heightArr,"minHeight",minHeight):null}
-            {ispop==2?multiCheckBtnSecond("Maximum Height",heightArr2,"maxHeight",maxHeight):null}
+            {ispop==2?multiRadioBtnSecond("Maximum Height",heightArr2,"maxHeight",maxHeight,minHeight,1):null}
             {ispop==4?multiRadioBtn("Minimum Age",ageArr,"minAge",minAge):null}
-            {ispop==5?multiCheckBtnSecond("Maximum Age",ageArr2,"maxAge",maxAge):null}
+            {ispop==5?multiRadioBtnSecond("Maximum Age",ageArr2,"maxAge",maxAge,minAge,4):null}
             {ispop==6?multiCheckBox("Country",countries,"country",country):null}
-            
         </div>
 
     </div>

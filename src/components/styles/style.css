@@ -8,6 +8,10 @@ html, body, ul, form, button, input, p {
     margin: 0;
     padding: 0;
 }
+body{
+    overflow:auto!important;
+    padding-right: 0!important;;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
@@ -2670,19 +2674,27 @@ li:hover .subhobver{
 }
 .upgrdBtn button{
     width: 90%;
-    padding-bottom: 4px;
-    background-color: #e51e57;
+    padding: 8px 10px;
+    background-color:#A70855;
     color: #fff;
+    font-size: 14px;
+    line-height: 20px;
     border-radius: 8px;
     border: none;
-    height: 40px;
     font-weight: 500;
 }
 .upgrad-MenuList{
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px;
-    color: #000;
+    padding: 5px 15px;
+    margin: 14px 0;
+    color: #302e2e;
+    font-size: 14px;
+    cursor: pointer;
+}
+.upgrad-MenuList h6{
+    font-size: 14px;
+    margin: 0;
 }
 
 .help-child{
@@ -2850,7 +2862,6 @@ li:hover .subhobver{
 }
 .srchform li{
     position: relative;
-
 }
 .srchField{
     position: relative;
@@ -3221,7 +3232,7 @@ li:hover .subhobver{
     font-size: 14px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid rgb(163, 160, 160);
+    border-bottom: 1px solid rgb(196, 192, 192);
     outline: none;
     padding: 4px 0 ;
     line-height: 18px;

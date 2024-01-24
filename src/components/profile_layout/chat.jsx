@@ -5,7 +5,6 @@ import './style.css';
 
 import ProfileHeader from './profileHeader';
 import Leftaside from './left_aside';
-import RightAside from './right_aside';
 import MobileAside from './MobileAside';
 
 export default function Details() {

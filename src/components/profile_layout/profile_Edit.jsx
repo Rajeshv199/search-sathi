@@ -5,7 +5,6 @@ import './style.css';
 
 import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
-import RightAside from './right_aside';
 import MobileAside from './MobileAside';
 
 export default function Details() {
@@ -37,20 +36,21 @@ export default function Details() {
                         <span><i class="fa-solid fa-image px-1"></i>Upload</span>
                         <span><i class="fa-solid fa-image px-1"></i>10 Images</span>
                     </div>
+                    <div >
+                        <img className='user-image' src='https://images.unsplash.com/photo-1474552226712-ac0f0961a954?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
+                    </div>
                     <div className='postion-absolute'>
-                        <div className='w-100 d-flex'>
-                            <div className='w-50'> 
-                            <div className='user-icon'>
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                        <div className='user-profile'>
+                            <div> 
+                                <div className='user-icon'>
+                                    <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                </div>
                             </div>
+                            <div className='d-block'>
+                                <div className='pro-name'>Hi Rohit</div>
+                                <div className='text-white'>Profession, Location</div>
                             </div>
-                            
-                            <div className='pro-name'>Hi Rohit</div>
                         </div>
-                        
-                        
-                        
-                       
                     </div>
                 </div>
                 <div className='postion-sticky'> 

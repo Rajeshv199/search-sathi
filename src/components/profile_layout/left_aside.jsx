@@ -18,7 +18,7 @@ export default function LeftAside(){
         <div className="profileDetils">
             <div className="d-flex" >
                 <div className='user-icon'>
-                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                    <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                 </div>
                 
                 <div className="text-detils mb-3">
@@ -41,10 +41,13 @@ export default function LeftAside(){
                         <div className={route=="/activity"?"colr5":""}>Activity</div>
                     </div>
                 </Link>
-                <div className="left-side-items">
-                <span class="material-symbols-outlined">query_stats</span>
-                    <div>Search</div>
-                </div>
+                <Link to="/byCriteria">
+                    <div className={'left-side-items '+(route=="/search"?"colr5":"")}>
+                        <span class="material-symbols-outlined">query_stats</span>
+                        <div className={route=="/search"?"colr5":""}>Search</div>
+                    </div>
+                </Link>
+                
                 <div className="left-side-items">
                 <span class="material-symbols-outlined">send</span>
                     <div>Messanger</div>

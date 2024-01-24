@@ -29,8 +29,7 @@ export default function LifeStyle_Partner() {
         }
         setLifeStyleData(lifeStyleData1);
     }
-   
-   
+     
     function handleSubmit(){
         history.push("/edit/partner")
     }

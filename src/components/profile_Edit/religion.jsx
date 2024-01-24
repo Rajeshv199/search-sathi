@@ -26,14 +26,18 @@ export default function Religion() {
         }
         return inpArr;
     }
-
+    function handleDelete(arr,val){
+        let religionData1 = {...religionData};
+        let index = arr.findIndex(a1=>a1==val);
+        if(index>=0) arr.splice(index,1);
+        setReligionData(religionData1);
+    }
 
     function multiInputs2(label,value,no){
         return(
             <div className='custom-form'>
                 <label>{label}</label>
                 <input type='text' readOnly value={value.length<=3?value.join(", "):`${value[0]}, ${value[1]}, ${value[2]}, +${value.length-3} More`} onClick={()=>setIsPop(no)}/>
-                
             </div>
         )
     }
@@ -46,11 +50,11 @@ export default function Religion() {
                     <div className="checkbox-Custom">
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
-                            {value.length<=3? value.map((v1,index)=><li key={index}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
+                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
                             <React.Fragment>
-                            <li>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
                             <div>+{value.length-3} More</div>
                             </React.Fragment>
                             }

@@ -360,7 +360,6 @@ function SearchBar() {
                             <div className="profeError">Required</div>
                             <li className="serchProfileId">
                                 <input className="srxchField" placeholder="Profile ID"/>
-                                    
                             </li>
                         </ul>
                         <div className="serchBtn bg-white mt-4">

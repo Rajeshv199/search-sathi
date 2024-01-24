@@ -17,7 +17,6 @@ import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import SocialDetails from "./../components/registration/socialDetails";
 import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
-import PhoneBook from "./features/phone-book";
 import Notification from "./profile_layout/Notification";
 import SearchBar from "./header/searchBar";
 import SuccessStories from "./features/success_stories";
@@ -36,6 +35,10 @@ import Eduction_Occupation from "./profile_Edit/education_Occuption";
 import Religion from "./profile_Edit/religion";
 import LifeStyle_Partner from "./profile_Edit/lifeStyle_partner";
 import About_Partner from "./profile_Edit/about_partner";
+import Search from "./profile_layout/search";
+import Block_Ignore from "./features/block_ignore";
+import PhoneBook from "./features/phoneBook";
+
 import Temprorary from "./temprorary";
 
 
@@ -81,6 +84,8 @@ class MainComponent extends Component{
                     <Route path="/user_registration" component={User_registration}/>
                     {/* <Route path="/profiles" component={AllPageManage}/> */}
 
+                    <Route path="/phone-book" component={PhoneBook} />
+                    <Route path="/activity/blocked" component={Block_Ignore} />
                     <Route path="/notification" component={Notification} />
                     <Route path="/landing" component={LandingPage} />
 
@@ -101,11 +106,13 @@ class MainComponent extends Component{
                     <Route path="/profile_edit/basic" component={Basic} />
                     <Route path="/chat" component={Chat} />
                     <Route path="/profile_edit" component={ProfileEdit} />
+                    <Route path="/byCriteria" component={Search} />
                     <Route path="/activity" component={Activity} />
                     <Route path="/profile_details" component={MyMatches} />
+
+
                     <Route path="/settings" component={Settings}/>
-                    <Route path="/features/help" component={Help}/>
-                    <Route path="/features/phone-book" component={PhoneBook}/> 
+                    <Route path="/features/help" component={Help}/> 
                     <Route path="/success/story" component={SuccessStories} />
 
                     <Route path="/login" render={(props)=><User_Login {...props} onSubmit={this.handlePopView} />}/>

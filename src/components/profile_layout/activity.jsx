@@ -5,8 +5,6 @@ import './style.css';
 
 import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
-import RightAside from './right_aside';
-import MobileAside from './MobileAside';
 
 
 export default function Activity() {

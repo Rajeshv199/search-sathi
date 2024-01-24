@@ -26,65 +26,77 @@ export default function ProfileHeader() {
             <div class="offcanvas offcanvas-end offSliderMain" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div className="sliderPadding">
                     <div class="offcanvas-header">
-                        <div className='d-flex justify-content-around' >
+                        <div className="d-flex" >
                             <div className='user-icon'>
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" /> 
+                                <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                             </div>
-                            <div className='user-percent megtop'>100%</div>
-                            <div className="text-detils">
-                                <h4>Hi Abc !</h4>
-                                <p>UVA537 <a href='#'> Edit profile</a></p>
+                            <div className="text-detils mb-3">
+                                <h4>Hi Sunit!</h4>
+                                <p>UVA537 <a href='#'>Edit profile</a></p>
+                                <div className="user-percent"><span>80%</span> Profile Completed!</div>
                             </div>
                         </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        {/* <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> */}
                     </div>
                     <div className="upgrdBtn">
-                        <h6>Flat 60% off till 21 Nov</h6>
                         <button type="button" class="">Upgrade Membership</button>
-                        
                     </div>
                 </div>
                 <div className="offcanvas-body" >
                     <div>
-                        <div className="upgrad-MenuList" >
+                        <Link to="/edit/partner" >
+                        <div className="upgrad-MenuList" data-bs-dismiss="offcanvas" aria-label="Close">
                             <h6>Partner Preferencs</h6>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                            <i class="fa-solid fa-angle-right"></i>
                         </div>
+                        </Link>
+                        <Link to="/activity/blocked">
                         <div className="upgrad-MenuList" >
                             <h6>Blocked/Ignored Profiles</h6>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                            <i class="fa-solid fa-angle-right"></i>
                         </div>
-                        <Link to='/features/phone-book'>
+                        </Link>
+                        <Link>
+                        <div className="upgrad-MenuList" >
+                            <h6>Astrology Services</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                        </Link>
+                        <Link to='/phone-book'>
                             <div className="upgrad-MenuList" >
                                 <h6>Phonebook</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                                <i class="fa-solid fa-angle-right"></i>
                             </div>
                         </Link>
                         <Link to="/settings">
                             <div className="upgrad-MenuList" >
                                 <h6>Account & Setting</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                                <i class="fa-solid fa-angle-right"></i>
                             </div>
                         </Link>
                         <Link to="/features/help">
                             <div className="upgrad-MenuList" >
                                 <h6>Help & Support</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                                <i class="fa-solid fa-angle-right"></i>
                             </div>
                         </Link>
                         <Link to="/success/story" >
-                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px",color:'black' }}>
+                            <div className='upgrad-MenuList'>
                                 <h6>Success Stories</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                                <i class="fa-solid fa-angle-right"></i>
                             </div>
                         </Link>
-                        <div >
-                            <h6>Video tour</h6>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                        </div>
+                        <Link to="/success/story" >
+                            <div className='upgrad-MenuList'>
+                                <h6>Video tour</h6>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </Link>
                     </div>
-                    <br />
-                    <p onClick={() => { }}>Logout</p>
+                    
+                </div>
+                <div className='logoutBtn'>
+                        <button>Logout</button>
                 </div>
             </div>
         </div>

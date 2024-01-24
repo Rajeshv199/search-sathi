@@ -3,7 +3,7 @@ import logo from './.././../asset/logo1.png';
 import { Link } from 'react-router-dom';
 import './style.css';
 import LeftAside from '../profile_layout/left_aside';
-import RightAside from '../profile_layout/right_aside';
+// import RightAside from '../profile_layout/right_aside';
 import ProfileHeader from '../profile_layout/profileHeader';
 
 export default function Settings() {
@@ -144,7 +144,7 @@ export default function Settings() {
                 </div>
             </div>
 
-            <RightAside />
+            {/* <RightAside /> */}
         </div>
 
     </div>
