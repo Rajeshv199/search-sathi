@@ -1003,6 +1003,14 @@
 .block-Info a{
     color: #c51e6f;
 }
+.settingList{
+    display: flex;
+    justify-content: space-between;
+}
+.settingList p{
+    font-size: 16px;
+    line-height: 24px;
+}
 @media only screen and (max-width: 1200px) {
 
     .landing-navbar {

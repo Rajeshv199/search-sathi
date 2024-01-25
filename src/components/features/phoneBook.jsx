@@ -1,4 +1,3 @@
-import './style.css';
 import { Link } from 'react-router-dom';
 import LeftAside from '../profile_layout/left_aside';
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -17,10 +16,6 @@ export default function PhoneBook() {
 
         <ProfileHeader/>
         <div className='profile-detail-body'>
-            <div>
-                
-            </div>
-
             <LeftAside />
 
             <div className='profile-box p-4'>
