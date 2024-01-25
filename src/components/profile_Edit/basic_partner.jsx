@@ -21,24 +21,24 @@ export default function BasicPartner() {
     }
     function handleDelete(arr,val){
         let basicPartner1 = {...basicPartner};
-        let index = arr.findIndex(a1=>a1==val);
+        let index = arr.findIndex(a1=>a1===val);
         if(index>=0) arr.splice(index,1);
         setBasicPartner(basicPartner1);
     }
 
     function handleMutiSelected(val,arr){
         let basicPartner1 = {...basicPartner}
-        let find = arr.find(b1=>b1==val);
+        let find = arr.find(b1=>b1===val);
         if(find){
-            let index = arr.findIndex(b1=>b1==val);
+            let index = arr.findIndex(b1=>b1===val);
             if(index>=0) arr.splice(index,1);
         }else{
-            if(val=="Doesn't Matter"){
+            if(val==="Doesn't Matter"){
                 arr.splice(0, arr.length);
                 arr.push("Doesn't Matter");
             }
             else{
-                let index = arr.findIndex(b1=>b1=="Doesn't Matter");
+                let index = arr.findIndex(b1=>b1==="Doesn't Matter");
                 if(index>=0) arr.splice(index,1);
                 arr.push(val);
             }
@@ -57,8 +57,8 @@ export default function BasicPartner() {
 
     function closePopup(val){
         setIsPop(-1);
-        if(ispop==1)setTimeout(()=>{setIsPop(2);},100);
-        if(ispop==4)setTimeout(()=>{setIsPop(5);},100);
+        if(ispop===1)setTimeout(()=>{setIsPop(2);},100);
+        if(ispop===4)setTimeout(()=>{setIsPop(5);},100);
     }
   
 
@@ -88,7 +88,7 @@ export default function BasicPartner() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -110,7 +110,7 @@ export default function BasicPartner() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -191,8 +191,8 @@ export default function BasicPartner() {
                         <label>Marital Status</label>
                         <div className='habitsOpt'>
                             {maritalStatusArr.map((h1,index)=>(
-                                <button className={maritalStatus.find(m1=>m1==h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,maritalStatus)} key={index}>
-                                    {h1} {maritalStatus.find(m1=>m1==h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                <button className={maritalStatus.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,maritalStatus)} key={index}>
+                                    {h1} {maritalStatus.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>
@@ -202,8 +202,8 @@ export default function BasicPartner() {
                         <label>Residential Status</label>
                         <div className='habitsOpt'>
                             {residentialStatusArr.map((h1,index)=>(
-                                <button className={residentialStatus.find(m1=>m1==h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,residentialStatus)} key={index}>
-                                    {h1} {residentialStatus.find(m1=>m1==h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                <button className={residentialStatus.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,residentialStatus)} key={index}>
+                                    {h1} {residentialStatus.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>
@@ -216,11 +216,11 @@ export default function BasicPartner() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBtn("Minimum Height",heightArr,"minHeight",minHeight):null}
-            {ispop==2?multiRadioBtnSecond("Maximum Height",heightArr2,"maxHeight",maxHeight,minHeight,1):null}
-            {ispop==4?multiRadioBtn("Minimum Age",ageArr,"minAge",minAge):null}
-            {ispop==5?multiRadioBtnSecond("Maximum Age",ageArr2,"maxAge",maxAge,minAge,4):null}
-            {ispop==6?multiCheckBox("Country",countries,"country",country):null}
+            {ispop===1?multiRadioBtn("Minimum Height",heightArr,"minHeight",minHeight):null}
+            {ispop===2?multiRadioBtnSecond("Maximum Height",heightArr2,"maxHeight",maxHeight,minHeight,1):null}
+            {ispop===4?multiRadioBtn("Minimum Age",ageArr,"minAge",minAge):null}
+            {ispop===5?multiRadioBtnSecond("Maximum Age",ageArr2,"maxAge",maxAge,minAge,4):null}
+            {ispop===6?multiCheckBox("Country",countries,"country",country):null}
         </div>
 
     </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Prompt,useHistory } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
@@ -40,7 +40,7 @@ export default function Family() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -80,18 +80,18 @@ export default function Family() {
                     <div className='custom-form'>
                         <label>Family Status</label>
                         <div className='habitsOpt'>
-                            <button className={familyStatus=="Rich"?"bgcolor":""} onClick={()=>handleSelected("Rich","familyStatus")}>Rich</button>
-                            <button className={familyStatus=="Upper Class"?"bgcolor":""} onClick={()=>handleSelected("Upper Class","familyStatus")}>Upper Middle Class</button>
-                            <button className={familyStatus=="Middle Class"?"bgcolor":""} onClick={()=>handleSelected("Middle Class","familyStatus")}>Middle Class</button>
+                            <button className={familyStatus==="Rich"?"bgcolor":""} onClick={()=>handleSelected("Rich","familyStatus")}>Rich</button>
+                            <button className={familyStatus==="Upper Class"?"bgcolor":""} onClick={()=>handleSelected("Upper Class","familyStatus")}>Upper Middle Class</button>
+                            <button className={familyStatus==="Middle Class"?"bgcolor":""} onClick={()=>handleSelected("Middle Class","familyStatus")}>Middle Class</button>
                         </div>
                     </div>
 
                     <div className='custom-form'>
                         <label>Family Type</label>
                         <div className='habitsOpt'>
-                            <button className={familyType=="Joint Family"?"bgcolor":""} onClick={()=>handleSelected("Joint Family","familyType")}>Joint Family</button>
-                            <button className={familyType=="Nuculear Family"?"bgcolor":""} onClick={()=>handleSelected("Nuculear Family","familyType")}>Nuculear Family</button>
-                            <button className={familyType=="Other"?"bgcolor":""} onClick={()=>handleSelected("Other","familyType")}>Other</button>
+                            <button className={familyType==="Joint Family"?"bgcolor":""} onClick={()=>handleSelected("Joint Family","familyType")}>Joint Family</button>
+                            <button className={familyType==="Nuculear Family"?"bgcolor":""} onClick={()=>handleSelected("Nuculear Family","familyType")}>Nuculear Family</button>
+                            <button className={familyType==="Other"?"bgcolor":""} onClick={()=>handleSelected("Other","familyType")}>Other</button>
                         </div>
                     </div>
                     
@@ -101,21 +101,21 @@ export default function Family() {
                     <div className='custom-form'>
                         <label>No. of Brothers</label>
                         <div className='habitsOpt'>
-                            <button className={noOfBrother=="0"?"bgcolor":""} onClick={()=>handleSelected("0","noOfBrother")}>0</button>
-                            <button className={noOfBrother=="1"?"bgcolor":""} onClick={()=>handleSelected("1","noOfBrother")}>1</button>
-                            <button className={noOfBrother=="2"?"bgcolor":""} onClick={()=>handleSelected("2","noOfBrother")}>2</button>
-                            <button className={noOfBrother=="3"?"bgcolor":""} onClick={()=>handleSelected("3","noOfBrother")}>3</button>
-                            <button className={noOfBrother=="3+"?"bgcolor":""} onClick={()=>handleSelected("3+","noOfBrother")}>3+</button>
+                            <button className={noOfBrother==="0"?"bgcolor":""} onClick={()=>handleSelected("0","noOfBrother")}>0</button>
+                            <button className={noOfBrother==="1"?"bgcolor":""} onClick={()=>handleSelected("1","noOfBrother")}>1</button>
+                            <button className={noOfBrother==="2"?"bgcolor":""} onClick={()=>handleSelected("2","noOfBrother")}>2</button>
+                            <button className={noOfBrother==="3"?"bgcolor":""} onClick={()=>handleSelected("3","noOfBrother")}>3</button>
+                            <button className={noOfBrother==="3+"?"bgcolor":""} onClick={()=>handleSelected("3+","noOfBrother")}>3+</button>
                         </div>
                     </div>
                     <div className='custom-form'>
                         <label>No. of Sisters</label>
                         <div className='habitsOpt'>
-                            <button className={noOfSister=="0"?"bgcolor":""} onClick={()=>handleSelected("0","noOfSister")}>0</button>
-                            <button className={noOfSister=="1"?"bgcolor":""} onClick={()=>handleSelected("1","noOfSister")}>1</button>
-                            <button className={noOfSister=="2"?"bgcolor":""} onClick={()=>handleSelected("2","noOfSister")}>2</button>
-                            <button className={noOfSister=="3"?"bgcolor":""} onClick={()=>handleSelected("3","noOfSister")}>3</button>
-                            <button className={noOfSister=="3+"?"bgcolor":""} onClick={()=>handleSelected("3+","noOfSister")}>3+</button>
+                            <button className={noOfSister==="0"?"bgcolor":""} onClick={()=>handleSelected("0","noOfSister")}>0</button>
+                            <button className={noOfSister==="1"?"bgcolor":""} onClick={()=>handleSelected("1","noOfSister")}>1</button>
+                            <button className={noOfSister==="2"?"bgcolor":""} onClick={()=>handleSelected("2","noOfSister")}>2</button>
+                            <button className={noOfSister==="3"?"bgcolor":""} onClick={()=>handleSelected("3","noOfSister")}>3</button>
+                            <button className={noOfSister==="3+"?"bgcolor":""} onClick={()=>handleSelected("3+","noOfSister")}>3+</button>
                         </div>
                     </div>
 
@@ -135,8 +135,8 @@ export default function Family() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBtn("Father's Occupation",fatherOccuArr,"fatherOccupation",fatherOccupation):null}
-            {ispop==2?multiRadioBtn("Mother's Occupation",motherOccuArr,"motherOccupation",motherOccupation):null}
+            {ispop===1?multiRadioBtn("Father's Occupation",fatherOccuArr,"fatherOccupation",fatherOccupation):null}
+            {ispop===2?multiRadioBtn("Mother's Occupation",motherOccuArr,"motherOccupation",motherOccupation):null}
         </div>
 
     </div>

@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import {Switch, Route, Redirect,useHistory } from "react-router-dom";
-import {Link} from "react-router-dom";
-import LoginForm from '../login/user_login';
+import {useHistory } from "react-router-dom";
 
 
 function UserRegister(){
@@ -9,7 +7,6 @@ function UserRegister(){
     const [errors,setErrors]= useState({});
     const [passwordShow,setPasswordShow]=useState(false);
     const [confrmPaswordShow,setconfrmPaswordShow]=useState(false);
-    const [loginPop,setloginPop]=useState(false);
     const history =  useHistory();
 
     function handleChange(e){
@@ -24,7 +21,7 @@ function UserRegister(){
     function isValid(errors){
     let keys = Object.keys(errors);
     let count = keys.reduce((acc,curr)=>(errors[curr]?acc+1:acc),0);
-    return count==0;
+    return count===0;
     }
 
     function handleValidate(e){
@@ -66,15 +63,17 @@ function UserRegister(){
         var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
          return !gmail?"Gmail is missing":gmail.match(validRegex)?"":"Not a valid Gmail"}
     function validateMob(mobileNo){
-        var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-        return !mobileNo?"Mobile No is missing":filter.test(mobileNo)&&mobileNo.length==10?"":"Not a valid number";
+        /* eslint-disable */
+        var filter = /^((\+[1-9]{1,4}[\-]*)|(\([0-9]{2,3}\)[\-]*)|([0-9]{2,4})[\-]*)*?[0-9]{3,4}?[\-]*[0-9]{3,4}?$/; 
+        console.log(filter[39]);
+        return !mobileNo?"Mobile No is missing":filter.test(mobileNo)&&mobileNo.length===10?"":"Not a valid number";
     }
     function validatePasswrd(password){return !password?"Password is missing":""}
     function validateConfrmPasswrd(confirmPassword){return !confirmPassword?"Password is missing":""}
 
     function handleSubmit(){
         let errors = validateAll();
-        if(isValid(errors)&&(takeData.password==takeData.confirmPassword)){
+        if(isValid(errors)&&(takeData.password===takeData.confirmPassword)){
             history.push({pathname:"/user_registration",state:{takeData}});
         }
         else {

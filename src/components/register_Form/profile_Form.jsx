@@ -1,10 +1,7 @@
-import React, {useEffect, useState} from "react";
-import {Switch, Route, Redirect,useHistory,useLocation} from "react-router-dom";
-import {Link} from "react-router-dom";
+import React, {useState} from "react";
  
     
 function ProfileDetails(props){
-    const history =  useHistory();
 
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
@@ -12,7 +9,6 @@ function ProfileDetails(props){
     const [label4, setlabel4] = useState(false);
     const [label5, setlabel5] = useState(false);
     const [label6, setlabel6] = useState(false);
-    const [label7, setlabel7] = useState(false);
     const [label8, setlabel8] = useState(false);
    
     const [showPop,setShowPop] = useState(-1);
@@ -28,11 +24,6 @@ function ProfileDetails(props){
     const [height, setHeight] = useState("");
     const [descriYrSelf, setDescriYrSelf] = useState("");
 
-
-    useEffect(()=>{
-        console.log("pro");
-        // if(props.showPop&&showPop>=1)setShowPop(-1);
-    },showPop);
 
     function handlePop(val){
         setShowPop(val);
@@ -75,37 +66,37 @@ function ProfileDetails(props){
                                         <div >
                                             <span>{day?day:"Data"}</span>
                                             <i className="dropArrow"></i>
-                                            <i className={showPop==1?"imgArrow":""}></i>
+                                            <i className={showPop===1?"imgArrow":""}></i>
                                         </div>
                                     </li>
                                     <li onClick={() =>handlePop(2)}>
                                         <div >
                                             <span>{month?month:"Month"}</span> 
                                             <i className="dropArrow"></i>
-                                            <i className={showPop==2?"imgArrow":""}></i>
+                                            <i className={showPop===2?"imgArrow":""}></i>
                                         </div>
                                     </li>
                                     <li onClick={() =>handlePop(3)}>
                                         <div >
                                             <span>{year?year:"Year"}</span> 
                                             <i className="dropArrow"></i>
-                                            <i className={showPop==3?"imgArrow":""}></i>
+                                            <i className={showPop===3?"imgArrow":""}></i>
                                         </div>
                                     </li>
                                 </ul>:null}
-                                <div className={showPop==1?"daysBox":"daysBox2"}>
+                                <div className={showPop===1?"daysBox":"daysBox2"}>
                                     <ul>
-                                        {days.map((d1,index)=><li className={day==d1?"box1":""} onClick={() =>{setShowPop(2);setDay(d1)}} key={index}>{d1}</li>)}
+                                        {days.map((d1,index)=><li className={day===d1?"box1":""} onClick={() =>{setShowPop(2);setDay(d1)}} key={index}>{d1}</li>)}
                                     </ul>
                                 </div>
-                                <div className={showPop==2?"monthsBox":"monthsBox2"}>
+                                <div className={showPop===2?"monthsBox":"monthsBox2"}>
                                     <ul>
-                                        {months.map((m1,index)=><li className={month==m1?"box1":""} onClick={() =>{setShowPop(3);setMonth(m1)}} key={index}>{m1}</li>)}
+                                        {months.map((m1,index)=><li className={month===m1?"box1":""} onClick={() =>{setShowPop(3);setMonth(m1)}} key={index}>{m1}</li>)}
                                     </ul>
                                 </div>
-                                <div className={showPop==3?"yersBox":"yersBox2"}>
+                                <div className={showPop===3?"yersBox":"yersBox2"}>
                                     <ul>
-                                        {years.map((y1,index)=><li className={year==y1?"box1":""} onClick={() =>{setShowPop(-1);setYrs(y1)}} key={index}>{y1}</li>)}
+                                        {years.map((y1,index)=><li className={year===y1?"box1":""} onClick={() =>{setShowPop(-1);setYrs(y1)}} key={index}>{y1}</li>)}
                                     </ul>
                                 </div>
                             </div>
@@ -114,7 +105,7 @@ function ProfileDetails(props){
                             <div className="regi-secle mt20">
                                 <label className={"reg-label top8 " +(label3?"reg-label4":"")} onClick={() =>{setlabel3(true);handlePop(4)}}>Mother tongue</label>
                                 <input type="text" placeholder="" readOnly value={mothertongue} onClick={() =>{setlabel3(true);handlePop(4)}}/>
-                                {label3 && showPop==4?
+                                {label3 && showPop===4?
                                 <div className="gridDropdown">
                                     <ul>
                                         {langs.map((l1,index)=><li onClick={() =>{setMothertong(l1);setShowPop(-1);}} key={index}>{l1}</li>)}
@@ -127,7 +118,7 @@ function ProfileDetails(props){
                             <div className="regi-secle mt20" >
                                 <label className={"reg-label top8 " +(label4?"reg-label5":"")} onClick={() =>{setlabel4(true);handlePop(5)}}>Religion</label>
                                 <input type="text" placeholder="" readOnly value={religion} onClick={() =>{setlabel4(true);handlePop(5)}}/>
-                                {label4 && showPop==5?
+                                {label4 && showPop===5?
                                 <div className="religionBox">
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
@@ -139,10 +130,10 @@ function ProfileDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt20" >
-                                <i className={showPop==8?"imgArrow casteIcon":null}></i>
+                                <i className={showPop===8?"imgArrow casteIcon":null}></i>
                                 <label className={"reg-label top8 " +(label1?"reg-sister":"")} onClick={() =>{setlabel1(true);handlePop(8)}}>Caste</label>
                                 <input type="text" placeholder={label1?"Select or type":""} readOnly value={caste} onClick={() =>{setlabel1(true);handlePop(8)}}/>
-                                {label1&& showPop==8?
+                                {label1&& showPop===8?
                                 <div className="casteBox">
                                     {/* <i className={"imgArrow casteIcon"}></i> */}
                                     <ul>
@@ -156,7 +147,7 @@ function ProfileDetails(props){
                             <div className="regi-secle mt20">
                                 <label className={"reg-label top8 " +(label5?"reg-label6":"")} onClick={() =>{setlabel5(true);handlePop(6)}}>Marital status</label>
                                 <input type="text" placeholder="" readOnly value={maritalStatus} onClick={() =>{setlabel5(true);handlePop(6)}}/>
-                                {label5 && showPop==6?
+                                {label5 && showPop===6?
                                 <div className="mStatusBox">
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
@@ -170,7 +161,7 @@ function ProfileDetails(props){
                             <div className="regi-secle mt20">
                                 <label className={"reg-label top8 " +(label6?"reg-label7":"")}  onClick={() =>{setlabel6(true);handlePop(7)}}>Height</label>
                                 <input type="text" placeholder="" readOnly value={height} onClick={() =>{setlabel6(true);handlePop(7)}}/>
-                                {label6 && showPop==7?
+                                {label6 && showPop===7?
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>

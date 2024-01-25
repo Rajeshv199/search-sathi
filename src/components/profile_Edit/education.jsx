@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { Link, Prompt,useHistory } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
@@ -33,7 +33,7 @@ export default function Education() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -73,7 +73,7 @@ export default function Education() {
                 <div className=''>
                     {multiInputs("Highest Degree",highestDegree,1)}
 
-                    {pgDegreeArr.find(p1=>p1==highestDegree)&&
+                    {pgDegreeArr.find(p1=>p1===highestDegree)&&
                     <React.Fragment>
                         {multiInputs("PG Degree",pgDegree,2)}
 
@@ -84,7 +84,7 @@ export default function Education() {
                     </React.Fragment>
                     }
                     
-                    {pgDegreeArr.find(p1=>p1==highestDegree)|| ugDegreeArr.find(p1=>p1==highestDegree)?
+                    {pgDegreeArr.find(p1=>p1===highestDegree)|| ugDegreeArr.find(p1=>p1===highestDegree)?
                     <React.Fragment>
                         {multiInputs("UG Degree",ugDegree,3)}
                         
@@ -111,9 +111,9 @@ export default function Education() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBtn("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
-            {ispop==2?multiRadioBtn("Height",pgDegreeArr,"pgDegree",pgDegree):null}
-            {ispop==3?multiRadioBtn("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
+            {ispop===1?multiRadioBtn("Highest Degree",heighDegreesArr,"highestDegree",highestDegree):null}
+            {ispop===2?multiRadioBtn("Height",pgDegreeArr,"pgDegree",pgDegree):null}
+            {ispop===3?multiRadioBtn("Religion",ugDegreeArr,"ugDegree",ugDegree):null}
         </div>
 
 

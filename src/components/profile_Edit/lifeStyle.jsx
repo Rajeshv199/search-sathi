@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { Link, Prompt,useHistory } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
@@ -33,7 +33,7 @@ export default function LifeStyle() {
     }
     function handleDelete(arr,val){
         let LifeStyleData1 = {...LifeStyleData};
-        let index = arr.findIndex(a1=>a1==val);
+        let index = arr.findIndex(a1=>a1===val);
         if(index>=0) arr.splice(index,1);
         setLifeStyleData(LifeStyleData1);
     }
@@ -116,7 +116,7 @@ export default function LifeStyle() {
                         <label>Drinking Habits</label>
                         <div className='habitsOpt'>
                             {drinkHabitsArr.map((h1,index)=>(
-                                <button className={drinkingHabits==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"drinkingHabits")} key={index}>{h1}</button>
+                                <button className={drinkingHabits===h1?"bgcolor":""} onClick={()=>handleSelected(h1,"drinkingHabits")} key={index}>{h1}</button>
                             ))}
                         </div>
                     </div>
@@ -124,7 +124,7 @@ export default function LifeStyle() {
                         <label>Dietary Habits</label>
                         <div className='habitsOpt'>
                             {dietryHabitsArr.map((h1,index)=>(
-                                <button className={dietaryHabits==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"dietaryHabits")} key={index}>{h1}</button>
+                                <button className={dietaryHabits===h1?"bgcolor":""} onClick={()=>handleSelected(h1,"dietaryHabits")} key={index}>{h1}</button>
                             ))}
                         </div>
                     </div>
@@ -132,7 +132,7 @@ export default function LifeStyle() {
                         <label>Smoking Habits</label>
                         <div className='habitsOpt'>
                             {drinkHabitsArr.map((h1,index)=>(
-                                <button className={smokingHabits==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"smokingHabits")} key={index}>{h1}</button>
+                                <button className={smokingHabits===h1?"bgcolor":""} onClick={()=>handleSelected(h1,"smokingHabits")} key={index}>{h1}</button>
                             ))}
                         </div>
                     </div>
@@ -159,11 +159,11 @@ export default function LifeStyle() {
             </div>
         </div>
         <div>
-            {ispop==1?multiCheckBox("Hobbies",hobbyArr,"hobbies",hobbies):null}
-            {ispop==2?multiCheckBox("Interests",interestsArr,"interests",interests):null}
-            {ispop==3?multiCheckBox("Languages",languageArr,"languages",languages):null}
-            {ispop==4?multiCheckBox("Favourite Music",favorteMusicArr,"favouriteMusic",favouriteMusic):null}
-            {ispop==5?multiCheckBox("Sports",sportArr,"sports",sports):null}
+            {ispop===1?multiCheckBox("Hobbies",hobbyArr,"hobbies",hobbies):null}
+            {ispop===2?multiCheckBox("Interests",interestsArr,"interests",interests):null}
+            {ispop===3?multiCheckBox("Languages",languageArr,"languages",languages):null}
+            {ispop===4?multiCheckBox("Favourite Music",favorteMusicArr,"favouriteMusic",favouriteMusic):null}
+            {ispop===5?multiCheckBox("Sports",sportArr,"sports",sports):null}
         </div>
 
     </div>

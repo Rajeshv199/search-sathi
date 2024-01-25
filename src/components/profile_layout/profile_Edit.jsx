@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import logo from './.././../asset/logo1.png'
-import { Link, Prompt } from 'react-router-dom'
+import { useState } from 'react';
+import { Link }from 'react-router-dom';
 import './style.css';
 
 import ProfileHeader from './profileHeader';
@@ -37,13 +36,13 @@ export default function Details() {
                         <span><i class="fa-solid fa-image px-1"></i>10 Images</span>
                     </div>
                     <div >
-                        <img className='user-image' src='https://images.unsplash.com/photo-1474552226712-ac0f0961a954?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
+                        <img className='user-image' src='https://images.unsplash.com/photo-1474552226712-ac0f0961a954?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=""/>
                     </div>
                     <div className='postion-absolute'>
                         <div className='user-profile'>
                             <div> 
                                 <div className='user-icon'>
-                                    <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                    <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
                                 </div>
                             </div>
                             <div className='d-block'>
@@ -54,20 +53,20 @@ export default function Details() {
                     </div>
                 </div>
                 <div className='postion-sticky'> 
-                    <button className={activeAbut==1?'activeBtn':""} onClick={()=>{setActiveAbut(1);setShowDetails(1)}}>About Me</button>
-                    <button className={activeAbut==2?'activeBtn':""} onClick={()=>{setActiveAbut(2);setShowDetails(1)}}>About Family</button>
+                    <button className={activeAbut===1?'activeBtn':""} onClick={()=>{setActiveAbut(1);setShowDetails(1)}}>About Me</button>
+                    <button className={activeAbut===2?'activeBtn':""} onClick={()=>{setActiveAbut(2);setShowDetails(1)}}>About Family</button>
                     <Link to="/edit/partner"><button className='' >About Partner</button></Link>
                 </div>
-                {activeAbut==1&&
+                {activeAbut===1&&
                 <div>
                     <div className='basicData' onClick={()=>setShowDetails(1)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>Basic Details 
-                                {showDetails==1&&<div className='headerTxt'>Brief outline of personal information</div>}
+                                {showDetails===1&&<div className='headerTxt'>Brief outline of personal information</div>}
                             </h5>
-                            {showDetails==1?<Link className='text-dark' to="/profile_edit/basic"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/profile_edit/basic"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                         </div>
-                        {showDetails==1&&
+                        {showDetails===1&&
                         <div className='d-flex'>
                             <div>
                                 {multipleValue("Height",`4' 11" (1.50 mts)`,"widh80")}
@@ -84,12 +83,12 @@ export default function Details() {
                     <div className='basicData' onClick={()=>setShowDetails(2)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>About Me
-                                {showDetails==2&&<div className='headerTxt'>Describe yourself in a few words</div>}
+                                {showDetails===2&&<div className='headerTxt'>Describe yourself in a few words</div>}
                             </h5>
-                            {showDetails==2?<Link className='text-dark' to="/profile_edit/about"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===2?<Link className='text-dark' to="/profile_edit/about"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
-                        {showDetails==2&&
+                        {showDetails===2&&
                         <div className='mt-2'>
                         Surprise Visits: If possible, surprise your partner with a visit. Even short, unexpected visits can be incredibly special and memorable.
                         Be Supportive: Show support during tough times. Be there to listen, offer advice, or simply provide comfort when your partner needs it.
@@ -101,12 +100,12 @@ export default function Details() {
                     <div className='basicData' onClick={()=>setShowDetails(3)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>Education
-                                {showDetails==3&&<div className='headerTxt'>Showcase your educational qualification</div>}
+                                {showDetails===3&&<div className='headerTxt'>Showcase your educational qualification</div>}
                             </h5>
-                            {showDetails==3?<Link className='text-dark' to="/profile_edit/education"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===3?<Link className='text-dark' to="/profile_edit/education"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
-                        {showDetails==3&&
+                        {showDetails===3&&
                         <div className='d-flex mt-1'>
                             <div>
                                 {multipleValue("PG Degree","MCA","widh90")}
@@ -126,12 +125,12 @@ export default function Details() {
                     <div className='basicData' onClick={()=>setShowDetails(4)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>Career
-                                {showDetails==4&&<div className='headerTxt'>Give a glimpse of your professional life </div>}
+                                {showDetails===4&&<div className='headerTxt'>Give a glimpse of your professional life </div>}
                             </h5>
-                            {showDetails==4?<Link className='text-dark' to="/profile_edit/career"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===4?<Link className='text-dark' to="/profile_edit/career"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
-                        {showDetails==4&&
+                        {showDetails===4&&
                         <div className='d-flex mt-1'>
                             <div>
                                 {multipleValue("Employed In","Private Sector","widh90")}
@@ -146,42 +145,16 @@ export default function Details() {
                         </div>
                         }
                     </div>
-                    {/* <div className='basicData' onClick={()=>setShowDetails(5)}>
-                        <div className='d-flex justify-content-between'>
-                            <h5 className='m-0'>Family
-                                {showDetails==5&&<div className='headerTxt'>Introduce your family members</div>}
-                            </h5>
-                            {showDetails==5?<i class="fa-solid fa-pen-to-square"></i>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
-                            
-                        </div>
-                        {showDetails==5&&
-                        <div className='d-flex mt-1'>
-                            <div>
-                                {multipleValue("Family Status","Middle Class","widh100")}
-                                {multipleValue("Father's Occupation","Private Employee","widh130")}
-                                {multipleValue("Family Type","Joined Family","widh100")}
-                                {multipleValue("Mother's Occupation","Homemaker","widh130")}
-                                {multipleValue("No. of Brother(s)","2 Brothers","widh100")}
-                                {multipleValue("Family Living in","Ranchi, India","widh130")}
-                                {multipleValue("No. of Sister(s)","1 Sister","widh100")}
-                                
-                                <div className='w-100 flotLeft my-1'>
-                                    <h6 className='mt-2 mb-0'>About My Family</h6>
-                                    <div>You must consider a number of factors before deciding on your career. Each factor plays a significant role in your choice. Firstly, always assess yourself thoroughly. You must understand your area of interest to choose a career.</div>
-                                </div>
-                            </div>
-                        </div>
-                        }
-                    </div> */}
+                   
                     <div className='basicData' onClick={()=>setShowDetails(6)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>Contact
-                                {showDetails==6&&<div className='headerTxt'>Details that would help profiles get in touch with you</div>}
+                                {showDetails===6&&<div className='headerTxt'>Details that would help profiles get in touch with you</div>}
                             </h5>
-                            {showDetails==6?<Link className='text-dark' to="/profile_edit/contact"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===6?<Link className='text-dark' to="/profile_edit/contact"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
-                        {showDetails==6&&
+                        {showDetails===6&&
                         
                         <div className='d-flex mt-1'>
                             <div>
@@ -196,12 +169,12 @@ export default function Details() {
                     <div className='basicData' onClick={()=>setShowDetails(7)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>LifeStyle
-                                {showDetails==7&&<div className='headerTxt'>Your favourite activities</div>}
+                                {showDetails===7&&<div className='headerTxt'>Your favourite activities</div>}
                             </h5>
-                            {showDetails==7?<Link className='text-dark' to="/profile_edit/lifeStyle"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===7?<Link className='text-dark' to="/profile_edit/lifeStyle"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
-                        {showDetails==7&&
+                        {showDetails===7&&
                         <div className='d-flex mt-1'>
                             <div>
                                 {multipleValue("Drinking Habits","No","widh100")}
@@ -220,17 +193,17 @@ export default function Details() {
                     </div>
                 </div>
                 }
-                {activeAbut==2&&
+                {activeAbut===2&&
                 <div>
                     <div className='basicData' onClick={()=>setShowDetails(1)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>Family
-                                {showDetails==1&&<div className='headerTxt'>Introduce your family members</div>}
+                                {showDetails===1&&<div className='headerTxt'>Introduce your family members</div>}
                             </h5>
-                            {showDetails==1?<Link className='text-dark' to="/profile_edit/family"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/profile_edit/family"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
-                        {showDetails==1&&
+                        {showDetails===1&&
                         <div className='d-flex mt-1'>
                             <div>
                                 {multipleValue("Family Status","Middle Class","widh100")}

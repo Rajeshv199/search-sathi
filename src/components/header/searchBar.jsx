@@ -30,35 +30,6 @@ function SearchBar() {
         setReligion(religion1);
     }
 
-    function multipleSearchChoise(valueArr,arr,lable,no){
-        return(
-            <div className="d-flex pt38">
-                <label>{lable}</label>
-                <div className="srchField" onClick={()=>setshowPop(no)}>
-                    <i className={showPop==no?"iconArrow iconPostion":""}></i>
-                    <div className="p13">
-                        {valueArr[0]?
-                        <ul >
-                            {valueArr.map((r1,index)=>(
-                                <li className="serch-choice" key={index}>
-                                    <span >{r1}</span>
-                                    <span className="choice-close" onClick={()=>handleRemove(index)}>x</span>
-                                </li>
-                            ))}
-                        </ul>
-                        :<div className="nullValue">Doesn't Matter</div>}
-                    </div>
-                </div>
-                {showPop==no?(
-                    <ul className="dropBox2 width490 postionBox">
-                        {arr.map((h1,index)=>(
-                            <li className={"width156 border-0 "+(valueArr.find(r1=>r1==h1)?"optActive":"")} key={index} onClick={valueArr.find(r1=>r1==h1)?null:()=>{setshowPop(0);setReligion([...valueArr,h1])}}>{h1}</li>
-                        ))}
-                    </ul>
-                ):""}
-            </div>
-        )
-    }
     
     let minAges = [];
     for(let i=20;i<=70;i++) minAges.push(i);
@@ -76,7 +47,7 @@ function SearchBar() {
                 <div className="searchWid">
                     <div>
                         <Link className="jeevansathi-logo" to="/">
-                            <img height="100%" width="100%"  src={yogjodiLogo}/>
+                            <img height="100%" width="100%"  src={yogjodiLogo} alt="logo"/>
                         </Link>
                     </div>
                     <div className="menu-navbar">
@@ -142,19 +113,19 @@ function SearchBar() {
                             <li className="d-flex pt38">
                                 <label>Age</label>
                                 <div className="srchField">
-                                    <i className={showPop==1?"iconArrow iconPostion":showPop==2?"iconArrow iconPostion2":""}></i>
+                                    <i className={showPop===1?"iconArrow iconPostion":showPop===2?"iconArrow iconPostion2":""}></i>
                                     <div className="bordRigt wid50p text-start pl22" onClick={()=>setshowPop(1)}>{minAge} years<i className="dropArrow"></i></div>
                                     <div className="wid50p text-start pl22" onClick={()=>setshowPop(2)}>{maxAge} years <i className="dropArrow"></i></div>
-                                    {showPop==1?(
+                                    {showPop===1?(
                                     <div className="dropBox width380 postionBox">
                                         <ul>
-                                            {minAges.map((m1,index)=>(<li className={"width38 "+(minAge==m1?"optActive":"")} key={index} onClick={()=>{setshowPop(0);setMinAge(m1)}}>{m1}</li>))}
+                                            {minAges.map((m1,index)=>(<li className={"width38 "+(minAge===m1?"optActive":"")} key={index} onClick={()=>{setshowPop(0);setMinAge(m1)}}>{m1}</li>))}
                                         </ul>
                                     </div>
-                                    ):showPop==2?(
+                                    ):showPop===2?(
                                     <div className="dropBox width380 postionBox2">
                                         <ul>
-                                            {minAges.map((m1,index)=>(<li className={"width38 "+(minAge<m1?"":"color11 ")+(maxAge==m1?"optActive ":"")} key={index} onClick={minAge<m1?()=>{setshowPop(0);setmaxAge(m1)}:null}>{m1}</li>))}
+                                            {minAges.map((m1,index)=>(<li className={"width38 "+(minAge<m1?"":"color11 ")+(maxAge===m1?"optActive ":"")} key={index} onClick={minAge<m1?()=>{setshowPop(0);setmaxAge(m1)}:null}>{m1}</li>))}
                                         </ul>
                                     </div>
                                     ):""}
@@ -163,19 +134,19 @@ function SearchBar() {
                             <li className="d-flex pt38">
                                 <label>Height</label>
                                 <div className="srchField">
-                                    <i className={showPop==3?"iconArrow iconPostion":showPop==4?"iconArrow iconPostion2":""}></i>
+                                    <i className={showPop===3?"iconArrow iconPostion":showPop===4?"iconArrow iconPostion2":""}></i>
                                     <div className="bordRigt wid50p text-start pl22" onClick={()=>setshowPop(3)}>{minHeight}<i className="dropArrow"></i></div>
                                     <div className="wid50p text-start pl22" onClick={()=>setshowPop(4)}>{maxHeight}<i className="dropArrow"></i></div>
-                                    {showPop==3?(
+                                    {showPop===3?(
                                     <div className="dropBox width490 postionBox">
                                         <ul>
-                                            {heights.map((h1,index)=>(<li className={"width156 border-0 "+(minHeight==h1?"optActive":"")} key={index} onClick={()=>{setshowPop(0);setminHeight(h1)}}>{h1}</li>))}
+                                            {heights.map((h1,index)=>(<li className={"width156 border-0 "+(minHeight===h1?"optActive":"")} key={index} onClick={()=>{setshowPop(0);setminHeight(h1)}}>{h1}</li>))}
                                         </ul>
                                     </div>
-                                    ):showPop==4?(
+                                    ):showPop===4?(
                                     <div className="dropBox width490 postionBox2">
                                         <ul>
-                                            {heights.map((h1,index)=>(<li className={"width156 border-0 "+(minHeight<h1?"":"color11 ")+(maxHeight==h1?"optActive":"")} key={index} onClick={minHeight<h1?()=>{setshowPop(0);setmaxHeight(h1)}:null}>{h1}</li>))}
+                                            {heights.map((h1,index)=>(<li className={"width156 border-0 "+(minHeight<h1?"":"color11 ")+(maxHeight===h1?"optActive":"")} key={index} onClick={minHeight<h1?()=>{setshowPop(0);setmaxHeight(h1)}:null}>{h1}</li>))}
                                         </ul>
                                     </div>
                                     ):""}
@@ -185,7 +156,7 @@ function SearchBar() {
                                 <div className="d-flex pt38">
                                 <label>Religion</label>
                                 <div className="srchField" onClick={()=>setshowPop(5)}>
-                                    <i className={showPop==5?"iconArrow iconPostion":""}></i>
+                                    <i className={showPop===5?"iconArrow iconPostion":""}></i>
                                     <div className="p13">
                                         {religion[0]?
                                         <ul >
@@ -199,10 +170,10 @@ function SearchBar() {
                                         :<div className="nullValue">Doesn't Matter</div>}
                                     </div>
                                 </div>
-                                {showPop==5?(
+                                {showPop===5?(
                                     <ul className="dropBox2 width490 postionBox3">
                                         {religions.map((h1,index)=>(
-                                            <li className={"width156 text-start border-0 "+(religion.find(r1=>r1==h1)?"optActive":"")} key={index} onClick={religion.find(r1=>r1==h1)?null:()=>{setshowPop(0);setReligion([...religion,h1])}}>{h1}</li>
+                                            <li className={"width156 text-start border-0 "+(religion.find(r1=>r1===h1)?"optActive":"")} key={index} onClick={religion.find(r1=>r1===h1)?null:()=>{setshowPop(0);setReligion([...religion,h1])}}>{h1}</li>
                                         ))}
                                     </ul>
                                 ):""}
@@ -212,7 +183,7 @@ function SearchBar() {
                                 <div className="d-flex pt38">
                                 <label>Mother Tongue</label>
                                 <div className="srchField" onClick={()=>setshowPop(6)}>
-                                    <i className={showPop==6?"iconArrow iconPostion":""}></i>
+                                    <i className={showPop===6?"iconArrow iconPostion":""}></i>
                                     <div className="p13">
                                         {motherTongue[0]?
                                         <ul >
@@ -226,10 +197,10 @@ function SearchBar() {
                                         :<div className="nullValue">Doesn't Matter</div>}
                                     </div>
                                 </div>
-                                {showPop==6?(
+                                {showPop===6?(
                                     <ul className="dropBox2 width490 postionBox3">
                                         {motherTongues.map((h1,index)=>(
-                                            <li className={"width156 text-start border-0 "+(motherTongue.find(r1=>r1==h1)?"optActive":"")} key={index} onClick={motherTongue.find(r1=>r1==h1)?null:()=>{setshowPop(0);setmotherTongue([...motherTongue,h1])}}>{h1}</li>
+                                            <li className={"width156 text-start border-0 "+(motherTongue.find(r1=>r1===h1)?"optActive":"")} key={index} onClick={motherTongue.find(r1=>r1===h1)?null:()=>{setshowPop(0);setmotherTongue([...motherTongue,h1])}}>{h1}</li>
                                         ))}
                                     </ul>
                                 ):""}
@@ -239,7 +210,7 @@ function SearchBar() {
                                 <div className="d-flex pt38">
                                 <label>Country</label>
                                 <div className="srchField" onClick={()=>setshowPop(7)}>
-                                    <i className={showPop==7?"iconArrow iconPostion":""}></i>
+                                    <i className={showPop===7?"iconArrow iconPostion":""}></i>
                                     <div className="p13">
                                         {country[0]?
                                         <ul >
@@ -253,10 +224,10 @@ function SearchBar() {
                                         :<div className="nullValue">Doesn't Matter</div>}
                                     </div>
                                 </div>
-                                {showPop==7?(
+                                {showPop===7?(
                                     <ul className="dropBox2 width490 postionBox3">
                                         {countries.map((h1,index)=>(
-                                            <li className={"width156 text-start border-0 "+(country.find(r1=>r1==h1)?"optActive":"")} key={index} onClick={country.find(r1=>r1==h1)?null:()=>{setshowPop(0);setCountries([...country,h1])}}>{h1}</li>
+                                            <li className={"width156 text-start border-0 "+(country.find(r1=>r1===h1)?"optActive":"")} key={index} onClick={country.find(r1=>r1===h1)?null:()=>{setshowPop(0);setCountries([...country,h1])}}>{h1}</li>
                                         ))}
                                     </ul>
                                 ):""}
@@ -266,7 +237,7 @@ function SearchBar() {
                                 <div className="d-flex pt38">
                                 <label>Residential Status</label>
                                 <div className="srchField" onClick={()=>setshowPop(8)}>
-                                    <i className={showPop==8?"iconArrow iconPostion":""}></i>
+                                    <i className={showPop===8?"iconArrow iconPostion":""}></i>
                                     <div className="p13">
                                         {resiStatus[0]?
                                         <ul >
@@ -280,10 +251,10 @@ function SearchBar() {
                                         :<div className="nullValue">Doesn't Matter</div>}
                                     </div>
                                 </div>
-                                {showPop==8?(
+                                {showPop===8?(
                                     <ul className="dropBox2 width490 postionBox3">
                                         {residStatus.map((h1,index)=>(
-                                            <li className={"width156 text-start border-0 "+(resiStatus.find(r1=>r1==h1)?"optActive":"")} key={index} onClick={resiStatus.find(r1=>r1==h1)?null:()=>{setshowPop(0);setResiStatus([...resiStatus,h1])}}>{h1}</li>
+                                            <li className={"width156 text-start border-0 "+(resiStatus.find(r1=>r1===h1)?"optActive":"")} key={index} onClick={resiStatus.find(r1=>r1===h1)?null:()=>{setshowPop(0);setResiStatus([...resiStatus,h1])}}>{h1}</li>
                                         ))}
                                     </ul>
                                 ):""}
@@ -292,16 +263,16 @@ function SearchBar() {
                             <li className="d-flex pt38 sdsa">
                                 <label>Income</label>
                                 <div className="srchField">
-                                    <i className={showPop==9?"iconArrow iconPostion":showPop==10?"iconArrow iconPostion2":""}></i>
+                                    <i className={showPop===9?"iconArrow iconPostion":showPop===10?"iconArrow iconPostion2":""}></i>
                                     <div className="bordRigt wid50p text-start pl22" onClick={()=>setshowPop(9)}>Rs. 0<i className="dropArrow"></i></div>
                                     <div className="wid50p text-start pl22" onClick={()=>setshowPop(10)}>and above<i className="dropArrow"></i></div>
-                                    {showPop==9?(
+                                    {showPop===9?(
                                     <div className="dropBox width490 postionBox">
                                         <ul>
                                             {heights.map((h1,index)=>(<li className="width156 border-0" key={index} onClick={()=>setshowPop(0)}>{h1}</li>))}
                                         </ul>
                                     </div>
-                                    ):showPop==10?(
+                                    ):showPop===10?(
                                     <div className="dropBox width490 postionBox2">
                                         <ul>
                                             {heights.map((h1,index)=>(<li className="width156 border-0" key={index} onClick={()=>setshowPop(0)}>{h1}</li>))}
@@ -315,7 +286,7 @@ function SearchBar() {
                                 <div className="d-flex pt38">
                                 <label>Marital Status</label>
                                 <div className="srchField" onClick={()=>setshowPop(11)}>
-                                    <i className={showPop==11?"iconArrow iconPostion":""}></i>
+                                    <i className={showPop===11?"iconArrow iconPostion":""}></i>
                                     <div className="p13">
                                         {maritalstatus[0]?
                                         <ul >
@@ -329,10 +300,10 @@ function SearchBar() {
                                         :<div className="nullValue">Doesn't Matter</div>}
                                     </div>
                                 </div>
-                                {showPop==11?(
+                                {showPop===11?(
                                     <ul className="dropBox2 width490 postionBox3">
                                         {mstatus.map((h1,index)=>(
-                                            <li className={"width156 text-start border-0 "+(maritalstatus.find(r1=>r1==h1)?"optActive":"")} key={index} onClick={maritalstatus.find(r1=>r1==h1)?null:()=>{setshowPop(0);setmaritalstatus([...maritalstatus,h1])}}>{h1}</li>
+                                            <li className={"width156 text-start border-0 "+(maritalstatus.find(r1=>r1===h1)?"optActive":"")} key={index} onClick={maritalstatus.find(r1=>r1===h1)?null:()=>{setshowPop(0);setmaritalstatus([...maritalstatus,h1])}}>{h1}</li>
                                         ))}
                                     </ul>
                                 ):""}

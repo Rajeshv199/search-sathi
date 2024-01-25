@@ -1,5 +1,4 @@
-import './style.css'
-import logo from "./.././../asset/logo1.png"
+import './style.css';
 import { Link } from 'react-router-dom';
 import LeftAside from './left_aside';
 import ProfileHeader from './profileHeader';
@@ -7,11 +6,6 @@ import ProfileHeader from './profileHeader';
 
 
 export default function Notification() {
-
-    function goBack() {
-        window.history.back();
-    }
-
 
 
     return <div className='profile-details'>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import logo from './.././../asset/logo1.png';
-import { Link, Prompt,useHistory } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
@@ -43,7 +42,7 @@ export default function Career() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -85,7 +84,7 @@ export default function Career() {
                         <label>Employed In</label>
                         <div className='habitsOpt'>
                             {EmployeeArr.map((h1,index)=>(
-                                <button className={employee==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"employee")} key={index}>{h1}</button>
+                                <button className={employee===h1?"bgcolor":""} onClick={()=>handleSelected(h1,"employee")} key={index}>{h1}</button>
                             ))}
                         </div>
                     </div>
@@ -102,8 +101,8 @@ export default function Career() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBtn("Occupation",occupationArr,"occupation",occupation):null}
-            {ispop==2?multiRadioBtn("Organization",organizationArr,"organization",organization):null}
+            {ispop===1?multiRadioBtn("Occupation",occupationArr,"occupation",occupation):null}
+            {ispop===2?multiRadioBtn("Organization",organizationArr,"organization",organization):null}
         </div>
 
     </div>

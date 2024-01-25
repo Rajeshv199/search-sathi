@@ -1,5 +1,4 @@
 import React,{ useState } from 'react';
-import logo from './.././../asset/logo1.png';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -28,7 +27,7 @@ export default function Religion() {
     }
     function handleDelete(arr,val){
         let religionData1 = {...religionData};
-        let index = arr.findIndex(a1=>a1==val);
+        let index = arr.findIndex(a1=>a1===val);
         if(index>=0) arr.splice(index,1);
         setReligionData(religionData1);
     }
@@ -109,9 +108,9 @@ export default function Religion() {
             </div>
         </div>
         <div>
-            {ispop==1?multiCheckBox("Religion",religionArr,"religion",religion):null}
-            {ispop==2?multiCheckBox("Caste",motherToungArr,"caste",caste):null}
-            {ispop==3?multiCheckBox("Mother Tongue",motherToungArr,"motherTongue",motherTongue):null}
+            {ispop===1?multiCheckBox("Religion",religionArr,"religion",religion):null}
+            {ispop===2?multiCheckBox("Caste",motherToungArr,"caste",caste):null}
+            {ispop===3?multiCheckBox("Mother Tongue",motherToungArr,"motherTongue",motherTongue):null}
         </div>
 
     </div>

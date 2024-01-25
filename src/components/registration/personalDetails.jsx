@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import React, { useState} from "react";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -11,13 +10,13 @@ function UserRegisterMobile(){
     const [errorMsg,setErrorMsg]= useState(false);
    
     function handleData(title,value){
-        if(title=="gender")setTakeData({...takeData,gender:value});
-        if(title=="day")setTakeData({...takeData,day:value});
-        if(title=="month")setTakeData({...takeData,month:value});
-        if(title=="year")setTakeData({...takeData,year:value});
-        if(title=="height")setTakeData({...takeData,height:value});
-        if(title=="country")setTakeData({...takeData,country:value});
-        if(title=="city")setTakeData({...takeData,city:value});
+        if(title==="gender")setTakeData({...takeData,gender:value});
+        if(title==="day")setTakeData({...takeData,day:value});
+        if(title==="month")setTakeData({...takeData,month:value});
+        if(title==="year")setTakeData({...takeData,year:value});
+        if(title==="height")setTakeData({...takeData,height:value});
+        if(title==="country")setTakeData({...takeData,country:value});
+        if(title==="city")setTakeData({...takeData,city:value});
         setErrorMsg(false);
     }
 
@@ -47,7 +46,7 @@ function UserRegisterMobile(){
                 <div className="divSlider">
                     <ul>
                         {arr.map((h1,index)=>
-                            <li className={value==h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
+                            <li className={value===h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
                         )}
                     </ul>
                 </div>
@@ -132,17 +131,17 @@ function UserRegisterMobile(){
                     <div>
                         <div className="dobDiv">
                             <ul className="showDateUl">
-                                {days.map((d1,index)=>(<li className={day==d1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("day",d1)}}>{d1}</li>))}
+                                {days.map((d1,index)=>(<li className={day===d1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("day",d1)}}>{d1}</li>))}
                             </ul>
                         </div>
                         <div className="dobDiv">
                             <ul className="showDateUl">
-                                {months.map((m1,index)=>(<li className={month==m1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("month",m1)}}>{m1}</li>))}
+                                {months.map((m1,index)=>(<li className={month===m1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("month",m1)}}>{m1}</li>))}
                             </ul>
                         </div>
                         <div className="dobDiv">
                             <ul className="showDateUl">
-                                {years.map((y1,index)=>(<li className={year==y1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("year",y1)}}>{y1}</li>))}
+                                {years.map((y1,index)=>(<li className={year===y1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("year",y1)}}>{y1}</li>))}
                             </ul>
                         </div>
                     </div>

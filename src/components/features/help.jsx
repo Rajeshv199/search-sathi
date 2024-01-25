@@ -1,9 +1,6 @@
 import { useState } from "react";
 import Footer from "../footer/footer"
-import background from './.././../asset/header-inner1.jpg';
-import logo from "./.././../asset/logo1.png"
 import { Link } from "react-router-dom"
-import userVector from './../../asset/user-vector.png';
 import yogjodiLogo from "../image/YogJodiLogo.png";
 import BrowseContent from "../header/browseContent";
 
@@ -17,7 +14,7 @@ export default function Help() {
             <div className="searchWid">
                 <div>
                     <Link className="jeevansathi-logo" to="/">
-                        <img height="100%" width="100%"  src={yogjodiLogo}/>
+                        <img height="100%" width="100%" alt="logo"  src={yogjodiLogo}/>
                     </Link>
                 </div>
                 <div className="menu-navbar">

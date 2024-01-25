@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import logo from './.././../asset/logo1.png'
-import { Link, Prompt } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './style.css';
 
 import ProfileHeader from './profileHeader';
@@ -12,11 +11,7 @@ export default function MyMatches() {
     const[interest,setInterest] = useState(false);
     const[msgInput,setMsgInput] = useState(false);
     const[shotList,setShotList] = useState(false);
-    // function goBack() {
-    //     window.history.back()
-    // }
-
-
+   
     return (
     <div className='profile-details'>
         <ProfileHeader/>
@@ -36,7 +31,7 @@ export default function MyMatches() {
                 <div className='matchDetails'>
                    <div className="custom-Card">
                         <div className='cover-object'>
-                            <img   src='https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'/>
+                            <img src='https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt=""/>
                         </div>
                         <div className='d-block w-100'>
                             <Link >

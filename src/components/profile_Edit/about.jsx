@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import logo from './.././../asset/logo1.png';
-import { Link, Prompt,useHistory } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';

@@ -1,11 +1,10 @@
 import React, {useState,useEffect} from "react";
-import {Switch, Route, Redirect,useHistory,useLocation } from "react-router-dom";
+import {useLocation } from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../footer/regi_footer";
 import YogJodiLogo from "../image/YogJodiLogo.png"; 
     
 function ProfileDetails(){
-    const history =  useHistory();
 
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
@@ -47,18 +46,19 @@ function ProfileDetails(){
         setTakeData(takeData1);
     }
 
-    useEffect(()=>{ checkForData(); },0);
-
-    function checkForData(){
-        if(state){
-            setError(true);setlabel1(true);setlabel2(true);
-            setlabel3(true);setlabel4(true);setlabel5(true);
-            let data = {...takeData};
-            data=state.takeData;
-            setTakeData(data);
+    useEffect(()=>{
+        function checkForData(){
+            if(state){
+                setError(true);setlabel1(true);setlabel2(true);
+                setlabel3(true);setlabel4(true);setlabel5(true);
+                setlabel7(true);
+                let data = {...takeData};
+                data=state.takeData;
+                setTakeData(data);
+            }
         }
-        
-    }
+        checkForData(); 
+    },[state,takeData]);
 
     function handleSubmit(){
         setError(true);setlabel1(true);setlabel2(true);
@@ -69,11 +69,11 @@ function ProfileDetails(){
         let keys = Object.keys(data);
         let count = keys.reduce((acc,curr)=>(data[curr]?acc+1:acc),0);
         // const {password,confirmPassword} = takeData;
-        if(keys.length==count&&(takeData.password==takeData.confirmPassword)){
+        if(keys.length===count&&(takeData.password===takeData.confirmPassword)){
             setVerifyMob(true);
             // history.push({pathname:"/profile",state:{takeData}});
         }else{
-            if(takeData.password!=takeData.confirmPassword) alert("Password do not match");
+            if(takeData.password!==takeData.confirmPassword) alert("Password do not match");
         }
            
         
@@ -91,8 +91,7 @@ function ProfileDetails(){
                 <div className="profile-container">
                     <div className="proheader">
                         <div className="pro-jeevanLogo">
-                            {/* <Link to="/" className="ml-2"><img src="https://www.jeevansathi.com/images/jspc/commonimg/logo1.png" /></Link> */}
-                            <Link to="/" className=""><img  src={YogJodiLogo} /></Link>
+                            <Link to="/" className=""><img  src={YogJodiLogo} alt=""/></Link>
                         </div>
                         <div className="liveChat-Help">
                             <span>LIVE CHAT</span>
@@ -163,9 +162,9 @@ function ProfileDetails(){
                         <div className="contactPrivacy ">
                             <div className="privcysetting">Contact Privacy Settings</div>
                             <div className="mt-3">
-                                <span className={pvacyMode==1?"chipLight":""} onClick={()=>setPvacyMode(1)}>Show to all</span>
-                                <span className={pvacyMode==2?"chipLight":""} onClick={()=>setPvacyMode(2)}>Hide to all</span>
-                                <span className={pvacyMode==3?"chipLight":""} onClick={()=>setPvacyMode(3)}>Show to members I express interest in</span>
+                                <span className={pvacyMode===1?"chipLight":""} onClick={()=>setPvacyMode(1)}>Show to all</span>
+                                <span className={pvacyMode===2?"chipLight":""} onClick={()=>setPvacyMode(2)}>Hide to all</span>
+                                <span className={pvacyMode===3?"chipLight":""} onClick={()=>setPvacyMode(3)}>Show to members I express interest in</span>
                             </div>
                            
                         </div>
@@ -197,7 +196,7 @@ function ProfileDetails(){
                                 <div>
                                     <ul className="profileFor">
                                         {profileFor.map((p1,index)=>
-                                            <li className={title==p1?"optActive":""} key={index} onClick={()=>handleProfile(p1)}>{p1}</li>
+                                            <li className={title===p1?"optActive":""} key={index} onClick={()=>handleProfile(p1)}>{p1}</li>
                                         )}
                                         
                                     </ul>
@@ -206,7 +205,7 @@ function ProfileDetails(){
                                 :""}
                             </div>
                         </div>
-                        {title=="Self"?
+                        {title==="Self"?
                         <div className="regi-detail">
                         <div className="arletVlid">{error&&!gender?"Please provide a gender.":""}</div>
                             <div className={"regi-secle "+(!error||gender?"mt20":"")} onClick={() =>{setlabel5(true);}}>
@@ -215,8 +214,8 @@ function ProfileDetails(){
                                 <React.Fragment>
                                 <div>
                                     <ul className="genderFor">
-                                        <li className={gender=="male"?"optActive":""} onClick={()=>handleGender("male")}>Male</li>
-                                        <li className={gender=="female"?"optActive":""} onClick={()=>handleGender("female")}>Female</li>
+                                        <li className={gender==="male"?"optActive":""} onClick={()=>handleGender("male")}>Male</li>
+                                        <li className={gender==="female"?"optActive":""} onClick={()=>handleGender("female")}>Female</li>
                                     </ul>
                                 </div>
                                 </React.Fragment>

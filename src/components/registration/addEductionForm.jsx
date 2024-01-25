@@ -1,12 +1,9 @@
 import React, {useState} from "react";
-import {Switch, Route, Redirect,useHistory } from "react-router-dom";
-import {Link} from "react-router-dom";
 
 function AddEduction(){
 
     const[showPop,setShowPop] = useState(-1);
     const[eduction,setEduction] = useState("");
-    const[university,setUniversity] = useState("");
     const[country,setCountry] = useState("");
     const[state,setState] = useState("");
 
@@ -20,8 +17,8 @@ function AddEduction(){
             <div className="fw-bold text-center">Add Education</div>
             <div className="eductForm mt-3">
                 <label className="">Education</label> 
-                <input type="text" placeholder={showPop==1?"Select Eduction":null} readOnly value={eduction} onClick={() =>setShowPop(1)}/> 
-                {showPop==1?
+                <input type="text" placeholder={showPop===1?"Select Eduction":null} readOnly value={eduction} onClick={() =>setShowPop(1)}/> 
+                {showPop===1?
                 <React.Fragment>
                 <i className={"imgArrow eductIcon"}></i>  
                 <div className="edutionDrop">
@@ -39,8 +36,8 @@ function AddEduction(){
             </div>
             <div className="eductForm mt-3">
                 <label className="">Country</label> 
-                <input type="text" placeholder={showPop==2?"Select Country":null} readOnly value={country} onClick={() =>setShowPop(2)}/>    
-                {showPop==2?
+                <input type="text" placeholder={showPop===2?"Select Country":null} readOnly value={country} onClick={() =>setShowPop(2)}/>    
+                {showPop===2?
                 <React.Fragment>
                 <i className={"imgArrow eductIcon"}></i>  
                 <div className="edutionDrop">
@@ -53,8 +50,8 @@ function AddEduction(){
             </div>
             <div className="eductForm mt-3">
                 <label className="">State</label> 
-                <input type="text" placeholder={showPop==3?"Select State":null} readOnly value={state} onClick={() =>setShowPop(3)}/>
-                {showPop==3?
+                <input type="text" placeholder={showPop===3?"Select State":null} readOnly value={state} onClick={() =>setShowPop(3)}/>
+                {showPop===3?
                 <React.Fragment>
                 <i className={"imgArrow eductIcon"}></i>  
                 <div className="edutionDrop">

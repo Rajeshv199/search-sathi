@@ -6,12 +6,6 @@ import ProfileHeader from '../profile_layout/profileHeader';
 
 export default function PhoneBook() {
 
-    function goBack() {
-        window.history.back();
-    }
-
-
-
     return <div className='profile-details'>
 
         <ProfileHeader/>

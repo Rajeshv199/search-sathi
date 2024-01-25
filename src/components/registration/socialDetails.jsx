@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import React, { useState} from "react";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -12,10 +11,10 @@ function SocialDetails(){
     const [errorMsg,setErrorMsg]= useState(false);
    
     function handleData(title,value){
-        if(title=="maritStatus")setTakeData({...takeData,maritStatus:value});
-        if(title=="motherTongue")setTakeData({...takeData,motherTongue:value});
-        if(title=="religCaste")setTakeData({...takeData,religCaste:value});
-        if(title=="horoscopeMatch")setTakeData({...takeData,horoscopeMatch:value});
+        if(title==="maritStatus")setTakeData({...takeData,maritStatus:value});
+        if(title==="motherTongue")setTakeData({...takeData,motherTongue:value});
+        if(title==="religCaste")setTakeData({...takeData,religCaste:value});
+        if(title==="horoscopeMatch")setTakeData({...takeData,horoscopeMatch:value});
         setErrorMsg(false);
     }
 
@@ -45,7 +44,7 @@ function SocialDetails(){
                 <div className="divSlider">
                     <ul>
                         {arr.map((h1,index)=>
-                            <li className={value==h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
+                            <li className={value===h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
                         )}
                     </ul>
                 </div>

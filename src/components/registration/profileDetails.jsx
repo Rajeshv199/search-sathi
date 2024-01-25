@@ -1,5 +1,5 @@
-import React, {useState,useEffect,useRef} from "react";
-import {Switch, Route, Redirect,useHistory,useLocation} from "react-router-dom";
+import React, {useState} from "react";
+import {useLocation} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../footer/regi_footer";
 import WhyRegister from "./whyRegister";
@@ -11,7 +11,6 @@ import Partner from "../register_Form/partner_Form";
  
     
 function ProfileDetails(){
-    const history =  useHistory();
     // window.scrollTo(0,0);
 
     const[profile,setProfile] = useState(true);
@@ -25,10 +24,10 @@ function ProfileDetails(){
     const [showPop,setShowPop] = useState(false);
 
     function handleOption(value){
-        if(value=="profile"){setProfile(true);setCareer(false);setLifeStyle(false);setPartner(false)};
-        if(value=="career"){setProfile(false);setCareer(true);setLifeStyle(false);setPartner(false)};
-        if(value=="lifeSyle"){setProfile(false);setCareer(false);setLifeStyle(true);setPartner(false)};
-        if(value=="partner"){setProfile(false);setCareer(false);setLifeStyle(false);setPartner(true)};
+        if(value==="profile"){setProfile(true);setCareer(false);setLifeStyle(false);setPartner(false)};
+        if(value==="career"){setProfile(false);setCareer(true);setLifeStyle(false);setPartner(false)};
+        if(value==="lifeSyle"){setProfile(false);setCareer(false);setLifeStyle(true);setPartner(false)};
+        if(value==="partner"){setProfile(false);setCareer(false);setLifeStyle(false);setPartner(true)};
         setTitleShow(false);
     }
    
@@ -42,29 +41,29 @@ function ProfileDetails(){
         window.scrollTo({ top: 2820, behavior: 'smooth' });
     }
     function handleShowMore(value){
-        if(value=="career"){
+        if(value==="career"){
             setProfile(true);setCareer(true);
             setTimeout(scrollCareer, 0);
         };
-        if(value=="lifeSyle"){
+        if(value==="lifeSyle"){
             setProfile(true);setLifeStyle(true);
             setTimeout(scrollLife, 0);
         };
-        if(value=="partner"){
+        if(value==="partner"){
             setProfile(true);setCareer(true);
             setPartner(true);
             setTimeout(scrollPartner, 0);
         };
 
-        if(value=="careerHide"){
+        if(value==="careerHide"){
             setCareer(false);setLifeStyle(false);setPartner(false);
             window.scrollTo({ top: 0, behavior: 'smooth'});
         }
-        if(value=="lifeSyleHide"){
+        if(value==="lifeSyleHide"){
             setLifeStyle(false);setPartner(false);
             window.scrollTo({ top: 990, behavior: 'smooth'});
         }
-        if(value=="partnerHide"){
+        if(value==="partnerHide"){
             setPartner(false);
             window.scrollTo({ top: 1860, behavior: 'smooth'});
         }
@@ -86,7 +85,7 @@ function ProfileDetails(){
                 <div className="profile-container">
                     <div className="proheader">
                         <div className="pro-jeevanLogo">
-                            <Link to="/" className="ml-2"><img src={YogJodiLogo} /></Link>
+                            <Link to="/" className="ml-2"><img src={YogJodiLogo} alt=""/></Link>
                         </div>
                         <div className="liveChat-Help">
                             <span>LIVE CHAT</span>

@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
-import {Link} from "react-router-dom";
 
 class Membership extends Component{
     state={

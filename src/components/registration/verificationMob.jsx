@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -87,9 +86,9 @@ import { motion } from "framer-motion";
                     <div className="selectWid2">
                         <div className="dateofbrth">Contact Privacy Settings</div>
                         <div className="chipContainer">
-                            <div className={ShowInterest==1?"highlightChip":""} onClick={()=>handleInterest(1)}>Show to all</div>
-                            <div className={ShowInterest==2?"highlightChip":""} onClick={()=>handleInterest(2)}>Hide from all</div>
-                            <div className={ShowInterest==3?"highlightChip":""} onClick={()=>handleInterest(3)}>Show to members I express interest in</div>
+                            <div className={ShowInterest===1?"highlightChip":""} onClick={()=>handleInterest(1)}>Show to all</div>
+                            <div className={ShowInterest===2?"highlightChip":""} onClick={()=>handleInterest(2)}>Hide from all</div>
+                            <div className={ShowInterest===3?"highlightChip":""} onClick={()=>handleInterest(3)}>Show to members I express interest in</div>
                         </div>
                         
                     </div>

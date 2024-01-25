@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -13,10 +12,10 @@ function CareerDatailsMob(){
 
    
     function handleData(title,value){
-        if(title=="qualify")setTakeData({...takeData,qualify:value});
-        if(title=="employee")setTakeData({...takeData,employee:value});
-        if(title=="occupation")setTakeData({...takeData,occupation:value});
-        if(title=="annIncome")setTakeData({...takeData,annIncome:value});
+        if(title==="qualify")setTakeData({...takeData,qualify:value});
+        if(title==="employee")setTakeData({...takeData,employee:value});
+        if(title==="occupation")setTakeData({...takeData,occupation:value});
+        if(title==="annIncome")setTakeData({...takeData,annIncome:value});
         setErrorMsg(false);
     }
 
@@ -46,7 +45,7 @@ function CareerDatailsMob(){
                 <div className="divSlider">
                     <ul>
                         {arr.map((h1,index)=>
-                            <li className={value==h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
+                            <li className={value===h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
                         )}
                     </ul>
                 </div>

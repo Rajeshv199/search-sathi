@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import logo from './.././../asset/logo1.png';
-import {Link,Switch, Route, Redirect,useHistory } from "react-router-dom";
+import {Link,useHistory } from "react-router-dom";
 
 import ProfileHeader from '../profile_layout/profileHeader';
 import Leftaside from '../profile_layout/left_aside';
@@ -33,7 +32,7 @@ export default function Basic() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -92,7 +91,7 @@ export default function Basic() {
                         <label>Marital Status</label>
                         <div className='habitsOpt'>
                             {maritalStatusArr.map((h1,index)=>(
-                                <button className={maritalStatus==h1?"bgcolor":""} onClick={()=>handleSelected(h1,"maritalStatus")} key={index}>{h1}</button>
+                                <button className={maritalStatus===h1?"bgcolor":""} onClick={()=>handleSelected(h1,"maritalStatus")} key={index}>{h1}</button>
                             ))}
                         </div>
                     </div>
@@ -125,11 +124,11 @@ export default function Basic() {
         </div>
         <div>
             
-            {ispop==2?multiRadioBtn("Height",heightArr,"height",height):null}
-            {ispop==3?multiRadioBtn("Religion",religionArr,"religion",religion):null}
-            {ispop==4?multiRadioBtn("Caste",religionArr,"caste",caste):null}
-            {ispop==5?multiRadioBtn("Mother Tongue",motherTongueArr,"motherTongue",motherTongue):null}
-            {ispop==6?multiRadioBtn("Anuual Income",anualIncomeArr,"anualIncome",anualIncome):null}
+            {ispop===2?multiRadioBtn("Height",heightArr,"height",height):null}
+            {ispop===3?multiRadioBtn("Religion",religionArr,"religion",religion):null}
+            {ispop===4?multiRadioBtn("Caste",religionArr,"caste",caste):null}
+            {ispop===5?multiRadioBtn("Mother Tongue",motherTongueArr,"motherTongue",motherTongue):null}
+            {ispop===6?multiRadioBtn("Anuual Income",anualIncomeArr,"anualIncome",anualIncome):null}
         </div>
 
         

@@ -1,10 +1,7 @@
 import React, {useState} from "react";
-import {Switch, Route, Redirect,useHistory } from "react-router-dom";
-import {Link} from "react-router-dom";
 
 
 function FamilyDetails(props){
-    const history =  useHistory();
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
     const [label3, setlabel3] = useState(false);
@@ -48,14 +45,14 @@ function FamilyDetails(props){
                         <div className="regi-detail">
                             <div className="regi-secle " onClick={() =>{setlabel1(true)}}>
                                 <label className={"reg-label top8 " +(label1?"reg-label6":"")} >Father's Name</label>
-                                <input type="text" placeholder={label1?"Enter Father's Name":""} onChange={(e)=>setFatherName(e.currentTarget.value)}/>
+                                <input type="text" value={fatherName} placeholder={label1?"Enter Father's Name":""} onChange={(e)=>setFatherName(e.currentTarget.value)}/>
                                 
                             </div>
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt-4" onClick={() =>{setlabel2(true)}}>
                                 <label className={"reg-label top8 " +(label2?"reg-mother":"")} >Mother's Name</label>
-                                <input type="text" placeholder={label2?"Enter Mother's Name":""} onChange={(e)=>setMotherName(e.currentTarget.value)}/>
+                                <input type="text" value={motherName} placeholder={label2?"Enter Mother's Name":""} onChange={(e)=>setMotherName(e.currentTarget.value)}/>
                                 
                             </div>
                         </div>
@@ -65,11 +62,11 @@ function FamilyDetails(props){
                                 {label3?
                                 <div>
                                     <ul className="brotherList">
-                                        <li className={"border-0 " +(brotherNo==0?"optActive":"")} onClick={()=>{setBrotherNo(0)}}>None</li>
-                                        <li className={brotherNo==1?"optActive":""}  onClick={()=>{setBrotherNo(1)}}>1</li>
-                                        <li className={brotherNo==2?"optActive":""}  onClick={()=>{setBrotherNo(2)}}>2</li>
-                                        <li className={brotherNo==3?"optActive":""}  onClick={()=>{setBrotherNo(3)}}>3</li>
-                                        <li className={brotherNo==4?"optActive":""}  onClick={()=>{setBrotherNo(4)}}>3+</li>
+                                        <li className={"border-0 " +(brotherNo===0?"optActive":"")} onClick={()=>{setBrotherNo(0)}}>None</li>
+                                        <li className={brotherNo===1?"optActive":""}  onClick={()=>{setBrotherNo(1)}}>1</li>
+                                        <li className={brotherNo===2?"optActive":""}  onClick={()=>{setBrotherNo(2)}}>2</li>
+                                        <li className={brotherNo===3?"optActive":""}  onClick={()=>{setBrotherNo(3)}}>3</li>
+                                        <li className={brotherNo===4?"optActive":""}  onClick={()=>{setBrotherNo(4)}}>3+</li>
                                     </ul>
                                 </div>
                                 :""}
@@ -81,11 +78,11 @@ function FamilyDetails(props){
                                 {label4?
                                 <div>
                                     <ul className="brotherList">
-                                        <li className={"border-0 " +(sisterNo==0?"optActive":"")} onClick={()=>{setSisterNo(0)}}>None</li>
-                                        <li className={sisterNo==1?"optActive":""}  onClick={()=>{setSisterNo(1)}}>1</li>
-                                        <li className={sisterNo==2?"optActive":""}  onClick={()=>{setSisterNo(2)}}>2</li>
-                                        <li className={sisterNo==3?"optActive":""}  onClick={()=>{setSisterNo(3)}}>3</li>
-                                        <li className={sisterNo==4?"optActive":""}  onClick={()=>{setSisterNo(4)}}>3+</li>
+                                        <li className={"border-0 " +(sisterNo===0?"optActive":"")} onClick={()=>{setSisterNo(0)}}>None</li>
+                                        <li className={sisterNo===1?"optActive":""}  onClick={()=>{setSisterNo(1)}}>1</li>
+                                        <li className={sisterNo===2?"optActive":""}  onClick={()=>{setSisterNo(2)}}>2</li>
+                                        <li className={sisterNo===3?"optActive":""}  onClick={()=>{setSisterNo(3)}}>3</li>
+                                        <li className={sisterNo===4?"optActive":""}  onClick={()=>{setSisterNo(4)}}>3+</li>
                                     </ul>
                                 </div>
                                 :""}
@@ -95,7 +92,7 @@ function FamilyDetails(props){
                             <div className="regi-secle mt-4" >
                                 <label className={"reg-label top8 " +(label5?"reg-FtherOcption":"")} onClick={() =>{setlabel5(true);setShowPop(1)}}>Father's Occupation</label>
                                 <input type="text" placeholder="" readOnly value={fatherOcp} onClick={() =>{setlabel5(true);setShowPop(1)}}/>
-                                {label5 && showPop==1?
+                                {label5 && showPop===1?
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
@@ -110,7 +107,7 @@ function FamilyDetails(props){
                             <div className="regi-secle mt-4" >
                                 <label className={"reg-label top8 " +(label6?"reg-mtherOcption":"")} onClick={() =>{setlabel6(true);setShowPop(2)}}>Mother's Occupation</label>
                                 <input type="text" placeholder="" readOnly value={matherOcp} onClick={() =>{setlabel6(true);setShowPop(2)}}/>
-                                {label6 && showPop==2?
+                                {label6 && showPop===2?
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
@@ -126,10 +123,10 @@ function FamilyDetails(props){
                                 {label7?
                                 <div>
                                     <ul className="familyType">
-                                        <li className={"border-0 " +(famlyTye=="none"?"optActive":"")} onClick={()=>{setFamlyTye("none")}}>Select</li>
-                                        <li className={famlyTye=="Joint Family"?"optActive":""}  onClick={()=>{setFamlyTye("Joint Family")}}>Joint Family</li>
-                                        <li className={famlyTye=="Nuclear Family"?"optActive":""}  onClick={()=>{setFamlyTye("Nuclear Family")}}>Nuclear Family</li>
-                                        <li className={famlyTye=="Others"?"optActive":""}  onClick={()=>{setFamlyTye("Others")}}>Others</li>
+                                        <li className={"border-0 " +(famlyTye==="none"?"optActive":"")} onClick={()=>{setFamlyTye("none")}}>Select</li>
+                                        <li className={famlyTye==="Joint Family"?"optActive":""}  onClick={()=>{setFamlyTye("Joint Family")}}>Joint Family</li>
+                                        <li className={famlyTye==="Nuclear Family"?"optActive":""}  onClick={()=>{setFamlyTye("Nuclear Family")}}>Nuclear Family</li>
+                                        <li className={famlyTye==="Others"?"optActive":""}  onClick={()=>{setFamlyTye("Others")}}>Others</li>
                                     </ul>
                                 </div>
                                 :""}
@@ -140,7 +137,7 @@ function FamilyDetails(props){
                             <div className="regi-secle mt-4" >
                                 <label className={"reg-label top8 " +(label8?"reg-famlyLing":"")} onClick={() =>{setlabel8(true);setShowPop(4)}}>Family living in</label> 
                                 <input type="text" placeholder="" readOnly value={famlyLiving} onClick={() =>{setlabel8(true);setShowPop(4)}}/>
-                                {label8 && showPop==4 ?
+                                {label8 && showPop===4 ?
                                 <div className="gridDropdown">
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul> 

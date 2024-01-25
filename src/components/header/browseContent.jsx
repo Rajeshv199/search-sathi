@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
 
 class BrowseContent extends Component{
@@ -15,47 +14,47 @@ class BrowseContent extends Component{
     }
 
     render(){
-        const {motherTongue,castes,religion,cities,occupation,states,NRI,colleges} = this.state;
+        const {motherTongue,castes,religion,cities,occupation,states,NRI} = this.state;
         const {showList} = this.props;
         return(
             <React.Fragment >
-                {showList==1?(
+                {showList===1?(
                     <div className="row ">
                         {motherTongue.map((m1,index)=>(
                             <div className="col-4 list-element" key={index}><Link to={m1.link}>{m1.name}</Link></div>
                         ))}
                     </div>
-                ):showList==2?(
+                ):showList===2?(
                     <div className="row ">
                     {castes.map((c1,index)=>(
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>
                     ))}
                     </div>
-                ):showList==3?(
+                ):showList===3?(
                     <div className="row ">
                     {religion.map((c1,index)=>(
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>
                     ))}
                     </div>
-                ):showList==4?(
+                ):showList===4?(
                     <div className="row ">
                     {cities.map((c1,index)=>(
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>
                     ))}
                     </div>
-                ):showList==5?(
+                ):showList===5?(
                     <div className="row ">
                     {occupation.map((c1,index)=>(
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>
                     ))}
                     </div>
-                ):showList==6?(
+                ):showList===6?(
                     <div className="row ">
                     {states.map((c1,index)=>(
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>
                     ))}
                     </div>
-                ):showList==7?(
+                ):showList===7?(
                     <div className="row ">
                     {NRI.map((c1,index)=>(
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>

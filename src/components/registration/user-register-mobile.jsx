@@ -1,7 +1,5 @@
-import React, {useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import React from "react";
 import {Link} from "react-router-dom";
-import Footer from "../footer/regi_footer"
 
 
 function UserRegisterMobile(){
@@ -11,7 +9,7 @@ function UserRegisterMobile(){
             <div className="bgImageMb">
                 <header className="header-container">
                     <Link className="regi-logo" to="/">
-                        <img height="100%" width="100%"  src="https://static.jeevansathi.com/js_static/_next/static/images/js_new_icon-238c9556ce308e2eb9036123ecb3c126.svg"/>
+                        <img height="100%" width="100%"  src="https://static.jeevansathi.com/js_static/_next/static/images/js_new_icon-238c9556ce308e2eb9036123ecb3c126.svg" alt=""/>
                     </Link>
                     <Link to="/login"><div className="regi-loginBtn">Login</div></Link>
                             

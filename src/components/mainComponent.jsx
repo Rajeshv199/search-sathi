@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
-import {Link} from "react-router-dom";
 import  "./styles/style.css";
 import  "./styles/styleMobile.css";
 import Index from "./index";
 import User_registration from "./../components/registration/user_registrations";
-import LandingPage from "./landing_page/landing-page";
+// import LandingPage from "./landing_page/landing-page";
 import MyMatches from "./profile_layout/myMatches";
 import Activity from "./profile_layout/activity";
 import Settings from "./features/settings";
@@ -19,7 +18,7 @@ import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import Notification from "./profile_layout/Notification";
 import SearchBar from "./header/searchBar";
-import SuccessStories from "./features/success_stories";
+// import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
 import PartnerEdit from "./profile_layout/pertner_edit";
 import Chat from "./profile_layout/chat";
@@ -39,7 +38,6 @@ import Search from "./profile_layout/search";
 import Block_Ignore from "./features/block_ignore";
 import PhoneBook from "./features/phoneBook";
 
-import Temprorary from "./temprorary";
 
 
 
@@ -56,7 +54,7 @@ class MainComponent extends Component{
   
     
     render(){
-        const {isPopSign,erorr} = this.state;
+        
         return(
             
 
@@ -65,7 +63,6 @@ class MainComponent extends Component{
                 
                     
 
-                    <Route path="/test" component={Temprorary}/>
 
                     <Route path="/search" component={SearchBar}/>
 
@@ -87,7 +84,7 @@ class MainComponent extends Component{
                     <Route path="/phone-book" component={PhoneBook} />
                     <Route path="/activity/blocked" component={Block_Ignore} />
                     <Route path="/notification" component={Notification} />
-                    <Route path="/landing" component={LandingPage} />
+                    {/* <Route path="/landing" component={LandingPage} /> */}
 
 
                     <Route path="/partner/about" component={About_Partner} />
@@ -113,9 +110,10 @@ class MainComponent extends Component{
 
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/> 
-                    <Route path="/success/story" component={SuccessStories} />
+                    {/* <Route path="/success/story" component={SuccessStories} /> */}
 
-                    <Route path="/login" render={(props)=><User_Login {...props} onSubmit={this.handlePopView} />}/>
+                    <Route path="/login" component={User_Login}/>
+                    {/* <Route path="/login"  render={(props)=><User_Login {...props} />}/> */}
 
                     {/* <Route path="/login" component={User_Login}/> */}
                     <Route path="/home" component={Index}/>

@@ -1,8 +1,5 @@
 import React, {useState} from "react";
-import {Switch, Route, Redirect,useHistory } from "react-router-dom";
-import {Link} from "react-router-dom";
-import Footer from "../footer/regi_footer";
-import Select from 'react-select';
+import {useHistory } from "react-router-dom";
 
 
 function PartnerForm(){
@@ -110,25 +107,25 @@ function PartnerForm(){
                                     <li onClick={() =>setShowPop(1)}>
                                         <div >
                                             <span>{minAge?minAge +" years":"min age"}</span>
-                                            <i className={showPop==1?"iconArrow iconPostion":""}></i>
+                                            <i className={showPop===1?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
                                     <li onClick={() =>setShowPop(2)}>
                                         <div >
                                             <span>{maxAge?maxAge+" years":"max age"}</span> 
-                                            <i className={showPop==2?"iconArrow iconPostion":""}></i>
+                                            <i className={showPop===2?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
                                     
                                 </ul>:null}
-                                <div className={showPop==1?"dropBox width380 postionBox":"daysBox2"}>
+                                <div className={showPop===1?"dropBox width380 postionBox":"daysBox2"}>
                                     <ul>
-                                        {ageArr.map((d1,index)=><li className={"width38 "+(minAge==d1?"box1":"")} onClick={() =>{setShowPop(-1);setMinAge(d1);d1>maxAge?setMaxAge(d1):setMaxAge(maxAge)}} key={index}>{d1}</li>)}
+                                        {ageArr.map((d1,index)=><li className={"width38 "+(minAge===d1?"box1":"")} onClick={() =>{setShowPop(-1);setMinAge(d1);d1>maxAge?setMaxAge(d1):setMaxAge(maxAge)}} key={index}>{d1}</li>)}
                                     </ul>
                                 </div>
-                                <div className={showPop==2?"dropBox width380 postionBox2":"monthsBox2"}>
+                                <div className={showPop===2?"dropBox width380 postionBox2":"monthsBox2"}>
                                     <ul>
-                                        {ageArr.map((m1,index)=><li className={"width38 "+(minAge<m1?"":"color11 ")+(maxAge==m1?"optActive ":"")} onClick={minAge<m1?() =>{setShowPop(-1);setMaxAge(m1)}:null} key={index}>{m1}</li>)}
+                                        {ageArr.map((m1,index)=><li className={"width38 "+(minAge<m1?"":"color11 ")+(maxAge===m1?"optActive ":"")} onClick={minAge<m1?() =>{setShowPop(-1);setMaxAge(m1)}:null} key={index}>{m1}</li>)}
                                     </ul>
                                 </div>
                             </div>
@@ -141,25 +138,25 @@ function PartnerForm(){
                                     <li onClick={() =>setShowPop(3)}>
                                         <div >
                                             <span>{minHeight?minHeight:"min height"}</span>
-                                            <i className={showPop==3?"iconArrow iconPostion":""}></i>
+                                            <i className={showPop===3?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
                                     <li onClick={() =>setShowPop(4)}>
                                         <div >
                                             <span>{maxHeight?maxHeight:"max height"}</span> 
-                                            <i className={showPop==4?"iconArrow iconPostion":""}></i>
+                                            <i className={showPop===4?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
                                     
                                 </ul>:null}
-                                <div className={showPop==3?"dropBox width380 postionBox":"daysBox2"}>
+                                <div className={showPop===3?"dropBox width380 postionBox":"daysBox2"}>
                                     <ul>
-                                        {heights.map((d1,index)=><li className={"width156 border-0  "+(minHeight==d1?"box1":"")} onClick={() =>{setShowPop(-1);setMinHeight(d1);d1>maxHeight?setMaxHeight(d1):setMaxHeight(maxHeight)}} key={index}>{d1}</li>)}
+                                        {heights.map((d1,index)=><li className={"width156 border-0  "+(minHeight===d1?"box1":"")} onClick={() =>{setShowPop(-1);setMinHeight(d1);d1>maxHeight?setMaxHeight(d1):setMaxHeight(maxHeight)}} key={index}>{d1}</li>)}
                                     </ul>
                                 </div>
-                                <div className={showPop==4?"dropBox width380 postionBox2":"monthsBox2"}>
+                                <div className={showPop===4?"dropBox width380 postionBox2":"monthsBox2"}>
                                     <ul>
-                                        {heights.map((m1,index)=><li className={"width156 border-0 "+(minHeight<m1?"":"color11 ")+(maxHeight==m1?"optActive ":"")} onClick={minHeight<m1?() =>{setShowPop(-1);setMaxHeight(m1)}:null} key={index}>{m1}</li>)}
+                                        {heights.map((m1,index)=><li className={"width156 border-0 "+(minHeight<m1?"":"color11 ")+(maxHeight===m1?"optActive ":"")} onClick={minHeight<m1?() =>{setShowPop(-1);setMaxHeight(m1)}:null} key={index}>{m1}</li>)}
                                     </ul>
                                 </div>
                             </div>
@@ -172,7 +169,7 @@ function PartnerForm(){
                                 ))}
                             </div>
                                 {/* <Select isMulti={true} value={minAge} onChange={setMinAge}  options={aaAw}/> */}
-                            {label3 && showPop==5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
+                            {label3 && showPop===5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
                             </div>
                         </div>
                         <div className="regi-detail">
@@ -182,7 +179,7 @@ function PartnerForm(){
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(country,m1)}></i> </div>
                                 ))}
                                 </div>
-                                {label4 && showPop==6?  multiCheckbox(countries,"country",country):null}
+                                {label4 && showPop===6?  multiCheckbox(countries,"country",country):null}
                             </div>
                         </div>
                         {country&&
@@ -193,7 +190,7 @@ function PartnerForm(){
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(state,m1)}></i></div>
                                 ))}
                                 </div>
-                                {label5 && showPop==7?  multiCheckbox(countries,"state",state):null}
+                                {label5 && showPop===7?  multiCheckbox(countries,"state",state):null}
                             </div>
                         </div>
                         }
@@ -204,7 +201,7 @@ function PartnerForm(){
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(motherToung,m1)}></i></div>
                                 ))}
                                 </div>
-                                {label6 && showPop==8?  multiCheckbox(motherToungs,"motherToung",motherToung):null}
+                                {label6 && showPop===8?  multiCheckbox(motherToungs,"motherToung",motherToung):null}
                             </div>
                         </div>
                         <div className="regi-detail">
@@ -214,7 +211,7 @@ function PartnerForm(){
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(skill,m1)}></i></div>
                                 ))}
                                 </div>
-                                {label7 && showPop==9?  multiCheckbox(skills,"skill",skill):null}
+                                {label7 && showPop===9?  multiCheckbox(skills,"skill",skill):null}
                             </div>
                         </div>
                         <div className="regi-detail">
@@ -224,7 +221,7 @@ function PartnerForm(){
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(board,m1)}></i></div>
                                 ))}
                                 </div>
-                                {label8 && showPop==10?  multiCheckbox(borads,"board",board):null}
+                                {label8 && showPop===10?  multiCheckbox(borads,"board",board):null}
                             </div>
                         </div>
                         
@@ -236,25 +233,25 @@ function PartnerForm(){
                                     <li onClick={() =>setShowPop(10)}>
                                         <div >
                                             <span>{minQalification?minQalification:"min qalification"}</span>
-                                            <i className={showPop==2?"iconArrow iconPostion":""}></i>
+                                            <i className={showPop===2?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
                                     <li onClick={() =>setShowPop(11)}>
                                         <div >
                                             <span>{maxQualification?maxQualification:"max qualification"}</span> 
-                                            <i className={showPop==3?"iconArrow iconPostion":""}></i>
+                                            <i className={showPop===3?"iconArrow iconPostion":""}></i>
                                         </div>
                                     </li>
                                     
                                 </ul>:null}
-                                <div className={showPop==2?"dropBox width380 postionBox":"daysBox2"}>
+                                <div className={showPop===2?"dropBox width380 postionBox":"daysBox2"}>
                                     <ul>
-                                        {heights.map((d1,index)=><li className={"width156 border-0  "+(minQalification==d1?"box1":"")} onClick={() =>{setShowPop(-1);setMinQalification(d1)}} key={index}>{d1}</li>)}
+                                        {heights.map((d1,index)=><li className={"width156 border-0  "+(minQalification===d1?"box1":"")} onClick={() =>{setShowPop(-1);setMinQalification(d1)}} key={index}>{d1}</li>)}
                                     </ul>
                                 </div>
-                                <div className={showPop==3?"dropBox width380 postionBox2":"monthsBox2"}>
+                                <div className={showPop===3?"dropBox width380 postionBox2":"monthsBox2"}>
                                     <ul>
-                                        {heights.map((m1,index)=><li className={"width156 border-0 "+(maxQualification==m1?"optActive ":"")} onClick={() =>{setShowPop(-1);setMaxQualification(m1)}} key={index}>{m1}</li>)}
+                                        {heights.map((m1,index)=><li className={"width156 border-0 "+(maxQualification===m1?"optActive ":"")} onClick={() =>{setShowPop(-1);setMaxQualification(m1)}} key={index}>{m1}</li>)}
                                     </ul>
                                 </div>
                             </div>
@@ -266,7 +263,7 @@ function PartnerForm(){
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(occupation,m1)}></i></div>
                                 ))}
                                 </div>
-                                {label10 && showPop==12?  multiCheckbox(occupations,"occupation",occupation):null}
+                                {label10 && showPop===12?  multiCheckbox(occupations,"occupation",occupation):null}
                             </div>
                         </div>
 
@@ -274,7 +271,7 @@ function PartnerForm(){
                             <div className={"regi-secle mt20"} >
                                 <label className={"reg-label top8 " +(label11?"reg-income":"")} onClick={() =>{setlabel11(true);setShowPop(13)}}>Income</label> 
                                 <input type="text" placeholder="" readOnly value={income} onClick={() =>{setlabel11(true);setShowPop(13)}}/>
-                                {label11 && showPop==13?
+                                {label11 && showPop===13?
                                 <React.Fragment>
                                 <div className={"gridDropdown"}>
                                     <i className={"imgArrow religionIcon"}></i>

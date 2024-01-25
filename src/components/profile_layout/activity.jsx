@@ -1,6 +1,4 @@
-import React, {useState} from "react";
-import logo from './.././../asset/logo1.png'
-import { Link, Prompt } from 'react-router-dom'
+import React from "react";
 import './style.css';
 
 import ProfileHeader from './profileHeader';
@@ -62,7 +60,7 @@ export default function Activity() {
                     <div className="interstPople">
                         <div className="proImg2">
                             <div >
-                                <img width="48" height="48" src='https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg'/>
+                                <img width="48" height="48" src='https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg' alt=""/>
                             </div>
                             <div className="-ml-5">
                                 <svg viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-1 h-full w-full text-white/40"><path d="M77 527.075c1.47-25.378 13.5-40.472 37.96-47.952 31.009-9.483 61.884-19.768 90.755-34.728 5.079-2.672 9.891-5.877 15.104-8.549 16.039-8.148 18.044-22.974 18.445-38.602.267-9.751 0-19.635 0-29.386 0-2.27-.668-4.407-1.871-6.277-9.624-15.762-15.104-33.126-19.247-50.891-.802-3.74-1.738-5.209-6.015-4.274-6.149 1.202-9.624-3.073-11.228-8.282-2.406-8.281-4.143-16.696-6.683-26.848-3.341 12.289-2.138 22.307 2.005 32.191 3.208 7.48 8.02 13.758 13.366 19.902 24.327 27.783 24.46 75.201.535 101.247-1.604 1.737-3.208 3.607-4.812 5.343-.401-.267-.935-.668-1.336-.935 2.004-4.675 4.009-9.35 5.881-14.158 8.821-22.841 11.093-45.682-.268-68.389-4.41-8.949-10.826-16.296-18.044-22.974-15.772-14.56-20.584-33.126-19.782-53.83.535-11.754 2.406-23.375 5.347-34.862.534-2.003.668-3.873-.268-5.743-15.504-30.989-13.499-62.512-1.737-93.767 14.168-37.801 37.425-67.454 74.85-84.284 8.821-4.007 18.178-6.144 27.668-6.946 46.113-4.274 89.018 3.206 121.631 39.003 33.415 36.732 42.103 79.742 27.133 127.16-2.005 6.145.935 11.354 2.539 16.563 8.822 27.916 5.213 57.302-17.643 77.872-15.504 13.892-26.999 30.054-29.672 51.292-2.406 19.501 2.94 37.4 10.826 54.897.668 1.603 2.272 2.805 1.738 4.809-12.965-6.011-20.584-31.122-21.787-70.793-3.876 9.884-12.831 17.364-11.628 29.787 1.069 11.487.534 23.107 1.202 34.595.802 15.227 10.56 22.707 21.787 29.252 30.876 18.032 64.692 28.851 98.508 39.403 10.96 3.473 21.118 8.148 29.138 16.697 9.356 9.884 12.564 21.772 11.361 34.995-45.979 0-92.092.134-138.071.134H85.822c-3.075 0-6.95 1.469-8.822-2.672Zm304.078-208.504c3.074-3.874 6.015-7.748 9.223-11.755-5.08-2.27-7.886-1.87-8.287 4.007-.268 2.538-1.203 5.076-.936 7.748-.134.4-.267.801-.401 1.068.134-.401.267-.668.401-1.068Zm18.846-23.108c5.614-7.881 7.084-14.426 5.213-22.975a1849.089 1849.089 0 0 0-5.213 22.975Z" fill="currentColor"></path></svg>
@@ -80,7 +78,7 @@ export default function Activity() {
                     </div>
                     <div className="shortlstContner">
                         <div className="boxShortlst">
-                            <img width="255" height="300" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"/>
+                            <img width="255" height="300" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="activtyLst">
                                 <div><i className="fa-regular fa-envelope"></i>Send Interest</div>
                                 <div><i className="fa-star fa-solid"></i>Shortlisted</div>
@@ -88,7 +86,7 @@ export default function Activity() {
                             </div>
                         </div>
                         <div className="boxShortlst">
-                            <img width="255" height="300" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"/>
+                            <img width="255" height="300" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="activtyLst">
                                 <div><i className="fa-regular fa-envelope"></i>Send Interest</div>
                                 <div><i className="fa-star fa-solid"></i>Shortlisted</div>
@@ -104,7 +102,7 @@ export default function Activity() {
                     <div className="shortlstContner">
                         <div className="boxInterest">
                             <i class="fa-solid fa-ellipsis-vertical"></i>
-                            <img width="120" height="120" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg"/>
+                            <img width="120" height="120" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="textIntest">Kajal Kumari, 20</div>
                             <span>4ft 5in • Ranchi</span>
                         </div>

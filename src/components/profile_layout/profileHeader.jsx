@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import yogjodiLogo from "../image/YogJodiLogo.png";
 import { Link } from 'react-router-dom'
 import './style.css';
@@ -10,7 +8,7 @@ export default function ProfileHeader() {
 
         <div className="profile-navbar">    
             <div className='px-3'>
-                <Link to="/"><img src={yogjodiLogo} /></Link>
+                <Link to="/"><img src={yogjodiLogo} alt="" /></Link>
             </div>
             <div className="nav-logo">
                 <Link to="/profile_edit">
@@ -28,11 +26,11 @@ export default function ProfileHeader() {
                     <div class="offcanvas-header">
                         <div className="d-flex" >
                             <div className='user-icon'>
-                                <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?q=80&w=1385&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
                             </div>
                             <div className="text-detils mb-3">
                                 <h4>Hi Sunit!</h4>
-                                <p>UVA537 <a href='#'>Edit profile</a></p>
+                                <p>UVA537 <Link href='#'>Edit profile</Link></p>
                                 <div className="user-percent"><span>80%</span> Profile Completed!</div>
                             </div>
                         </div>

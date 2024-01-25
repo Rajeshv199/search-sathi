@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,9 +29,9 @@ class footer extends Component{
                             <ul className="footerCard d-flex">
                                 <li className="headfoots visa"></li>
                                 <li className="headfoots mcard"></li>
-                                <li className=""><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/amex.jpg"/></li>
-                                <li><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/maestro.png" /></li>
-                                <li><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/rupay.png" /></li>
+                                <li className=""><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/amex.jpg" alt="imgage" /></li>
+                                <li><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/maestro.png" alt="imgage" /></li>
+                                <li><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/rupay.png" alt="imgage" /></li>
                             </ul>
                         </div>
                         <div className="ml-5">

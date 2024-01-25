@@ -1,5 +1,4 @@
 import React,{ useState } from 'react';
-import { Link, Prompt } from 'react-router-dom';
 import './style.css';
 
 import ProfileHeader from './profileHeader';
@@ -9,9 +8,7 @@ export default function Details() {
     const[searchData,setSearchData] = useState({minHeight:`4' 0" (1.22 mts)`,maxHeight:`4' 5" (1.22 mts)`,minAge:"18 Years",maxAge:"22 Years",maritalStatus:[],religions:[],caste:[],minIncome:"18 Years",maxIncome:"20 Years",motherTongue:[],country:[],residentialStatus:[],education:[],occupation:[],byprofileId:""})
     const[searchByCriteria,setSearchByCriteria] = useState(true);
     const[ispop,setIsPop] = useState(-1);
-    // function goBack() {
-    //     window.history.back()
-    // }
+    
     function handleChange(e){
         const {currentTarget: input} = e;
         let searchData1 = {...searchData}
@@ -30,14 +27,14 @@ export default function Details() {
     }
     function closePopup(){
         setIsPop(-1);
-        if(ispop==1)setTimeout(()=>{setIsPop(2);},100);
-        if(ispop==3)setTimeout(()=>{setIsPop(4);},100);
-        if(ispop==8)setTimeout(()=>{setIsPop(9);},100);
+        if(ispop===1)setTimeout(()=>{setIsPop(2);},100);
+        if(ispop===3)setTimeout(()=>{setIsPop(4);},100);
+        if(ispop===8)setTimeout(()=>{setIsPop(9);},100);
 
     }
     function handleDelete(arr,val){
         let searchData1 = {...searchData};
-        let index = arr.findIndex(a1=>a1==val);
+        let index = arr.findIndex(a1=>a1===val);
         if(index>=0) arr.splice(index,1);
         setSearchData(searchData1);
     }
@@ -60,17 +57,17 @@ export default function Details() {
     }
     function handleMutiSelected(val,arr){
         let searchData1 = {...searchData}
-        let find = arr.find(b1=>b1==val);
+        let find = arr.find(b1=>b1===val);
         if(find){
-            let index = arr.findIndex(b1=>b1==val);
+            let index = arr.findIndex(b1=>b1===val);
             if(index>=0) arr.splice(index,1);
         }else{
-            if(val=="Doesn't Matter"){
+            if(val==="Doesn't Matter"){
                 arr.splice(0, arr.length);
                 arr.push("Doesn't Matter");
             }
             else{
-                let index = arr.findIndex(b1=>b1=="Doesn't Matter");
+                let index = arr.findIndex(b1=>b1==="Doesn't Matter");
                 if(index>=0) arr.splice(index,1);
                 arr.push(val);
             }
@@ -119,7 +116,7 @@ export default function Details() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -141,7 +138,7 @@ export default function Details() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -194,8 +191,8 @@ export default function Details() {
                             <label>Marital Status</label>
                             <div className='habitsOpt'>
                                 {maritalStatusArr.map((h1,index)=>(
-                                    <button className={maritalStatus.find(m1=>m1==h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,maritalStatus)} key={index}>
-                                        {h1} {maritalStatus.find(m1=>m1==h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    <button className={maritalStatus.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,maritalStatus)} key={index}>
+                                        {h1} {maritalStatus.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
                                     </button>
                                 ))}
                             </div>
@@ -204,8 +201,8 @@ export default function Details() {
                             <label>Religion</label>
                             <div className='habitsOpt'>
                                 {religionArr.map((h1,index)=>(
-                                    <button className={religions.find(m1=>m1==h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,religions)} key={index}>
-                                        {h1} {religions.find(m1=>m1==h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    <button className={religions.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,religions)} key={index}>
+                                        {h1} {religions.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
                                     </button>
                                 ))}
                             </div>
@@ -219,8 +216,8 @@ export default function Details() {
                             <label>Residential Status</label>
                             <div className='habitsOpt'>
                                 {residentialStatusArr.map((h1,index)=>(
-                                    <button className={residentialStatus.find(m1=>m1==h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,residentialStatus)} key={index}>
-                                        {h1} {residentialStatus.find(m1=>m1==h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    <button className={residentialStatus.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,residentialStatus)} key={index}>
+                                        {h1} {residentialStatus.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
                                     </button>
                                 ))}
                             </div>
@@ -247,17 +244,17 @@ export default function Details() {
             </div>
         </div>
         <div>
-            {ispop==1?multiRadioBtn("Minimum Height",heightArr,"minHeight",minHeight):null}
-            {ispop==2?multiRadioBtnSecond("Maximum Height",heightArr2,"maxHeight",maxHeight,minHeight,1):null}
-            {ispop==3?multiRadioBtn("Minimum Age",ageArr,"minAge",minAge):null}
-            {ispop==4?multiRadioBtnSecond("Maximum Age",ageArr2,"maxAge",maxAge,minAge,3):null}
-            {ispop==5?multiCheckBox("Caste",motherToungArr,"caste",caste):null}
-            {ispop==6?multiCheckBox("Mother Tongue",motherToungArr,"motherTongue",motherTongue):null}
-            {ispop==7?multiCheckBox("Country",countries,"country",country):null}
-            {ispop==8?multiRadioBtn("Minimum Income",incomeArr,"minIncome",minIncome):null}
-            {ispop==9?multiRadioBtnSecond("Maximum Income",incomeArr2,"maxIncome",maxIncome,minIncome,8):null}
-            {ispop==10?multiCheckBox("Education",heighDegreesArr,"education",education):null}
-            {ispop==11?multiCheckBox("Occupation",occupationArr,"occupation",occupation):null}
+            {ispop===1?multiRadioBtn("Minimum Height",heightArr,"minHeight",minHeight):null}
+            {ispop===2?multiRadioBtnSecond("Maximum Height",heightArr2,"maxHeight",maxHeight,minHeight,1):null}
+            {ispop===3?multiRadioBtn("Minimum Age",ageArr,"minAge",minAge):null}
+            {ispop===4?multiRadioBtnSecond("Maximum Age",ageArr2,"maxAge",maxAge,minAge,3):null}
+            {ispop===5?multiCheckBox("Caste",motherToungArr,"caste",caste):null}
+            {ispop===6?multiCheckBox("Mother Tongue",motherToungArr,"motherTongue",motherTongue):null}
+            {ispop===7?multiCheckBox("Country",countries,"country",country):null}
+            {ispop===8?multiRadioBtn("Minimum Income",incomeArr,"minIncome",minIncome):null}
+            {ispop===9?multiRadioBtnSecond("Maximum Income",incomeArr2,"maxIncome",maxIncome,minIncome,8):null}
+            {ispop===10?multiCheckBox("Education",heighDegreesArr,"education",education):null}
+            {ispop===11?multiCheckBox("Occupation",occupationArr,"occupation",occupation):null}
             
         </div>
 

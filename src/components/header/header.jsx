@@ -52,7 +52,7 @@ class Header extends Component{
             <div className="header--modifier text-white">
                 <div>
                     <Link className="jeevansathi-logo" to="#">
-                        <img height="100%" width="100%"  src={yogjodiLogo}/>
+                        <img height="100%" width="100%" src={yogjodiLogo} alt="logo"/>
                     </Link>
                 </div>
                 <div className="menu-navbar">

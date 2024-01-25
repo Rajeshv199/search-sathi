@@ -1,5 +1,4 @@
 import React,{ useState } from 'react';
-import logo from './.././../asset/logo1.png';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -32,7 +31,7 @@ export default function Education() {
     }
     function handleDelete(arr,val){
         let educt_occuption1 = {...educt_occuption};
-        let index = arr.findIndex(a1=>a1==val);
+        let index = arr.findIndex(a1=>a1===val);
         if(index>=0) arr.splice(index,1);
         setEduct_occuption(educt_occuption1);
     }
@@ -95,7 +94,7 @@ export default function Education() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>{setTimeout(closePopup, 100)}}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -116,7 +115,7 @@ export default function Education() {
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
-                                    <input type='radio' name={name} value={a1} checked={a1==value} onChange={handleChange} />
+                                    <input type='radio' name={name} value={a1} checked={a1===value} onChange={handleChange} />
                                     <div className='px-2'>{a1}</div>
                                 </label>
                             ))}
@@ -167,10 +166,10 @@ export default function Education() {
             </div>
         </div>
         <div>
-            {ispop==1?multiCheckBox("Height Degree",heighDegreesArr,"heightDegree",heightDegree):null}
-            {ispop==2?multiCheckBox("Occupation",occupationArr,"occupation",occupation):null}
-            {ispop==3?multiRadioBtn("Minimum Income",incomeArr,"minIncome",minIncome):null}
-            {ispop==4?multiRadioBtnSecond("Maximum Income",incomeArr2,"maxIncome",maxIncome):null}
+            {ispop===1?multiCheckBox("Height Degree",heighDegreesArr,"heightDegree",heightDegree):null}
+            {ispop===2?multiCheckBox("Occupation",occupationArr,"occupation",occupation):null}
+            {ispop===3?multiRadioBtn("Minimum Income",incomeArr,"minIncome",minIncome):null}
+            {ispop===4?multiRadioBtnSecond("Maximum Income",incomeArr2,"maxIncome",maxIncome):null}
         </div>
 
     </div>
