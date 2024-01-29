@@ -116,7 +116,7 @@ function UserRegister(){
                                 <option>+ 86</option>
                             </select>
                         </div>
-                        <input type="number"  name="mobileNo" value={mobileNo} className="mobileText" placeholder="" onChange={handleChange}/>
+                        <input type="number" name="mobileNo" value={mobileNo} className="mobileText" placeholder="" onChange={handleChange}/>
                        
                     </div>
                     {/* <span className="showError">{errors&&errors.mobileNo}</span> */}

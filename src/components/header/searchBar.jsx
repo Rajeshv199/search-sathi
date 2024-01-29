@@ -46,7 +46,7 @@ function SearchBar() {
             <header className="coverImg">
                 <div className="searchWid">
                     <div>
-                        <Link className="jeevansathi-logo" to="/">
+                        <Link className="yogjodi-logo" to="/">
                             <img height="100%" width="100%"  src={yogjodiLogo} alt="logo"/>
                         </Link>
                     </div>

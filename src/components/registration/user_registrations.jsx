@@ -75,10 +75,8 @@ function ProfileDetails(){
         }else{
             if(takeData.password!==takeData.confirmPassword) alert("Password do not match");
         }
-           
         
     }
-
 
     let profileFor=["Self","Son","Daughter","Sister","Relative/Friend","Other"];
 
@@ -91,7 +89,7 @@ function ProfileDetails(){
                 <div className="profile-container">
                     <div className="proheader">
                         <div className="pro-jeevanLogo">
-                            <Link to="/" className=""><img  src={YogJodiLogo} alt=""/></Link>
+                            <Link to="/" className=""><img src={YogJodiLogo} alt=""/></Link>
                         </div>
                         <div className="liveChat-Help">
                             <span>LIVE CHAT</span>

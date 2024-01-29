@@ -13,7 +13,7 @@
     .bgImageMb {
         position: relative;
         min-height: 360px;
-        background: url("https://static.jeevansathi.com/js_static/_next/static/images/cover_free_chat-04882e93512aed855750c3484b6b70f6.png");
+        background:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../image/bgImgae.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         /* background-size: 100% 100%; */
@@ -42,7 +42,7 @@
         padding: 0px 4px;
         margin-top: 8px;
     }
-    .jeevansathi-logo--Mobile {
+    .yogjodi-logo--Mobile {
         width: 70px;
         height: 26px;
         margin-top: 8px;
@@ -115,7 +115,7 @@
 
     .imgInfo {
         margin-top: 6px;
-        margin-right: 8px;
+        margin-right: 14px;
     }
 
     .infoText {

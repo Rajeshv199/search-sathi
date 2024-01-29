@@ -2,7 +2,9 @@ import React, {Component} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import amex from "../image/amex.jpg";
+import maestro from "../image/maestro.png";
+import rupay from "../image/rupay.png";
 class footer extends Component{
     state={}
     
@@ -27,11 +29,11 @@ class footer extends Component{
                         </div>
                         <div>
                             <ul className="footerCard d-flex">
-                                <li className="headfoots visa"></li>
+                                <li className="headfoots visa"></li> 
                                 <li className="headfoots mcard"></li>
-                                <li className=""><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/amex.jpg" alt="imgage" /></li>
-                                <li><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/maestro.png" alt="imgage" /></li>
-                                <li><img src="https://www.jeevansathi.com/images/jspc/membership_img/seamless/rupay.png" alt="imgage" /></li>
+                                <li className=""><img src={amex} alt="amex" /></li>
+                                <li><img src={maestro} alt="" /></li>
+                                <li><img src={rupay} alt="" /></li>
                             </ul>
                         </div>
                         <div className="ml-5">
@@ -67,7 +69,7 @@ class footer extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="copyRight"> All rights reserved © 2016 Yogjodi Internet Services. </div>
+                <div className="copyRight"> All rights reserved © 2024 Yogjodi Internet Services. </div>
             </div>
         );
     }

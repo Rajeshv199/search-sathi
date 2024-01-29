@@ -13,7 +13,7 @@ export default function Help() {
         <header className="coverImg">
             <div className="searchWid">
                 <div>
-                    <Link className="jeevansathi-logo" to="/">
+                    <Link className="yogjodi-logo" to="/">
                         <img height="100%" width="100%" alt="logo"  src={yogjodiLogo}/>
                     </Link>
                 </div>
@@ -39,7 +39,7 @@ export default function Help() {
                                 </div>
                             </li>
                             <li className="search-ml" >
-                                <div className="search-menu"><Link to="search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
+                                <div className="search-menu"><Link to="/search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
                                     
                             </li>
                             <li className="search-ml">
@@ -169,10 +169,7 @@ export default function Help() {
             </div>
         </div>
         <Footer />
-
-        <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
-            <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Yogjodi Internet Services.</p>
-        </div>
+        <div className="copyRight"> All rights reserved © 2024 Yogjodi Internet Services. </div>
     </div>
     )
 }

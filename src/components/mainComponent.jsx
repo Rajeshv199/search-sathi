@@ -18,7 +18,7 @@ import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import Notification from "./profile_layout/Notification";
 import SearchBar from "./header/searchBar";
-// import SuccessStories from "./features/success_stories";
+import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
 import PartnerEdit from "./profile_layout/pertner_edit";
 import Chat from "./profile_layout/chat";
@@ -48,10 +48,7 @@ class MainComponent extends Component{
         // setTimeout(this.togglePopup, 2000);
     }
  
- 
-   
-   
-  
+
     
     render(){
         
@@ -61,8 +58,6 @@ class MainComponent extends Component{
             <div>
                 <Switch>
                 
-                    
-
 
                     <Route path="/search" component={SearchBar}/>
 
@@ -110,7 +105,7 @@ class MainComponent extends Component{
 
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/> 
-                    {/* <Route path="/success/story" component={SuccessStories} /> */}
+                    <Route path="/success/story" component={SuccessStories} />
 
                     <Route path="/login" component={User_Login}/>
                     {/* <Route path="/login"  render={(props)=><User_Login {...props} />}/> */}

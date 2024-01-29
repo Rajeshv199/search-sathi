@@ -51,7 +51,7 @@ class Header extends Component{
         return(
             <div className="header--modifier text-white">
                 <div>
-                    <Link className="jeevansathi-logo" to="#">
+                    <Link className="yogjodi-logo" to="#">
                         <img height="100%" width="100%" src={yogjodiLogo} alt="logo"/>
                     </Link>
                 </div>
@@ -77,7 +77,7 @@ class Header extends Component{
                                 </div>
                             </li>
                             <li className="search-ml" >
-                                <div className="search-menu"><Link to="search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
+                                <div className="search-menu"><Link to="/search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
                                 {/* <div className="search-list">
                                     <div>Search</div>
                                     <div>Search by Profile ID</div>

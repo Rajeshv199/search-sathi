@@ -58,7 +58,7 @@ a:hover{
 }
 
 
-.jeevansathi-logo{
+.yogjodi-logo{
     width: 163px;
     height: 63px;
     float:left;
@@ -146,11 +146,12 @@ a:hover{
 }
 .bgImage{
     width: 100%;
-    background: url("https://static.jeevansathi.com/images/jspc/commonimg/cover_img_free_chat.png");
+    background:linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url("../image/bgImgae.jpg");
     background-size: cover;
     /* background-size: contain; */
     background-repeat: no-repeat;
     height: 622px;
+    /* opacity: 0.6; */
     
 
 }
@@ -201,8 +202,9 @@ a:hover{
     font-size: 14px;
     text-transform: uppercase;
 }
+
 .browse-link-list div:hover{
-    background: #e51e57 url(https://static.jeevansathi.com/images/jspc/commonimg/topnav-arwright.png) no-repeat 170px 16px;
+    background: #e51e57 url("../image/topnav-arwright.png") no-repeat 170px 16px;
 }
 .search-ml{
     margin-left: 56px;
@@ -288,15 +290,14 @@ a:hover{
     margin-top: 4px
 }
 .registerFreeBtn{
-    position: absolute;
-    right: 200px;
-    top: 200px;
+    position: relative;
+    top: -120px;
     border: 1px solid #cecbcb;
     padding: 12px 60px;
     border-radius: 30px;
     font-size: 20px;
     background-color:transparent;
-    color: #cecbcb;
+    color: #e4dfdf;
 }
 .registerFreeBtn:hover{
     border: 1px solid #fff;
@@ -359,7 +360,7 @@ a:hover{
     border-bottom-right-radius: 0;
 }
 .mobileText{
-    width: 340px!important;
+    width: 100%!important;
     border-top-left-radius: 0!important;
     border-bottom-left-radius: 0!important;
 }
@@ -437,7 +438,7 @@ a:hover{
 .infoImg{
     height: 53px;
     width: 60px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/Top_new_Benefits.png");
+    background-image: url("../image/Top_new_Benefits.png");
     background-repeat: no-repeat;
 }
 .ImgPosition{
@@ -614,7 +615,7 @@ a:hover{
 .findWorkImg{
     height: 100px;
     width: 197px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/How_it_works.svg");
+    background-image: url("../image/How_it_works.svg");
     background-repeat: no-repeat;
 }
 
@@ -698,7 +699,7 @@ a:hover{
 .materialIcons{
     width: 24px;
     height: 24px;
-    background-image: url(https://static.jeevansathi.com/images/jspc/commonimg/Material_Icons_Sprites_final.svg);
+    background-image: url("../image/Material_Icons_Sprites_final.svg");
     background-repeat: no-repeat;
 }
 .pinktick{
@@ -777,7 +778,7 @@ a:hover{
     background-repeat: no-repeat;
     background-position: bottom left;
     border-radius: 12px;
-    background-image: url("https://www.jeevansathi.com/images/jspc/commonimg/JS_Exclusive_Image_final_min.png");
+    background-image: url("../image/exclusive_Image.png");
 }
 .exclusiveBtn{
     padding: 4px 16px;
@@ -839,7 +840,7 @@ a:hover{
     background-color: #ffff!important;
     color: #000000;
     z-index: 5;
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/Material_Icons_Sprites_final.svg")!important;
+    background-image: url("../image/Material_Icons_Sprites_final.svg")!important;
     background-repeat: no-repeat!important;
     background-position: -24px -80px!important;
 }
@@ -850,7 +851,7 @@ a:hover{
     border-radius: 50%;
     box-shadow: 0 12px 18px 0 rgba(38,48,140,0.20);
     background-color: #ffff!important;
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/Material_Icons_Sprites_final.svg")!important;
+    background-image: url("../image/Material_Icons_Sprites_final.svg")!important;
     background-repeat: no-repeat!important;
     background-position: -190px -80px!important;
   }
@@ -946,7 +947,6 @@ a:hover{
 }
 
 
-
 .connectApp{
     height: 390px;
     justify-content: space-between;
@@ -960,24 +960,7 @@ a:hover{
     float: left;
 }
 
-/* .appsImg{
-    height: 48px;
-    width: 145px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/store_icons_sprite.png");
-    background-repeat: no-repeat;
-} */
-/* .app{
-    background-position: 0px 0px
-} */
-/* .appsImg2{
-    height: 52px;
-    width: 164px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/store_icons_sprite.png");
-    background-repeat: no-repeat;
-} */
-/* .app2{
-    background-position: -174px 0px
-} */
+
 .connectApp-Img{
     position: relative;
     width: 52%;
@@ -1078,6 +1061,13 @@ li:hover .subhobver{
     background-color: #f8f9f9;
     text-align: justify;
 }
+.seoText h4{
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #A70855;
+    font-weight: 700;
+    
+}
 .seoText img {
     height: 46px;
 }
@@ -1145,7 +1135,7 @@ li:hover .subhobver{
 
 }
 .footerIcon{
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/FooterIconsSpriteNew.svg");
+    background-image: url("../image/FooterIconsSpriteNew.svg");
     background-repeat: no-repeat;
 }
 .iconPostion{
@@ -1252,7 +1242,7 @@ li:hover .subhobver{
     padding-left: 40px;
 }
 .headfoots{
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/header-footer3.png");
+    background-image: url("../image/header-footer3.png");
     background-repeat: no-repeat;
     height: 44px;
 }
@@ -1303,7 +1293,7 @@ li:hover .subhobver{
     left: -30px;
     top:25px;
     z-index: 9;
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/header-footer3.png")!important;
+    background-image: url("../image/header-footer3.png")!important;
     background-repeat: no-repeat!important;
     background-position: -193px 1px!important;
 }
@@ -1312,7 +1302,7 @@ li:hover .subhobver{
     height: 23px!important;
     right: -20px!important;
     top:25px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/header-footer3.png")!important;
+    background-image: url("../image/header-footer3.png")!important;
     background-repeat: no-repeat!important;
     background-position: -210px 1px!important;
   }
@@ -1381,7 +1371,7 @@ li:hover .subhobver{
   }
   
   .close-icon{
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/sprite-two.png?cacheBurst=true");
+    background-image: url("../image/sprite-two.png");
     background-repeat: no-repeat;
     background-position: -73px -178px;
     width: 26px;
@@ -1817,7 +1807,7 @@ li:hover .subhobver{
     .iconSetting{
         width: 25px!important;
         height: 21px!important;
-        background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/iconSpriteNameSetting.png");
+        background-image: url("../image/iconSpriteNameSetting.png");
         background-repeat: no-repeat;
         background-position: -32px -30px;
     }
@@ -1875,7 +1865,7 @@ li:hover .subhobver{
         padding: 0 10px 0 28px;
     }
     .dropArrow{
-        background: url("https://static.jeevansathi.com/images/jspc/commonimg/iconsvert.png");
+        background: url("../image/iconsvert.png");
         background-size: cover;
         background-position: -1px -131px;
         width: 18px;
@@ -1885,7 +1875,7 @@ li:hover .subhobver{
     }
     .imgArrow{
         position: absolute;
-        background: url("https://static.jeevansathi.com/images/jspc/registration/reg-spirite.png");
+        background: url("../image/reg-spirite.png");
         background-repeat: no-repeat;
         background-position: -6px -214px;
         width: 16px;
@@ -2224,7 +2214,7 @@ li:hover .subhobver{
 
     }
     .reg-privacy{
-        background: url("https://static.jeevansathi.com/images/jspc/registration/reg-spirite.png");
+        background: url("../image/reg-spirite.png");
         background-repeat: no-repeat;
         display: inline-block;
         height: 44px;
@@ -2787,7 +2777,7 @@ li:hover .subhobver{
 }
 /* for search  */
 .coverImg{
-    background: url("https://static.jeevansathi.com/images/jspc/commonimg/header-inner1.jpg") no-repeat center center;
+    background: url("../image/bgCover2.png") no-repeat center center;
     background-size: cover;
     
 }
@@ -2818,7 +2808,7 @@ li:hover .subhobver{
     background:#0e68c2;
 }
 .login-icon{
-    background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/sprite-two.png?cacheBurst=true");
+    background-image: url("../image/sprite-two.png");
     background-repeat: no-repeat;
     background-position: -74px 1px ;;
     width: 21px;
@@ -3006,7 +2996,7 @@ li:hover .subhobver{
 }
 .iconArrow{
     position: absolute;
-    background: url("https://static.jeevansathi.com/images/jspc/registration/reg-spirite.png");
+    background: url("../image/reg-spirite.png");
     background-repeat: no-repeat;
     background-position: -6px -214px;
     width: 16px;
@@ -3047,7 +3037,7 @@ li:hover .subhobver{
     display: block;
     width: 12px;
     height: 12px;
-    background: url("https://static.jeevansathi.com/css/jspc/utility/chosen/chosen-sprite.png") -42px 1px no-repeat;
+    background: url("../image/chosen-sprite.png") -42px 1px no-repeat;
     font-size: 1px;
     cursor: pointer;
 }
