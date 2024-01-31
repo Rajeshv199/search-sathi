@@ -20,6 +20,9 @@ import Special from './image/special.png';
 import Restrict from './image/restrict.png';
 import Advisor from './image/advisor.png';
 import Handpicked from './image/handpicked.png';
+import MatchImage from './image/matchImage.png';
+import VideoImage from './image/videoImage.png';
+import VideoProfile from './image/profile121.png';
 
 
 
@@ -165,13 +168,13 @@ class index extends Component{
                                     </div>
                                     <div className="featuresSection-Images">
                                         <div className="featuresSection--Images--Wrapper">
-                                            <img className="featuresSection--Images--Wrapper--img" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/match-hour.svg" alt=""/>
+                                            <img className="featuresSection--WrapperImg" src={MatchImage} alt=""/>
                                         </div>
                                         <div className="featuresSection--Images--Wrapper">
-                                            <img className="featuresSection--Images--Wrapper--img--Wrapper" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/voice-call.svg" alt=""/>
+                                            <img className="featuresSection--WrapperImg" src={VideoImage} alt=""/>
                                         </div>
                                         <div className="featuresSection--Images--Wrapper">
-                                            <img className="featuresSection--Images--Wrapper--img" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/video-profile.svg" alt=""/>
+                                            <img className="featuresSection--WrapperImg" src={VideoProfile} alt=""/>
                                         </div>
                                             
                                     </div>
@@ -514,7 +517,7 @@ class index extends Component{
                                                 <span>Meet Your Relationship Manager</span>
                                             </li>
                                             <li>
-                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"></path></svg>
+                                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"></path></svg>
                                                 <span>Communicate your preferences</span>
                                             </li>
                                             <li>
@@ -572,7 +575,7 @@ class index extends Component{
                                                 <li key={index} onClick={()=>this.handleShowMb(index)}>
                                                 <div className={"border-secondary pt-3 "+(index>0?"border-top":"")}></div>
                                                         {m1} 
-                                                    <i class={"fa-solid float-right m-2 "+(showMatrialMb===index?"fa-angle-up":"fa-angle-down")}></i>
+                                                    <i className={"fa-solid float-right m-2 "+(showMatrialMb===index?"fa-angle-up":"fa-angle-down")}></i>
                                                     
                                                     <div className={showMatrialMb===index?"d-block":"d-none"}>
                                                         {showMatrialMb===0?(

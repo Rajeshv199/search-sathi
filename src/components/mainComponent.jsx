@@ -37,6 +37,7 @@ import About_Partner from "./profile_Edit/about_partner";
 import Search from "./profile_layout/search";
 import Block_Ignore from "./features/block_ignore";
 import PhoneBook from "./features/phoneBook";
+import Demo from "./demo";
 
 
 
@@ -59,6 +60,7 @@ class MainComponent extends Component{
                 <Switch>
                 
 
+                    <Route path="/test" component={Demo}/>
                     <Route path="/search" component={SearchBar}/>
 
                     <Route path="/registr/page5" component={VerificationMob}/>

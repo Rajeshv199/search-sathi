@@ -38,7 +38,7 @@ export default function Basic() {
                             ))}
                         </div>
                         {/* <button className="ubmitopt2" onClick={()=>setIsPop(false)}>Done</button> */}
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ export default function Basic() {
            <Leftaside/>
             <div className='profile-box p-4'>
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/profile_edit"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/profile_edit"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>Basic Details</h5>
                     <div>Update these details to get suitable matches</div>
                 </div>
@@ -75,7 +75,7 @@ export default function Basic() {
                     </div>
                     <div className='custom-form'>
                         <label>Gender</label>
-                        <span class="material-symbols-outlined lock">lock</span>
+                        <span className="material-symbols-outlined lock">lock</span>
                         <input type='text' readOnly name='gender' value={gender} />
                     </div>
                     <div className='custom-form'>

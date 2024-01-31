@@ -30,7 +30,7 @@ export default function About() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/profile_edit"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/profile_edit"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>About Me</h5>
                     <div>Update these details to get suitable matches</div>
                 </div>

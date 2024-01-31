@@ -14,7 +14,7 @@ export default function Block() {
 
             <div className='profile-box p-4'>
                 <div className='d-flex'>
-                    <Link className='text-dark' to="/profile_edit"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/profile_edit"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-auto'>Blocked/Ignored Members</h5>
                 </div>
                 <div className='block-Info mt-5'>

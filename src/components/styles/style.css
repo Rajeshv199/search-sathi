@@ -3,6 +3,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
 
+ @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+
+
 
 html, body, ul, form, button, input, p {
     margin: 0;
@@ -164,7 +167,8 @@ a:hover{
     overflow: hidden;
     height: 300px;
     z-index: 3;
-    background: rgba(52, 73, 94, 0.95);
+    /* background: rgba(52, 73, 94, 0.95); */
+    background: rgba(4, 54, 89, 0.95);
     color: #fff;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
     transition: bottom 0.5s ease;
@@ -291,11 +295,12 @@ a:hover{
 }
 .registerFreeBtn{
     position: relative;
-    top: -120px;
+    top: -160px;
     border: 1px solid #cecbcb;
     padding: 12px 60px;
     border-radius: 30px;
     font-size: 20px;
+    margin-right: 20px;
     background-color:transparent;
     color: #e4dfdf;
 }
@@ -507,9 +512,10 @@ a:hover{
     margin: 0;
     font-size: 1.75rem;
     font-weight: 600;
+    font-family: 'Akaya Kanadaka', system-ui;
 }
 .featuresSection__Title span{
-    color: #e51e57;
+    color:#c72573;
 }
 .featuresSection-List{
     width: 100%;
@@ -604,7 +610,7 @@ a:hover{
     margin-top: -35vh;
 }
 
-.featuresSection--Images--Wrapper--img{
+.featuresSection--WrapperImg{
     display: block;
     height: 50vh;
     max-height: 420px;
@@ -635,10 +641,10 @@ a:hover{
     font-weight: 600;
 }
 .findBottom{
-    background: #e51e57;
+    background:#A70855;
     padding: 8px 20px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     border: none;
     color: #fff;
     border-radius: 5px;
@@ -3379,3 +3385,17 @@ li:hover .subhobver{
 
 
 }
+
+
+.regi-detailw{
+
+}
+/* .dewsd{
+    display: none;
+}
+
+.regi-detailw:hover .dewsd,
+.regi-detailw:focus-within .dewsd{
+    display: block;
+} */
+

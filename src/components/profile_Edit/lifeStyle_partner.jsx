@@ -47,7 +47,7 @@ export default function LifeStyle_Partner() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/edit/partner"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/edit/partner"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>LifeStyle Details</h5>
                     <div>Update these details to get suitable matches</div>
                 </div>
@@ -57,7 +57,7 @@ export default function LifeStyle_Partner() {
                         <div className='habitsOpt'>
                             {drinkingHabitArr.map((h1,index)=>(
                                 <button className={drinkingHabits.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,drinkingHabits)} key={index}>
-                                    {h1} {drinkingHabits.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    {h1} {drinkingHabits.find(m1=>m1===h1)?<i className="fa-solid fa-check fa-sm text-danger"></i>:<i className="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>
@@ -67,7 +67,7 @@ export default function LifeStyle_Partner() {
                         <div className='habitsOpt'>
                             {dietaryHabitArr.map((h1,index)=>(
                                 <button className={dietaryHabits.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,dietaryHabits)} key={index}>
-                                    {h1} {dietaryHabits.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    {h1} {dietaryHabits.find(m1=>m1===h1)?<i className="fa-solid fa-check fa-sm text-danger"></i>:<i className="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>
@@ -77,7 +77,7 @@ export default function LifeStyle_Partner() {
                         <div className='habitsOpt'>
                             {drinkingHabitArr.map((h1,index)=>(
                                 <button className={smokingHabits.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,smokingHabits)} key={index}>
-                                    {h1} {smokingHabits.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    {h1} {smokingHabits.find(m1=>m1===h1)?<i className="fa-solid fa-check fa-sm text-danger"></i>:<i className="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>
@@ -87,7 +87,7 @@ export default function LifeStyle_Partner() {
                         <div className='habitsOpt'>
                             {specialCaseArr.map((h1,index)=>(
                                 <button className={specialCase.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,specialCase)} key={index}>
-                                    {h1} {specialCase.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    {h1} {specialCase.find(m1=>m1===h1)?<i className="fa-solid fa-check fa-sm text-danger"></i>:<i className="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>

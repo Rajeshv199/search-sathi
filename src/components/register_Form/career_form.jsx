@@ -87,7 +87,7 @@ function CareerDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt20">
-                                <label className={"reg-label top8 " +(label4?"reg-email":"")} onClick={() =>{setlabel4(true);handlePop(4)}}>Organization</label> 
+                                <label className={"reg-label top8 " +(label4?"reg-mobile":"")} onClick={() =>{setlabel4(true);handlePop(4)}}>Organization</label> 
                                 <input type="text" placeholder="" readOnly value={organization} onClick={() =>{setlabel4(true);handlePop(4)}}/>
                                 {label4 && showPop===4?
                                 <div className={"mStatusBox"}>
@@ -132,7 +132,7 @@ function CareerDetails(props){
 
                         <div className="regi-detail">
                             <div className="regi-secle mt20" >
-                                <label className={"reg-label " +(label9?"reg-expres":"")} onClick={() =>{setlabel9(true);handlePop(7)}}>Highest Degree</label> 
+                                <label className={"reg-label " +(label9?"reg-mother":"")} onClick={() =>{setlabel9(true);handlePop(7)}}>Highest Degree</label> 
                                 <input type="text" placeholder="" readOnly value={hightdegree} onClick={() =>{setlabel9(true);handlePop(7)}}/>
                                 {label9 && showPop===7?
                                 <div className={"highdegBox"}>
@@ -146,13 +146,13 @@ function CareerDetails(props){
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle mt20" >
-                                <label className={"reg-label " +(label8?"reg-expres":"")} onClick={() =>{setlabel8(true);setEductOpen(true)}}>Add Education</label> 
+                                <label className={"reg-label " +(label8?"reg-label6":"")} onClick={() =>{setlabel8(true);setEductOpen(true)}}>Add Education</label> 
                                 <input type="text" placeholder="" readOnly  onClick={() =>{setlabel8(true);setEductOpen(true)}}/>
                             </div>
                         </div>
                         <div className="regi-detail">
                             <div className="regi-secle2 mt20" onClick={() =>{setlabel7(true)}}>
-                                <label className={"reg-label top8 " +(label7?"reg-mtherOcption":"")} onClick={() =>{setlabel7(true)}}>Describe About Career</label>
+                                <label className={"reg-label top8 " +(label7?"reg-partnr":"")} onClick={() =>{setlabel7(true)}}>Describe About Career</label>
                                 {label7?
                                     <textarea name="descriOfCareer" value={descriOfCareer} onChange={(e)=>setdescriOfCareer(e.currentTarget.value)}></textarea>
                                 :null}

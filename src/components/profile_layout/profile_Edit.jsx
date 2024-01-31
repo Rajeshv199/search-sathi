@@ -32,8 +32,8 @@ export default function Details() {
             <div className='profile-box'>
                 <div className='prfile-panel'>
                     <div className='profile-glary'>
-                        <span><i class="fa-solid fa-image px-1"></i>Upload</span>
-                        <span><i class="fa-solid fa-image px-1"></i>10 Images</span>
+                        <span><i className="fa-solid fa-image px-1"></i>Upload</span>
+                        <span><i className="fa-solid fa-image px-1"></i>10 Images</span>
                     </div>
                     <div >
                         <img className='user-image' src='https://images.unsplash.com/photo-1474552226712-ac0f0961a954?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=""/>
@@ -64,7 +64,7 @@ export default function Details() {
                             <h5 className='m-0'>Basic Details 
                                 {showDetails===1&&<div className='headerTxt'>Brief outline of personal information</div>}
                             </h5>
-                            {showDetails===1?<Link className='text-dark' to="/profile_edit/basic"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/profile_edit/basic"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                         </div>
                         {showDetails===1&&
                         <div className='d-flex'>
@@ -85,7 +85,7 @@ export default function Details() {
                             <h5 className='m-0'>About Me
                                 {showDetails===2&&<div className='headerTxt'>Describe yourself in a few words</div>}
                             </h5>
-                            {showDetails===2?<Link className='text-dark' to="/profile_edit/about"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===2?<Link className='text-dark' to="/profile_edit/about"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===2&&
@@ -102,7 +102,7 @@ export default function Details() {
                             <h5 className='m-0'>Education
                                 {showDetails===3&&<div className='headerTxt'>Showcase your educational qualification</div>}
                             </h5>
-                            {showDetails===3?<Link className='text-dark' to="/profile_edit/education"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===3?<Link className='text-dark' to="/profile_edit/education"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===3&&
@@ -127,7 +127,7 @@ export default function Details() {
                             <h5 className='m-0'>Career
                                 {showDetails===4&&<div className='headerTxt'>Give a glimpse of your professional life </div>}
                             </h5>
-                            {showDetails===4?<Link className='text-dark' to="/profile_edit/career"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===4?<Link className='text-dark' to="/profile_edit/career"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===4&&
@@ -136,6 +136,7 @@ export default function Details() {
                                 {multipleValue("Employed In","Private Sector","widh90")}
                                 {multipleValue("Occupation","Operator/Technician","widh90")}
                                 {multipleValue("Organization","Sobha Developers Limited","widh90")}
+                                {multipleValue("Years Of Exp","0 - 1 year","widh90")}
                             
                                 <div className='d-block w-100 flotLeft mt-2'>
                                     <h6 className='mb-0'>About My Career</h6>
@@ -151,7 +152,7 @@ export default function Details() {
                             <h5 className='m-0'>Contact
                                 {showDetails===6&&<div className='headerTxt'>Details that would help profiles get in touch with you</div>}
                             </h5>
-                            {showDetails===6?<Link className='text-dark' to="/profile_edit/contact"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===6?<Link className='text-dark' to="/profile_edit/contact"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===6&&
@@ -171,7 +172,7 @@ export default function Details() {
                             <h5 className='m-0'>LifeStyle
                                 {showDetails===7&&<div className='headerTxt'>Your favourite activities</div>}
                             </h5>
-                            {showDetails===7?<Link className='text-dark' to="/profile_edit/lifeStyle"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===7?<Link className='text-dark' to="/profile_edit/lifeStyle"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===7&&
@@ -200,13 +201,13 @@ export default function Details() {
                             <h5 className='m-0'>Family
                                 {showDetails===1&&<div className='headerTxt'>Introduce your family members</div>}
                             </h5>
-                            {showDetails===1?<Link className='text-dark' to="/profile_edit/family"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/profile_edit/family"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===1&&
                         <div className='d-flex mt-1'>
                             <div>
-                                {multipleValue("Family Status","Middle Class","widh100")}
+                                {multipleValue("Family Status","Middle className","widh100")}
                                 {multipleValue("Father's Occupation","Private Employee","widh130")}
                                 {multipleValue("Family Type","Joined Family","widh100")}
                                 {multipleValue("Mother's Occupation","Housewife","widh130")}

@@ -699,7 +699,7 @@
         position: fixed;
         width: 91%;
         background-color: #575656;
-        background: url("https://static.jeevansathi.com/js_static/_next/static/images/loginbg-338b20c1852b0a7cf491e55ebadf3f71.jpg");
+        background: url("../image/loginbg.jpg");
         height: 100vh;
         color: #fff;
         z-index: 5;
@@ -817,7 +817,7 @@
         z-index: 10;
    }
    .allimages{
-        background: url("https://static.jeevansathi.com/images/jsms/commonImg/main-sprite_new_1.png");
+        background: url("../image/main-sprite_new_1.png");
         background-repeat: no-repeat;
         display: inline-block;
    }

@@ -9,7 +9,7 @@ class MatrimonialFilter extends Component{
         const {name,index} = this.props;
         return(
             <React.Fragment >
-                {index>0?<li className="sub-h">|</li>:""}
+                {index>0?<li className="sub-h" key={index}>|</li>:""}
                 <li>
                     <Link to="#" >{name}</Link>
                     <div className="subhobver">

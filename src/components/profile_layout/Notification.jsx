@@ -20,7 +20,7 @@ export default function Notification() {
 
             <div className='profile-box p-4'>
                 <div className='d-flex'>
-                    <Link className='text-dark' to="/profile_edit"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/profile_edit"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='text-center m-auto'>What's New?</h5>
                 </div>
                 

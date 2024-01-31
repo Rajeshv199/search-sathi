@@ -72,7 +72,7 @@ function SearchBar() {
                                     </div>
                                 </li>
                                 <li className="search-ml" >
-                                    <div className="search-menu"><Link to="search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
+                                    <div className="search-menu"><Link to="search"><i className="fa-solid fa-magnifying-glass"></i></Link></div>
                                     
                                 </li>
                                 <li className="search-ml">

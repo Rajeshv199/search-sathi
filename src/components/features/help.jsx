@@ -39,7 +39,7 @@ export default function Help() {
                                 </div>
                             </li>
                             <li className="search-ml" >
-                                <div className="search-menu"><Link to="/search"><i class="fa-solid fa-magnifying-glass"></i></Link></div>
+                                <div className="search-menu"><Link to="/search"><i className="fa-solid fa-magnifying-glass"></i></Link></div>
                                     
                             </li>
                             <li className="search-ml">
@@ -65,9 +65,9 @@ export default function Help() {
             <div className="help-body-sub" >
                 <h4>How can we help you?</h4>
                 <br />
-                <div class="input-group w-75 m-auto">
-                    <input type="text" class="form-control" placeholder="What can we help with?" aria-describedby="button-addon2" />
-                    <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
+                <div className="input-group w-75 m-auto">
+                    <input type="text" className="form-control" placeholder="What can we help with?" aria-describedby="button-addon2" />
+                    <button className="btn btn-danger" type="button" id="button-addon2">Search</button>
                 </div><br />
                 <h4 className="text-start mt-4">Categories</h4>
            

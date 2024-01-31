@@ -61,11 +61,11 @@ export default function Education() {
                     <div className="checkbox-Custom">
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
-                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
+                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i className="fa-solid fa-xmark fa-sm"></i></li>):
                             <React.Fragment>
-                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i className="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i className="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i className="fa-solid fa-xmark fa-sm"></i></li>
                             <div>+{value.length-3} More</div>
                             </React.Fragment>
                             }
@@ -79,7 +79,7 @@ export default function Education() {
                             ))}
                         </div>
                         <button className="submitopt2" onClick={()=>setIsPop(false)}>Done</button>
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@ export default function Education() {
                                 </label>
                             ))}
                         </div>
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -110,8 +110,8 @@ export default function Education() {
             <div className="popup-box2">
                 <div className="box5">
                     <div className="checkbox-Custom">
-                        <h5 className='mb-2'><i class="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(3)}></i>{title}</h5>
-                        <ul className='select-item'><li>{minIncome}<i class="fa-solid fa-xmark fa-sm"></i></li></ul>
+                        <h5 className='mb-2'><i className="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(3)}></i>{title}</h5>
+                        <ul className='select-item'><li>{minIncome}<i className="fa-solid fa-xmark fa-sm"></i></li></ul>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
@@ -120,7 +120,7 @@ export default function Education() {
                                 </label>
                             ))}
                         </div>
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@ export default function Education() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/edit/partner"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/edit/partner"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>Education & Occupation</h5>
                     <div>Update these details to get suitable matches</div>
                 </div>

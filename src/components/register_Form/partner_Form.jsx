@@ -162,14 +162,14 @@ function PartnerForm(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);handleShowPop(5)}}>
-                                <label className={"reg-label top8 " +(label3?"reg-mobile":"")} >Marital status</label>
+                            <div className={"regi-secle4 mt20"} onClick={() =>{setlabel3(true);setShowPop(5)}}>
+                                <label className={"reg-label top8 " +(label3?"reg-mobile":"")} onClick={() =>setShowPop(5)}>Marital status</label>
                                 <div className="">{maritalStatus.map((m1,index)=>(
                                     <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" onClick={()=>handleDelete(maritalStatus,m1)}></i></div>
                                 ))}
                             </div>
                                 {/* <Select isMulti={true} value={minAge} onChange={setMinAge}  options={aaAw}/> */}
-                            {label3 && showPop===5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
+                                {label3 && showPop===5?  multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus):null}
                             </div>
                         </div>
                         <div className="regi-detail">

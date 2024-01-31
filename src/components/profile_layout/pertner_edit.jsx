@@ -28,8 +28,8 @@ export default function Partner_Edit() {
             <div className='profile-box'>
                 <div className='prfile-panel'>
                     <div className='profile-glary'>
-                        <span><i class="fa-solid fa-image px-1"></i>Upload</span>
-                        <span><i class="fa-solid fa-image px-1"></i>10 Images</span>
+                        <span><i className="fa-solid fa-image px-1"></i>Upload</span>
+                        <span><i className="fa-solid fa-image px-1"></i>10 Images</span>
                     </div>
                     <div >
                         <img className='user-image' src='https://images.unsplash.com/photo-1474552226712-ac0f0961a954?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=""/>
@@ -61,7 +61,7 @@ export default function Partner_Edit() {
                             <h5 className='m-0'>Basic Details 
                                 {showDetails===1&&<div className='headerTxt'>Update these details to get suitable matches</div>}
                             </h5>
-                            {showDetails===1?<Link className='text-dark' to="/partner/basic"><i class="fa-solid fa-pen-to-square"></i></Link> :<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/partner/basic"><i className="fa-solid fa-pen-to-square"></i></Link> :<i className="fa-solid mt-1 fa-chevron-down"></i>}
                         </div>
                         {showDetails===1&&
                         <div className='d-flex'>
@@ -82,7 +82,7 @@ export default function Partner_Edit() {
                             <h5 className='m-0'>Education & Occupation
                                 {showDetails===2&&<div className='headerTxt'>Update these details to get suitable matches</div>}
                             </h5>
-                            {showDetails===2?<Link className='text-dark' to="/partner/eduction_occupation"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===2?<Link className='text-dark' to="/partner/eduction_occupation"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===2&&
@@ -101,7 +101,7 @@ export default function Partner_Edit() {
                             <h5 className='m-0'>Religion
                                 {showDetails===3&&<div className='headerTxt'>Update these details to get suitable matches</div>}
                             </h5>
-                            {showDetails===3?<Link className='text-dark' to="/partner/religion"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===3?<Link className='text-dark' to="/partner/religion"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                         </div>
                         {showDetails===3&&
                         <div className='d-flex mt-1'>
@@ -118,7 +118,7 @@ export default function Partner_Edit() {
                             <h5 className='m-0'>Lifestyle
                                 {showDetails===4&&<div className='headerTxt'>Update these details to get suitable matches</div>}
                             </h5>
-                            {showDetails===4?<Link className='text-dark' to="/partner/lifeStyle"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===4?<Link className='text-dark' to="/partner/lifeStyle"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===4&&
@@ -135,7 +135,7 @@ export default function Partner_Edit() {
                     <div className='basicData' onClick={()=>setShowDetails(5)}>
                         <div className='d-flex justify-content-between'>
                             <h5 className='m-0'>About My Partner</h5>
-                            {showDetails===5?<Link className='text-dark' to="/partner/about"><i class="fa-solid fa-pen-to-square"></i></Link>:<i class="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===5?<Link className='text-dark' to="/partner/about"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===5&&

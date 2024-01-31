@@ -19,7 +19,7 @@ export default function Details() {
 
             <div className='profile-box'>
                 <div className='msgHeader'>
-                    <Link to="/profile_details" className='text-dark'><i class="fa-solid fa-angle-left fa-lg py-2 my-1"></i></Link>
+                    <Link to="/profile_details" className='text-dark'><i className="fa-solid fa-angle-left fa-lg py-2 my-1"></i></Link>
                     <div className='text-center d-flex mx-4 justify-constent-center'>
                         <img className='proImg' width="40" height="40" src='https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg' alt=""/>
                         <div className='customText'>
@@ -28,8 +28,8 @@ export default function Details() {
                         </div>
                     </div>
                     <div className='callMenu'>
-                        <button><i class="fa-solid fa-phone"></i></button>
-                        <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <button><i className="fa-solid fa-phone"></i></button>
+                        <button><i className="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
                 </div>
                 <div className='pdding32 heiht400'>
@@ -39,7 +39,7 @@ export default function Details() {
                 <div className='msgContainer'>
                     <div className='msgInput'>
                         <input type='text' placeholder='Type a message'/>
-                        <button className='border-0'><span class="material-symbols-outlined">send</span></button>
+                        <button className='border-0'><span className="material-symbols-outlined">send</span></button>
                     </div>
                 </div>
             

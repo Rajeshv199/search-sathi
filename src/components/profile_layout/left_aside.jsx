@@ -28,25 +28,25 @@ export default function LeftAside(){
             <div className="d-flex justify-content-between">
                 <Link to="/profile_details">
                     <div className={'left-side-items '+(route==="/profile_details"?"colr5":"")}>
-                        <span class="material-symbols-outlined">join_inner</span>
+                        <span className="material-symbols-outlined">join_inner</span>
                         <div className={route==="/profile_details"?"colr5":""}>Matches</div>
                     </div>
                 </Link>
                 <Link to="/activity">
                     <div className={'left-side-items '+(route==="/activity"?"colr5":"")}>
-                        <span class="material-symbols-outlined">local_activity</span>
+                        <span className="material-symbols-outlined">local_activity</span>
                         <div className={route==="/activity"?"colr5":""}>Activity</div>
                     </div>
                 </Link>
                 <Link to="/byCriteria">
                     <div className={'left-side-items '+(route==="/search"?"colr5":"")}>
-                        <span class="material-symbols-outlined">query_stats</span>
+                        <span className="material-symbols-outlined">query_stats</span>
                         <div className={route==="/search"?"colr5":""}>Search</div>
                     </div>
                 </Link>
                 
                 <div className="left-side-items">
-                <span class="material-symbols-outlined">send</span>
+                <span className="material-symbols-outlined">send</span>
                     <div>Messanger</div>
                 </div>
             </div>
@@ -79,7 +79,7 @@ export default function LeftAside(){
             </div>
 
             <div className="upgrdeBtn text-center mt-4">
-                <button>Upgrade Now <i class="fa-solid fa-chevron-right fa-2xs"></i></button>
+                <button>Upgrade Now <i className="fa-solid fa-chevron-right fa-2xs"></i></button>
             </div>
             
         </div>

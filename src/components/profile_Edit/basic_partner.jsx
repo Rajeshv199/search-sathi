@@ -94,7 +94,7 @@ export default function BasicPartner() {
                             ))}
                         </div>
                         {/* <button className="ubmitopt2" onClick={()=>setIsPop(false)}>Done</button> */}
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -105,8 +105,8 @@ export default function BasicPartner() {
             <div className="popup-box2">
                 <div className="box5">
                     <div className="checkbox-Custom">
-                        <h5 className='mb-2'><i class="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(prevPop)}></i>{title}</h5>
-                        <ul className='select-item'><li>{minval} <i class="fa-solid fa-xmark fa-sm"></i></li></ul>
+                        <h5 className='mb-2'><i className="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(prevPop)}></i>{title}</h5>
+                        <ul className='select-item'><li>{minval} <i className="fa-solid fa-xmark fa-sm"></i></li></ul>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
                                 <label key={index} onClick={()=>setTimeout(()=>setIsPop(-1),100)}>
@@ -116,7 +116,7 @@ export default function BasicPartner() {
                             ))}
                         </div>
                         {/* <button className="ubmitopt2" onClick={()=>setIsPop(false)}>Done</button> */}
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -130,11 +130,11 @@ export default function BasicPartner() {
                     <div className="checkbox-Custom">
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
-                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i class="fa-solid fa-xmark fa-sm"></i></li>):
+                            {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i className="fa-solid fa-xmark fa-sm"></i></li>):
                             <React.Fragment>
-                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i class="fa-solid fa-xmark fa-sm"></i></li>
-                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i class="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[0])}>{value[0]}<i className="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[1])}>{value[1]}<i className="fa-solid fa-xmark fa-sm"></i></li>
+                            <li onClick={()=>handleDelete(value,value[2])}>{value[2]}<i className="fa-solid fa-xmark fa-sm"></i></li>
                             <div>+{value.length-3} More</div>
                             </React.Fragment>
                             }
@@ -148,7 +148,7 @@ export default function BasicPartner() {
                             ))}
                         </div>
                         <button className="submitopt2" onClick={()=>setIsPop(false)}>Done</button>
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@ export default function BasicPartner() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/edit/partner"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/edit/partner"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>Basic Details</h5>
                     <div>Update these details to get suitable matches</div>
                 </div>
@@ -192,7 +192,7 @@ export default function BasicPartner() {
                         <div className='habitsOpt'>
                             {maritalStatusArr.map((h1,index)=>(
                                 <button className={maritalStatus.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,maritalStatus)} key={index}>
-                                    {h1} {maritalStatus.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    {h1} {maritalStatus.find(m1=>m1===h1)?<i className="fa-solid fa-check fa-sm text-danger"></i>:<i className="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>
@@ -203,7 +203,7 @@ export default function BasicPartner() {
                         <div className='habitsOpt'>
                             {residentialStatusArr.map((h1,index)=>(
                                 <button className={residentialStatus.find(m1=>m1===h1)?"bgcolor":""} onClick={()=>handleMutiSelected(h1,residentialStatus)} key={index}>
-                                    {h1} {residentialStatus.find(m1=>m1===h1)?<i class="fa-solid fa-check fa-sm text-danger"></i>:<i class="fa-solid fa-plus fa-sm"></i>}
+                                    {h1} {residentialStatus.find(m1=>m1===h1)?<i className="fa-solid fa-check fa-sm text-danger"></i>:<i className="fa-solid fa-plus fa-sm"></i>}
                                 </button>
                             ))}
                         </div>

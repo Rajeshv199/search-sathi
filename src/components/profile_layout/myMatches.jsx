@@ -23,7 +23,7 @@ export default function MyMatches() {
 
             <div className='profile-box'>
                 <div className='filterBtn '>
-                    <div><i class="fa-solid fa-filter px-1"></i>Filters</div>
+                    <div><i className="fa-solid fa-filter px-1"></i>Filters</div>
                     <div>Verified</div>
                     <div>Just Joined</div>
                     <div>Nearby</div>
@@ -83,11 +83,11 @@ export default function MyMatches() {
                                 {msgInput&& !interest&&
                                  <div className='sentMsgInput'>
                                     <input type="text" className=''  placeholder='Send a personal message'/>
-                                    <button onClick={()=>setInterest(true)}><span class="material-symbols-outlined">send</span></button>
+                                    <button onClick={()=>setInterest(true)}><span className="material-symbols-outlined">send</span></button>
                                  </div>
                                 }
                                 {interest&&
-                                    <div className="msgText"><i class="fa-solid fa-check px-2"></i>Message sent</div>
+                                    <div className="msgText"><i className="fa-solid fa-check px-2"></i>Message sent</div>
                                 }
                                  
                             </div>

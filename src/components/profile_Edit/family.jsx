@@ -46,7 +46,7 @@ export default function Family() {
                             ))}
                         </div>
                         {/* <button className="ubmitopt2" onClick={()=>setIsPop(false)}>Done</button> */}
-                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i class="fa-solid fa-xmark fa-lg"></i></button>
+                        <button className="cancelBtn2" onClick={()=>setIsPop(false)}><i className="fa-solid fa-xmark fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ export default function Family() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/profile_edit"><i class="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/profile_edit"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'> About My Family</h5>
                     <div>Talk about your family members</div>
                 </div>
@@ -81,8 +81,8 @@ export default function Family() {
                         <label>Family Status</label>
                         <div className='habitsOpt'>
                             <button className={familyStatus==="Rich"?"bgcolor":""} onClick={()=>handleSelected("Rich","familyStatus")}>Rich</button>
-                            <button className={familyStatus==="Upper Class"?"bgcolor":""} onClick={()=>handleSelected("Upper Class","familyStatus")}>Upper Middle Class</button>
-                            <button className={familyStatus==="Middle Class"?"bgcolor":""} onClick={()=>handleSelected("Middle Class","familyStatus")}>Middle Class</button>
+                            <button className={familyStatus==="Upper className"?"bgcolor":""} onClick={()=>handleSelected("Upper className","familyStatus")}>Upper Middle className</button>
+                            <button className={familyStatus==="Middle className"?"bgcolor":""} onClick={()=>handleSelected("Middle className","familyStatus")}>Middle className</button>
                         </div>
                     </div>
 
