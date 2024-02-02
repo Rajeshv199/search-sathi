@@ -43,7 +43,7 @@ a:hover{
 }
 .header-container{
     position: fixed;
-    top:0;
+    top:20px;
     z-index: 6;
     height: 63px;
     width: 100%;
@@ -149,7 +149,8 @@ a:hover{
 }
 .bgImage{
     width: 100%;
-    background:linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url("../image/bgImgae.jpg");
+    /* background:linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url("../image/bgImage2.jpg"); */
+    background: url("../image/bgImage2.jpg");
     background-size: cover;
     /* background-size: contain; */
     background-repeat: no-repeat;
@@ -259,19 +260,15 @@ a:hover{
     display: block;
 }
 
-.firstBlock{
-    margin-top: -622px;
-}
 
 .looking-Container{
-    padding: 54px 0px 25px;
-    font-family: 'Cabin',sans-serif;
+    position: relative;
     color: #fff;
     width: 990px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 315px;
+    padding-top: 260px;
 }
 .looking-text{
     display: flex;
@@ -279,34 +276,27 @@ a:hover{
     justify-content: flex-end;
 }
 .nowChatForFree{
-    font-style: normal;
-    font-family: 'Noto Serif', serif;
+    /* font-family: 'Noto Serif', serif; */
     font-weight: 500;
-    font-size: 48px;
-    line-height: 52px;
+    font-size: 35px;
+    line-height: 40px;
     letter-spacing: -0.03em;
     color: #FFF;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    letter-spacing: 1px;
 }
 .isLooking{
     font-size: 20px;
-    text-shadow: 0px 4px 4px rgb(0 0 0 / 75%);
-    margin-top: 4px
 }
 .registerFreeBtn{
-    position: relative;
-    top: -160px;
-    border: 1px solid #cecbcb;
-    padding: 12px 60px;
-    border-radius: 30px;
+    width: 40%;
+    margin-top: 10px;
+    border: none;
+    padding: 8px 0;
+    border-radius: 8px;
     font-size: 20px;
-    margin-right: 20px;
     background-color:transparent;
-    color: #e4dfdf;
-}
-.registerFreeBtn:hover{
-    border: 1px solid #fff;
     color: #fff;
+    background-color: #A70855;
 }
 .registerFields{
     position: relative;
@@ -409,59 +399,72 @@ a:hover{
 }
 
 /* main-benifit  */
-
+.firstBlock{
+    background-color: #e5f5f2;
+    padding-top: 20px;
+}
 
 .homeContainer{
     width: 990px;
     margin: 0 auto;
-    box-shadow: 0 2px 6px 0 rgba(142, 142, 142, 0.2);
     margin-bottom: 48px;
     border-radius: 4px;
 }
 .main-benifit{
+    width: 100%;
+    position: relative;
     border-radius: 6px;
     background-color: #fff;
     font-family: 'Cabin', sans-serif;
     font-weight: 400px;
     padding: 28px 74px 48px 74px;
-    margin: 20px 0;
 }
-.moreThan{
+.benifit-title{
     letter-spacing: 1.75px;
-    color: #8A9DB0;
-    font-size: 14px;
-    font-weight: 700;
+    color: #414040;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
 }
-.bringingPeople{
+.benifit-title span{
+    color:#c72573;
+}
+.benifit-title2{
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 500;
+    font-family: 'Akaya Kanadaka', system-ui;
+    /* line-height: 28px; */
+}
+.benifit-title2 span{
+    color:#c72573;
+}
+
+
+
+/* .bringingPeople{
     color: #000;
     font-size: 28px;
     font-weight: 400;
-}
+} */
 .main-benifit span{
     color: #e51e57;
 }
-.infoImg{
-    height: 53px;
-    width: 60px;
-    background-image: url("../image/Top_new_Benefits.png");
+
+/* .infoImg{
+    height: 100%;
+    width: 100%;
+    background-image: url("../image/new_Benefits.png");
     background-repeat: no-repeat;
-}
-.ImgPosition{
-    background-position: -23px -10px;
-}
-.ImgPosition2{
-    background-position: -206px -10px;
-}
-.ImgPosition3{
-    background-position: -121px -10px;;
-}
-.underline{
+} */
+
+/* .underline{
     height: 2px;
     width: 39px;
     margin: 8px 0 5px 0;
     background-color: #e51e57;
 
-}
+} */
 .textmore{
     line-height: 19px;
     color: #33495F;
@@ -478,12 +481,13 @@ a:hover{
     box-sizing: border-box;
     display: flex;
     align-items: flex-start;
+    box-shadow: 0 2px 6px 0 rgba(142, 142, 142, 0.2);
     
 }
 .featuresSection_body{
     position: sticky;
     top: 0;
-    height: 100vh;
+    /* height: 100vh; */
     width: 310px;
     flex: none;
     z-index: 5;
@@ -498,7 +502,7 @@ a:hover{
     padding-left: 4rem;
     background: #f8f9f9;
 }
-.FeaturesSection__SubTitle{
+/* .FeaturesSection__SubTitle{
     text-transform: uppercase;
     font-size: .875rem;
     font-weight: 700;
@@ -507,16 +511,8 @@ a:hover{
     margin: 0;
     margin-bottom: 0.25rem;
     color: #8A9DB0;
-}
-.featuresSection__Title{
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 600;
-    font-family: 'Akaya Kanadaka', system-ui;
-}
-.featuresSection__Title span{
-    color:#c72573;
-}
+} */
+
 .featuresSection-List{
     width: 100%;
     padding-top: 2rem;
@@ -618,32 +614,18 @@ a:hover{
     max-width: 100%;
     margin: 0 auto;
 }
-.findWorkImg{
-    height: 100px;
-    width: 197px;
-    background-image: url("../image/How_it_works.svg");
-    background-repeat: no-repeat;
-}
 
-.img-postion{
-    background-position: -14px -10px;    
-}
-.img-postion2{
-    background-position: -233px -10px;    
-}
-.img-postion3{
-    background-position: -449px -10px;    
-}
+
 .findWorkTxt{
     /* width: 197px; */
-    padding-top: 10px;
+    padding-top: 20px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .findBottom{
     background:#A70855;
     padding: 8px 20px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     border: none;
     color: #fff;
@@ -653,18 +635,16 @@ a:hover{
 }
 
 .membershipPlans{
+    position: relative;
     padding: 28px 74px 48px 74px;
-    background-color: #f8f9f9;
+    background-color: #c4f0f0;
     text-align: center;
     justify-content: center;
-    margin-bottom: -230px;
 }
 .membership-Title{
     font-size: 28px;
     font-weight: 600;   
-}
-.membership-Title span{
-    color: #e51e57;
+    color: #583535;
 }
 .membership-Txt{
     font-size: 16px;
@@ -677,9 +657,11 @@ a:hover{
     text-align: center;
 }
 .free-Membership{
+    position: relative;
     height: 440px;
-    width: 350px;
+    /* width: 350px; */
     margin-top: 40px;
+    margin-right: 25px;
     box-shadow: 0 2px 6px -1px rgba(38,48,140,0.20);
     padding: 24px;
     text-align: left;
@@ -687,58 +669,81 @@ a:hover{
     border-radius: 4px;
     background-color: #ffff;
 }
-.microLine{
-    height: 3.2px;
-    width: 33.6px;
-    background-color: #e51e57;
+.sideBorder{
+    position: absolute;
+    width: 190px;
+    height: 280px;
+    background-color: #2D5973;
+    z-index: 1;
+    left: 103px;
+    bottom: 30px;
 }
 .membership-text{
     display: flex;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     text-align: start;
     padding-top: 4px;
+    color: #000;
 }
 .pddingTop{
     margin-top: 12px;
 }
 
 .materialIcons{
-    width: 24px;
-    height: 24px;
-    background-image: url("../image/Material_Icons_Sprites_final.svg");
+    width: 18px;
+    height: 18px;
+    background-image: url("../image/sprite2.png");
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3px;
+    margin-right: 8px;
 }
-.pinktick{
-    background-position: -271px -38px;
+.materialIcons2{
+    width: 18px;
+    height: 18px;
+    background-image: url("../image/spritecrox.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3px;
+    margin-right: 8px;
+    background-color: #bdc0bd;
+    border-radius: 50px;
 }
-.pinktick2{
-    background-position: -288px -134px; 
-    
-}
+
 .colorGray{
     color: #8A9DB0;
 }
 .freeRegister{
-    height: 35px;
-    display: flex;
-    background: #e51e57;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
+    border: none;
+    background: #2D5973;
+    padding: 8px 12px;
     color: #fff;
-    margin-right: 10px;
     border-radius: 3px;
-    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+.sideBorder2{
+    position: absolute;
+    width: 190px;
+    height: 280px;
+    background-color: #A70855;
+    z-index: 1;
+    left: 495px;
+    bottom: 30px;
 }
 .paid-Membership{
     width: 350px;
-    background-color: #e51e57;
+    background-color: #ffff;
     border-radius: 4px;
-    color: #ffff;
+    color: #0000;
     text-align: left;
     /* margin-top: -40px; */
     padding: 32px 0px 32px 32px;
     box-shadow: 0 2px 6px 0 rgba(38, 48, 140, 0.2);
+    z-index: 2;
+    margin-left: 20px;
 
 }
 .microLine2{
@@ -746,87 +751,77 @@ a:hover{
     width: 34px;
     background-color: #fff;
 }
-.paid-Membership--Title{
+/* .paid-Membership--Title{
     font-size: 28px;
     font-weight: 400;
     color: #fff;
-}
-.pinktick3{
-    background-position: -85px -37px; 
-}
+} */
+
 .paidRegister{
-    width: 90%;
-    height: 35px;
-    display: flex;
-    background: #fff;
-    font-weight: 500;
-    align-items: center;
-    justify-content: center;
-    color: #e51e57;
-    margin-right: 10px;
+    border: none;
+    background: #A70855;
+    padding: 8px 12px;
+    color: #fff;
     border-radius: 3px;
-    cursor: pointer;
-}
-.bgBlue{
-    height: 232px;
-    background-color: #34495e;
-    /* margin-top: -240px; */
+    outline: none;
+    margin-top: 10px;
+
 }
 
+
 .exclusivePad{
+    position: relative;
     padding: 32px 60px 45px 74px;
     background-color: #fff;
 }
 .exclusiveImage{
-    width: 851px;
-    height: 490px;
-    background: #FBFBFB;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    border-radius: 12px;
-    background-image: url("../image/exclusive_Image.png");
+    width: 100%;
 }
 .exclusiveBtn{
+    position: relative;
     padding: 4px 16px;
     color: #fff;
-    background-color: #e51e57;
+    background-color: #A70855;
     border-radius: 4px;
     font-size: 14px;
-}
-.disp-flex{
-    display: flex;
-    padding-top: 28px;
-}
-.pickPeople{
-    background-position: -45px -135px;
-}
+    margin-right: 20px;
+    margin-top: 10px;
 
-.divideSize{
-    width: 0px;
-    height: 75px;
-    border: 1px solid #DFE6ED;
-    margin: 0px 10px 0px 6px;
+}
+.materialBox{
+    position: relative;
+    width: 330px;
+    padding: 12px;
+    box-shadow: 2px 2px 2px 0 rgba(38, 48, 140, 0.2);
+    border-left: 12px solid #A70855;
+}
+.materialBox svg{
+    width: 22px;
+    height: 22px;
+    color: #A70855;
+    margin-right: 8px;
 }
 .exclusiveMeet{
     font-size: 16px;
     font-weight: 500;
-    padding-left: 8px;
+    line-height: 15px;
 }
 .txtMore{
     font-size: 13px;
-    line-height: 19px;
+    line-height: 16px;
     color: #33495F;
+    margin-top: 4px;
 
 }
-.pickTune{
-    background-position: -136px -135px;
+.m-left{
+    margin-left: 100px;
 }
-.pickprofile{
-    background-position: -89px -135px;
+.m-left2{
+    margin-left: 170px;
 }
 .successStory{
     padding: 30px 50px 45px 74px;
-    background-color: #f8f9f9;
+    background-color: #dbf3f3;
 }
 .storyMatched{
     width: 866px;
@@ -840,9 +835,9 @@ a:hover{
 .storySlick .slick-prev {
     width: 40px!important;
     height: 40px!important;
-    left: -20px !important;
+    left: -45px !important;
     border-radius: 50%;
-    box-shadow: 0 12px 18px 0 rgba(38,48,140,0.20);
+    /* box-shadow: 0 12px 18px 0 rgba(38,48,140,0.20); */
     background-color: #ffff!important;
     color: #000000;
     z-index: 5;
@@ -853,10 +848,10 @@ a:hover{
 .storySlick .slick-next{
     width: 40px!important;
     height: 40px!important;
-    right: -20px!important;
+    right: -45px!important;
     border-radius: 50%;
-    box-shadow: 0 12px 18px 0 rgba(38,48,140,0.20);
-    background-color: #ffff!important;
+    /* box-shadow: 0 12px 18px 0 rgba(38,48,140,0.20); */
+    background-color: #fff!important;
     background-image: url("../image/Material_Icons_Sprites_final.svg")!important;
     background-repeat: no-repeat!important;
     background-position: -190px -80px!important;
@@ -872,54 +867,45 @@ a:hover{
     font-size: 45px;
   }
 
-.storySlick .slick-current{
-    width: 289px!important;
-    height: 230px;
-    min-height: 100px;
+.slick-active{
+    width: 240px!important;
+    margin-right: 30px;
 }
+
 .slick-cloned{
     width: 100%;
     display: inline-block;
-    height: 228.9px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px 0 rgba(142, 142, 142, 0.2);
+    overflow: hidden;
+    /* height: 300px; */
 }
 .storyList{
     position: relative;
-    margin-right: 20px;
-    height: 100%!important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
-    background-position: center top;
-    border-radius: 20px;
-}
-.pos_abs{
-    width: 100%;
-    position: absolute;
-    padding-top: 10px;
-    bottom: 0;
-    color: #fff;
-    text-align: center;
-}
-.story-Name{
-    text-shadow: 0 1px 1px rgba(0,0,0,0.27);
-    font-size: 40px;    
-    font-family: 'Aguafina Script', cursive;
-}
-.lineClass{
-    border: 2px solid white;
-    width: 90%;
-    margin: 0 auto;
-    margin-top: -5px;
-}
-.marriageDate{
-    letter-spacing: 1.15px;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.24);
-    font-size: 11px;
-    font-weight: 600;
-    padding-top: 7px;
-    padding-bottom: 20px;
+    /* margin-right: 20px; */
+    width: 240px;
+    height: 270px!important;
 }
 .storyDetails{
+    width: 240px;
+    background-color: #f399b8;
+    padding: 8px;
+    color: #313131;
+}
+.story-Name{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;  
+    /* font-family: 'Aguafina Script', cursive; */
+}
+
+.marriageDate{
+    letter-spacing: 1.15px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 4px;  
+}
+/* .storyDetails{
     position: relative;
     height: 228.2px;
     width: 100%;
@@ -930,18 +916,18 @@ a:hover{
     color: #fff;
     padding: 24px;
     transition: 2s all;
-}
+} */
 
-.storyDesc{
+/* .storyDesc{
     height: 98px;
     padding-top: 8px;
     overflow: hidden;
-}
-.storyList:hover .storyDetails{
+} */
+/* .storyList:hover .storyDetails{
     visibility:visible;
     opacity: 1;
-}
-.viewMore{
+} */
+/* .viewMore{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -950,7 +936,7 @@ a:hover{
 }
 .iconView{
     background-position: -340px -38px
-}
+} */
 
 
 .connectApp{
@@ -2498,15 +2484,6 @@ li:hover .subhobver{
     display: none!important;
 }
 
-.tickIcon{
-    display: none;
-}
-.tickIcon2{
-    display: none;
-}
-.tickIcons{
-    display: none;
-}
 .loginView{
     /* display: none; */
 }

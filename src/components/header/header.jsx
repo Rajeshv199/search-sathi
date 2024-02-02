@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
 import LoginForm from '../login/user_login';
-import yogjodiLogo from "../image/YogJodiLogo.png";
+import YogjodiLogo from "../image/YogJodiLogo.png";
+import YogjodiLogo2 from "../image/yogJodiLogo2.png";
 import UserRegisterPop from "../registration/userRegisterPop";
 
 class Header extends Component{
@@ -52,7 +53,7 @@ class Header extends Component{
             <div className="header--modifier text-white">
                 <div>
                     <Link className="yogjodi-logo" to="#">
-                        <img height="100%" width="100%" src={yogjodiLogo} alt="logo"/>
+                        <img height="100%" width="100%" src={YogjodiLogo} alt="logo"/>
                     </Link>
                 </div>
                 <div className="menu-navbar">

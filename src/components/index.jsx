@@ -23,6 +23,13 @@ import Handpicked from './image/handpicked.png';
 import MatchImage from './image/matchImage.png';
 import VideoImage from './image/videoImage.png';
 import VideoProfile from './image/profile121.png';
+import New_Benefits from './image/new_Benefits.png';
+import New_Benefits2 from './image/new_Benefits2.png';
+import New_Benefits3 from './image/new_Benefits3.png';
+import how_work from './image/how-work.png';
+import how_work2 from './image/how-work2.png';
+import how_work3 from './image/how-work3.png';
+import ExclusiveBgImg from './image/exclusiveBgImg.png';
 
 
 
@@ -99,54 +106,45 @@ class index extends Component{
                     <header className="header-container">
                         <Header/>
                     </header>
-                    <div className="bgImage"></div>
-                        <div className="firstBlock">
-                            <div className="looking-Container">
-                                <div className="looking-text">
-                                    <div className="nowChatForFree">Now, chat for free!</div>
-                                    <div className="isLooking">Finding your perfect match just became easier</div>
-                                </div>
-                                <div className="">
-                                    <button className="registerFreeBtn" onClick={this.handleResisterPop}>Register Free</button>
-                                </div>
-                                
+                    <div className="bgImage">
+                        <div className="looking-Container">
+                            <div className="looking-text">
+                                <div className="nowChatForFree">Now, chat for free!</div>
+                                <div className="isLooking">Finding your perfect match just became easier</div>
+                                <button className="registerFreeBtn" onClick={this.handleResisterPop}>Register Free</button>
                             </div>
-
-                            <div>
+                        </div>
+                    </div>
+                        <div className="firstBlock">
                             <div className="homeContainer">
                                 <div className="main-benifit">
                                     <div className="my-3">
-                                        <div className="moreThan">MORE THAN 20 YEARS OF</div>
-                                        <div className="bringingPeople">Bringing People <span>Together</span> </div>
+                                        <div className="benifit-title">More Than 20 Years Of</div>
+                                        <div className="benifit-title2 ">Bringing People <span>Together</span> </div>
                                     </div>
-                                    
-                                    <div className="row">
+                                    <div className="row mt-5">
                                         <div className="col-4">
-                                            <div className="infoImg ImgPosition"></div>
+                                            <div className="text-center"><img  src={New_Benefits} alt=""/> </div> 
                                             <div className="pt-3">100% Manually Screened Profiles</div>
-                                            <div className="underline"></div>
                                             <div className="textmore">Search by location, community, profession & more from lakhs of active profiles</div>
                                         </div>
-                                        <div className="col-4">
-                                            <div className="infoImg ImgPosition2"></div>
+                                        <div className="col-4 ">
+                                            <div className="text-center"><img  src={New_Benefits2} alt=""/> </div> 
                                             <div className="pt-3">Verification by Personal Visit</div>
-                                            <div className="underline"></div>
                                             <div className="textmore">Special listing of profiles verified by our agents through personal visits</div>
                                         </div>
                                         <div className="col-4">
-                                            <div className="infoImg ImgPosition3"></div>
+                                            <div className="text-center"><img  src={New_Benefits3} alt=""/> </div>  
                                             <div className="pt-3">Control over Privacy</div>
-                                            <div className="underline"></div>
                                             <div className="textmore">Restrict unwanted access to contact details & photos/videos</div>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div className="featuresSection">
                                     <div className="featuresSection_body">
                                         <header className="featuresSection__Header">
-                                            <h5 className="FeaturesSection__SubTitle">Meet From Home</h5>
-                                            <h2 className="featuresSection__Title">Impress them Over the <span>Distance</span></h2>
+                                            <div className="benifit-title">Meet From Home</div>
+                                            <div className="benifit-title2">Impress them Over the <span>Distance</span></div>
                                         </header>
 
                                         <div className="featuresSection-List">
@@ -181,22 +179,22 @@ class index extends Component{
 
                                    
                                 </div>
-                                <div className="main-benifit">
-                                    <h2>
-                                        <div className="moreThan">THREE SIMPLE STEPS TO</div>
-                                        <div className="featuresSection__Title">Find the <span> One for You</span></div>
-                                    </h2>
-                                    <div className="row">
+                                <div className="main-benifit ">
+                                    <div>
+                                        <div className="benifit-title">Three Simple Steps To</div>
+                                        <div className="benifit-title2">Find the <span> One for You</span></div>
+                                    </div>
+                                    <div className="row text-center">
                                         <div className="col-4 pt-4">
-                                            <div className="findWorkImg img-postion"></div>
+                                            <div><img src={how_work} alt=""/></div>
                                             <div className="findWorkTxt m-0"><span>1. </span>Define Your Partner Preferences</div>
                                         </div>
                                         <div className="col-4 pt-4">
-                                            <div className="findWorkImg img-postion2"></div>
+                                            <div><img src={how_work2} alt=""/></div>
                                             <div className="findWorkTxt"><span>2. </span>Browse Profiles</div>
                                         </div>
                                         <div className="col-4 pt-4">
-                                            <div className="findWorkImg img-postion3"></div>
+                                            <div><img src={how_work3} alt=""/></div>
                                             <div className="findWorkTxt"><span>3. </span>Send Interests & Connect</div>
                                         </div>
                                         <div className="text-center pt-4">
@@ -205,91 +203,80 @@ class index extends Component{
                                     </div>
                                 </div>
                                 <div className="membershipPlans">
-                                    <h3><div className="membership-Title"><span>Membership</span> Plans</div></h3>
+                                    <h3><div className="benifit-title2"><span>Membership</span> Plans</div></h3>
                                     <div className="membership-Txt">Upgrade your plan as per your customized requirements. With a paid membership, you can seamlessly connect with your prospects and get more responses. Here are some key benefits:</div>
                                     <div className="membership">
                                         <Membership/>
                                     </div>
                                 </div>
-                                <div className="bgBlue"></div>
-
                                 <div className="exclusivePad">
-                                    <div className="exclusiveImage">
-                                        <h2 className="text-center py-4">
-                                            <div className="moreThan pb-1">PERSONALISED MATCH-MAKING SERVICE</div>
-                                            <div className="featuresSection__Title">Introducing <span>Exclusive</span></div>
-                                            <bottom className="exclusiveBtn">EXCLUSIVE</bottom>
-                                        </h2>            
-                                    </div>
-                                    <div className="disp-flex">
-                                        <div>
-                                            <div className="d-flex text-center pb-2">
-                                                <div className="materialIcons pickPeople"></div>
-                                                <div className="exclusiveMeet">Meet Your Relationship Manager</div>
-                                            </div>
-                                            <div className="txtMore">Connect with our highly experienced advisor who manages your profile.</div>
+                                    <div className="">
+                                        <div className="benifit-title">Personalised Match-Making Service</div>
+                                        <div className="d-flex justify-content-between">
+                                            <div className="benifit-title2">Introducing <span>Exclusive</span></div>
+                                            <div ><bottom className="exclusiveBtn">EXCLUSIVE</bottom></div>
                                         </div>
-                                        <div className="divideSize"></div>
-                                        <div>
-                                            <div className="d-flex text-center pb-2">
-                                                <div className="materialIcons pickTune"></div>
-                                                <div className="exclusiveMeet">Communicate your preferences</div>
-                                            </div>
-                                            <div className="txtMore">Consultation to understand your expectations in a prospective partner.</div>
+                                    </div>  
+                                    <div className="row">
+                                        <div className="col-5 px-0 pt-3">
+                                            <img className="exclusiveImage" src={ExclusiveBgImg} alt="exclusiveBgImg"/>
                                         </div>
-                                        <div className="divideSize"></div>
-                                        <div>
-                                            <div className="d-flex text-center pb-2">
-                                                <div className="materialIcons pickprofile"></div>
-                                                <div className="exclusiveMeet">Choose from handpicked profiles</div>
+                                        <div className="col-7">
+                                            <div className="materialBox mt-4 ml-4">
+                                                <div className="exclusiveMeet">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
+                                                    Meet Your Relationship Manager
+                                                </div>
+                                                <div className="txtMore">Connect with our highly experienced advisor who manages your profile.</div>
                                             </div>
-                                            <div className="txtMore">We shortlist profiles matching your criteria for offline interactions.</div>
+                                            <div className="materialBox my-4 m-left">
+                                                <div className="exclusiveMeet">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>
+                                                    Communicate your preferences
+                                                </div>
+                                                <div className="txtMore">Consultation to understand your expectations in a prospective partner.</div>
+                                            </div>
+                                            <div className="materialBox m-left2">
+                                                <div className="exclusiveMeet">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>
+                                                    Choose from handpicked profiles
+                                                    </div>
+                                                <div className="txtMore">We shortlist profiles matching your criteria for offline interactions.</div>
+                                            </div>
                                         </div>
-
-                                    </div>
+                                    </div>          
+                                   
+                                    
                                 </div>
                                 <div className="successStory">
                                    <div className="storyMatched">
-                                        <h3 className="my-3">
-                                            <div className="moreThan">LAKHS OF HAPPY COUPLES</div>
-                                            <div className="featuresSection__Title">Matched by <span> Yogjodi</span></div>
-                                        </h3>
+                                        <div className="my-3">
+                                            <div className="benifit-title">Lakhs Of Happy Couples</div>
+                                            <div className="benifit-title2">Matched by <span> Yogjodi</span></div>
+                                        </div>
                                    </div> 
                                    <div className="storySlick">
-                                   <Slider {...settings}>
-                                        {successStoryList.map((item,index) => (
-                                            <div className="slick-current" key={index}>
-                                                <div className="slick-cloned">
-                                                    <div className="storyList" style={{backgroundImage:`radial-gradient(50% 114%, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(rgba(255, 255, 255, 0.5) 16%, rgba(0, 0, 0, 0.7) 76%), url("${item.img}")`}}>
-                                                        <div className="pos_abs">
-                                                            <div className="story-Name">{item.name}</div>
-                                                            <div className="lineClass"></div>
-                                                            <div className="marriageDate">MARRIAGE DATE 01, JANUARY 2021</div>
-                                                        </div>  
+                                        <Slider {...settings}>
+                                            {successStoryList.map((item,index) => (
+                                                <div key={index}>
+                                                    <div className="slick-cloned">
+                                                        <div className="storyList" ><img width="100%" height="100%" src={item.img} alt="" /></div>  
                                                         <div className="storyDetails">
-                                                            <div className="fw-bold">{item.name}</div>
-                                                            <div className="storyDesc">i am satisfied with Yogjodi.com for bringing my better half in my life</div>
-                                                            <Link to="#">
-                                                                <div className="viewMore">
-                                                                    <div>View More</div>
-                                                                    <div className="materialIcons iconView"></div>
-                                                                    
-                                                                </div>
-                                                            </Link>
-                                                        </div>
+                                                            <div className="story-Name">{item.name}</div>
+                                                            <div className="marriageDate">Marriage Date 01, January 2023</div>
+                                                        </div>  
                                                     </div>  
-                                                </div>  
-                                            </div>
-                                        ))}
-                                    </Slider>
+                                                </div>
+                                            ))}
+                                        </Slider>
                                    </div>
                                 </div>
 
                                 <div className="connectApp">
                                     <div className="connectApp-Txt">
                                         <h3 className="my-3">
-                                            <div className="moreThan">STAY CONNECTED WITH</div>
-                                            <div className="featuresSection__Title">Yogjodi Apps</div>
+                                            <div className="benifit-title text-secondary">STAY CONNECTED WITH</div>
+                                            <div className="benifit-title2">Yogjodi Apps</div>
                                         </h3>
                                         <div className="pb-3">Access quick & simple search, instant updates and a great user experience on your phone. Download our apps rated best in the online matrimony segment.</div>
                                         <div className=" text-center py-2">
@@ -304,8 +291,8 @@ class index extends Component{
 
                                 <div className="matrimonialContainer">
                                     <h3 className="py-3 text-center">
-                                        <div className="moreThan">BROWSE</div>
-                                        <div className="featuresSection__Title"> Matrimonial <span>Profiles by</span></div>
+                                        <div className="benifit-title">BROWSE</div>
+                                        <div className="benifit-title2"> Matrimonial <span>Profiles by</span></div>
                                     </h3>  
                                     <div className="text-center">
                                         <ul className="matrimonial-Browse">
@@ -347,7 +334,7 @@ class index extends Component{
                                 </div>   
 
                                 <div>
-                                    <div className="featuresSection__Title">Matched Gallery </div>
+                                    <div className="benifit-title2">Matched Gallery </div>
                                     <div className="d-flex p-4">
                                         <div className="gallryMatch">
                                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGOhHTtj-5-h2Qnt8Bljz_it4ZGiTsu4TSSQ&usqp=CAU" alt=""/>
@@ -362,17 +349,14 @@ class index extends Component{
                                             <div>More</div>
                                         </div>
                                     </div>
-                                </div>    
-                            </div>      
-
-                            
+                                </div>  
+                            </div>
+                            <footer>
+                                <Footer/> 
+                            </footer>  
+                            <div className="copyRight"> All rights reserved © 2024 Yogjodi Internet Services. </div>
                         </div>
-                        <footer>
-                            <Footer/> 
-                        </footer>  
-                        <div className="copyRight"> All rights reserved © 2024 Yogjodi Internet Services. </div>
                     </div>
-                </div>
 
                 <div className="homePage-Mobile">
                     <div className="bgImageMb">
@@ -393,8 +377,8 @@ class index extends Component{
                     <div className="homeContainer">
                             <div className="main-benifit">
                                 <div className="">
-                                    <div className="moreThan">MORE THAN 20 YEARS OF</div>
-                                    <div className="bringingPeople">Bringing People <span>Together</span> </div>
+                                    <div className="benifit-title">MORE THAN 20 YEARS OF</div>
+                                    <div className="benifit-title2">Bringing People <span>Together</span> </div>
                                 </div>
                                 <div>
                                     <div className=" d-flex mt-3">
@@ -431,8 +415,8 @@ class index extends Component{
                             <div className="featuresSection">
                                     <div className="featuresSection_body">
                                         <header className="featuresSection__Header">
-                                            <h5 className="moreThan">Meet From Home</h5>
-                                            <h2 className="featuresSection__Title">Impress them Over the <span>Distance</span></h2>
+                                            <h5 className="benifit-title">Meet From Home</h5>
+                                            <h2 className="benifit-title2">Impress them Over the <span>Distance</span></h2>
                                         </header>
                                         <div className="featuresSection-dflex">
                                             <div className="featuresSection-Card">
@@ -467,8 +451,8 @@ class index extends Component{
                             </div>
                                 <div className="main-benifit2">
                                     <h2>
-                                        <div className="moreThan">THREE SIMPLE STEPS TO</div>
-                                        <div className="featuresSection__Title">Find the <span> One for You</span></div>
+                                        <div className="benifit-title">THREE SIMPLE STEPS TO</div>
+                                        <div className="benifit-title2">Find the <span> One for You</span></div>
                                     </h2>
                                     <div className="featuresSectionContain">
                                         <div className="featuresSections--lists">
@@ -495,8 +479,8 @@ class index extends Component{
 
                                 <div className="membershipPlans">
                                     <h2>
-                                        <div className="moreThan">UPGRADE YOUR ACCOUNT</div>
-                                        <div className="featuresSection__Title"><span>Membership</span> Plans</div>
+                                        <div className="benifit-title">UPGRADE YOUR ACCOUNT</div>
+                                        <div className="benifit-title2"><span>Membership</span> Plans</div>
                                     </h2>
                                     <div className="membership">
                                         <Membership/>
@@ -506,8 +490,8 @@ class index extends Component{
 
                                 <div className="exclusivePad">
                                     <h2 className="text-center">
-                                        <div className="moreThan pb-1">PERSONALISED MATCH-MAKING SERVICE</div>
-                                        <div className="featuresSection__Title">Introducing <span>Exclusive</span></div>
+                                        <div className="benifit-title pb-1">PERSONALISED MATCH-MAKING SERVICE</div>
+                                        <div className="benifit-title2">Introducing <span>Exclusive</span></div>
                                     </h2>   
                                     <img className="exclusiveImg" src="https://i.ibb.co/NmqvTt3/JS-Exclusive-Image-final-min.png" alt=""/>         
                                     <div className="exclusiveList">
@@ -531,8 +515,8 @@ class index extends Component{
                                 <div className="successStory">
                                    <div className="storyMatched">
                                         <h3 className="m-0">
-                                            <div className="moreThan">LAKHS OF HAPPY COUPLES</div>
-                                            <div className="featuresSection__Title">Matched by <span> Yogjodi</span></div>
+                                            <div className="benifit-title">LAKHS OF HAPPY COUPLES</div>
+                                            <div className="benifit-title2">Matched by <span> Yogjodi</span></div>
                                         </h3>
                                    </div> 
                                    <div className="storySlick">
@@ -553,8 +537,8 @@ class index extends Component{
                                 <div>
                                     <div className="connectApp-Title">
                                         <h3 className="">
-                                            <div className="moreThan">Stay Connected With</div>
-                                            <div className="featuresSection__Title"><span> Yogjodi</span> Apps</div>
+                                            <div className="benifit-title">Stay Connected With</div>
+                                            <div className="benifit-title2"><span> Yogjodi</span> Apps</div>
                                         </h3>
                                    </div>   
                                     <div className="">
@@ -567,8 +551,8 @@ class index extends Component{
                                 </div>   
                                 <div className="matrimonialContainer">
                                     <h3 className="m-0">
-                                        <div className="moreThan">BROWSE</div>
-                                        <div className="featuresSection__Title"><span>Matrimonial</span> Profiles by</div>
+                                        <div className="benifit-title">BROWSE</div>
+                                        <div className="benifit-title2"><span>Matrimonial</span> Profiles by</div>
                                     </h3>  
                                         <ul className="matrimonial-Browse">
                                             {matrimonial.map((m1,index)=>(

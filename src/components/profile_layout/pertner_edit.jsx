@@ -18,7 +18,6 @@ export default function Partner_Edit() {
             </div>
         )
     }
-    
 
     return (
     <div className='profile-details'>

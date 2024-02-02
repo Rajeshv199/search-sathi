@@ -16,9 +16,7 @@ export default function MyMatches() {
     <div className='profile-details'>
         <ProfileHeader/>
 
-        
         <div className='profile-detail-body'>
-
             <LeftAside/>
 
             <div className='profile-box'>

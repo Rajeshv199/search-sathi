@@ -7,7 +7,6 @@ import ProfileHeader from './profileHeader';
 
 export default function Notification() {
 
-
     return <div className='profile-details'>
 
         <ProfileHeader/>

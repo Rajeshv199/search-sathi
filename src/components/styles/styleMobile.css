@@ -8,12 +8,18 @@
         width: 100% !important;
         display: block !important;
     }
+    .sideBorder{
+        display: none!important;
+    }
+    .sideBorder2{
+        display: none!important;
+    }
 
 
     .bgImageMb {
         position: relative;
         min-height: 360px;
-        background:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../image/bgImgae.jpg");
+        background:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../image/bgImage.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         /* background-size: 100% 100%; */
@@ -308,30 +314,6 @@
     }
 
 
-    /* .microLine{
-        width: 95px;
-    }
-    .microLine2{
-        width: 55px;
-    } */
-    .tickIcon {
-        color: rgb(217, 71, 92);
-        height: 30px;
-        width: 30px;
-        display: block;
-
-    }
-
-    .tickIcon2 {
-        height: 30px;
-        width: 30px;
-        display: block;
-    }
-
-    .materialIcons {
-        display: none;
-    }
-
     .membership-Title {
         font-size: 20px;
         /* margin-bottom: 15px; */
@@ -378,12 +360,6 @@
         display: inline-block;
     }
 
-    .tickIcons {
-        display: block;
-        height: 30px;
-        width: 30px;
-        color: #fff;
-    }
 
     .paidRegister {
         width: 100%;

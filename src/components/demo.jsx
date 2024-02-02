@@ -30,14 +30,15 @@ function PartnerForm(){
         return inpArr;
     }
 
-
     useEffect(() => {
         const handleClickOutside = (event) => {
+            console.log(dropdown1Ref.current.contains(event.target));
+            console.log(dropdown2Ref.current.contains(event.target));
           if (dropdown1Ref.current && !dropdown1Ref.current.contains(event.target)) {
             // Clicked outside dropdown 1, close it
             setShowPop(-1);
           }
-          if (dropdown2Ref.current && !dropdown2Ref.current.contains(event.target)) {
+          if (dropdown2Ref.current && dropdown2Ref.current.contains(event.target)) {
             // Clicked outside dropdown 2, close it
             setShowPop(-1);
           }
@@ -76,7 +77,7 @@ function PartnerForm(){
 
     return(
         <div className='container'>
-            <div className="regi-detailw w-100" ref={dropdown1Ref}>
+            <div className="regi-detailw" ref={dropdown1Ref}>
                 <div className={"regi-secle4 float-left mt20"} onClick={() =>{setlabel1(true);setShowPop(1)}} >
                     <label className={"reg-label top8 " +(label1?"reg-mobile":"")} >Marital status</label>
                     <div className="">{maritalStatus.map((m1,index)=>(
