@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
 import LoginForm from '../login/user_login';
 import YogjodiLogo from "../image/YogJodiLogo.png";
-import YogjodiLogo2 from "../image/yogJodiLogo2.png";
 import UserRegisterPop from "../registration/userRegisterPop";
 
 class Header extends Component{

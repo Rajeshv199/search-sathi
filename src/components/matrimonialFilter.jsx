@@ -28,6 +28,5 @@ class MatrimonialFilter extends Component{
               
         );
     }
-
 }
 export default MatrimonialFilter;

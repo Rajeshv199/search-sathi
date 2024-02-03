@@ -81,6 +81,7 @@ class Membership extends Component{
                     </div>
                     <div className="text-center"><button className="paidRegister">Browse Membership Plans</button></div>
                 </div>
+                
 
             </React.Fragment>
         );

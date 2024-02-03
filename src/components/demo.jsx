@@ -11,7 +11,6 @@ function PartnerForm(){
 
     const [takeData,setTakeData] = useState({maritalStatus:[],motherToung:[]})
   
-   
     function handleChange(e){
         const {currentTarget: input} = e;
         let takeData1 = {...takeData};
@@ -32,8 +31,6 @@ function PartnerForm(){
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            console.log(dropdown1Ref.current.contains(event.target));
-            console.log(dropdown2Ref.current.contains(event.target));
           if (dropdown1Ref.current && !dropdown1Ref.current.contains(event.target)) {
             // Clicked outside dropdown 1, close it
             setShowPop(-1);
@@ -52,9 +49,6 @@ function PartnerForm(){
           document.removeEventListener('click', handleClickOutside);
         };
       }, []);
-
-
-      
 
     function multiCheckbox(manArr,name,arr){
         return(
@@ -75,23 +69,45 @@ function PartnerForm(){
     
     const {maritalStatus,motherToung} = takeData;
 
+    const regiSecle4={
+        position: "relative",
+        minHeight:" 46px",
+        width: "500px",
+        backgroundColor: "#fff",
+        border: "1px solid #d9d9d9",
+        borderRadius: "2px",
+        padding: "10px 0",
+    }
+    const multiValue = {
+        backgroundColor: "#ddd9d9",
+        borderRadius: "2px",
+        float: "left",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+        fontSize: "14px",
+        /* padding: 2px 4px; */
+        margin: "2px 0 2px 6px",
+    }
+
     return(
-        <div className='container'>
-            <div className="regi-detailw" ref={dropdown1Ref}>
-                <div className={"regi-secle4 float-left mt20"} onClick={() =>{setlabel1(true);setShowPop(1)}} >
-                    <label className={"reg-label top8 " +(label1?"reg-mobile":"")} >Marital status</label>
-                    <div className="">{maritalStatus.map((m1,index)=>(
-                        <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark" ></i></div>
+        <div className='container mt-4'>
+            <div className=" " ref={dropdown1Ref}>
+                <div onClick={() =>{setlabel1(true);setShowPop(1)}} >
+                    <label>Marital status</label>
+                    <div style={regiSecle4}  >{maritalStatus.map((m1,index)=>(
+                        <div style={multiValue} key={index}><span>{m1}</span><i class="fa-solid fa-xmark" ></i></div>
                         ))}
                     </div>
                     {label1 && showPop===1 &&  <div >{multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus)}</div>}
                 </div>
             </div>
-            <div className="regi-detailw" ref={dropdown2Ref}>
-                <div className={"regi-secle4 float-left mt20"} onClick={() =>{setlabel2(true);setShowPop(2)}} >
-                    <label className={"reg-label top8 " +(label2?"reg-mobile":"")} >Marital status</label>
-                    <div className="">{motherToung.map((m1,index)=>(
-                        <div className="multiValue" key={index}><span>{m1}</span><i class="fa-solid fa-xmark"></i></div>
+            <br/>  <br/> <br/>
+            <div className="" ref={dropdown2Ref}>
+                <div onClick={() =>{setlabel2(true);setShowPop(2)}} >
+                    <label  >Marital status</label>
+                    <div style={regiSecle4}  >{motherToung.map((m1,index)=>(
+                        <div style={multiValue} key={index}><span>{m1}</span><i class="fa-solid fa-xmark"></i></div>
                                     ))}
                     </div>
                     {label2 && showPop===2&&  <div >{multiCheckbox(motherToungs,"motherToung",motherToung)}</div>}

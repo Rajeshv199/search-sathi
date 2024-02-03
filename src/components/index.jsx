@@ -263,7 +263,7 @@ class index extends Component{
                                                         <div className="storyList" ><img width="100%" height="100%" src={item.img} alt="" /></div>  
                                                         <div className="storyDetails">
                                                             <div className="story-Name">{item.name}</div>
-                                                            <div className="marriageDate">Marriage Date 01, January 2023</div>
+                                                            <div className="marriageDate"><span>Marriage Date 01</span>, <span>January 2023</span></div>
                                                         </div>  
                                                     </div>  
                                                 </div>
@@ -693,4 +693,3 @@ class index extends Component{
     }
 }
 export default index;
-
