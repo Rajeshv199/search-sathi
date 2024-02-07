@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useRef, useEffect } from 'react';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -8,6 +8,7 @@ export default function Education() {
     const[eductionData,setEductionData] = useState({highestDegree:"MCA",pgDegree:"MCA",pgCollege:"University Evening College",ugDegree:"BCA",ugCollege:"Annamalai University",school:"Independent HPS, Haroorgeri",aboutEducton:"The term education can be applied to primitive cultures only in the sense of enculturation"})
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
+    let item1ref = useRef(null);
     
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -16,6 +17,18 @@ export default function Education() {
         setEductionData(eductionData1);
     }
     
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+        document.addEventListener('mousedown', handleOutsideClick);
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
+
     function multiInputs(label,value,no){
         return(
             <div className='custom-form'>
@@ -28,7 +41,7 @@ export default function Education() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(

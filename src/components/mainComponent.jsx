@@ -37,6 +37,7 @@ import About_Partner from "./profile_Edit/about_partner";
 import Search from "./profile_layout/search";
 import Block_Ignore from "./features/block_ignore";
 import PhoneBook from "./features/phoneBook";
+import Exclusive from "./features/exclusive";
 import Demo from "./demo";
 
 
@@ -105,6 +106,7 @@ class MainComponent extends Component{
                     <Route path="/profile_details" component={MyMatches} />
 
 
+                    <Route path="/ydexclusive" component={Exclusive}/>
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/> 
                     <Route path="/success/story" component={SuccessStories} />

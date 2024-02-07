@@ -98,7 +98,6 @@ class index extends Component{
             autoplaySpeed: 1000,
           };
 
-        // console.log(scrolled);
 
         return(
             <div className="">
@@ -198,7 +197,7 @@ class index extends Component{
                                             <div className="findWorkTxt"><span>3. </span>Send Interests & Connect</div>
                                         </div>
                                         <div className="text-center pt-4">
-                                            <button className="findBottom">Get Started</button>
+                                            <Link to="/user_registration"><button className="findBottom">Get Started</button></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -214,7 +213,7 @@ class index extends Component{
                                         <div className="benifit-title">Personalised Match-Making Service</div>
                                         <div className="d-flex justify-content-between">
                                             <div className="benifit-title2">Introducing <span>Exclusive</span></div>
-                                            <div ><bottom className="exclusiveBtn">EXCLUSIVE</bottom></div>
+                                            <div ><Link to="/ydexclusive"><bottom className="exclusiveBtn">EXCLUSIVE</bottom></Link></div>
                                         </div>
                                     </div>  
                                     <div className="row">

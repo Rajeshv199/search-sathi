@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect,useCallback } from 'react';
 
 function PartnerForm(){
 
@@ -28,27 +28,40 @@ function PartnerForm(){
         }
         return inpArr;
     }
+//   custom sonu /////////////////////
+const [isOpen1, setIsOpen1] = useState(false);
+const [isOpen2, setIsOpen2] = useState(false);
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-          if (dropdown1Ref.current && !dropdown1Ref.current.contains(event.target)) {
-            // Clicked outside dropdown 1, close it
-            setShowPop(-1);
-          }
-          if (dropdown2Ref.current && dropdown2Ref.current.contains(event.target)) {
-            // Clicked outside dropdown 2, close it
-            setShowPop(-1);
-          }
-        };
-    
-        // Attach the event listener to the document
-        document.addEventListener('click', handleClickOutside);
-    
-        // Clean up the event listener on component unmount
-        return () => {
-          document.removeEventListener('click', handleClickOutside);
-        };
-      }, []);
+let item1ref = useRef(null);
+let item2ref = useRef(null);
+
+const toggle = useCallback((dropdownNumber) => {
+  if (dropdownNumber === 1) {
+    setIsOpen1((prevIsOpen) => !prevIsOpen);
+    setIsOpen2(false); 
+  } else if (dropdownNumber === 2) {
+    setIsOpen2((prevIsOpen) => !prevIsOpen);
+    setIsOpen1(false); 
+  }
+}, []);
+
+useEffect(() => {
+  const handleOutsideClick = (e) => {
+    console.log(e.target);
+    if (isOpen1 && item1ref.current && !item1ref.current.contains(e.target)) {
+      setIsOpen1(false);
+    }
+    if (isOpen2 && item2ref.current && !item2ref.current.contains(e.target)) {
+      setIsOpen2(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleOutsideClick);
+
+  return () => {
+    document.removeEventListener('mousedown', handleOutsideClick);
+  };
+}, [isOpen1, isOpen2]);
 
     function multiCheckbox(manArr,name,arr){
         return(
@@ -65,7 +78,7 @@ function PartnerForm(){
   
    
     let maritalStutArr=["Never Married","Awaiting Divorce","Divorced","Widowed"];
-    let motherToungs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"];
+    let motherTongues = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"];
     
     const {maritalStatus,motherToung} = takeData;
 
@@ -92,27 +105,29 @@ function PartnerForm(){
 
     return(
         <div className='container mt-4'>
-            <div className=" " ref={dropdown1Ref}>
-                <div onClick={() =>{setlabel1(true);setShowPop(1)}} >
+            <div className=" " ref={item1ref}>
+                <div  >
                     <label>Marital status</label>
-                    <div style={regiSecle4}  >{maritalStatus.map((m1,index)=>(
-                        <div style={multiValue} key={index}><span>{m1}</span><i class="fa-solid fa-xmark" ></i></div>
+                    <div style={regiSecle4} onClick={() =>toggle(1)} >{maritalStatus.map((m1,index)=>(
+                        <div style={multiValue} key={index}><span>{m1}</span><i className="fa-solid fa-xmark" ></i></div>
                         ))}
                     </div>
-                    {label1 && showPop===1 &&  <div >{multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus)}</div>}
+                    {isOpen1 &&  <div >{multiCheckbox(maritalStutArr,"maritalStatus",maritalStatus)}</div>}
                 </div>
             </div>
             <br/>  <br/> <br/>
-            <div className="" ref={dropdown2Ref}>
-                <div onClick={() =>{setlabel2(true);setShowPop(2)}} >
-                    <label  >Marital status</label>
+            <div className="" ref={item2ref}>
+                <div onClick={() =>toggle(2)} >
+                    <label  >Marital Tongue</label>
                     <div style={regiSecle4}  >{motherToung.map((m1,index)=>(
-                        <div style={multiValue} key={index}><span>{m1}</span><i class="fa-solid fa-xmark"></i></div>
+                        <div style={multiValue} key={index}><span>{m1}</span><i className="fa-solid fa-xmark"></i></div>
                                     ))}
                     </div>
-                    {label2 && showPop===2&&  <div >{multiCheckbox(motherToungs,"motherToung",motherToung)}</div>}
+                    {isOpen2 &&  <div >{multiCheckbox(motherTongues,"motherToung",motherToung)}</div>}
                 </div>
             </div>
+
+
         </div>  
     );
  }

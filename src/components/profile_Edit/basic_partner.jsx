@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useRef, useEffect } from 'react';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -8,7 +8,7 @@ export default function BasicPartner() {
     const[basicPartner,setBasicPartner] = useState({minHeight:`4' 0" (1.22 mts)`,maxHeight:`4' 3" (1.22 mts)`,minAge:"18 Years",maxAge:"20 Years",maritalStatus:[],country:[],residentialStatus:[]})
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
-
+    let item1ref = useRef(null);
   
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -25,6 +25,20 @@ export default function BasicPartner() {
         if(index>=0) arr.splice(index,1);
         setBasicPartner(basicPartner1);
     }
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
     function handleMutiSelected(val,arr){
         let basicPartner1 = {...basicPartner}
@@ -83,7 +97,7 @@ export default function BasicPartner() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
@@ -104,7 +118,7 @@ export default function BasicPartner() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'><i className="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(prevPop)}></i>{title}</h5>
                         <ul className='select-item'><li>{minval} <i className="fa-solid fa-xmark fa-sm"></i></li></ul>
                         <div className='popContaner'>
@@ -127,7 +141,7 @@ export default function BasicPartner() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
                             {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i className="fa-solid fa-xmark fa-sm"></i></li>):

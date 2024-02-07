@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
 
  @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 
 
@@ -1633,7 +1634,7 @@ li:hover .subhobver{
         border: 1px solid #d9d9d9;
         border-radius: 2px;
         /* margin-top: 30px; */
-        padding: 10px 0;
+        padding: 6px 0;
         /* z-index: 99; */
 
     }
@@ -2976,6 +2977,7 @@ li:hover .subhobver{
     border: none;
     margin: 10px 0;
     line-height: 44px;
+    outline: none;
 }
 .iconArrow{
     position: absolute;
@@ -3124,15 +3126,16 @@ li:hover .subhobver{
     overflow-y: auto;
     max-height: 200px;
     z-index: 10;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
         
 }
 .top35{
-    top: 32px!important;
+    top: 44px!important;
 }
 
 .multiCheckbox input{
     margin-right: 6px;
+    outline: none;
 }
 .multiCheckbox label{
     display: block;
@@ -3143,6 +3146,7 @@ li:hover .subhobver{
 .multiCheckbox label:hover{
     background-color: #d4e9df;
 }
+
 .multiValue{
     background-color: #ddd9d9;
     border-radius: 2px;
@@ -3273,11 +3277,105 @@ li:hover .subhobver{
     padding: 0 4px;
 }
 
+/* Exclusive  */
+.excluveEqry{
+    padding: 40px 60px 0 100px;
+}
+.font-italnreg{
+    font-family: 'Italianno',cursive;
+    font-weight: 400;
+    font-size: 60px;
+    color: #A70855;
 
+}
+.custom-Excuve-frm{
+    width: 80%;
+}
+.custom-Excuve-frm label{
+    font-size: 14px;
+    display: block;
+    color: #6ba3db;
+    padding: 5px 0;
+    margin: 0;
+}
+.custom-Excuve-frm .form-control{
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    background-color: #d5d8d5;
+    
+}
+.custom-Excuve-frm .form-custom{
+    box-shadow: none;
+    border-radius: 4px;
+    background-color: #d5d8d5;
+    height: 38px;
+    border-radius: 0;
+    
+}
 
+.excve-isdCde{
+    width: 25%;
+    border-right: 1px solid rgb(190, 187, 187);
+}
+.excve-mobile{
+    width: 100%;
+    background-color: #A70855;
+}
+.exclusve-Getbtn{
+    width: 80%;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 8px 10px;
+    background-color: #429fbb;
+    margin-top: 30px;
+    border-radius: 5px;
 
-
-
+}
+.matchMaking-srvice{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px -1px 5px 1px rgba(207,170,207,1);
+    padding-top: 20px;
+}
+.cabinmed-srvice{
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+.srvice-title{
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.srvice-title span{
+    color: #c72573;
+}
+.srvice-info{
+    font-size: 20px;
+    line-height: 24px;
+}
+.benefits-future div{
+    font-size: 15px;
+    margin-top: 8px;
+}
+.reationShip-MagerCard{
+    box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    height: 390px;
+    width: 300px;
+    padding: 20px;
+}
+.reationShip-img{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+}
+.reationShip-img img{
+    border-radius: 50%;
+}
 
 @media only screen and (max-width: 1200px){
 

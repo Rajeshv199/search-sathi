@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useRef, useEffect } from 'react';
 import {Link,useHistory } from "react-router-dom";
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -9,6 +9,7 @@ export default function Basic() {
     const[ispop,setIsPop] = useState(-1);
     const[basicData,setBasicData] = useState({name:"Rajesh",gender:"Male",date:"01/02/2000",maritalStatus:"Never Married",height:`4' 0" (1.22 mts)`,religion:"Hindu",caste:"Banik",motherTongue:"Hindi",currentLocation:"Kolkata",anualIncome:"Rs. 3 - 5 Lakh"})
     const history =  useHistory();
+    let item1ref = useRef(null);
 
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -21,13 +22,26 @@ export default function Basic() {
         basicData1[name]= val;
         setBasicData(basicData1);
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
 
     function multiRadioBtn(title,arr,name,value){
         return(
-            <div className="popup-box2">
+            <div className="popup-box2" >
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(

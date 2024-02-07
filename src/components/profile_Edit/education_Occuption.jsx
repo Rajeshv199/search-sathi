@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState ,useRef, useEffect} from 'react';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -8,6 +8,7 @@ export default function Education() {
     const[educt_occuption,setEduct_occuption] = useState({heightDegree:[],occupation:[],minIncome:"Rs. 1 Lakh",maxIncome:"Rs. 3 Lakh"});
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
+    let item1ref = useRef(null);
 
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -35,6 +36,19 @@ export default function Education() {
         if(index>=0) arr.splice(index,1);
         setEduct_occuption(educt_occuption1);
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
     function multiInputs(label,value,no){
         return(
@@ -58,7 +72,7 @@ export default function Education() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
                             {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i className="fa-solid fa-xmark fa-sm"></i></li>):

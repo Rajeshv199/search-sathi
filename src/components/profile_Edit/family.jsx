@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState ,useRef, useEffect} from 'react';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -8,6 +8,7 @@ export default function Family() {
     const[familyData,setFamilyData] = useState({familyStatus:"",fatherOccupation:"",familyType:"",motherOccupation:"",noOfBrother:"",familyLiving:"",noOfSister:"",aboutFmaily:""})
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
+    let item1ref = useRef(null);
 
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -21,6 +22,20 @@ export default function Family() {
         familyData1[name]= val;
         setFamilyData(familyData1);
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
+
 
     function multiInputs(label,value,no){
         return(
@@ -35,7 +50,7 @@ export default function Family() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(

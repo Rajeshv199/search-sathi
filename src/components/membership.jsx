@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 
 class Membership extends Component{
     state={
@@ -42,7 +43,7 @@ class Membership extends Component{
                             Make unlimited voice and video calls
                         </div>
                     </span>
-                    <div className="text-center"><button className="freeRegister">Register Free</button></div>
+                    <div className="text-center"><Link to="/user_registration"><button className="freeRegister">Register Free</button></Link></div>
                 </div>
                 <div className="sideBorder2"></div>
                 <div className="paid-Membership">
@@ -81,7 +82,6 @@ class Membership extends Component{
                     </div>
                     <div className="text-center"><button className="paidRegister">Browse Membership Plans</button></div>
                 </div>
-                
 
             </React.Fragment>
         );

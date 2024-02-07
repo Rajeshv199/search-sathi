@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState ,useRef, useEffect} from 'react';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -9,6 +9,7 @@ export default function Career() {
     const[careerData,setCareerData] = useState({employee:"Private Sector",occupation:"Operator",organization:"Sobha Developers Limited",yearsOfExp:"",aboutCareer:"You must consider a number of factors before deciding on your career. Each factor plays a significant role in your choice. Firstly,"})
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
+    let item1ref = useRef(null);
 
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -31,13 +32,26 @@ export default function Career() {
             </div>
         )
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
 
     function multiRadioBtn(title,arr,name,value){
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(

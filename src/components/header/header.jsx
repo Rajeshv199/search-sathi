@@ -78,10 +78,7 @@ class Header extends Component{
                             </li>
                             <li className="search-ml" >
                                 <div className="search-menu"><Link to="/search"><i className="fa-solid fa-magnifying-glass"></i></Link></div>
-                                {/* <div className="search-list">
-                                    <div>Search</div>
-                                    <div>Search by Profile ID</div>
-                                </div> */}
+                               
                             </li>
                             <li className="search-ml">
                                 <Link to="/features/help">HELP</Link>

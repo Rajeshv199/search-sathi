@@ -60,8 +60,7 @@ class BrowseContent extends Component{
                         <div className="col-4 list-element" key={index}><Link to={c1.link}>{c1.name}</Link></div>
                     ))}
                     </div>
-                ):""}
-                                                                   
+                ):""}                                     
             </React.Fragment>
         );
     }

@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState ,useRef, useEffect} from 'react';
 import { Link,useHistory } from 'react-router-dom';
 
 import ProfileHeader from '../profile_layout/profileHeader';
@@ -8,6 +8,7 @@ export default function LifeStyle() {
     const[LifeStyleData,setLifeStyleData] = useState({drinkingHabits:"Yes",dietaryHabits:"",smokingHabits:"",hobbies:[],interests:[],languages:[],favouriteMusic:[],movies:"",favouriteBooks:"",sports:[]})
     const[ispop,setIsPop] = useState(-1);
     const history = useHistory();
+    let item1ref = useRef(null);
 
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -25,6 +26,19 @@ export default function LifeStyle() {
         }
         return inpArr;
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
     function handleSelected(val,name){
         let LifeStyleData1 = {...LifeStyleData};
@@ -51,7 +65,7 @@ export default function LifeStyle() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
                             {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i className="fa-solid fa-xmark fa-sm"></i></li>):
