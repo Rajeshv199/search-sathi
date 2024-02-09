@@ -22,6 +22,7 @@ import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
 import PartnerEdit from "./profile_layout/pertner_edit";
 import Chat from "./profile_layout/chat";
+import MatchesProfile from "./profile_layout/matchesProfile";
 import Basic from "./profile_Edit/basic";
 import About from "./profile_Edit/about";
 import Education from "./profile_Edit/education";
@@ -99,11 +100,12 @@ class MainComponent extends Component{
                     <Route path="/profile_edit/education" component={Education} />
                     <Route path="/profile_edit/about" component={About} />
                     <Route path="/profile_edit/basic" component={Basic} />
+                    <Route path="/mymatches/profile" component={MatchesProfile} />
                     <Route path="/chat" component={Chat} />
                     <Route path="/profile_edit" component={ProfileEdit} />
                     <Route path="/byCriteria" component={Search} />
                     <Route path="/activity" component={Activity} />
-                    <Route path="/profile_details" component={MyMatches} />
+                    <Route path="/mymatches" component={MyMatches} />
 
 
                     <Route path="/ydexclusive" component={Exclusive}/>

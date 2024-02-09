@@ -280,11 +280,12 @@
 .prfile-panel{
     position: relative;
     overflow: hidden;
-    height: 400px;
+    height: 380px;
     color: rgba(152,163,175,.3);
     background: #477288  ;
     width: 100%;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .profile-glary{
     background-color: #A70855;
@@ -292,6 +293,8 @@
     text-align: end;
     padding:4px 0;
     font-size: 12px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .profile-glary span{
@@ -360,7 +363,7 @@
     background-color: transparent;
     font-weight: 500;
     opacity: 0.8;
-    margin-right: 14px;
+    margin-right: 16px;
     outline: 2px solid transparent;
     color: #4d4c4c;
 }
@@ -389,17 +392,18 @@
 }
 .basicData{
     padding: 14px 20px;
-    font-size: 14px;
+    font-size: 15px;
     margin: 15px 30px;
-    color: #3a3939;
+    color: #252525;
     box-shadow: 0px 4px 8px 0px rgba(75,97,119,.1);;
     border: 1px solid rgb(221, 218, 218);
     border-radius: 8px;
     cursor: pointer;
+    /* font-weight: 500; */
 }
 .basicData h5{
     color: #A70855;
-    font-size: 16px;
+    font-size: 20px;
 }   
 .basicData h5 div{
     margin-top: 4px;
@@ -407,8 +411,22 @@
     color: #f176b2;
     font-weight: 300;
 }   
-
-
+.lookfor{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.lookingImg{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #00a984;
+    
+}
+.cursorNot{
+    cursor: default!important;
+}
 
 
 
@@ -740,6 +758,8 @@
     margin-bottom: 10px;
 }
 .boxShortlst{
+    width: 255px;
+    height: 360px;
     position: relative;
     margin: 16px 0 0 16px;
     border-radius: 8px;
@@ -751,18 +771,19 @@
     cursor: pointer;
 }
 .activtyLst{
+    width: 100%;
     position: relative;
     background-color: #000;
     justify-content: space-around;
     box-shadow: rgba(235, 241, 248, 0.3) 0px 1px;
     color:#fff;
-    align-items: center;
+    /* align-items: center; */
     height: 60px;
     display: flex;
     border-top: 1px solid rgb(95, 94, 94);
 
 }
-.activtyLst div{
+.activityitem ,.ctivityitem a{
     display: flex;
     padding: 4px 0;
     font-size: 13px;
@@ -771,16 +792,46 @@
     align-items: center;
     cursor: pointer;
 }
+.activtyInpt{
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    margin-top: 9px; 
+    font-size: 17px;
+    background-color: #656665;
+    padding: 4px 40px 4px 6px;
+    color: #fff;
+}
+
+.activeSend{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    right: 8px;
+    bottom: 13px;
+    color: #fff;
+    background-color: #00a984;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    padding-left: 3px;
+    padding-top: 6px;
+    
+}
 .boxInterest{
-    margin: 16px 0 0 16px;
+    margin: 16px 0 30px 16px;
     position: relative;
     width: 248px;
-    height: 256px;
+    height: 240px;
     flex-shrink: 0;
     box-shadow: 0px 0px 5px rgb(173, 175, 175);
     background-color: #f0f3f5;
     padding: 24px 20px;
     overflow: hidden;
+    text-align: center;
+
 
 }
 .boxInterest i{
@@ -831,8 +882,8 @@
   .cancelBtn2{
     cursor: pointer;
     position: fixed;
-    right: calc(38% - 55px);
-    top: calc(100vh - 75vh - 80px);
+    right: calc(38% - 58px);
+    top: calc(100vh - 75vh - 85px);
     background-color: transparent;
     border: none;
     color: #fff;
@@ -1023,6 +1074,54 @@
     font-weight: 600;
     padding-left: 8px;
 }
+.interestBox{
+    padding: 18px;
+    color: #477288;
+}
+.interestBox i{
+    padding-right: 8px;
+}
+.interestBox a, .interestBox div{
+    cursor: pointer;
+    color: #477288;
+}
+.box6{
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 150vh;
+    margin-top: calc(100vh - 50vh - 80px);
+    background: #fff;
+    overflow: none;
+    border-radius: 4px;
+  }
+  .absoluteDiv{
+    position: absolute;
+    margin: 0 0 25px 30px;
+    left: 0;
+    bottom: 0;
+    color: #ffff;
+  }
+  .moreOption{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #fff;
+    cursor: pointer;
+    background-color:#d86680;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+
+
+
+
+
+
 @media only screen and (max-width: 1200px) {
 
     .landing-navbar {

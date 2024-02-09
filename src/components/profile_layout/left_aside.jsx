@@ -20,16 +20,16 @@ export default function LeftAside(){
                 </div>
                 <div className="text-detils mb-3">
                     <h4>Hi Sunit!</h4>
-                    <p>UVA537 <Link >Edit profile</Link></p>
+                    <p>UVA537 <Link to="/profile_edit">Edit profile</Link></p>
                     <div className="user-percent"><span>80%</span> Profile Completed!</div>
                 </div>
             </div>
 
             <div className="d-flex justify-content-between">
-                <Link to="/profile_details">
-                    <div className={'left-side-items '+(route==="/profile_details"?"colr5":"")}>
+                <Link to="/mymatches">
+                    <div className={'left-side-items '+(route==="/mymatches"?"colr5":"")}>
                         <span className="material-symbols-outlined">join_inner</span>
-                        <div className={route==="/profile_details"?"colr5":""}>Matches</div>
+                        <div className={route==="/mymatches"?"colr5":""}>Matches</div>
                     </div>
                 </Link>
                 <Link to="/activity">

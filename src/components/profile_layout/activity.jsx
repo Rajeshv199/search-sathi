@@ -1,12 +1,26 @@
-import React from "react";
+import React,{useState,useRef,useEffect} from "react";
 import './style.css';
-
 import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
-
+import { Link,useHistory } from 'react-router-dom';
 
 export default function Activity() {
 
+    const [interestOpt,settnterestOpt] = useState(false);
+    let item1ref = useRef(null);
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            settnterestOpt(false);
+          }
+        };
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
     return (
     <div className='profile-details'>
@@ -78,19 +92,25 @@ export default function Activity() {
                     </div>
                     <div className="shortlstContner">
                         <div className="boxShortlst">
-                            <img width="255" height="300" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
+                            <img width="255px" height="300px" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="activtyLst">
-                                <div><i className="fa-regular fa-envelope"></i>Send Interest</div>
-                                <div><i className="fa-star fa-solid"></i>Shortlisted</div>
-                                <div><i className="fa-regular fa-comment"></i>Chat</div>
+                                {/* <div>
+                                    <input type="text" className="activtyInpt"/>
+                                    <button className="activeSend"><span class="material-symbols-outlined">send</span></button>
+                                </div> */}
+                                <div className="activityitem"><i className="fa-regular fa-envelope"></i>Send Interest</div>
+                                <div className="activityitem"><i className="fa-star fa-solid"></i>Shortlisted</div>
+                                {/* <div><i className="fa-star fa-regular"></i>Shortlist</div> */}
+                                <div className="activityitem"><Link to="/chat"><div className="activityitem"><i className="fa-regular fa-comment"></i>Chat</div></Link></div>
                             </div>
                         </div>
                         <div className="boxShortlst">
                             <img width="255" height="300" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="activtyLst">
-                                <div><i className="fa-regular fa-envelope"></i>Send Interest</div>
-                                <div><i className="fa-star fa-solid"></i>Shortlisted</div>
-                                <div><i className="fa-regular fa-comment"></i>Chat</div>
+                                <div className="activityitem"><i className="fa-regular fa-envelope"></i>Send Interest</div>
+                                <div className="activityitem"><i className="fa-star fa-solid"></i>Shortlisted</div>
+                                {/* <div><i className="fa-star fa-regular"></i>Shortlist</div> */}
+                                <div className="activityitem"><Link to="/chat"><div className="activityitem"><i className="fa-regular fa-comment"></i>Chat</div></Link></div>
                             </div>
                         </div>
 
@@ -101,7 +121,7 @@ export default function Activity() {
                     </div>
                     <div className="shortlstContner">
                         <div className="boxInterest">
-                            <i className="fa-solid fa-ellipsis-vertical"></i>
+                            <i className="fa-solid fa-ellipsis-vertical" onClick={()=>settnterestOpt(true)}></i>
                             <img width="120" height="120" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="textIntest">Kajal Kumari, 20</div>
                             <span>4ft 5in • Ranchi</span>
@@ -112,10 +132,22 @@ export default function Activity() {
             </div>
 
         </div>
+        <div>
+            {interestOpt&&
+            <div className="popup-box2">
+                <div className="box6" ref={item1ref} >
+                    <div className="interestBox" >
+                        <Link to="/chat"><div className="mb-3"><i class="fa-regular fa-comment fa-lg"></i>Chat</div></Link>
+                        <div><i class="fa-solid fa-xmark fa-lg ml-1"></i>Cancel Interest</div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        
 
     </div>
 )
 }
 
 
-// https://www.figma.com/file/aka1QwX3DPlc7yPeSCYO8w/YogJodi-Web-Profile?type=design&node-id=0%3A1&mode=design&t=nojqzXHGzV8NDIb1-1

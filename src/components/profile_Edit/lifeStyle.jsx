@@ -179,6 +179,7 @@ export default function LifeStyle() {
             {ispop===4?multiCheckBox("Favourite Music",favorteMusicArr,"favouriteMusic",favouriteMusic):null}
             {ispop===5?multiCheckBox("Sports",sportArr,"sports",sports):null}
         </div>
+        
 
     </div>
 )

@@ -70,7 +70,7 @@ export default function Details() {
                         <div className='d-flex'>
                             <div>
                                 {multipleValue("Height",`4' 11" (1.50 mts)`,"widh80")}
-                                {multipleValue("Annual Incom","Rs. 5 - 7.5 Lakh","widh100")}
+                                {multipleValue("Annual Income","Rs. 5 - 7.5 Lakh","widh100")}
                                 {multipleValue("Religion","Hindu • Bari","widh80")}
                                 {multipleValue("Marital Status","Never Married","widh100")}
                                 {multipleValue("Location","Kolkata, West Bengal, India","widh80")}

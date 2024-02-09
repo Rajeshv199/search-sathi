@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useRef,useEffect } from 'react';
 import './style.css';
 
 import ProfileHeader from './profileHeader';
@@ -8,6 +8,7 @@ export default function Details() {
     const[searchData,setSearchData] = useState({minHeight:`4' 0" (1.22 mts)`,maxHeight:`4' 5" (1.22 mts)`,minAge:"18 Years",maxAge:"22 Years",maritalStatus:[],religions:[],caste:[],minIncome:"18 Years",maxIncome:"20 Years",motherTongue:[],country:[],residentialStatus:[],education:[],occupation:[],byprofileId:""})
     const[searchByCriteria,setSearchByCriteria] = useState(true);
     const[ispop,setIsPop] = useState(-1);
+    let item1ref = useRef(null);
     
     function handleChange(e){
         const {currentTarget: input} = e;
@@ -32,6 +33,19 @@ export default function Details() {
         if(ispop===8)setTimeout(()=>{setIsPop(9);},100);
 
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setIsPop(-1);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
     function handleDelete(arr,val){
         let searchData1 = {...searchData};
         let index = arr.findIndex(a1=>a1===val);
@@ -80,7 +94,7 @@ export default function Details() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <ul className='select-item'>
                             {value.length<=3? value.map((v1,index)=><li key={index} onClick={()=>handleDelete(value,v1)}>{v1}<i className="fa-solid fa-xmark fa-sm"></i></li>):
@@ -111,7 +125,7 @@ export default function Details() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'>{title}</h5>
                         <div className='popContaner'>
                             {arr.map((a1,index)=>(
@@ -132,7 +146,7 @@ export default function Details() {
         return(
             <div className="popup-box2">
                 <div className="box5">
-                    <div className="checkbox-Custom">
+                    <div className="checkbox-Custom" ref={item1ref}>
                         <h5 className='mb-2'><i className="fa-solid fa-chevron-left fa-xs" onClick={()=>setIsPop(prevPop)}></i>{title}</h5>
                         <ul className='select-item'><li>{minval} <i className="fa-solid fa-xmark fa-sm"></i></li></ul>
                         <div className='popContaner'>

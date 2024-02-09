@@ -1,4 +1,5 @@
 import React, { useState,} from 'react';
+import {Link} from "react-router-dom";
 import Smartbanner from "../image/smartbanner.jpg";
 
 function Exclusive(){
@@ -83,7 +84,7 @@ function Exclusive(){
                 </div>
             </div>
 
-            <div className='mb-3'>
+            <div className='mt-4'>
                 <div className='matchMaking-srvice'>
                     <div className='cabinmed-srvice'>
                         <h5>HERE TO HELP YOU</h5>
@@ -158,24 +159,48 @@ function Exclusive(){
                         </div>
 
                         <div>
-                            <div className='p-3'>
+                            <div className='p-3 d-flex'>
                                 <div className='reationShip-MagerCard'>
-                                    <div className='reationShip-img'>
-                                        <img width="100%" height="100%" src='https://img.freepik.com/free-photo/portrait-young-man-with-dark-curly-hair_176532-8137.jpg?w=740&t=st=1707304400~exp=1707305000~hmac=b509fd471b96e6b8b3e053af676264f434b182d3b5bd7eea5b8734d8df10a2a2' alt=''/>
+                                    <div className='text-center'>
+                                        <img className='reationShip-img' src='https://img.freepik.com/free-photo/portrait-young-man-with-dark-curly-hair_176532-8137.jpg?w=740&t=st=1707304400~exp=1707305000~hmac=b509fd471b96e6b8b3e053af676264f434b182d3b5bd7eea5b8734d8df10a2a2' alt=''/>
                                     </div>
-                                    <div className='text-center'>Vishal Kumar</div>
+                                    <div className='reationShip-name'>Vishal Kumar</div>
+                                    <p className='reationShip-exp'>5 Years Experience | 600+ Clients </p>
+                                    <p className='reationShip-desc'>Ankita is an MBA professional from Delhi & has handled 600+ clients. She is skilled to handle versatile clients, especially from the Rajput community. She believes in going the extra mile to ensure you find and marry the Yogjodi of your dreams.</p>
                                 </div>
-                                <div></div>
-                                <div></div>
+                                <div className='reationShip-MagerCard'>
+                                    <div className='text-center'>
+                                        <img className='reationShip-img' src='https://img.freepik.com/free-photo/portrait-young-man-with-dark-curly-hair_176532-8137.jpg?w=740&t=st=1707304400~exp=1707305000~hmac=b509fd471b96e6b8b3e053af676264f434b182d3b5bd7eea5b8734d8df10a2a2' alt=''/>
+                                    </div>
+                                    <div className='reationShip-name'>Vishal Kumar</div>
+                                    <p className='reationShip-exp'>5 Years Experience | 600+ Clients </p>
+                                    <p className='reationShip-desc'>Ankita is an MBA professional from Delhi & has handled 600+ clients. She is skilled to handle versatile clients, especially from the Rajput community. She believes in going the extra mile to ensure you find and marry the Yogjodi of your dreams.</p>
+                                </div>
                             </div>
                         </div>
                         
                     </div>
                 </div>
             </div>
-        
-            
-            
+            <div className="AppFollow bg4">
+                <div className="AppFollow-List">
+                    <div className="footerWid">
+                        <div className="pb-2"> App available on </div>
+                        <Link to="#" className="footerIcon iconPostion"></Link>
+                        <Link to="#" className="footerIcon iconPostion2"></Link>
+                    </div>
+                    <div className="footerWid">
+                        <div className="pb-2"> Follow us on </div>
+                        <Link to="#" className="footerIcon iconPostion3"></Link>
+                        <Link to="#" className="footerIcon iconPostion4"></Link>
+                        <Link to="#" className="footerIcon iconPostion5"></Link>
+                    </div>
+                    <div>
+                        <div>Customer Service (Toll Free)</div>
+                        <div>1800-652-5777</div>
+                    </div>
+                </div>
+            </div>
         </div>  
     );
  }

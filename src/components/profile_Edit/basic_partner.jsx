@@ -32,7 +32,6 @@ export default function BasicPartner() {
             setIsPop(-1);
           }
         };
-      
         document.addEventListener('mousedown', handleOutsideClick);
       
         return () => {

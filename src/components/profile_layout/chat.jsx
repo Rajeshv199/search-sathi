@@ -19,7 +19,7 @@ export default function Details() {
 
             <div className='profile-box'>
                 <div className='msgHeader'>
-                    <Link to="/profile_details" className='text-dark'><i className="fa-solid fa-angle-left fa-lg py-2 my-1"></i></Link>
+                    <Link to="/mymatches" className='text-dark'><i className="fa-solid fa-angle-left fa-lg py-2 my-1"></i></Link>
                     <div className='text-center d-flex mx-4 justify-constent-center'>
                         <img className='proImg' width="40" height="40" src='https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg' alt=""/>
                         <div className='customText'>
