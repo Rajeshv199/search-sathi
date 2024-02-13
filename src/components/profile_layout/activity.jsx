@@ -6,13 +6,13 @@ import { Link,useHistory } from 'react-router-dom';
 
 export default function Activity() {
 
-    const [interestOpt,settnterestOpt] = useState(false);
+    const [interestOpt,setInterestOpt] = useState(false);
     let item1ref = useRef(null);
 
     useEffect(() => {
         const handleOutsideClick = (e) => {
           if (item1ref.current && !item1ref.current.contains(e.target)) {
-            settnterestOpt(false);
+            setInterestOpt(false);
           }
         };
         document.addEventListener('mousedown', handleOutsideClick);
@@ -121,7 +121,7 @@ export default function Activity() {
                     </div>
                     <div className="shortlstContner">
                         <div className="boxInterest">
-                            <i className="fa-solid fa-ellipsis-vertical" onClick={()=>settnterestOpt(true)}></i>
+                            <i className="fa-solid fa-ellipsis-vertical" onClick={()=>setInterestOpt(true)}></i>
                             <img width="120" height="120" src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt=""/>
                             <div className="textIntest">Kajal Kumari, 20</div>
                             <span>4ft 5in • Ranchi</span>
@@ -136,6 +136,7 @@ export default function Activity() {
             {interestOpt&&
             <div className="popup-box2">
                 <div className="box6" ref={item1ref} >
+                <span className="closePop" onClick={()=>setInterestOpt(false)}><i class="fa-solid fa-xmark"></i></span>
                     <div className="interestBox" >
                         <Link to="/chat"><div className="mb-3"><i class="fa-regular fa-comment fa-lg"></i>Chat</div></Link>
                         <div><i class="fa-solid fa-xmark fa-lg ml-1"></i>Cancel Interest</div>

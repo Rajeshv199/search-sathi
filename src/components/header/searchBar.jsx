@@ -1,7 +1,7 @@
 import Footer from "../footer/footer";
 import { Link } from "react-router-dom";
 import BrowseContent from "./browseContent";
-import { useState ,useRef, useEffect} from "react";
+import { useState } from "react";
 import yogjodiLogo from "../image/YogJodiLogo.png";
 
 
@@ -11,7 +11,7 @@ function SearchBar() {
     const[bride,setBride] = useState(true);
     const[showPop,setshowPop] = useState(0);
     const[allprofile,setAllprofile] = useState(false);
-    let item1ref = useRef(null);
+
     
 
     const[minAge,setMinAge]=useState(21);
@@ -29,19 +29,7 @@ function SearchBar() {
         religion1.splice(index,1);
         setReligion(religion1);
     }
-    useEffect(() => {
-        const handleOutsideClick = (e) => {
-          if (item1ref.current && !item1ref.current.contains(e.target)) {
-            setshowPop(-1);
-          }
-        };
-      
-        document.addEventListener('mousedown', handleOutsideClick);
-      
-        return () => {
-          document.removeEventListener('mousedown', handleOutsideClick);
-        };
-      }, []);
+
     
     let minAges = [];
     for(let i=20;i<=70;i++) minAges.push(i);
@@ -114,7 +102,7 @@ function SearchBar() {
                     {!searchProfileId?(
                     <div>
                     <div className="srchform">
-                        <ul ref={item1ref}>
+                        <ul>
                             <li className="d-flex">
                                 <label>Search for</label>
                                 <div className="srchField">

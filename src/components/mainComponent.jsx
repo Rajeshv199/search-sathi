@@ -39,6 +39,7 @@ import Search from "./profile_layout/search";
 import Block_Ignore from "./features/block_ignore";
 import PhoneBook from "./features/phoneBook";
 import Exclusive from "./features/exclusive";
+import SettingVisibility from "./features/settingVisibility";
 import Demo from "./demo";
 
 
@@ -108,6 +109,7 @@ class MainComponent extends Component{
                     <Route path="/mymatches" component={MyMatches} />
 
 
+                    <Route path="/settingVisibility" component={SettingVisibility}/>
                     <Route path="/ydexclusive" component={Exclusive}/>
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/> 

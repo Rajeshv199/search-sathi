@@ -75,15 +75,30 @@ a:hover{
 
 .menu-navbar{
     width:508px;
-    background-color: #043659;
+    background-color: #c72573;
     /* background: rgba(27, 53, 82, 0.95); */
     /* background: rgba(52, 73, 94, 0.95); */
     font-size: 14px;
     font-family: 'Cabin', sans-serif;
     font-weight: 500;
     height: 63px;
-    color: #cbe2f2;
+    color: #ffff;
     float: left;
+}
+.menu-navbar2{
+    width:550px;
+    background-color: #c72573;
+    /* background: rgba(27, 53, 82, 0.95); */
+    /* background: rgba(52, 73, 94, 0.95); */
+    font-size: 16px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 500;
+    height: 63px;
+    color: #ffff;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 .menupl{
     padding-left: 27px;
@@ -101,7 +116,7 @@ a:hover{
 .menu-navbar--second{
     position: relative;
     width:319px;
-    background-color: #043659;
+    background-color: #c72573;
     /* background: rgba(27, 53, 82, 0.95); */
     font-size: 14px;
     font-family: 'Cabin',sans-serif;
@@ -130,7 +145,7 @@ a:hover{
     display: table;
     float: left;
     text-align: center;
-    color: #cbe2f2;
+    color: #fff;
     vertical-align: middle;
     display: table-cell;
     width:160px;
@@ -214,7 +229,7 @@ a:hover{
 }
 .search-ml{
     margin-left: 56px;
-    color: #cbe2f2;
+    color: #ffff;
 }
 .browseContent{
     width: 71%;
@@ -2763,7 +2778,7 @@ li:hover .subhobver{
 .coverImg{
     background: url("../image/bgCover2.png") no-repeat center center;
     background-size: cover;
-    
+    height: 145px;
 }
 .searchWid{
     padding-top: 35px;
@@ -2771,6 +2786,7 @@ li:hover .subhobver{
     width: 990px;
     margin: 0 auto;
     position: relative;
+    
 }
 .signupMenu2{
     display: table;
@@ -3402,6 +3418,46 @@ li:hover .subhobver{
 .bg4{
     background-color: #3fb3a9!important;
 }
+.profile-setting-lists{
+    position: relative;
+    width: 100%;
+    display: flex;
+    background-color: #eceaea;
+    text-align: center;
+}
+.profile-setting-lists li{
+    width: 20%;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.borderRight{
+    border-right: 1px solid rgb(143, 141, 141);
+    
+}
+.active3{
+    border-bottom: 2px solid rgb(136, 62, 62);
+}
+.setting-option{
+    display: flex;
+    margin: 35px 0;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 10px;
+}
+.setting-option span{
+    font-weight: 500;
+}
+.setting-option small{
+    display: block;
+    line-height: 14px;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 1200px){
 
     .features-navbar{

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useRef,useEffect} from "react";
 import { Link } from 'react-router-dom';
 import './style.css';
 
@@ -6,6 +6,9 @@ import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
 
 export default function MatchesProfile() {
+    let item1ref = useRef(null);
+    const [profileOpt,setProfileOpt] = useState(false);
+    const [imageShow,setImageShow] = useState(false);
 
     function multipleValue(label,value,width){
         return(
@@ -15,6 +18,18 @@ export default function MatchesProfile() {
             </div>
         )
     }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setProfileOpt(false);
+          }
+        };
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
     function matchesData(title,value){
         return(
@@ -37,10 +52,13 @@ export default function MatchesProfile() {
             <LeftAside/>
 
             <div className='profile-box'>
-               <div className="px-4 pt-3"><Link to="#" className="text-dark"><i class="fa-solid fa-angle-left p-1"></i></Link></div>
+               <div className="px-4 pt-3"><Link to="/mymatches" className="text-dark"><i class="fa-solid fa-angle-left p-1"></i></Link></div>
                 
                 <div className='prfile-panel mt-3'>
-                    <div className="moreOption"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    <div className="moreOption">
+                        <span onClick={()=>setImageShow(true)}><i class="fa-regular fa-images fa-sm px-1 "></i>4</span>
+                        <i class="fa-solid fa-ellipsis-vertical" onClick={()=>setProfileOpt(true)}></i>
+                    </div>
                     <div className="userContainer">
                         <img className='user-image' src='https://images.unsplash.com/photo-1682686580922-2e594f8bdaa7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=""/>
                     </div>
@@ -137,12 +155,75 @@ export default function MatchesProfile() {
                         {matchesData("Earning","Rs. 1 Lakh and above")}
                     </div>
                     
-                    
-                    
-                    
-                   
                 </div>
             </div>
+        </div>
+       
+        <div>
+            {profileOpt&&
+            <div className="popup-box2">
+                
+                <div className="box6" ref={item1ref} >
+                    <span className="closePop" onClick={()=>setProfileOpt(false)}><i class="fa-solid fa-xmark"></i></span>
+                    <div className="interestBox" >
+                        <Link to="#"><div className="mb-3"><i class="fa-solid fa-ban"></i>Block Profile</div></Link>
+                        <div><i class="fa-solid fa-circle-exclamation"></i>Report Profile</div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div>
+            {imageShow&&
+                <div className="img-popup-box">
+                <span className="imgClosePop" onClick={()=>setImageShow(false)}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="absolute top-2 right-2 text-white lg:right-7 lg:top-7"><path d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path></svg></span>
+                <div className="boxImg">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div className="img-indicators">
+                            <div  class="active" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-label="Slide 1">
+                                <img src="https://images.unsplash.com/photo-1707464568815-7fb6b6ea3e2a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                            </div>
+                            <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+                                <img src="https://images.unsplash.com/photo-1707333572517-986169cdb639?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                            </div>
+                            <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+                                <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                            </div>
+                            <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
+                                <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="https://images.unsplash.com/photo-1707464568815-7fb6b6ea3e2a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..."/>
+                            </div>
+                            <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1707333572517-986169cdb639?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block " alt="..."/>
+                            </div>
+                            <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..."/>
+                            </div>
+                            <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..."/>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+
+
+                </div>
+            </div>
+            }
+
         </div>
 
     </div>

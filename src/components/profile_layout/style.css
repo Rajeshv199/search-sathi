@@ -376,7 +376,7 @@
     flex-shrink: 0;
 }
 .widh90{
-    width: 90px;
+    width: 92px;
     flex-shrink: 0;
 }
 .widh100{
@@ -384,7 +384,7 @@
     flex-shrink: 0;
 }
 .widh130{
-    width: 140px;
+    width: 146px;
     flex-shrink: 0;
 }
 .flotLeft{
@@ -1096,6 +1096,16 @@
     overflow: none;
     border-radius: 4px;
   }
+  .closePop{
+    cursor: pointer;
+    position: fixed;
+    right: calc(38% - 58px);
+    top: calc(100vh - 50vh - 85px);
+    background-color: transparent;
+    border: none;
+    color: #fff;
+
+  }
   .absoluteDiv{
     position: absolute;
     margin: 0 0 25px 30px;
@@ -1108,15 +1118,103 @@
     right: 20px;
     top: 20px;
     color: #fff;
+    text-align: center;
+    
+  }
+  .moreOption span{
+    background-color:#d86680;
+    /* width: 40px; */
+    /* font-size: 14px; */
+    /* height: 25px; */
+    border-radius: 10px;
+    padding: 4px 8px;
     cursor: pointer;
+    margin:0 6px;
+    /* line-height: 24px; */
+  }
+  .moreOption .fa-ellipsis-vertical{
     background-color:#d86680;
     width: 25px;
     height: 25px;
-    text-align: center;
     border-radius: 50%;
+    cursor: pointer;
+    margin:0 6px;
+    line-height: 24px;
   }
-
-
+  .img-popup-box{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.99);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10!important;
+  }
+.imgClosePop{
+    cursor: pointer;
+    position: fixed;
+    right: calc(6% - 62px);
+    top: 20px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+.boxImg{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh!important;
+    margin-top: 70px;
+    /* background: #fff; */
+    /* overflow: none; */
+    border-radius: 4px;
+}
+.boxImg .carousel-inner{
+    width: 60%;
+    margin: 0 auto;
+    height: 72vh;
+}
+.boxImg .carousel-inner .d-block{
+    width: 100%;
+    height: 72vh;
+    object-fit: contain;
+    text-align: center;
+    
+}
+.boxImg .carousel-indicators{
+    /* width:50%!important; */
+    /* margin-left: 70px!important; */
+    margin: 0 auto;
+}
+.boxImg .carousel-indicators button{
+    width:110px!important;
+    /* margin: 0 auto; */
+}
+.img-indicators{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: -90px;
+    margin: 0 auto!important;
+    text-align: center;
+    align-items: center;
+    
+}
+.img-indicators div{
+    align-items: center;
+    text-align: center;
+    
+}
+.img-indicators img{
+    width: 100%;
+    height: 65px;
+    margin: 0 10px;
+    align-items: center;
+    text-align: center;
+    object-fit: contain;
+    cursor: pointer;
+    
+}
 
 
 
