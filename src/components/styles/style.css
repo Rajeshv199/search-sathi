@@ -3451,10 +3451,42 @@ li:hover .subhobver{
 .setting-option small{
     display: block;
     line-height: 14px;
+    opacity: 0.7;
 }
-
-
-
+.hideProfile{
+    width: 50%;
+    background-color: #ffff;
+    margin: 20px auto;
+    text-align: center;
+    padding: 30px;
+}
+.hideProfile p{
+    line-height: 18px;
+}
+.hideProfile button{
+    border: 1px solid rgb(194, 190, 190);
+    background-color: transparent;
+    padding: 6px 14px;
+    margin: 0 2px;
+}
+.hideProfile input{
+    width: 75%;
+    outline: none;
+    padding: 7px 8px;
+    margin: 14px 0;
+    border: 1px solid rgb(194, 190, 190);
+}
+.deleteOpt{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(228, 225, 225) ;
+    padding: 8px 0;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 14px;
+    color: #5f5e5e;
+    cursor: pointer;
+}
 
 
 
