@@ -5,6 +5,7 @@ import './style.css';
 import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
 import MobileAside from './MobileAside';
+import RefindMatches from './refindMatches';
 
 export default function MyMatches() {
 
@@ -98,6 +99,13 @@ export default function MyMatches() {
             </div>
 
             <MobileAside />
+        </div>
+
+        <div className="popup-box2">
+            <div className="box6">
+                <RefindMatches/>
+            </div>
+
         </div>
 
     </div>

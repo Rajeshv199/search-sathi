@@ -54,12 +54,12 @@ export default function ProfileHeader() {
                             <i className="fa-solid fa-angle-right"></i>
                         </div>
                         </Link>
-                        <Link>
+                        {/* <Link>
                         <div className="upgrad-MenuList" >
                             <h6>Astrology Services</h6>
                             <i className="fa-solid fa-angle-right"></i>
                         </div>
-                        </Link>
+                        </Link> */}
                         <Link to='/phone-book'>
                             <div className="upgrad-MenuList" >
                                 <h6>Phonebook</h6>

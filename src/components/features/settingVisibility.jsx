@@ -21,9 +21,8 @@ export default function SettingVisibility() {
                 <div>
                     <span>{prag}</span>
                     <small>{desc}</small>
-                            
                 </div>
-                <small><input type='checkbox'/></small>
+                <div className={'px-2 '+(desc?"mt-2":"")}><input type='checkbox'/></div>
             </div>
         )
     }
@@ -44,6 +43,8 @@ export default function SettingVisibility() {
                         <Link to="#"><div className='mt-3 py-1'>Upgrade</div></Link>
                         <Link to="/features/help"><div className='mt-3 py-1'>Help</div></Link>
                         
+                    </div>
+                    <div className='menu-navbar3'>
                     </div>
                 
                 </div>
@@ -69,15 +70,15 @@ export default function SettingVisibility() {
                 }
                 {handalOpt===2&&
                 <div>
-                    {multleDiv("Membership Mails.","Receive mails from Jeevansathi about membership options and offers")}
-                    {multleDiv("New Matches Mails","Receive mails where Jeevansathi recommends new profiles to you.")}
-                    {multleDiv("Contact Alert Mails","Receive mails when someone on Jeevansathi 'Expresses Interest' in your profile.")}
-                    {multleDiv("Photo Request Mails","Receive mails when someone in Jeevansathi Requests you to upload photo in your profile.")}
-                    {multleDiv("Kundli Alert Mails","Receive mails where Jeevansathi recommends a profile to you based on astrological compatibility.")}
-                    {multleDiv("Service Mails","Receive mails (other than Visitor Alert/ Match Alert / Photo request) from Jeevansathi.")}
-                    {multleDiv("Promotional Mails","Receive mails from 3rd Party other than Jeevansathi.")}
-                    {multleDiv("Membership SMS","Receive membership information and special offers from Jeevansathi for your profile.")}
-                    {multleDiv("Transactional SMS","Receive important notifications from Jeevansathi on your profile.")}
+                    {multleDiv("Membership Mails.","Receive mails from Yogjodi about membership options and offers")}
+                    {multleDiv("New Matches Mails","Receive mails where Yogjodi recommends new profiles to you.")}
+                    {multleDiv("Contact Alert Mails","Receive mails when someone on Yogjodi 'Expresses Interest' in your profile.")}
+                    {multleDiv("Photo Request Mails","Receive mails when someone in Yogjodi Requests you to upload photo in your profile.")}
+                    {multleDiv("Kundli Alert Mails","Receive mails where Yogjodi recommends a profile to you based on astrological compatibility.")}
+                    {multleDiv("Service Mails","Receive mails (other than Visitor Alert/ Match Alert / Photo request) from Yogjodi.")}
+                    {multleDiv("Promotional Mails","Receive mails from 3rd Party other than Yogjodi.")}
+                    {multleDiv("Membership SMS","Receive membership information and special offers from Yogjodi for your profile.")}
+                    {multleDiv("Transactional SMS","Receive important notifications from Yogjodi on your profile.")}
                     {multleDiv("Membership Calls","Receive calls for Paid Membership options.")}
                     {multleDiv("Offer Calls","Receive calls for Special offers / discounts on Membership")}
                     {multleDiv("Website Help","Receive calls for Explanation of site features")}
