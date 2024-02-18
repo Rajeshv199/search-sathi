@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from "react";
 import './style.css';
 import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
-import { Link,useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 export default function Activity() {
 

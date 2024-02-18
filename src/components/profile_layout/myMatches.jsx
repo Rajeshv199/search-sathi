@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useRef,useEffect} from "react";
 import { Link } from 'react-router-dom';
 import './style.css';
 
@@ -12,7 +12,22 @@ export default function MyMatches() {
     const[interest,setInterest] = useState(false);
     const[msgInput,setMsgInput] = useState(false);
     const[shotList,setShotList] = useState(false);
-   
+    const[matchfilter,setMatchfilter] = useState(false);
+    let item1ref = useRef(null);
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setMatchfilter(false);
+          }
+        };
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
+
     return (
     <div className='profile-details'>
         <ProfileHeader/>
@@ -22,7 +37,7 @@ export default function MyMatches() {
 
             <div className='profile-box'>
                 <div className='filterBtn '>
-                    <div><i className="fa-solid fa-filter px-1"></i>Filters</div>
+                    <div onClick={()=>setMatchfilter(true)}><i className="fa-solid fa-filter px-1"></i>Filters</div>
                     <div>Verified</div>
                     <div>Just Joined</div>
                     <div>Nearby</div>
@@ -100,13 +115,15 @@ export default function MyMatches() {
 
             <MobileAside />
         </div>
-
-        <div className="popup-box2">
-            <div className="box6">
-                <RefindMatches/>
+        {matchfilter&&
+            <div className="popup-box2" >
+                <span className="closePop2" onClick={()=>setMatchfilter(false)}><i class="fa-solid fa-xmark"></i></span>
+                <div className="box7" ref={item1ref}>
+                    <RefindMatches/>
+                </div>
             </div>
-
-        </div>
+        }
+        
 
     </div>
 )
