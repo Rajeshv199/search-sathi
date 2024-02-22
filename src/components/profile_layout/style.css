@@ -115,13 +115,25 @@
 }
 
 .profile-box{
-    position: relative;
+    position: sticky;
     width: 67%;
     border: 1px solid rgb(220, 225, 230);
     box-shadow: 1px 1px 3px rgb(220, 225, 230);
     background-color: #ffffff;
     border-radius: 5px;
+    justify-content: space-around;
+    
+    
+}
+.profile-box2{
     position: sticky;
+    width: 67%;
+    height: 570px;
+    top: 80px!important;
+    border: 1px solid rgb(220, 225, 230);
+    box-shadow: 1px 1px 3px rgb(220, 225, 230);
+    background-color: #ffff;
+    border-radius: 5px;
     justify-content: space-around;
     
     
@@ -380,7 +392,7 @@
     flex-shrink: 0;
 }
 .widh100{
-    width: 115px;
+    width: 124px;
     flex-shrink: 0;
 }
 .widh130{
@@ -607,11 +619,12 @@
     padding: 12px 32px;
     background-color: #ecd7e7;
     position: sticky;
-    top: 76px;
+    top: 0;
     
 }
 .heiht400{
-    min-height: 420px;
+    height: 442px;
+    overflow-y: scroll;
     
 }
 
@@ -631,7 +644,7 @@
 .msgContainer{
     position: sticky;
     bottom: 0;
-    top: 0;
+    margin-top: 30px;
     /* padding: 8px 0; */
     padding: 10px 32px;
     background-color: #e4ecec;
@@ -1254,6 +1267,8 @@
 }
 .matchesinput{
     margin: 18px 0;
+}
+.matchesinput label{
     cursor: pointer;
 }
 .matchesBtn{

@@ -12,7 +12,6 @@ function SearchBar() {
     const[showPop,setshowPop] = useState(0);
     const[allprofile,setAllprofile] = useState(false);
 
-    
 
     const[minAge,setMinAge]=useState(21);
     const[maxAge,setmaxAge]=useState(35);

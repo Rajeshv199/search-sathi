@@ -51,7 +51,7 @@ export default function MyMatches() {
                             <Link to="/mymatches/profile">
                                 <div className='card-text'>
                                     <div className='lastSeen'>Last seen at 6:24 pm</div>
-                                    <div className='profileName'>Rohit Kumar<span>, &nbsp; 20</span></div>
+                                    <div className='profileName'>Kajal Kumari<span>, &nbsp; 20</span></div>
                                     <div className='d-flex'>
                                         <div className='profleHight mxWid375'>6ft 2in </div>
                                         <div className='profleHight mxWid50'><span className='mx-2'>•</span>Ranchi </div>

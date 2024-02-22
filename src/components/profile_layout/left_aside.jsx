@@ -44,11 +44,12 @@ export default function LeftAside(){
                         <div className={route==="/search"?"colr5":""}>Search</div>
                     </div>
                 </Link>
-                
+                <Link to="/messenger">
                 <div className="left-side-items">
-                <span className="material-symbols-outlined">send</span>
-                    <div>Messanger</div>
+                    <span className="material-symbols-outlined">send</span>
+                    <div className={route==="/messanger"?"colr5":""}>Messanger</div>
                 </div>
+                </Link>
             </div>
             
         </div>

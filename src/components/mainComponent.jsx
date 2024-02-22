@@ -21,6 +21,7 @@ import SearchBar from "./header/searchBar";
 import SuccessStories from "./features/success_stories";
 import ProfileEdit from "./profile_layout/profile_Edit";
 import PartnerEdit from "./profile_layout/pertner_edit";
+import Messenger from "./profile_layout/messanger";
 import Chat from "./profile_layout/chat";
 import MatchesProfile from "./profile_layout/matchesProfile";
 import Basic from "./profile_Edit/basic";
@@ -107,6 +108,7 @@ class MainComponent extends Component{
                     <Route path="/byCriteria" component={Search} />
                     <Route path="/activity" component={Activity} />
                     <Route path="/mymatches" component={MyMatches} />
+                    <Route path="/messenger" component={Messenger} />
 
 
                     <Route path="/settingVisibility" component={SettingVisibility}/>

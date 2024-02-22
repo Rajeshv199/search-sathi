@@ -84,7 +84,7 @@ export default function ProfileHeader() {
                                 <i className="fa-solid fa-angle-right"></i>
                             </div>
                         </Link>
-                        <Link to="/success/story" >
+                        <Link to="#" >
                             <div className='upgrad-MenuList'>
                                 <h6>Video tour</h6>
                                 <i className="fa-solid fa-angle-right"></i>

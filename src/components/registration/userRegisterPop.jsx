@@ -65,10 +65,15 @@ function UserRegister(){
     function validateMob(mobileNo){
         /* eslint-disable */
         var filter = /^((\+[1-9]{1,4}[\-]*)|(\([0-9]{2,3}\)[\-]*)|([0-9]{2,4})[\-]*)*?[0-9]{3,4}?[\-]*[0-9]{3,4}?$/; 
-        console.log(filter[39]);
+        // console.log(filter[39]);
         return !mobileNo?"Mobile No is missing":filter.test(mobileNo)&&mobileNo.length===10?"":"Not a valid number";
     }
-    function validatePasswrd(password){return !password?"Password is missing":""}
+    function validatePasswrd(password){
+        // var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+        // if(inputtxt.value.match(decimal))
+        // return !password?"Password is missing":password.value.match(decimal)?"Not a valid Password":""
+        return !password?"Password is missing":""
+    }
     function validateConfrmPasswrd(confirmPassword){return !confirmPassword?"Password is missing":""}
 
     function handleSubmit(){

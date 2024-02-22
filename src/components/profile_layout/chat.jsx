@@ -17,7 +17,7 @@ export default function Details() {
 
            <Leftaside/>
 
-            <div className='profile-box'>
+            <div className='profile-box2'>
                 <div className='msgHeader'>
                     <Link to="/mymatches" className='text-dark'><i className="fa-solid fa-angle-left fa-lg py-2 my-1"></i></Link>
                     <div className='text-center d-flex mx-4 justify-constent-center'>
@@ -31,9 +31,11 @@ export default function Details() {
                         <button><i className="fa-solid fa-phone"></i></button>
                         <button><i className="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
+                    
                 </div>
                 <div className='pdding32 heiht400'>
                     <div className='mb-3'>Sending message will also send this member your interest</div>
+                    
       
                 </div>
                 <div className='msgContainer'>

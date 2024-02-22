@@ -3,10 +3,34 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 export default function RefineMatches() {
-
+    const[filterData,setFilterData] = useState({typeOfMatches:[],familyBasedOutOf:[],profilePostedBy:[],activityOnSite:[],religion:[],motherTongue:[],casteGroup:[],country:[],city:[],income:[],employeeIn:[], education:[],occupation:[],photo:[],height:[],age:[],diet:[],maritalStatus:[],haveChildren:[]})
     const[findMatches,setFindMatches] = useState(1);
 
+    function handleChange(e){
+        const {currentTarget: input} = e;
+        let filterData1 = {...filterData}
+        input.type === "checkbox"?
+        filterData1[input.name] = updateCBs(filterData1[input.name],input.checked,input.value):
+        filterData1[input.name] = input.value;
+        setFilterData(filterData1);
+    }
+    function updateCBs(inpArr, checked, value){
+        console.log(inpArr, checked, value);
+        if(value==="all"){
+            return inpArr=[];
+        }else{
+        if(checked) inpArr.push(value);
+        else{
+            let index = inpArr.findIndex((ele)=> ele === value);
+            if (index >= 0) inpArr.splice(index, 1);
+        }
+        return inpArr;
+        }
+    }
+    let countries = ["Russia", "Canada", "China", "US of America", "Brazil", "Australia", "India", "Argentina", "Kazakhstan", "Algeria"];
    
+    const{typeOfMatches,familyBasedOutOf,profilePostedBy,activityOnSite,religion,motherTongue,casteGroup,country,city,income,employeeIn, education,occupation,photo,height,age,diet,maritalStatus,haveChildren} = filterData;
+    
     return (
     <div>
         <h4 className="py-4 px-3">Refind Matches</h4>
@@ -17,7 +41,7 @@ export default function RefineMatches() {
                 <button className={findMatches===3 ?"bg-white":null} onClick={()=>setFindMatches(3)}>Profile posted by</button>
                 <button className={findMatches===4 ?"bg-white":null} onClick={()=>setFindMatches(4)}>Activity on site</button>
                 <button className={findMatches===5 ?"bg-white":null} onClick={()=>setFindMatches(5)}>Religion</button>
-                <button className={findMatches===6 ?"bg-white":null} onClick={()=>setFindMatches(6)}>Mother Tongue</button>
+                <button className={findMatches===6 ?"bg-white":null} onClick={()=>setFindMatches(6)}>Mother Tongue</button> 
                 <button className={findMatches===7 ?"bg-white":null} onClick={()=>setFindMatches(7)}>Caste Group</button>
                 <button className={findMatches===8 ?"bg-white":null} onClick={()=>setFindMatches(8)}>Caste Subcaste</button>
                 <button className={findMatches===9 ?"bg-white":null} onClick={()=>setFindMatches(9)}>Country</button>
@@ -100,17 +124,29 @@ export default function RefineMatches() {
                         <span className="px-2">All</span>
                     </label>
                 </div>}
+
                 {/* Country */}
+
                 {findMatches===9 &&
-                    <div className="matchesinput">
+                <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="country" value="all" checked={country.find(c2=>c2==="all")} onChange={handleChange}/>
                         <span className="px-2">All</span>
                     </label>
-                </div>}
-                {/* City */}
-                {findMatches===10 &&
+                    {countries.map((c1,index)=>(
                     <div className="matchesinput">
+                        <label key={index}>
+                            <input type="checkbox" name="country" value={c1} checked={country.find(c2=>c2===c1)} onChange={handleChange}/>
+                            <span className="px-2">{c1}</span>
+                        </label>
+                    </div>
+                    ))}
+                </div>}
+
+                {/* City */}
+
+                {findMatches===10 &&
+                <div className="matchesinput">
                     <label>
                         <input type="checkbox" />
                         <span className="px-2">All</span>
@@ -196,7 +232,7 @@ export default function RefineMatches() {
                         <span className="px-2">All</span>
                     </label>
                 </div>}
-                
+                <br/><br/><br/>
                 
             
             </div>
@@ -209,3 +245,4 @@ export default function RefineMatches() {
     </div>
 )
 }
+
