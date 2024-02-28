@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState,useEffect,useRef} from "react";
 import {useLocation } from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../footer/regi_footer";
@@ -24,6 +24,9 @@ function ProfileDetails(){
     const [pvacyMode,setPvacyMode] = useState(3);
     const [verifyMob,setVerifyMob] = useState(false);
 
+    const inputRefs = [useRef(null), useRef(null), useRef(null),useRef(null),useRef(null),useRef(null)];
+    const [currentInputIndex, setCurrentInputIndex] = useState(0);
+
     const [takeData,setTakeData] = useState({firstName:"",middleName:"",lastName:"",title:"",gmail:"",ISD:"+91",mobileNo:"",password:"",confirmPassword:"",gender:""})
 
     function handleChange(e){
@@ -31,7 +34,6 @@ function ProfileDetails(){
         let takeData1 = {...takeData};
         (takeData1[input.name] = input.value) ;
         setTakeData(takeData1);
-        // handleValidate(e);
 
     }
 
@@ -59,6 +61,17 @@ function ProfileDetails(){
         }
         checkForData(); 
     },[state,takeData]);
+
+    const handleKeyPress = (event) => {
+          console.log(currentInputIndex);
+          const nextIndex = currentInputIndex + 1;
+
+          if (nextIndex < inputRefs.length) {
+            inputRefs[nextIndex].current.focus();
+    
+            setCurrentInputIndex(nextIndex);
+          }
+      };
 
     function handleSubmit(){
         setError(true);setlabel1(true);setlabel2(true);
@@ -116,9 +129,10 @@ function ProfileDetails(){
                             <div className="arletVlid">{error&&!firstName?"Please provide a valid First Name":""}</div>
                             <div className={"regi-secle "+(!error||firstName?"mt20":"")} onClick={() =>{setlabel6(true)}}>
                                 <label className={"reg-label " +(label6?"reg-email":"")}>First Name <span className="star">*</span></label>
-                                <input type="text" value={firstName} name="firstName" onChange={handleChange}/>
+                                <input type="text" value={firstName} name="firstName" onChange={handleChange} autoComplete="off"/>
                             </div>
                         </div>
+                        
                         <div className="regi-detail">
                             <div className={"regi-secle mt20"} onClick={() =>{setlabel8(true)}}>
                                 <label className={"reg-label top8 " +(label8?"reg-label6":"")}>Middle Name</label>
@@ -219,7 +233,7 @@ function ProfileDetails(){
                                 </React.Fragment>
                                 :""}
                             </div>
-                        </div>
+                        </div> 
                         :""}
 
                         <button className="proBtns" onClick={handleSubmit}>Register Me</button>
@@ -256,12 +270,9 @@ function ProfileDetails(){
                             <h5 className="text-center">Verify Your Mobile No</h5>
                             <div className="sntopt">Sent OTP</div>
                             <h6 className="mt-2">Enter OTP</h6>
-                            <input  type="number" className="inputopt"/>
-                            <input  type="number" className="inputopt"/>
-                            <input  type="number" className="inputopt"/>
-                            <input  type="number" className="inputopt"/>
-                            <input  type="number" className="inputopt"/>
-                            <input  type="number" className="inputopt"/>
+                            {inputRefs.map((inputRef, index) => (
+                                <input className="inputopt" type='number' key={index} ref={inputRef} onKeyDown={handleKeyPress} />
+                            ))}
                             <div className="mt-4 mb-2">
                                 <button className="submitopt" onClick={()=>setVerifyMob(false)}>Submit</button>
                                 {/* <button className="cancelBtn" onClick={()=>setVerifyMob(false)}>Cencel</button> */}
