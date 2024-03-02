@@ -2,13 +2,14 @@
 import { Link } from 'react-router-dom';
 import yogjodiLogo from "../image/YogJodiLogo.png";
 import Footer from "../footer/footer";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
-export default function SettingVisibility() {
+export default function SettingVisibility(props) {
 
     const[handalOpt,setHandalOpt] = useState(1);
     const[hideProfile,setHideProfile] = useState(1);
     const[deleteIdOpt,setDeleteIdOpt] = useState(0);
+    const { state } = props.location;
     
     function handleDeleteOpt(val){
         if(deleteIdOpt===val) setDeleteIdOpt(0);
@@ -26,6 +27,10 @@ export default function SettingVisibility() {
             </div>
         )
     }
+
+    useEffect(() => {
+        setHandalOpt(state);
+      }, [state]);
 
     return (
         <div className='profile-details'>
@@ -92,9 +97,9 @@ export default function SettingVisibility() {
                 
                     <h6 className='my-4'>Hide My Profile For</h6>
                     <div>
-                        <button className={hideProfile==1?'bg-danger text-white border-0':null} onClick={()=>setHideProfile(1)}>7 days</button>
-                        <button className={hideProfile==2?'bg-danger text-white border-0':null} onClick={()=>setHideProfile(2)}>15 days</button>
-                        <button className={hideProfile==3?'bg-danger text-white border-0':null} onClick={()=>setHideProfile(3)}>30 days</button>
+                        <button className={hideProfile===1?'bg-danger text-white border-0':null} onClick={()=>setHideProfile(1)}>7 days</button>
+                        <button className={hideProfile===2?'bg-danger text-white border-0':null} onClick={()=>setHideProfile(2)}>15 days</button>
+                        <button className={hideProfile===3?'bg-danger text-white border-0':null} onClick={()=>setHideProfile(3)}>30 days</button>
                     </div>
                     <div className='my-3'>
                         <input type='number' placeholder='Your Password'/>

@@ -9,17 +9,9 @@ import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
 import Footer from "./footer/footer";
 import UserRegisterPop from "../components/registration/userRegisterPop";
-import findWorkImg1 from "./image/findWorkImg1.png";
-import findWorkImg2 from "./image/findWorkImg2.png";
-import findWorkImg3 from "./image/findWorkImg3.png";
 import MobileView from "./image/mobileView.png";
 import LoginForm from './login/user_login';
 import YogJodiLogo from './image/YogJodiLogo.png';
-import Screened_Profiles from './image/Screened_Profiles.png';
-import Special from './image/special.png';
-import Restrict from './image/restrict.png';
-import Advisor from './image/advisor.png';
-import Handpicked from './image/handpicked.png';
 import MatchImage from './image/matchImage.png';
 import VideoImage from './image/videoImage.png';
 import VideoProfile from './image/profile121.png';
@@ -30,6 +22,7 @@ import how_work from './image/how-work.png';
 import how_work2 from './image/how-work2.png';
 import how_work3 from './image/how-work3.png';
 import ExclusiveBgImg from './image/exclusiveBgImg.png';
+import ExclusiveBgImg2 from './image/exclusiveBgImg2.png';
 
 
 
@@ -382,8 +375,8 @@ class index extends Component{
                                 <div>
                                     <div className=" d-flex mt-3">
                                         <div className="imgInfo">
-                                            <img width="60px" height="40px" src={Screened_Profiles} alt=""/>
-                                            {/* <img width="70px" height="40px" src="https://static.jeevansathi.com/js_static/_next/static/images/Screened_Profiles-63d4c9edff8d96926cbf2d19c392be95.svg" alt=""/> */}
+                                            <img width="60px" height="40px" src={New_Benefits} alt=""/>
+                                            
                                         </div>
                                         <div className="infoText">
                                             <div className="">100% Manually Screened Profiles</div>
@@ -392,7 +385,7 @@ class index extends Component{
                                     </div>
                                     <div className="d-flex mt-3">
                                         <div className="imgInfo">
-                                            <img width="60px" height="40px" src={Special} alt=""/>
+                                            <img width="60px" height="40px" src={New_Benefits2} alt=""/>
                                         </div>
                                         
                                         <div className="infoText">
@@ -402,7 +395,7 @@ class index extends Component{
                                     </div>
                                     <div className="d-flex mt-3">
                                         <div className="imgInfo ml-n">
-                                            <img width="60px" height="40px" src={Restrict} alt=""/>
+                                            <img width="60px" height="40px" src={New_Benefits3} alt=""/>
                                         </div>
                                         <div className="infoText">
                                             <div className="">Control over Privacy</div>
@@ -419,8 +412,8 @@ class index extends Component{
                                         </header>
                                         <div className="featuresSection-dflex">
                                             <div className="featuresSection-Card">
-                                                <div className="featuresSectionImages pt-5">
-                                                    <img width="100%" height="100%" src="https://static.jeevansathi.com/js_static/_next/static/images/match-hour-19b5b6122d30ef883c29f19334394835.svg" alt=""/>
+                                                <div className="featuresSectionImages ">
+                                                    <img width="100%" height="100%" src={MatchImage} alt=""/>
                                                 </div>
                                                 <div className="underline3"></div>
                                                 <h3>Yogjodi Match Hour</h3>
@@ -428,8 +421,8 @@ class index extends Component{
                                                 
                                             </div>
                                             <div className="featuresSection-Card">
-                                                <div className="featuresSectionImages pt-4">
-                                                    <img width="100%" src="https://static.jeevansathi.com/js_static/_next/static/images/Video_Voice-0a41d02f12a4d6ac442d6f89c537443b.svg" alt=""/>
+                                                <div className="featuresSectionImages ">
+                                                    <img width="100%" height="100%" src={VideoImage} alt=""/>
                                                 </div>
                                                 <div className="underline3"></div>
                                                 <h3>Voice & Video Calling</h3>
@@ -438,7 +431,7 @@ class index extends Component{
                                             </div>
                                             <div className="featuresSection-Card">
                                                 <div className="featuresSectionImages">
-                                                    <img width="100%" src="https://static.jeevansathi.com/js_static/_next/static/images/Video_Profile-c39366134dc7ff2aa86ab7541f555680.svg" alt=""/>
+                                                    <img width="100%" height="100%" src={VideoProfile} alt=""/>
                                                 </div>
                                                 <div className="underline3"></div>
                                                 <h3>Introducing Video Profiles</h3>
@@ -456,15 +449,21 @@ class index extends Component{
                                     <div className="featuresSectionContain">
                                         <div className="featuresSections--lists">
                                             <div className="featuresSectionImg">
-                                                <img className="carouselImg" src={findWorkImg1} alt=""/>
+                                                <div className="carouselImg">
+                                                    <img height="100%" src={how_work} alt=""/>
+                                                </div>
                                                 <p><span>01</span> Define Your Partner Preferences</p>
                                             </div>
                                             <div className="featuresSectionImg">
-                                                <img className="carouselImg" src={findWorkImg2} alt=""/>
+                                                <div className="carouselImg">
+                                                    <img height="100%" src={how_work2} alt=""/>
+                                                </div>
                                                 <p><span>02</span> Browse Profiles</p>
                                             </div>
                                             <div className="featuresSectionImg">
-                                                <img className="carouselImg" src={findWorkImg3} alt=""/>
+                                                <div className="carouselImg">
+                                                    <img height="100%" src={how_work3} alt=""/>
+                                                </div>
                                                 <p><span>03</span> Send Interests & Connect</p>
                                             </div>
                                         </div>
@@ -492,19 +491,19 @@ class index extends Component{
                                         <div className="benifit-title pb-1">PERSONALISED MATCH-MAKING SERVICE</div>
                                         <div className="benifit-title2">Introducing <span>Exclusive</span></div>
                                     </h2>   
-                                    <img className="exclusiveImg" src="https://i.ibb.co/NmqvTt3/JS-Exclusive-Image-final-min.png" alt=""/>         
+                                    <img className="exclusiveImg" src={ExclusiveBgImg2} alt=""/>         
                                     <div className="exclusiveList">
                                         <ul>  
                                             <li>
-                                                <img width="20px" height="20px" src={Advisor} alt=""/>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
                                                 <span>Meet Your Relationship Manager</span>
                                             </li>
                                             <li>
-                                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"></path></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>
                                                 <span>Communicate your preferences</span>
                                             </li>
                                             <li>
-                                                <img width="20px" height="20px" src={Handpicked} alt=""/>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>
                                                 <span>Choose from handpicked profiles</span>
                                             </li>
                                         </ul>
@@ -521,11 +520,11 @@ class index extends Component{
                                    <div className="storySlick">
                                         {successStoryList.map((item,index) => (
                                             <div className="slick-current" key={index}>
-                                                <div className="storyList" style={{backgroundImage:`radial-gradient(50% 114%, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(rgba(255, 255, 255, 0.5) 16%, rgba(0, 0, 0, 0.7) 76%), url("${item.img}")`}}>
-                                                    <div className="pos_abs">
+                                                <div className="storyList" >
+                                                    <img width="100%" height="100%" src={item.img} alt="" />
+                                                    <div className="storyDetails">
                                                         <div className="story-Name">{item.name}</div>
-                                                        <div className="lineClass"></div>
-                                                        <div className="marriageDate">MARRIAGE DATE 01, January 2021</div>
+                                                        <div className="marriageDate"><span>Marriage Date 01</span>, <span>January 2023</span></div>
                                                     </div>  
                                                 </div>  
                                             </div>

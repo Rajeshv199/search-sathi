@@ -41,6 +41,7 @@ import Block_Ignore from "./features/block_ignore";
 import PhoneBook from "./features/phoneBook";
 import Exclusive from "./features/exclusive";
 import SettingVisibility from "./features/settingVisibility";
+import UserLogout from "./login/userLogout";
 import Demo from "./demo";
 
 
@@ -118,6 +119,7 @@ class MainComponent extends Component{
                     <Route path="/success/story" component={SuccessStories} />
 
                     <Route path="/login" component={User_Login}/>
+                    <Route path="/forgotPass" component={UserLogout}/>
                     {/* <Route path="/login"  render={(props)=><User_Login {...props} />}/> */}
 
                     {/* <Route path="/login" component={User_Login}/> */}

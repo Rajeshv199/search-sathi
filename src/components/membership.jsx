@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 
 class Membership extends Component{
-    state={
-        
-    }
+    state={    }
+
+    
     render(){
         return(
             <React.Fragment >

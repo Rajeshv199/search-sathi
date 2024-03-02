@@ -37,7 +37,7 @@ function UserLogin(){
                     <div  className="">
                         <button className="loginBtns mt-4">LOGIN</button>
                     </div>
-                    <div className="forgotpass">Forgot Password?</div>
+                    <Link to="/forgotPass"><div className="forgotpass">Forgot Password?</div></Link>
                 </div>
                 
             </div>

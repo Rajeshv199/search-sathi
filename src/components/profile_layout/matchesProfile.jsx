@@ -125,7 +125,7 @@ export default function MatchesProfile() {
                         <div className="text-center">
                             <h6>Her Preference</h6>
                             <div className="lookingsImg">
-                                <img className="lookingImg" src="https://img.freepik.com/free-photo/portrait-happy-mature-businessman-with-handbag_23-2147955311.jpg?size=626&ext=jpg&ga=GA1.1.623821449.1706697601&semt=sph"/>
+                                <img className="lookingImg" src="https://img.freepik.com/free-photo/portrait-happy-mature-businessman-with-handbag_23-2147955311.jpg?size=626&ext=jpg&ga=GA1.1.623821449.1706697601&semt=sph" alt="" />
                             </div>
                         </div>
                         <div className="text-center w-25">
@@ -134,7 +134,7 @@ export default function MatchesProfile() {
                         <div className="text-center">
                             <h6>Your Match</h6>
                             <div className="lookingsImg">
-                                <img className="lookingImg" src="https://img.freepik.com/free-photo/portrait-happy-mature-businessman-with-handbag_23-2147955311.jpg?size=626&ext=jpg&ga=GA1.1.623821449.1706697601&semt=sph"/>
+                                <img className="lookingImg" src="https://img.freepik.com/free-photo/portrait-happy-mature-businessman-with-handbag_23-2147955311.jpg?size=626&ext=jpg&ga=GA1.1.623821449.1706697601&semt=sph" alt="" />
                             </div>
                         </div>
                     </div>
@@ -181,16 +181,16 @@ export default function MatchesProfile() {
                     <div id="carouselExampleIndicators" class="carousel slide">
                         <div className="img-indicators">
                             <div  class="active" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-label="Slide 1">
-                                <img src="https://images.unsplash.com/photo-1707464568815-7fb6b6ea3e2a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1707464568815-7fb6b6ea3e2a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
                             </div>
                             <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
-                                <img src="https://images.unsplash.com/photo-1707333572517-986169cdb639?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1707333572517-986169cdb639?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
                             </div>
                             <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
-                                <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
                             </div>
                             <div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
-                                <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                                <img src="https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/>
                             </div>
                         </div>
 

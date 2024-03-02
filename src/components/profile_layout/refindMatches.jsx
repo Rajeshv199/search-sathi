@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import { Link } from 'react-router-dom';
 import './style.css';
 
 export default function RefineMatches() {
-    const[filterData,setFilterData] = useState({typeOfMatches:[],familyBasedOutOf:[],profilePostedBy:[],activityOnSite:[],religion:[],motherTongue:[],casteGroup:[],country:[],city:[],income:[],employeeIn:[], education:[],occupation:[],photo:[],height:[],age:[],diet:[],maritalStatus:[],haveChildren:[]})
+    const[filterData,setFilterData] = useState({typeOfMatches:[],familyBasedOutOf:[],profilePostedBy:[],activityOnSite:[],religion:[],motherTongue:[],casteGroup:[],casteSubcaste:[],country:[],city:[],income:[],employeeIn:[], education:[],occupation:[],photo:[],height:[],age:[],diet:[],maritalStatus:[],haveChildren:[]})
     const[findMatches,setFindMatches] = useState(1);
 
     function handleChange(e){
@@ -29,7 +28,7 @@ export default function RefineMatches() {
     }
     let countries = ["Russia", "Canada", "China", "US of America", "Brazil", "Australia", "India", "Argentina", "Kazakhstan", "Algeria"];
    
-    const{typeOfMatches,familyBasedOutOf,profilePostedBy,activityOnSite,religion,motherTongue,casteGroup,country,city,income,employeeIn, education,occupation,photo,height,age,diet,maritalStatus,haveChildren} = filterData;
+    const{typeOfMatches,familyBasedOutOf,profilePostedBy,activityOnSite,religion,motherTongue,casteGroup,casteSubcaste,country,city,income,employeeIn, education,occupation,photo,height,age,diet,maritalStatus,haveChildren} = filterData;
     
     return (
     <div>
@@ -64,7 +63,8 @@ export default function RefineMatches() {
                 {findMatches===1 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" name="typeOfMatches" value={typeOfMatches}/>
+                        {/* <input type='checkbox' name="typeOfMatches" value={typeOfMatches} checked={value.findIndex((tech)=>tech===a1) >= 0} onChange={handleChange} /> */}
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -72,7 +72,7 @@ export default function RefineMatches() {
                 {findMatches===2 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={familyBasedOutOf}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -80,7 +80,7 @@ export default function RefineMatches() {
                 {findMatches===3 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={profilePostedBy}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -88,7 +88,7 @@ export default function RefineMatches() {
                 {findMatches===4 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={activityOnSite}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -96,7 +96,7 @@ export default function RefineMatches() {
                 {findMatches===5 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={religion}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -104,7 +104,7 @@ export default function RefineMatches() {
                 {findMatches===6 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={motherTongue}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -112,7 +112,7 @@ export default function RefineMatches() {
                 {findMatches===7 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={casteGroup}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -120,7 +120,7 @@ export default function RefineMatches() {
                 {findMatches===8 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={casteSubcaste}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -148,7 +148,7 @@ export default function RefineMatches() {
                 {findMatches===10 &&
                 <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={city}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -156,7 +156,7 @@ export default function RefineMatches() {
                 {findMatches===11 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={income}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -164,7 +164,7 @@ export default function RefineMatches() {
                 {findMatches===12 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={employeeIn}/>
                         <span className="px-2">All</span>              
                     </label>
                 </div>}
@@ -172,7 +172,7 @@ export default function RefineMatches() {
                 {findMatches===13 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={education}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -180,7 +180,7 @@ export default function RefineMatches() {
                 {findMatches===14 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={occupation}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -188,7 +188,7 @@ export default function RefineMatches() {
                 {findMatches===15 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={photo}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -196,7 +196,7 @@ export default function RefineMatches() {
                 {findMatches===16 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={height}/>
                         <span className="px-2">All</span>       
                     </label>
                 </div>}
@@ -204,7 +204,7 @@ export default function RefineMatches() {
                 {findMatches===17 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={age}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -212,7 +212,7 @@ export default function RefineMatches() {
                 {findMatches===18 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={diet}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -220,7 +220,7 @@ export default function RefineMatches() {
                 {findMatches===19 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={maritalStatus}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
@@ -228,7 +228,7 @@ export default function RefineMatches() {
                 {findMatches===20 &&
                     <div className="matchesinput">
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" value={haveChildren}/>
                         <span className="px-2">All</span>
                     </label>
                 </div>}
