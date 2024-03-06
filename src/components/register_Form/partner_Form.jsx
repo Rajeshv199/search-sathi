@@ -78,7 +78,7 @@ function PartnerForm() {
     }
     function multiCheckbox(manArr, name, arr) {
         return (
-                <div className={"multiCheckbox " + (arr[0]?"":"top35")}>
+                <div className="multiCheckbox">
                     {manArr.map((a1, index) => (
                         <label key={index}>
                             <input type="checkbox" name={name} value={a1} checked={arr.find((tk) => tk === a1)} onChange={handleChange} />
