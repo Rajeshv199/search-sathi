@@ -86,7 +86,6 @@ function OTPInput() {
   };
 
   function handleKeyPress(e,index){
-    const value = e.target.value;
 
     console.log(e.key,index);
     if (e.key === 'Backspace' && index > 0) {
@@ -99,16 +98,6 @@ function OTPInput() {
   }
 
 
-  const handlePaste = (e) => {
-    e.preventDefault();
-    const pasteData = e.clipboardData.getData('text/plain').slice(0, length);
-
-    // Update OTP state with pasted data
-    setOtp(pasteData.split(''));
-
-    // Move focus to the last input
-    inputRefs.current[length - 1].focus();
-  };
 
   return (
     <div>

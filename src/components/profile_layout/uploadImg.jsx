@@ -1,27 +1,14 @@
-import { useState } from 'react';
 import { Link }from 'react-router-dom';
 import './style.css';
 
 import ProfileHeader from './profileHeader';
 import LeftAside from './left_aside';
-import MobileAside from './MobileAside';
 
 export default function Details() {
 
-    const[showDetails,setShowDetails] = useState(1);
-    const[activeAbut,setActiveAbut] = useState(1);
-    // function goBack() {
-    //     window.history.back()
-    // }
+  
 
-    function multipleValue(label,value,width){
-        return(
-            <div className='d-flex w-50 flotLeft my-2'>
-                <div className={'d-flex justify-content-between '+width}>{label}<span >:</span></div>
-                <div className='px-2'>{value}</div>
-            </div>
-        )
-    }
+   
     
 
     return (
