@@ -8,9 +8,6 @@ export default function Details() {
 
   
 
-   
-    
-
     return (
     <div className='profile-details'>
         <ProfileHeader/>

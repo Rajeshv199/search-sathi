@@ -71,7 +71,7 @@ function ProfileDetails(){
             }
         }
         checkForData(); 
-    },[state,takeData]);
+    },[state]);
 
     const handleKeyPress = (e,index) => {
         if(e.key === 'Backspace' && index > 0) {
