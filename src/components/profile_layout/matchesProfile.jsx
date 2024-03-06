@@ -44,6 +44,17 @@ export default function MatchesProfile() {
             </div>
         )
     }
+
+    function handleScroll(val){
+        if(val==="family"){
+            window.scrollTo({ top: 1020, behavior: 'smooth' });
+        }
+        if(val==="partner"){
+            window.scrollTo({ top: 1280, behavior: 'smooth' });
+        }
+    }
+
+
     return (
     <div className='profile-details'>
         <ProfileHeader/>
@@ -71,8 +82,8 @@ export default function MatchesProfile() {
 
                 <div className="postion-sticky">
                     <button className="activeBtn ">About Me</button>
-                    <button>Family</button>
-                    <button>Partner </button>
+                    <button onClick={()=>handleScroll("family")}>Family</button>
+                    <button onClick={()=>handleScroll("partner")}>Partner </button>
                 </div>
                 <div className="basicData cursorNot ">
                     <div className='d-flex'>
@@ -87,6 +98,7 @@ export default function MatchesProfile() {
                         </div>
                     </div>
                 </div>
+                
                 <div className="basicData cursorNot">
                     <div className='d-flex'>
                         Just type lorem in html to generate a paragraph of dummy text. Control how much text is generated with a number suffix, such as lorem10 to generate 10 words of dummy text. You can also combine lorem with other Emmet abbreviations.
@@ -115,6 +127,17 @@ export default function MatchesProfile() {
                     </div>
                     <div className="d-flex">
                         <div className="lookfor">From Hazaribagh, Jharkhand, india</div>
+                    </div>
+                </div>
+                <div className="basicData cursorNot">
+                    <div className='d-flex justify-content-between'>
+                        <h5 className='m-0'>Lifestyle and Interests </h5>
+                    </div>
+                    <div className="d-fle">
+                        <div className="lookfor">Her Favourites</div>
+                        <div className="lookfor mx-3">She can speak</div>
+
+                        <div className="mx-3 text-secondary">English , Hindi</div>
                     </div>
                 </div>
                 <div className="basicData cursorNot">

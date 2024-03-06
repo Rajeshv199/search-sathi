@@ -39,15 +39,15 @@ export default function LeftAside(){
                     </div>
                 </Link>
                 <Link to="/byCriteria">
-                    <div className={'left-side-items '+(route==="/search"?"colr5":"")}>
+                    <div className={'left-side-items '+(route==="/byCriteria"?"colr5":"")}>
                         <span className="material-symbols-outlined">query_stats</span>
-                        <div className={route==="/search"?"colr5":""}>Search</div>
+                        <div className={route==="/byCriteria"?"colr5":""}>Search</div>
                     </div>
                 </Link>
                 <Link to="/messenger">
-                <div className="left-side-items">
+                <div className={'left-side-items '+(route==="/messenger"?"colr5":"")}>
                     <span className="material-symbols-outlined">send</span>
-                    <div className={route==="/messanger"?"colr5":""}>Messanger</div>
+                    <div className={route==="/messenger"?"colr5":""}>Messanger</div>
                 </div>
                 </Link>
             </div>

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './style.css';
 
 export default function RefineMatches() {
-    const[filterData,setFilterData] = useState({typeOfMatches:[],familyBasedOutOf:[],profilePostedBy:[],activityOnSite:[],religion:[],motherTongue:[],casteGroup:[],casteSubcaste:[],country:[],city:[],income:[],employeeIn:[], education:[],occupation:[],photo:[],height:[],age:[],diet:[],maritalStatus:[],haveChildren:[]})
+    const[filterData,setFilterData] = useState({typeOfMatches:"",familyBasedOutOf:[],profilePostedBy:[],activityOnSite:[],religion:["All"],motherTongue:[],casteGroup:[],casteSubcaste:[],country:["All"],city:[],income:[],employeeIn:[], education:[],occupation:[],photo:[],height:[],age:[],diet:[],maritalStatus:[],haveChildren:[]})
     const[findMatches,setFindMatches] = useState(1);
 
     function handleChange(e){
@@ -14,22 +14,31 @@ export default function RefineMatches() {
         setFilterData(filterData1);
     }
     function updateCBs(inpArr, checked, value){
-        console.log(inpArr, checked, value);
-        if(value==="all"){
-            return inpArr=[];
+        if(value==="All"){
+            return inpArr=["All"];
         }else{
-        if(checked) inpArr.push(value);
-        else{
-            let index = inpArr.findIndex((ele)=> ele === value);
-            if (index >= 0) inpArr.splice(index, 1);
-        }
-        return inpArr;
+            if(checked){
+                if(inpArr[0]==="All") inpArr.splice(0,1);
+                inpArr.push(value);
+            } 
+            else{
+                let index = inpArr.findIndex((ele)=> ele === value);
+                if (index >= 0) inpArr.splice(index, 1);
+            }
+            return inpArr[0]?inpArr:inpArr=["All"];
         }
     }
-    let countries = ["Russia", "Canada", "China", "US of America", "Brazil", "Australia", "India", "Argentina", "Kazakhstan", "Algeria"];
+
+    let typeMatchesArr = ["All","Verified", "Just Joined"];
+    let countries = ["All","Russia", "Canada", "China", "US of America", "Brazil", "Australia", "India", "Argentina", "Kazakhstan", "Algeria"];
+    let religionArr=["All","Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
+
+
    
     const{typeOfMatches,familyBasedOutOf,profilePostedBy,activityOnSite,religion,motherTongue,casteGroup,casteSubcaste,country,city,income,employeeIn, education,occupation,photo,height,age,diet,maritalStatus,haveChildren} = filterData;
     
+
+   
     return (
     <div>
         <h4 className="py-4 px-3">Refind Matches</h4>
@@ -62,12 +71,13 @@ export default function RefineMatches() {
                 {/* Type of Matches */}
                 {findMatches===1 &&
                     <div className="matchesinput">
-                    <label>
-                        <input type="checkbox" name="typeOfMatches" value={typeOfMatches}/>
-                        {/* <input type='checkbox' name="typeOfMatches" value={typeOfMatches} checked={value.findIndex((tech)=>tech===a1) >= 0} onChange={handleChange} /> */}
-                        <span className="px-2">All</span>
-                    </label>
-                </div>}
+                        {typeMatchesArr.map((t1,index)=>(
+                            <label className="d-block my-3" key={index}>
+                                <input type='radio' name="typeOfMatches" value={t1} checked={typeOfMatches===t1} onChange={handleChange} />
+                                <span className="px-2">{t1}</span>
+                            </label>
+                        ))}
+                    </div>}
                 {/* Family based out of */}
                 {findMatches===2 &&
                     <div className="matchesinput">
@@ -95,10 +105,12 @@ export default function RefineMatches() {
                 {/* Religion */}
                 {findMatches===5 &&
                     <div className="matchesinput">
-                    <label>
-                        <input type="checkbox" value={religion}/>
-                        <span className="px-2">All</span>
-                    </label>
+                        {religionArr.map((t1,index)=>(
+                            <label className="d-block my-3" key={index}>
+                                <input type='checkbox' name="religion" value={t1} checked={religion.findIndex((re)=>re===t1) >= 0} onChange={handleChange} />
+                                <span className="px-2">{t1}</span>
+                            </label>
+                        ))}
                 </div>}
                 {/* Mother Tongue */}
                 {findMatches===6 &&
@@ -129,17 +141,12 @@ export default function RefineMatches() {
 
                 {findMatches===9 &&
                 <div className="matchesinput">
-                    <label>
-                        <input type="checkbox" name="country" value="all" checked={country.find(c2=>c2==="all")} onChange={handleChange}/>
-                        <span className="px-2">All</span>
-                    </label>
+                    
                     {countries.map((c1,index)=>(
-                    <div className="matchesinput">
-                        <label key={index}>
-                            <input type="checkbox" name="country" value={c1} checked={country.find(c2=>c2===c1)} onChange={handleChange}/>
+                        <label className="d-block my-3" key={index}>
+                            <input type='checkbox' name="country" value={c1} checked={country.findIndex((re)=>re===c1) >= 0} onChange={handleChange} />
                             <span className="px-2">{c1}</span>
                         </label>
-                    </div>
                     ))}
                 </div>}
 

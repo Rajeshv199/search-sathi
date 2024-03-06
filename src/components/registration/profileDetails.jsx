@@ -153,6 +153,7 @@ function ProfileDetails(){
             <div>
                 <Footer/>
             </div>
+            
         </div>
                  
     );

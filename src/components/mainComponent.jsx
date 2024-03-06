@@ -23,6 +23,7 @@ import ProfileEdit from "./profile_layout/profile_Edit";
 import PartnerEdit from "./profile_layout/pertner_edit";
 import Messenger from "./profile_layout/messanger";
 import Chat from "./profile_layout/chat";
+import UploadImg from "./profile_layout/uploadImg";
 import MatchesProfile from "./profile_layout/matchesProfile";
 import Basic from "./profile_Edit/basic";
 import About from "./profile_Edit/about";
@@ -105,6 +106,7 @@ class MainComponent extends Component{
                     <Route path="/profile_edit/basic" component={Basic} />
                     <Route path="/mymatches/profile" component={MatchesProfile} />
                     <Route path="/chat" component={Chat} />
+                    <Route path="/profile_edit/upload-photo" component={UploadImg} />
                     <Route path="/profile_edit" component={ProfileEdit} />
                     <Route path="/byCriteria" component={Search} />
                     <Route path="/activity" component={Activity} />

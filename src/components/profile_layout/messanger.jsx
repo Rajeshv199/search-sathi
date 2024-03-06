@@ -33,8 +33,15 @@ export default function Details() {
                     </div>
                     
                 </div>
+                <div className="px-4">
+                    <div className="usrsdtails">
+                        <div>25 years , 5'2" , Student</div>
+                        <div>Bari , Hindi</div>
+                        <div>No Income , Never Married</div>
+                    </div>
+                </div>
                 <div className='pdding32 heiht400'>
-                    <div className='mb-3'>Sending message will also send this member your interest</div>
+                    {/* <div className='mb-3'>Sending message will also send this member your interest</div> */}
                     
       
                 </div>

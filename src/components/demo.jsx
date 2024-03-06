@@ -1,102 +1,125 @@
-// import { useState, createRef, useEffect } from "react";
+// import React, { useState, useRef } from 'react';
 
-// const GameLine = (props) => {
-//   const lineIndex = props.index;
-//   // number of inputs
-//   const numerOfInputs =  6;
+// const OTPInput = ({ length = 6, onComplete }) => {
+//   const [otp, setOtp] = useState(Array(length).fill(''));
+//   const inputRefs = useRef([]);
 
-//   // create a array of refs
-//   const [inputRefsArray] = useState(() =>
-//     Array.from({ length: numerOfInputs }, () => createRef())
-//   );
+//   const handleChange = (e, index) => {
+//     const value = e.target.value;
 
-//   // state for current input index
-//   const [currentIndex, setCurrentIndex] = useState(0);
+//     // Handle backspace to move focus to the previous input
+//     if (e.key === 'Backspace' && index > 0) {
+//       inputRefs.current[index - 1].focus();
+//     }
 
-//   // save letters in a array where each entry in the array refers to an input
-//   const [letters, setLetters] = useState(() =>
-//     Array.from({ length: numerOfInputs }, () => "")
-//   );
+//     // Update OTP state
+//     setOtp((prevOtp) =>
+//       prevOtp.map((digit, i) => (i === index ? value : digit))
+//     );
 
-//   const handleKeyPress = () => {
-//     setCurrentIndex((prevIndex) => {
-//       // calculate the next input index, next input after the final input will be again the first input. you can change the logic here as per your needs
-//       const nextIndex = prevIndex < numerOfInputs - 1 ? prevIndex + 1 : 0;
-//       const nextInput = inputRefsArray?.[nextIndex]?.current;
-//       nextInput.focus();
-//       nextInput.select();
-//       return nextIndex;
-//     });
+//     // Move focus to the next input
+//     if (index < length - 1 && value !== '') {
+//       inputRefs.current[index + 1].focus();
+//     }
+
+//     // If the last digit is entered, call the onComplete callback
+//     if (index === length - 1 && value !== '') {
+//       onComplete(otp.join(''));
+//     }
 //   };
 
-//   useEffect(() => {
-//     // focus the firs iput initially
-//     if (inputRefsArray?.[0]?.current) {
-//       inputRefsArray?.[0]?.current?.focus();
-//     }
-    
-//     // add the event listener for keyup keyboard event;
-//     window.addEventListener("keyup", handleKeyPress, false);
-    
-//     // remove the event listener when the component unmounts
-//     return () => {
-//       window.removeEventListener("keyup", handleKeyPress);
-//     };
-//   }, []);
+//   const handlePaste = (e) => {
+//     e.preventDefault();
+//     const pasteData = e.clipboardData.getData('text/plain').slice(0, length);
+
+//     // Update OTP state with pasted data
+//     setOtp(pasteData.split(''));
+
+//     // Move focus to the last input
+//     inputRefs.current[length - 1].focus();
+//   };
 
 //   return (
 //     <div>
-//       {inputRefsArray.map((ref, index) => {
-//         return (
-//           <input className="inputopt" ref={ref} type="text" id={`box${index}-1`} onChange={(e) => {const { value } = e.target;
-//               setLetters((letters) =>
-//                 letters.map((letter, letterIndex) =>
-//                   letterIndex === index ? value : letter
-//                 )
-//               );
-//             }}
-//             onClick={(e) => {setCurrentIndex(index); e.target.select();}} value={letters[index]} max={"1"}
-//           />
-//         );
-//       })}
+//       {otp.map((digit, index) => (
+//         <input key={index} type="text" inputMode="numeric" maxLength="1" value={digit} onChange={(e) => handleChange(e, index)}
+//           onPaste={handlePaste}
+//           ref={(ref) => (inputRefs.current[index] = ref)}
+//         />
+//       ))}
 //     </div>
 //   );
 // };
 
-// export default GameLine;
+// export default OTPInput;
 
 
+import React, { useState, useRef } from 'react';
 
-import React, { useRef, useState } from 'react';
+function OTPInput() {
+  let length = 6;
+  const [otp, setOtp] = useState(Array(length).fill(''));
+ 
+  const inputRefs = useRef([]);
 
-const YourComponent = () => {
-  const inputRefs = [useRef(null), useRef(null), useRef(null)]; // Add refs for each input
-  const [currentInputIndex, setCurrentInputIndex] = useState(0);
-
-  const handleKeyPress = (event) => {
-    // if (event.key === 'Enter') {
-      // If "Enter" key is pressed
-      console.log(currentInputIndex);
-      const nextIndex = currentInputIndex + 1;
-
-      // Check if there is a next input
-      if (nextIndex < inputRefs.length) {
-        // Focus on the next input
-        inputRefs[nextIndex].current.focus();
-
-        // Update the current input index
-        setCurrentInputIndex(nextIndex);
-      }
+  const handleChange = (e, index) => {
+    const value = e.target.value;
+    // console.log(e.key);
+    // Handle backspace to move focus to the previous input
+    // if (e.key === 'Backspace' && index > 0) {
+    //   // inputRefs.current[index - 1].focus();
     // }
+
+    
+
+    // Update OTP state
+    setOtp((prevOtp) =>
+      prevOtp.map((digit, i) => (i === index ? value : digit))
+    );
+
+    // Move focus to the next input
+    if (index < length - 1 && value !== '') {
+      inputRefs.current[index + 1].focus(); 
+    }
+
+
+  };
+
+  function handleKeyPress(e,index){
+    const value = e.target.value;
+
+    console.log(e.key,index);
+    if (e.key === 'Backspace' && index > 0) {
+      inputRefs.current[index - 1].focus();
+    }
+    
+
+   
+
+  }
+
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData('text/plain').slice(0, length);
+
+    // Update OTP state with pasted data
+    setOtp(pasteData.split(''));
+
+    // Move focus to the last input
+    inputRefs.current[length - 1].focus();
   };
 
   return (
     <div>
-      {inputRefs.map((inputRef, index) => (
-        <input className="inputopt" type='number' key={index} ref={inputRef} onKeyDown={handleKeyPress} />
+      {otp.map((digit, index) => (
+        <input key={index} type="text" inputMode="numeric" maxLength="1" value={digit} onChange={(e) => handleChange(e, index)}
+           onKeyUp={(e) => handleKeyPress(e, index)}
+          ref={(ref) => (inputRefs.current[index] = ref)}
+        />
       ))}
     </div>
   );
 };
 
-export default YourComponent;
+export default OTPInput;

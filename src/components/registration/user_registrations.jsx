@@ -24,16 +24,27 @@ function ProfileDetails(){
     const [pvacyMode,setPvacyMode] = useState(3);
     const [verifyMob,setVerifyMob] = useState(false);
 
-    const inputRefs = [useRef(null), useRef(null), useRef(null),useRef(null),useRef(null),useRef(null)];
-    const [currentInputIndex, setCurrentInputIndex] = useState(0);
+    let length = 6;
+    const [otp, setOtp] = useState(Array(length).fill(''));
+    const inputRefs = useRef([]);
+
 
     const [takeData,setTakeData] = useState({firstName:"",middleName:"",lastName:"",title:"",gmail:"",ISD:"+91",mobileNo:"",password:"",confirmPassword:"",gender:""})
 
-    function handleChange(e){
+    function handleChange(e,index){
         const {currentTarget: input} = e;
         let takeData1 = {...takeData};
         (takeData1[input.name] = input.value) ;
         setTakeData(takeData1);
+
+        const value = e.target.value;
+        // if(value>="0" && value<= "9"){
+            setOtp((prevOtp) => prevOtp.map((digit, i) => (i === index ?value: digit)));
+
+            if(index < length - 1 && value !== '') {
+                inputRefs.current[index + 1].focus(); 
+            }
+        // }
 
     }
 
@@ -62,14 +73,9 @@ function ProfileDetails(){
         checkForData(); 
     },[state,takeData]);
 
-    const handleKeyPress = (event) => {
-          console.log(currentInputIndex);
-          const nextIndex = currentInputIndex + 1;
-
-          if (nextIndex < inputRefs.length) {
-            inputRefs[nextIndex].current.focus();
-    
-            setCurrentInputIndex(nextIndex);
+    const handleKeyPress = (e,index) => {
+        if(e.key === 'Backspace' && index > 0) {
+            inputRefs.current[index - 1].focus();
           }
       };
 
@@ -268,13 +274,16 @@ function ProfileDetails(){
                     <div className="box3">
                         <div className="px-4 py-3">
                             <h5 className="text-center">Verify Your Mobile No</h5>
-                            <div className="sntopt">Sent OTP</div>
+                            <div className="sntopt">Resent OTP</div>
                             <h6 className="mt-2">Enter OTP</h6>
-                            {inputRefs.map((inputRef, index) => (
-                                <input className="inputopt" type='number' key={index} ref={inputRef} onKeyDown={handleKeyPress} />
+
+                            {otp.map((digit, index) => (
+                                <input key={index} className="inputopt" type="text" maxLength="1" value={digit} onChange={(e) => handleChange(e, index)}
+                                onKeyUp={(e) => handleKeyPress(e, index)} ref={(ref) => (inputRefs.current[index] = ref)}
+                                />
                             ))}
                             <div className="mt-4 mb-2">
-                                <button className="submitopt" onClick={()=>setVerifyMob(false)}>Submit</button>
+                                <Link to="/profile"><button className="submitopt" onClick={()=>setVerifyMob(false)}>Submit</button></Link>
                                 {/* <button className="cancelBtn" onClick={()=>setVerifyMob(false)}>Cencel</button> */}
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+import React, {useState,useRef,useEffect} from "react";
 import { Link } from 'react-router-dom';
 import './style.css';
 
@@ -6,7 +7,21 @@ import Leftaside from './left_aside';
 import MobileAside from './MobileAside';
 
 export default function Details() {
+    const [profileOpt,setProfileOpt] = useState(false);
+    let item1ref = useRef(null);
 
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setProfileOpt(false);
+          }
+        };
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
 
     return (
     <div className='profile-details'>
@@ -26,17 +41,22 @@ export default function Details() {
                             <div><Link className='text-dark'>Varsha Kumari</Link></div>
                             <span>offline</span>
                         </div>
+                        
                     </div>
                     <div className='callMenu'>
                         <button><i className="fa-solid fa-phone"></i></button>
-                        <button><i className="fa-solid fa-ellipsis-vertical"></i></button>
+                        <button onClick={()=>setProfileOpt(true)}><i className="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
-                    
+                </div>
+                <div className="px-4">
+                    <div className="usrsdtails">
+                        <div>25 years , 5'2" , Student</div>
+                        <div>Bari , Hindi</div>
+                        <div>No Income , Never Married</div>
+                    </div>
                 </div>
                 <div className='pdding32 heiht400'>
-                    <div className='mb-3'>Sending message will also send this member your interest</div>
-                    
-      
+                    {/* <div className='mb-3'>Sending message will also send this member your interest</div> */}
                 </div>
                 <div className='msgContainer'>
                     <div className='msgInput'>
@@ -49,6 +69,22 @@ export default function Details() {
             </div>
 
             <MobileAside />
+
+            <div>
+                {profileOpt&&
+                <div className="popup-box2">
+                    
+                    <div className="box6" ref={item1ref} >
+                        <span className="closePop" onClick={()=>setProfileOpt(false)}><i class="fa-solid fa-xmark"></i></span>
+                        <div className="interestBox" >
+                            <Link to="#"><div className="mb-3"><i class="fa-solid fa-phone"></i>View Contact Details</div></Link>
+                            <Link to="#"><div className="mb-3"><i class="fa-solid fa-ban"></i>Block Profile</div></Link>
+                            <div><i class="fa-solid fa-circle-exclamation"></i>Report Profile</div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
         </div>
 
     </div>

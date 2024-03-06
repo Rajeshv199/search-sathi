@@ -426,7 +426,7 @@
 .lookfor{
     font-size: 16px;
     font-weight: 500;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
 }
 .lookingImg{
     width: 80px;
@@ -617,14 +617,21 @@
 .msgHeader{
     display: flex;
     padding: 12px 32px;
-    background-color: #ecd7e7;
+    /* background-color: #FFE7F2; */
     position: sticky;
     top: 0;
     
 }
+.usrsdtails{
+    font-size: 14px;
+    padding-left: 40px;
+    color: #4e4d4d;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(231, 228, 228);
+}
 .heiht400{
     height: 442px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     
 }
 
@@ -920,9 +927,7 @@
   .popContaner2{
     height: 240px;
     overflow-y: auto;
-  }
-  .popContaner2{
-    accent-color: #d64869;;
+    accent-color: #d64869;
   }
 
   .popContaner input{
@@ -1298,7 +1303,58 @@
     color: #fff;
 
   }
+  .tips-bg{
+    position: relative;
+    width: 100%;
+    background-color: #FFF8FB;
+    padding: 30px 10px;
+    margin-top: 80px;
 
+  }
+
+  .photo-tips{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: #969292;
+  }
+  .photo-tips svg{
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(201, 197, 197);
+    border-radius: 50%;
+    
+  }
+  .photo-tips .xmark-tips{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    padding: 2px;
+    line-height: 12px;
+    background-color:#CB3055;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: -20px
+  }
+  .photo-tips .watermrk{
+    position: absolute;
+    margin-top: -38px;
+    font-size: 11px;
+    margin-left: 8px;
+    transform: rotate(10deg);
+  }
+  .photo-tips .ml54{
+    margin-left: 54px;
+  }
+  .photo-tips .ml50{
+    margin-left: 50px;
+  }
+ 
+  .photo-tips .ml78{
+    margin-left: 78px;
+  }
 @media only screen and (max-width: 1200px) {
 
     .landing-navbar {

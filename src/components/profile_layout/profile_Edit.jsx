@@ -32,7 +32,7 @@ export default function Details() {
             <div className='profile-box'>
                 <div className='prfile-panel'>
                     <div className='profile-glary'>
-                        <span><i className="fa-solid fa-image px-1"></i>Upload</span>
+                        <Link to="/profile_edit/upload-photo"><span><i className="fa-solid fa-image px-1"></i>Upload</span></Link>
                         <span><i className="fa-solid fa-image px-1"></i>10 Images</span>
                     </div>
                     <div >
