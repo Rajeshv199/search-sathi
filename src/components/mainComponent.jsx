@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import  "./styles/style.css";
 import  "./styles/styleMobile.css";
+import  "./styles/adminStyle.css";
 import Index from "./index";
 import User_registration from "./../components/registration/user_registrations";
 // import LandingPage from "./landing_page/landing-page";
@@ -45,6 +46,9 @@ import SettingVisibility from "./features/settingVisibility";
 import UserLogout from "./login/userLogout";
 import Demo from "./demo";
 
+import AdminHome from "./Admin/home";
+
+
 
 
 
@@ -66,6 +70,9 @@ class MainComponent extends Component{
                 <Switch>
                 
 
+                    <Route path="/admin" component={AdminHome}/>
+
+
                     <Route path="/test" component={Demo}/>
                     <Route path="/search" component={SearchBar}/>
 
@@ -74,20 +81,12 @@ class MainComponent extends Component{
                     <Route path="/registr/page3" component={CareerDetailsMob}/>
                     <Route path="/registr/page2" component={PersonalDetails}/>
                     <Route path="/registr/page1" component={RegisterMobile}/>
-
-                    {/* <Route path="/user_registration8" component={Verification}/> */}
-                    {/* <Route path="/user_registration7" component={PartnerEducatDetails}/> */}
-                    {/* <Route path="/partner" component={PartnerBasicDetails}/>
-                    <Route path="/lifestyle&family" component={Family}/>
-                    <Route path="/career" component={CareerDetails}/> */}
                     <Route path="/profile" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>
-                    {/* <Route path="/profiles" component={AllPageManage}/> */}
 
                     <Route path="/phone-book" component={PhoneBook} />
                     <Route path="/activity/blocked" component={Block_Ignore} />
                     <Route path="/notification" component={Notification} />
-                    {/* <Route path="/landing" component={LandingPage} /> */}
 
 
                     <Route path="/partner/about" component={About_Partner} />

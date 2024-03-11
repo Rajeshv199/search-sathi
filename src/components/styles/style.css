@@ -1119,6 +1119,7 @@ li:hover .subhobver{
 }
 .footerWid{
     width: 265px;
+    justify-content: space-between;
 }
 .footerWid li{
     opacity: 0.9;
@@ -3208,7 +3209,6 @@ li:hover .subhobver{
 .multiValue{
     background-color: #ddd9d9;
     border-radius: 2px;
-    
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;

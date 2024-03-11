@@ -75,6 +75,8 @@ class footer extends Component{
                             <Link to="#" className="footerIcon iconPostion3"></Link>
                             <Link to="#" className="footerIcon iconPostion4"></Link>
                             <Link to="#" className="footerIcon iconPostion5"></Link>
+                            <Link to="#"><i class="fa-brands fa-youtube fa-xm px-2"></i></Link>
+                            <Link to="#"><i class="fa-brands fa-linkedin-in fa-xm"></i></Link>
                         </div>
                     </div>
                 </div>
