@@ -1,9 +1,25 @@
 import React, { useState,useRef,useEffect } from "react";
 
 function WebsiteSetup(props) {
-    
-   
 
+    const[addNewItem,setAddNewItem] = useState(false);
+    let item1ref = useRef(null);
+   
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+          if (item1ref.current && !item1ref.current.contains(e.target)) {
+            setAddNewItem(false);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleOutsideClick);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick);
+        };
+      }, []);
+
+    let motherTongueArr = ["Assamese", "Bengali", "Bodo", "Dogri", "Gujarati", "Hindi", "Kannada", "Kashmiri", "Kashmiri", "Maithili", "Malayalam", "Manipuri", "Marathi", "Nepali", "Odia", "Punjabi", "Sanskrit", "Santali", "Sindhi", "Tamil", "Telugu", "Urdu"];
       const{websiteList}=props;
     return(
         <div className="members-section">
@@ -18,17 +34,44 @@ function WebsiteSetup(props) {
                     <div className="d-flex px-4 fw-bold">
                         <div>Header Settings</div>
                     </div>
-                    <div className="row m-2 px-1 mt-5">
-                        <div className="col-4">
-                            <div className="mb-4 pb-2">Header Logo</div>
-                            <div className="mb-4 pb-2">Meta Image</div>
+                    <div className=" m-2 px-3 mt-5">
+                        <div className="row my-2">
+                            <div className="col-3">Header Logo</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
                         </div>
-                        <div className="col-7">
-                            <div className="mb-4 pb-2"><input type="file" /></div>
-                            <div className="mb-4 pb-2"><input type="file" /></div>
+                        <div className="row my-3">
+                            <div className="col-3">Meta Image</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
+                        </div>
+                        <div className="row my-3">
+                            <div className="col-3">Match Image</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
+                        </div>
+                        <div className="row my-3">
+                            <div className="col-3">Video Calling Image</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
+                        </div>
+                        <div className="row my-3">
+                            <div className="col-3">Video Profile Image</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
+                        </div>
+                        <div className="row my-3">
+                            <div className="col-3">Exclusive Image</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
+                        </div>
+                        <div className="row my-3">
+                            <div className="col-3">Mobile App Image</div>
+                            <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                            <div className="col-5"><img className="imageFit" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/></div>
                         </div>
                     </div>
-                    <div className="text-center"><button className="updateBtn">Update</button></div>
+                    <div className="text-end px-4"><button className="updateBtn">Update</button></div>
                 </div>
                 }
                 {websiteList===2&&
@@ -38,12 +81,12 @@ function WebsiteSetup(props) {
                             <div>Footer Settings</div>
                         </div>
                         <div className="row m-2 px-1 mt-5">
-                            <div className="col-4">
-                                <div className="mb-4 pb-2">Footer Logo</div>
+                            <div className="row my-3">
+                                <div className="col-3">Footer Logo</div>
+                                <div className="col-4"><input className="appereInput w-100" type="file" /></div>
+                                <div className="col-5"><img className="imageFit" src="https://goclean.com.tw/wp-content/uploads/2022/02/Footer-logo-full_123.png"/></div>
                             </div>
-                            <div className="col-7">
-                                <div className="mb-4 pb-2"><input type="file" /></div>
-                            </div>
+
                             <div className="text-end"><button className="updateBtn">Update</button></div>
                         </div>
                     </div>
@@ -169,10 +212,146 @@ function WebsiteSetup(props) {
                    
                 </div>
                 }
+                {websiteList===5&&
+                <div className="bg-white w-75 m-auto py-3 mt-3 position-relative">
+                    <div className="d-flex px-4 fw-bold justify-content-between">
+                        <div>forms</div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5 position-relative">
+                        <div className="col-3">Mother tongue</div>
+                        <div className="col-9 ">
+                            <div><input type="text" className="appereInput w-75" value="Hindi" /></div>
+                            <div className="dropdownItem">
+                                <ul>
+                                    <li>Hindi</li>
+                                    <li>Hindi</li>
+                                    <li>Hindi</li>
+                                    <li>Hindi</li>
+                                </ul>
+                            </div>
+                            {/* <select className="appereInput bg-white w-75">
+                                <option disabled>Select</option>
+                                {motherTongueArr.map((m1,index)=>(
+                                    <option key={index}>{m1}</option>
+                                ))}
+                            </select> */}
+                            <button className="addItem" onClick={()=>setAddNewItem(true)}>Add New Mother Tongue</button>
+                        </div>
+                        
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Religion</div>
+                        <div className="col-9">
+                            <select className="appereInput bg-white w-75">
+                                <option disabled>Select</option>
+                                {motherTongueArr.map((m1,index)=>(
+                                    <option key={index}>{m1}</option>
+                                ))}
+                            </select>
+                            <button className="addItem" onClick={()=>setAddNewItem(true)}>Add New Religion</button>
+                        </div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Caste</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Marital status</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Height</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Employed In</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Occupation</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Organization</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Annual Income</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Years Of Experience</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Highest Degree</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Father's Occupation</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Mother's Occupation</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Family type</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Age</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Height</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Country</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">State</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Skill</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Borad</div>
+                        <div className="col-7"></div>
+                    </div>
+                    <div className="row m-2 px-1 mt-5">
+                        <div className="col-3">Qualification</div>
+                        <div className="col-7"></div>
+                    </div>
+                    
+                   
+                </div>
+                }
                 
             </div>
-            
-
+            <div>
+            {addNewItem &&
+                <div className="popup-box" >
+                    <div className="box4" ref={item1ref}>
+                        <div className="px-4 py-3">
+                            <span className="iconClose" onClick={()=>setAddNewItem(false)}><i class="fa-solid fa-xmark px-1"></i></span>
+                            <h5 className="">Add More</h5>
+                            <div className="mt-4">
+                                <input type="text" className="appereInput w-100"/>
+                            </div>
+                            <div className="">
+                                <button className="addBtnq" onClick={()=>setAddNewItem(false)}><i class="fa-solid fa-xmark px-1"></i>Cancel</button>
+                                <button className="saveBtnq" onClick={()=>setAddNewItem(false)}><i class="fa-regular fa-bookmark px-1"></i>Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 }
+            </div>
         </div>
     )
 

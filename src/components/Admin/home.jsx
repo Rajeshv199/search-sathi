@@ -13,6 +13,12 @@ function Home() {
     const[websiteList,setWebsiteList] = useState(1);
     const[staffList,setStaffList] = useState(1);
 
+    // function handleOption(val){
+    //     if(val===activeMenu)
+    //         setActiveMenu(0);
+    //     else
+    //         setActiveMenu(val);
+    // }
       
     return (
         <div>
@@ -57,6 +63,7 @@ function Home() {
                             <li className={websiteList===2?"text-white":null} onClick={()=>setWebsiteList(2)}>Footer</li>
                             <li className={websiteList===3?"text-white":null} onClick={()=>setWebsiteList(3)}>Page</li>
                             <li className={websiteList===4?"text-white":null} onClick={()=>setWebsiteList(4)}>Appearance</li>
+                            <li className={websiteList===5?"text-white":null} onClick={()=>setWebsiteList(5)}>Registration form</li>
                         </ul>
                         }
                     </li>
@@ -268,21 +275,21 @@ function Home() {
                         </div>
                         <div className="row m-2 px-1 mt-4">
                             <div className="col-3">Name</div>
-                            <div className="col-7"><input className="appereInput w-100" type="text" /></div>
+                            <div className="col-7"><input className="appereInput w-100" type="text" value="Gourav Sharma" /></div>
                         </div>
                         <div className="row m-2 px-1 mt-4">
                             <div className="col-3">Email</div>
-                            <div className="col-7"><input className="appereInput w-100" type="text" /></div>
+                            <div className="col-7"><input className="appereInput w-100" type="text" value="gourav123@gmail.com" /></div>
                         </div>
                         <div className="row m-2 px-1 mt-4">
                             <div className="col-3">Phone</div>
-                            <div className="col-7"><input className="appereInput w-100" type="number" /></div>
+                            <div className="col-7"><input className="appereInput w-100" type="number" value="9856214587" /></div>
                         </div>
                         <div className="row m-2 px-1 mt-4">
                             <div className="col-3">Address</div>
-                            <div className="col-7"><input className="appereInput w-100" type="text" /></div>
+                            <div className="col-7"><input className="appereInput w-100" type="text" value="NY" /></div>
                         </div>
-                        <div className="text-end px-4"><button className="updateBtn">Update</button></div>
+                        <div className="text-end px-4"><button className="updateBtn">Save</button></div>
                     </div>
                     <div className="bg-white w-75 m-auto py-3 mt-4">
                         <div className="d-flex px-4 fw-bold">
@@ -301,7 +308,7 @@ function Home() {
                             <div className="col-7"><input className="appereInput w-100" type="text" /></div>
                         </div>
                         
-                        <div className="text-end px-4"><button className="updateBtn">Update</button></div>
+                        <div className="text-end px-4"><button className="updateBtn">Save</button></div>
                     </div>
                 </div>
                 }
@@ -310,22 +317,112 @@ function Home() {
                 
                 }
                 {activeMenu===9&&
-                    <div className="members-section">
-                    <h5 className="m-0 py-4">Settings</h5>
-
-                    <div className="bg-white w-75 m-auto py-3">
-                        <div className="d-flex px-4 justify-content-between">
-                            <div>General Setting</div>
+                <div className="members-section">
+                    <div className="bg-white w-75 m-auto py-3 mt-4">
+                        <div className="d-flex px-4 fw-bold">
+                            <div>General Settings</div>
                         </div>
-                        <div className="membrs-list">
-                            
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-3">System Name</div>
+                            <div className="col-7"><input className="appereInput w-100" type="text" /></div>
                         </div>
-                        <div className="membrs-listData">
-                            
-                             
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-3">System Logo</div>
+                            <div className="col-7"><input className="appereInput w-100" type="file" /></div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-3">System Timezone</div>
+                            <div className="col-7"><input className="appereInput w-100" type="time" /></div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-3">Member Minimum Age</div>
+                            <div className="col-7"><input className="appereInput w-100" type="text" /></div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-3">Member Profile Picture Privacy</div>
+                            <div className="col-7">
+                                <select className="appereInput bg-white w-100">
+                                    <option disabled>Select</option>
+                                    <option>All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-3">Member Gallery Image Privacy</div>
+                            <div className="col-7">
+                                <select className="appereInput bg-white w-100">
+                                    <option disabled>Select</option>
+                                    <option>All</option>
+                                </select>
+                            </div>
+                        </div>
                         
+                        <div className="text-end px-4"><button className="updateBtn">Update</button></div>
+                    </div>
+                    <div className="bg-white w-75 m-auto py-3 my-4">
+                        <div className="d-flex px-4 fw-bold">
+                            <div>Activation</div>
                         </div>
-                        
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-9">Maintance Mode Activation</div>
+                            <div className="col-3">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-input"/>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-9">Wallet System Activation </div>
+                            <div className="col-3">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-input"/>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-9">Email Varificaion</div>
+                            <div className="col-3">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-input"/>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-9">Member Approval Admin Acrivation</div>
+                            <div className="col-3">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-input"/>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-9">
+                                Only Premium Member Can See Other Member Full Profile.
+                                <small className="text-danger px-2 fontItalic">(if you disable this all registered members will be able to see the members full profile)</small>
+                            </div>
+                            <div className="col-3">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-input"/>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="row m-2 px-1 mt-4">
+                            <div className="col-9">
+                                Member Profile Picture Approval By Admin.99
+                                <small className="text-danger px-2 fontItalic">(if you disable this, all redistered members will br able to see the members full profile.)</small>
+                            </div>
+                            <div className="col-3">
+                                <label class="switch">
+                                    <input type="checkbox" class="toggle-input"/>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 

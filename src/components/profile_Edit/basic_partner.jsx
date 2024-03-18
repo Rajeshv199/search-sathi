@@ -12,8 +12,7 @@ export default function BasicPartner() {
   
     function handleChange(e){
         const {currentTarget: input} = e;
-        let basicPartner1 = {...basicPartner}
-        console.log(input.name);
+        let basicPartner1 = {...basicPartner};
         input.type === "checkbox"?
         basicPartner1[input.name] = updateCBs(basicPartner1[input.name],input.checked,input.value):
         basicPartner1[input.name] = input.value;

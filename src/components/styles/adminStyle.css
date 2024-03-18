@@ -168,6 +168,9 @@
 .wid-40{
     width: 40%;
 }
+.wid-80{
+    width: 80%;
+}
 .accActive span{
     background-color: rgb(52, 172, 126);
     color: #fff;
@@ -288,3 +291,133 @@
     border-radius: 4px;
     padding: 2px 6px;
 }
+.memberCard{
+    width: 130px;
+    height: 60px;
+    border: 1px solid rgb(214, 211, 211);
+    margin: 15px;
+    border-radius: 4px;
+    padding: 0 4px;
+    /* text-align: center; */
+    font-size: 14px;
+    display: inline-table;
+    font-weight: 500;
+}
+
+.switch {
+    display: flex;
+    width: 34px;
+    /* align-items: center; */
+    position: relative;
+    margin: 6px;
+  }
+  
+  .toggle-input {
+    display: none;
+  }
+  
+  .slider {
+    position: relative;
+    cursor: pointer;
+    width: 32px;
+    height: 16px;
+    background-color: #e2e0e0;
+    border-radius: 34px;
+    transition: .4s;
+  }
+  
+
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: .4s;
+  }
+  
+.slider2:before {
+    transform: translateX(17px);
+    background-color: #176645;
+  }
+  .toggle-input:checked + .slider:before {
+    transform: translateX(14px);
+    background-color: #176645;
+  }
+.fontItalic{
+    font-style: italic;
+}
+.imageFit{
+    width: 280px;
+    height: 80px;
+    object-fit: contain;
+}
+.addItem{
+    position: absolute;
+    border:none;
+    background-color: transparent;
+    right: 160px;
+    font-size: 15px;
+    color: #A70855;
+
+}
+.box4 {
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    height: auto;
+    max-height: 150vh;
+    margin-top: calc(100vh - 60vh - 60px);
+    background: #f3f5f5;
+    overflow: none;
+    border-radius: 6px;
+  }
+  .dropdownItem{
+    position: absolute;
+    width: 53.5%;
+    top: 34px;
+    border: 1px solid rgb(182, 178, 178);
+    font-size: 14px;
+    z-index: 2;
+    background: #ffff;
+  }
+  .dropdownItem ul li{
+    width: 100%;
+    padding: 4px 6px;
+    margin: 2px 0;
+  }
+  .dropdownItem ul li:hover{
+    background-color: #2c4bd4;
+    color: #fff;
+  }
+  .addBtnq{
+    border: none;
+    margin: 24px 22px 12px 22px;
+    padding: 6px 12px;
+    background-color: rgb(245, 233, 233);
+    border-radius: 6px;
+    color: rgb(231, 92, 92);
+    font-weight: 500;
+
+  }
+  .saveBtnq{
+    border: none;
+    margin: 24px 22px 12px 22px;
+    padding: 6px 12px;
+    background-color: #e6eef7;
+    border-radius: 6px;
+    color: #0080FF;
+    font-weight: 500;
+  }
+  .iconClose{
+    cursor: pointer;
+    position: fixed;
+    right: calc(38% - 28px);
+    top: calc(100vh - 60vh - 65px);
+    background-color: transparent;
+    border: none;
+    color: #fff;
+  }
