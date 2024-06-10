@@ -103,7 +103,6 @@ class MainComponent extends Component{
                     <Route path="/edit/profile/about" component={About} />
                     <Route path="/edit/profile/basic" component={Basic} />
                     <Route path="/edit/profile/upload-photo" component={UploadImg} />
-                    {/* <Route path="/profile_edit" component={ProfileEdit} />  */}
                     <Route path="/view/profile" component={ProfileEdit} /> 
 
                     <Route path="/view/my-matches/profile" component={MatchesProfile} /> // 
