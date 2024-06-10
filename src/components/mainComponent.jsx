@@ -72,7 +72,6 @@ class MainComponent extends Component{
                 
 
                     <Route path="/admin" component={AdminHome}/>
-
                     <Route path="/search" component={SearchBar}/>
 
                     <Route path="/registr/page5" component={VerificationMob}/>
@@ -86,7 +85,6 @@ class MainComponent extends Component{
                     <Route path="/phone-book" component={PhoneBook} />
                     <Route path="/activity/blocked" component={Block_Ignore} />
                     <Route path="/notification" component={Notification} />
-
 
                     <Route path="/partner/about" component={About_Partner} />
                     <Route path="/partner/lifeStyle" component={LifeStyle_Partner} />
@@ -107,12 +105,10 @@ class MainComponent extends Component{
 
                     <Route path="/view/my-matches/profile" component={MatchesProfile} /> // 
                     <Route path="/chat" component={Chat} /> 
-                    
                     <Route path="/byCriteria" component={Search} />
                     <Route path="/activity" component={Activity} />
                     <Route path="/mymatches" component={MyMatches} />
                     <Route path="/messenger" component={Messenger} />
-
 
                     <Route path="/settingVisibility" component={SettingVisibility}/>
                     <Route path="/ydexclusive" component={Exclusive}/> //save/consultation
@@ -122,9 +118,6 @@ class MainComponent extends Component{
 
                     <Route path="/login" component={User_Login}/>
                     <Route path="/forgotPass" component={UserLogout}/>
-                    {/* <Route path="/login"  render={(props)=><User_Login {...props} />}/> */}
-
-                    {/* <Route path="/login" component={User_Login}/> */}
                     <Route path="/home" component={Index}/>
                     <Redirect from="/" to="/home"/>
                 </Switch>
