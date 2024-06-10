@@ -8,21 +8,21 @@ import Header from "./header/header";
 import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
 import Footer from "./footer/footer";
-import UserRegisterPop from "../components/registration/userRegisterPop";
-import MobileView from "./image/mobileView.png";
-import LoginForm from './login/user_login';
-import YogJodiLogo from './image/YogJodiLogo.png';
-import MatchImage from './image/matchImage.png';
-import VideoImage from './image/videoImage.png';
-import VideoProfile from './image/profile121.png';
-import New_Benefits from './image/new_Benefits.png';
-import New_Benefits2 from './image/new_Benefits2.png';
-import New_Benefits3 from './image/new_Benefits3.png';
-import how_work from './image/how-work.png';
-import how_work2 from './image/how-work2.png';
-import how_work3 from './image/how-work3.png';
-import ExclusiveBgImg from './image/exclusiveBgImg.png';
-import ExclusiveBgImg2 from './image/exclusiveBgImg2.png';
+import UserRegisterPop from "../pages/registration/userRegisterPop";
+import MobileView from "../assets/images/mobileView.png";
+import LoginForm from '../pages/login/user_login';
+import YogJodiLogo from '../assets/images/YogJodiLogo.png';
+import MatchImage from '../assets/images/matchImage.png';
+import VideoImage from '../assets/images/videoImage.png';
+import VideoProfile from '../assets/images/profile121.png';
+import New_Benefits from '../assets/images/new_Benefits.png';
+import New_Benefits2 from '../assets/images/new_Benefits2.png';
+import New_Benefits3 from '../assets/images/new_Benefits3.png';
+import how_work from '../assets/images/how-work.png';
+import how_work2 from '../assets/images/how-work2.png';
+import how_work3 from '../assets/images/how-work3.png';
+import ExclusiveBgImg from '../assets/images/exclusiveBgImg.png';
+import ExclusiveBgImg2 from '../assets/images/exclusiveBgImg2.png';
 
 
 

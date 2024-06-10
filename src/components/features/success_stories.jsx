@@ -1,8 +1,8 @@
 import Footer from '../footer/footer'
-import successBackground from './../../asset/success-bakground.jpg'
-import logo from "../image/YogJodiLogo.png"
+import successBackground from '../../assets/images/success-bakground.jpg'
+import logo from "../../assets/images/YogJodiLogo.png"
 import { Link } from 'react-router-dom'
-import userVector from './../../asset/user-vector.png'
+import userVector from '../../assets/images/user-vector.png'
 
 export default function SuccessStories() {
 

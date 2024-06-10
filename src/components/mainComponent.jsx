@@ -1,52 +1,53 @@
 import React, {Component} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
-import  "./styles/style.css";
-import  "./styles/styleMobile.css";
-import  "./styles/adminStyle.css";
+import  "../assets/styles/App.css";
+import  "../assets/styles/style.css";
+import  "../assets/styles/styleMobile.css";
+import  "../assets/styles/adminStyle.css";
 import Index from "./index";
-import User_registration from "./../components/registration/user_registrations";
+import User_registration from "../pages/registration/user_registrations";
 // import LandingPage from "./landing_page/landing-page";
-import MyMatches from "./profile_layout/myMatches";
-import Activity from "./profile_layout/activity";
+import MyMatches from "../pages/profile_layout/myMatches";
+import Activity from "../pages/profile_layout/activity";
 import Settings from "./features/settings";
-import User_Login from "./../components/login/user_login";
-import profileDetails from "./../components/registration/profileDetails";
-import RegisterMobile from "./../components/registration/user-register-mobile";
-import PersonalDetails from "./../components/registration/personalDetails";
-import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
-import SocialDetails from "./../components/registration/socialDetails";
-import VerificationMob from "./../components/registration/verificationMob";
+import User_Login from "../pages/login/user_login";
+import profileDetails from "../pages/registration/profileDetails";
+import RegisterMobile from "../pages/registration/user-register-mobile";
+import PersonalDetails from "../pages/registration/personalDetails";
+import CareerDetailsMob from "../pages/registration/careerDetailsMobile";
+import SocialDetails from "../pages/registration/socialDetails";
+import VerificationMob from "../pages/registration/verificationMob";
 import Help from "./features/help";
-import Notification from "./profile_layout/Notification";
+import Notification from "../pages/profile_layout/Notification";
 import SearchBar from "./header/searchBar";
 import SuccessStories from "./features/success_stories";
-import ProfileEdit from "./profile_layout/profile_Edit";
-import PartnerEdit from "./profile_layout/pertner_edit";
-import Messenger from "./profile_layout/messanger";
-import Chat from "./profile_layout/chat";
-import UploadImg from "./profile_layout/uploadImg";
-import MatchesProfile from "./profile_layout/matchesProfile";
-import Basic from "./profile_Edit/basic";
-import About from "./profile_Edit/about";
-import Education from "./profile_Edit/education";
-import Career from "./profile_Edit/career";
-import Contact from "./profile_Edit/contact";
-import LifeStyle from "./profile_Edit/lifeStyle";
-import Family from "./profile_Edit/family";
-import BasicPartner from "./profile_Edit/basic_partner";
-import Eduction_Occupation from "./profile_Edit/education_Occuption";
-import Religion from "./profile_Edit/religion";
-import LifeStyle_Partner from "./profile_Edit/lifeStyle_partner";
-import About_Partner from "./profile_Edit/about_partner";
-import Search from "./profile_layout/search";
+import ProfileEdit from "../pages/profile_layout/profile_Edit";
+import PartnerEdit from "../pages/profile_layout/pertner_edit";
+import Messenger from "../pages/profile_layout/messanger";
+import Chat from "../pages/profile_layout/chat";
+import UploadImg from "../pages/profile_layout/uploadImg";
+import MatchesProfile from "../pages/profile_layout/matchesProfile";
+import Basic from "../pages/profile_Edit/basic";
+import About from "../pages/profile_Edit/about";
+import Education from "../pages/profile_Edit/education";
+import Career from "../pages/profile_Edit/career";
+import Contact from "../pages/profile_Edit/contact";
+import LifeStyle from "../pages/profile_Edit/lifeStyle";
+import Family from "../pages/profile_Edit/family";
+import BasicPartner from "../pages/profile_Edit/basic_partner";
+import Eduction_Occupation from "../pages/profile_Edit/education_Occuption";
+import Religion from "../pages/profile_Edit/religion";
+import LifeStyle_Partner from "../pages/profile_Edit/lifeStyle_partner";
+import About_Partner from "../pages/profile_Edit/about_partner";
+import Search from "../pages/profile_layout/search";
 import Block_Ignore from "./features/block_ignore";
 import PhoneBook from "./features/phoneBook";
 import Exclusive from "./features/exclusive";
 import SettingVisibility from "./features/settingVisibility";
-import UserLogout from "./login/userLogout";
-import Demo from "./demo";
 
-import AdminHome from "./Admin/home";
+import UserLogout from "../pages/login/userLogout";
+
+import AdminHome from "../pages/Admin/home";
 
 
 
@@ -72,8 +73,6 @@ class MainComponent extends Component{
 
                     <Route path="/admin" component={AdminHome}/>
 
-
-                    <Route path="/test" component={Demo}/>
                     <Route path="/search" component={SearchBar}/>
 
                     <Route path="/registr/page5" component={VerificationMob}/>
@@ -92,21 +91,24 @@ class MainComponent extends Component{
                     <Route path="/partner/about" component={About_Partner} />
                     <Route path="/partner/lifeStyle" component={LifeStyle_Partner} />
                     <Route path="/partner/religion" component={Religion} />
-                    <Route path="/partner/eduction_occupation" component={Eduction_Occupation} />
-                    <Route path="/partner/basic" component={BasicPartner} />
-                    <Route path="/edit/partner" component={PartnerEdit} />
+                    <Route path="/partner/eduction_occupation" component={Eduction_Occupation} /> //-
+                    <Route path="/basic-details" component={BasicPartner} /> 
+                    <Route path="/my-partner" component={PartnerEdit} />
 
-                    <Route path="/profile_edit/family" component={Family} />
-                    <Route path="/profile_edit/lifeStyle" component={LifeStyle} />
-                    <Route path="/profile_edit/contact" component={Contact} />
-                    <Route path="/profile_edit/career" component={Career} />
-                    <Route path="/profile_edit/education" component={Education} />
-                    <Route path="/profile_edit/about" component={About} />
-                    <Route path="/profile_edit/basic" component={Basic} />
-                    <Route path="/mymatches/profile" component={MatchesProfile} />
-                    <Route path="/chat" component={Chat} />
-                    <Route path="/profile_edit/upload-photo" component={UploadImg} />
-                    <Route path="/profile_edit" component={ProfileEdit} />
+                    <Route path="/edit/profile/family" component={Family} /> 
+                    <Route path="/edit/profile/lifeStyle" component={LifeStyle} />
+                    <Route path="/edit/profile/contact" component={Contact} />
+                    <Route path="/edit/profile/career" component={Career} />
+                    <Route path="/edit/profile/education" component={Education} />
+                    <Route path="/edit/profile/about" component={About} />
+                    <Route path="/edit/profile/basic" component={Basic} />
+                    <Route path="/edit/profile/upload-photo" component={UploadImg} />
+                    {/* <Route path="/profile_edit" component={ProfileEdit} />  */}
+                    <Route path="/view/profile" component={ProfileEdit} /> 
+
+                    <Route path="/view/my-matches/profile" component={MatchesProfile} /> // 
+                    <Route path="/chat" component={Chat} /> 
+                    
                     <Route path="/byCriteria" component={Search} />
                     <Route path="/activity" component={Activity} />
                     <Route path="/mymatches" component={MyMatches} />
@@ -114,7 +116,7 @@ class MainComponent extends Component{
 
 
                     <Route path="/settingVisibility" component={SettingVisibility}/>
-                    <Route path="/ydexclusive" component={Exclusive}/>
+                    <Route path="/ydexclusive" component={Exclusive}/> //save/consultation
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/> 
                     <Route path="/success/story" component={SuccessStories} />

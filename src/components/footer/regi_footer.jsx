@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import amex from "../image/amex.jpg";
-import maestro from "../image/maestro.png";
-import rupay from "../image/rupay.png";
+import amex from "../../assets/images/amex.jpg";
+import maestro from "../../assets/images/maestro.png";
+import rupay from "../../assets/images/rupay.png";
 class footer extends Component{
     state={}
     

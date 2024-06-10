@@ -2,7 +2,7 @@ import Footer from "../footer/footer";
 import { Link } from "react-router-dom";
 import BrowseContent from "./browseContent";
 import { useState } from "react";
-import yogjodiLogo from "../image/YogJodiLogo.png";
+import yogjodiLogo from "../../assets/images/YogJodiLogo.png";
 
 
 function SearchBar() {

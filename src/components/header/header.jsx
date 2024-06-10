@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
-import LoginForm from '../login/user_login';
-import YogjodiLogo from "../image/YogJodiLogo.png";
-import UserRegisterPop from "../registration/userRegisterPop";
+import LoginForm from '../../pages/login/user_login';
+import YogjodiLogo from "../../assets/images/YogJodiLogo.png";
+import UserRegisterPop from "../../pages/registration/userRegisterPop";
 
 class Header extends Component{
     state={
+        
         showList:1,scrolled:null,loginPgOpen:false,regiPgopen:false,
     }
 

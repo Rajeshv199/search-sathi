@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Footer from "../footer/footer"
 import { Link } from "react-router-dom"
-import yogjodiLogo from "../image/YogJodiLogo.png";
+import yogjodiLogo from "../../assets/images/YogJodiLogo.png";
 import BrowseContent from "../header/browseContent";
 import Questions from "../features/questions";
 
 
-import LoginForm from '../login/user_login';
-import UserRegisterPop from "../registration/userRegisterPop";
+import LoginForm from '../../pages/login/user_login';
+import UserRegisterPop from "../../pages/registration/userRegisterPop";
 
 export default function Help() {
     const[showList,setShowList] = useState(1);

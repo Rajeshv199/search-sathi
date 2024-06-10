@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import yogjodiLogo from "../image/YogJodiLogo.png";
+import yogjodiLogo from "../../assets/images/YogJodiLogo.png";
 import Footer from "../footer/footer";
 import { useState,useEffect } from 'react';
 

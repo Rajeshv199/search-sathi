@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import Smartbanner from "../image/smartbanner.jpg";
+import Smartbanner from "../../assets/images/smartbanner.jpg";
 
 function Exclusive(){
 

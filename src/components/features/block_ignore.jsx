@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import LeftAside from '../profile_layout/left_aside';
-import ProfileHeader from '../profile_layout/profileHeader';
+import LeftAside from '../../pages/profile_layout/left_aside';
+import ProfileHeader from '../../pages/profile_layout/profileHeader';
 
 
 
