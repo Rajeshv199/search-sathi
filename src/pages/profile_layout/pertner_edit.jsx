@@ -48,8 +48,8 @@ export default function Partner_Edit() {
                     </div>
                 </div>
                 <div className='postion-sticky'> 
-                <Link to="/view/profile"><button >About Me</button></Link>
-                <Link to="/view/profile"><button >About Family</button></Link>
+                <Link to="/view/my-profile"><button >About Me</button></Link>
+                <Link to="/view/my-profile"><button >About Family</button></Link>
                     <button className='activeBtn' >About Partner</button>
                 </div>
               
@@ -81,7 +81,7 @@ export default function Partner_Edit() {
                             <h5 className='m-0'>Education & Occupation
                                 {showDetails===2&&<div className='headerTxt'>Update these details to get suitable matches</div>}
                             </h5>
-                            {showDetails===2?<Link className='text-dark' to="/partner/eduction_occupation"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===2?<Link className='text-dark' to="/partner/eduction-occupation"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===2&&

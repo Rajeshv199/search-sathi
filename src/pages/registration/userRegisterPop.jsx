@@ -79,7 +79,7 @@ function UserRegister(){
     function handleSubmit(){
         let errors = validateAll();
         if(isValid(errors)&&(takeData.password===takeData.confirmPassword)){
-            history.push({pathname:"/user_registration",state:{takeData}});
+            history.push({pathname:"/user-registration",state:{takeData}});
         }
         else {
             setErrors(errors);

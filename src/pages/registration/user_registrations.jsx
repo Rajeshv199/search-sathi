@@ -90,7 +90,7 @@ function ProfileDetails(){
         // const {password,confirmPassword} = takeData;
         if(keys.length===count&&(takeData.password===takeData.confirmPassword)){
             setVerifyMob(true);
-            // history.push({pathname:"/profile",state:{takeData}});
+            // history.push({pathname:"/create-profile",state:{takeData}});
         }else{
             if(takeData.password!==takeData.confirmPassword) alert("Password do not match");
         }
@@ -283,7 +283,7 @@ function ProfileDetails(){
                                 />
                             ))}
                             <div className="mt-4 mb-2">
-                                <Link to="/profile"><button className="submitopt" onClick={()=>setVerifyMob(false)}>Submit</button></Link>
+                                <Link to="/create-profile"><button className="submitopt" onClick={()=>setVerifyMob(false)}>Submit</button></Link>
                                 {/* <button className="cancelBtn" onClick={()=>setVerifyMob(false)}>Cencel</button> */}
                             </div>
                         </div>

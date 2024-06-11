@@ -63,7 +63,7 @@ export default function MatchesProfile() {
             <LeftAside/>
 
             <div className='profile-box'>
-               <div className="px-4 pt-3"><Link to="/mymatches" className="text-dark"><i class="fa-solid fa-angle-left p-1"></i></Link></div>
+               <div className="px-4 pt-3"><Link to="/view/my-matches-list" className="text-dark"><i class="fa-solid fa-angle-left p-1"></i></Link></div>
                 
                 <div className='prfile-panel mt-3'>
                     <div className="moreOption">

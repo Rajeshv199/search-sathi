@@ -48,7 +48,7 @@ export default function MyMatches() {
                             <img src='https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt=""/>
                         </div>
                         <div className='d-block w-100'>
-                            <Link to="/view/my-matches/profile">
+                            <Link to="/view/profile/my-matches">
                                 <div className='card-text'>
                                     <div className='lastSeen'>Last seen at 6:24 pm</div>
                                     <div className='profileName'>Kajal Kumari<span>, &nbsp; 20</span></div>

@@ -14,7 +14,7 @@ export default function Details() {
         <div className='profile-detail-body'>
             <LeftAside/>
             <div className='profile-box p-4'>
-                <Link className='text-dark' to="/view/profile"><i className="fa-solid mt-1 fa-chevron-left fa-lg"></i></Link>
+                <Link className='text-dark' to="/view/my-profile"><i className="fa-solid mt-1 fa-chevron-left fa-lg"></i></Link>
                 <div className='text-center'>
                     <h4 className='m-auto'>Impress them with your latest photo</h4>
                     <small className='text-secondary'>Profile photos ensure a 5% increase in matches</small>

@@ -32,7 +32,7 @@ export default function Details() {
             <div className='profile-box'>
                 <div className='prfile-panel'>
                     <div className='profile-glary'>
-                        <Link to="/edit/profile/upload-photo"><span><i className="fa-solid fa-image px-1"></i>Upload</span></Link>
+                        <Link to="/update/profile/upload-photo"><span><i className="fa-solid fa-image px-1"></i>Upload</span></Link>
                         <span><i className="fa-solid fa-image px-1"></i>10 Images</span>
                     </div>
                     <div >
@@ -64,7 +64,7 @@ export default function Details() {
                             <h5 className='m-0'>Basic Details 
                                 {showDetails===1&&<div className='headerTxt'>Brief outline of personal information</div>}
                             </h5>
-                            {showDetails===1?<Link className='text-dark' to="/edit/profile/basic"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/update/profile/basic-details"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                         </div>
                         {showDetails===1&&
                         <div className='d-flex'>
@@ -85,7 +85,7 @@ export default function Details() {
                             <h5 className='m-0'>About Me
                                 {showDetails===2&&<div className='headerTxt'>Describe yourself in a few words</div>}
                             </h5>
-                            {showDetails===2?<Link className='text-dark' to="/edit/profile/about"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===2?<Link className='text-dark' to="/update/profile/about-me"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===2&&
@@ -102,7 +102,7 @@ export default function Details() {
                             <h5 className='m-0'>Education
                                 {showDetails===3&&<div className='headerTxt'>Showcase your educational qualification</div>}
                             </h5>
-                            {showDetails===3?<Link className='text-dark' to="/edit/profile/education"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===3?<Link className='text-dark' to="/update/profile/my-education"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===3&&
@@ -127,7 +127,7 @@ export default function Details() {
                             <h5 className='m-0'>Career
                                 {showDetails===4&&<div className='headerTxt'>Give a glimpse of your professional life </div>}
                             </h5>
-                            {showDetails===4?<Link className='text-dark' to="/edit/profile/career"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===4?<Link className='text-dark' to="/update/profile/my-career"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===4&&
@@ -152,7 +152,7 @@ export default function Details() {
                             <h5 className='m-0'>Contact
                                 {showDetails===6&&<div className='headerTxt'>Details that would help profiles get in touch with you</div>}
                             </h5>
-                            {showDetails===6?<Link className='text-dark' to="/edit/profile/contact"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===6?<Link className='text-dark' to="/update/profile/my-contact"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===6&&
@@ -172,7 +172,7 @@ export default function Details() {
                             <h5 className='m-0'>LifeStyle
                                 {showDetails===7&&<div className='headerTxt'>Your favourite activities</div>}
                             </h5>
-                            {showDetails===7?<Link className='text-dark' to="/edit/profile/lifeStyle"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===7?<Link className='text-dark' to="/update/profile/my-life-Style"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===7&&
@@ -201,7 +201,7 @@ export default function Details() {
                             <h5 className='m-0'>Family
                                 {showDetails===1&&<div className='headerTxt'>Introduce your family members</div>}
                             </h5>
-                            {showDetails===1?<Link className='text-dark' to="/edit/profile/family"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
+                            {showDetails===1?<Link className='text-dark' to="/update/profile/my-family"><i className="fa-solid fa-pen-to-square"></i></Link>:<i className="fa-solid mt-1 fa-chevron-down"></i>}
                             
                         </div>
                         {showDetails===1&&

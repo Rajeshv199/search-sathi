@@ -60,7 +60,7 @@ export default function Education() {
     }
 
     function handleSubmit(){
-        history.push("/view/profile")
+        history.push("/view/my-profile")
     }
 
 
@@ -79,7 +79,7 @@ export default function Education() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/view/profile"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/view/my-profile"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>Education Details</h5>
                     <div>Update these details to get suitable matches</div>
                 </div>

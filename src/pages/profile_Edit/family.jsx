@@ -69,7 +69,7 @@ export default function Family() {
     }
 
     function handleSubmit(){
-        history.push("/view/profile")
+        history.push("/view/my-profile")
     }
 
     let fatherOccuArr = ["Business/Entrepreneur","Service-Private","Army/Armed Forces","Civil Services","Retired"];
@@ -86,7 +86,7 @@ export default function Family() {
             <div className='profile-box p-4'>
                 
                 <div className='edit-header'>
-                    <Link className='text-dark' to="/view/profile"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
+                    <Link className='text-dark' to="/view/my-profile"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'> About My Family</h5>
                     <div>Talk about your family members</div>
                 </div>

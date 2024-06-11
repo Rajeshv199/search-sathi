@@ -79,8 +79,9 @@ class MainComponent extends Component{
                     <Route path="/registr/page3" component={CareerDetailsMob}/>
                     <Route path="/registr/page2" component={PersonalDetails}/>
                     <Route path="/registr/page1" component={RegisterMobile}/>
-                    <Route path="/profile" component={profileDetails}/>
-                    <Route path="/user_registration" component={User_registration}/>
+
+                    <Route path="/create-profile" component={profileDetails}/>  create-profile
+                    <Route path="/user-registration" component={User_registration}/>
 
                     <Route path="/phone-book" component={PhoneBook} />
                     <Route path="/activity/blocked" component={Block_Ignore} />
@@ -89,25 +90,25 @@ class MainComponent extends Component{
                     <Route path="/partner/about" component={About_Partner} />
                     <Route path="/partner/lifeStyle" component={LifeStyle_Partner} />
                     <Route path="/partner/religion" component={Religion} />
-                    <Route path="/partner/eduction_occupation" component={Eduction_Occupation} /> //-
+                    <Route path="/partner/eduction-occupation" component={Eduction_Occupation} /> //-
                     <Route path="/basic-details" component={BasicPartner} /> 
                     <Route path="/my-partner" component={PartnerEdit} />
 
-                    <Route path="/edit/profile/family" component={Family} /> 
-                    <Route path="/edit/profile/lifeStyle" component={LifeStyle} />
-                    <Route path="/edit/profile/contact" component={Contact} />
-                    <Route path="/edit/profile/career" component={Career} />
-                    <Route path="/edit/profile/education" component={Education} />
-                    <Route path="/edit/profile/about" component={About} />
-                    <Route path="/edit/profile/basic" component={Basic} />
-                    <Route path="/edit/profile/upload-photo" component={UploadImg} />
-                    <Route path="/view/profile" component={ProfileEdit} /> 
+                    <Route path="/update/profile/my-family" component={Family} />  my-family
+                    <Route path="/update/profile/my-life-Style" component={LifeStyle} /> my-life-Style
+                    <Route path="/update/profile/my-contact" component={Contact} /> my-contact
+                    <Route path="/update/profile/my-career" component={Career} /> my-career
+                    <Route path="/update/profile/my-education" component={Education} /> my-education
+                    <Route path="/update/profile/about-me" component={About} /> about-me
+                    <Route path="/update/profile/basic-details" component={Basic} />   basic-details
+                    <Route path="/update/profile/upload-photo" component={UploadImg} />
+                    <Route path="/view/my-profile" component={ProfileEdit} /> 
 
-                    <Route path="/view/my-matches/profile" component={MatchesProfile} /> // 
+                    <Route path="/view/profile/my-matches" component={MatchesProfile} /> // view/profile/my-matches
                     <Route path="/chat" component={Chat} /> 
-                    <Route path="/byCriteria" component={Search} />
-                    <Route path="/activity" component={Activity} />
-                    <Route path="/mymatches" component={MyMatches} />
+                    <Route path="/search/by-criteria" component={Search} />// search/by-criteria
+                    <Route path="/my-activity" component={Activity} /> //my-activity
+                    <Route path="/view/my-matches-list" component={MyMatches} />//view/my-matches-list
                     <Route path="/messenger" component={Messenger} />
 
                     <Route path="/settingVisibility" component={SettingVisibility}/>

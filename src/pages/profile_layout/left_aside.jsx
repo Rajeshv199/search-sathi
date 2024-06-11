@@ -20,28 +20,28 @@ export default function LeftAside(){
                 </div>
                 <div className="text-detils mb-3">
                     <h4>Hi Sunit!</h4>
-                    <p>UVA537 <Link to="/view/profile">Edit profile</Link></p>
+                    <p>UVA537 <Link to="/view/my-profile">Edit profile</Link></p>
                     <div className="user-percent"><span>80%</span> Profile Completed!</div>
                 </div>
             </div>
 
             <div className="d-flex justify-content-between">
-                <Link to="/mymatches">
-                    <div className={'left-side-items '+(route==="/mymatches"?"colr5":"")}>
+                <Link to="/view/my-matches-list">
+                    <div className={'left-side-items '+(route==="/view/my-matches-list"?"colr5":"")}>
                         <span className="material-symbols-outlined">join_inner</span>
-                        <div className={route==="/mymatches"?"colr5":""}>Matches</div>
+                        <div className={route==="/view/my-matches-list"?"colr5":""}>Matches</div>
                     </div>
                 </Link>
-                <Link to="/activity">
-                    <div className={'left-side-items '+(route==="/activity"?"colr5":"")}>
+                <Link to="/my-activity">
+                    <div className={'left-side-items '+(route==="/my-activity"?"colr5":"")}>
                         <span className="material-symbols-outlined">local_activity</span>
-                        <div className={route==="/activity"?"colr5":""}>Activity</div>
+                        <div className={route==="/my-activity"?"colr5":""}>Activity</div>
                     </div>
                 </Link>
-                <Link to="/byCriteria">
-                    <div className={'left-side-items '+(route==="/byCriteria"?"colr5":"")}>
+                <Link to="/search/by-criteria">
+                    <div className={'left-side-items '+(route==="/search/by-criteria"?"colr5":"")}>
                         <span className="material-symbols-outlined">query_stats</span>
-                        <div className={route==="/byCriteria"?"colr5":""}>Search</div>
+                        <div className={route==="/search/by-criteria"?"colr5":""}>Search</div>
                     </div>
                 </Link>
                 <Link to="/messenger">
