@@ -31,7 +31,7 @@ export default function About_Partner() {
                 <div className='edit-header'>
                     <Link className='text-dark' to="/my-partner"><i className="fa-solid mt-1 fa-chevron-left"></i></Link>
                     <h5 className='m-0'>About Me Partner</h5>
-                    <div>Update these details to get suitable matches</div>
+                    <div>Update these details to get suitable matches</div> 
                 </div>
                 <div className=''>
                     <div className='custom-textarea mt-5 px-3'>

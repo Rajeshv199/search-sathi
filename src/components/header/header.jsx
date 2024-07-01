@@ -90,7 +90,7 @@ class Header extends Component{
                 <div className="menu-navbar--second">
                     <div className={"signupMenu " + (scrolled>400?"srolled":"")}>
                         <div className="loginPart" onClick={this.handelloginPg}>LOGIN</div>
-                        <Link to="/user_registration">
+                        <Link to="/user-registration">
                             <div className="registerPart" > REGISTER FREE</div>
                         </Link>
                     </div>
